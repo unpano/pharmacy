@@ -1,10 +1,10 @@
-package pharmacy.isa;
+package isa.pharmacy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PharmacyProjectIsaApplicationTests {
+class PharmacyApplicationTests {
 
 	@Test
 	void contextLoads() {

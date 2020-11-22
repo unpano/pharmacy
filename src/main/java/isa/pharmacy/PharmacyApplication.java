@@ -1,13 +1,13 @@
-package pharmacy.isa;
+package isa.pharmacy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PharmacyProjectIsaApplication {
+public class PharmacyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PharmacyProjectIsaApplication.class, args);
+		SpringApplication.run(PharmacyApplication.class, args);
 	}
 
 }
