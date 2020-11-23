@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a22cd27-5e31-446c-8a1e-7734fc728513" name="Default Changelist" comment="" />
+    <list default="true" id="6a22cd27-5e31-446c-8a1e-7734fc728513" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/isa/pharmacy/PharmacyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/isa/pharmacy/PharmacyApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\Users\Andjela Paunovic\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -23,6 +29,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -32,20 +42,11 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pharmacy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
+      <option name="DEBUG_MODE" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -60,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606061963667</updated>
       <workItem from="1606061964793" duration="787000" />
+      <workItem from="1606139397714" duration="555000" />
     </task>
     <servers />
   </component>
@@ -67,10 +69,42 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606062030207">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606139607155">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606062030207" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606139607155" />
+    <state width="1237" height="223" key="GridCell.Tab.0.bottom" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.0.center" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.0.left" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.0.right" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.1.center" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.1.left" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
+    <state width="1237" height="223" key="GridCell.Tab.1.right" timestamp="1606139953350">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="223" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1606139953350" />
     <state x="121" y="0" key="SettingsEditor" timestamp="1606062070208">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
