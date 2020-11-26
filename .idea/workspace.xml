@@ -118,20 +118,6 @@
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isa/pharmacy/PharmacyApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/isa/pharmacy/ServletInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/isa/pharmacy/PharmacyApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +148,6 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -196,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606415160248</updated>
       <workItem from="1606415161389" duration="355000" />
-      <workItem from="1606415629962" duration="343000" />
+      <workItem from="1606415629962" duration="706000" />
     </task>
     <servers />
   </component>
@@ -220,37 +205,51 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606415967305" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.0.bottom" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.0.center" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.0.left" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.0.right" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.1.bottom" timestamp="1606415518401">
+    <state width="1237" height="496" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.1.bottom" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606415518401" />
-    <state width="1237" height="163" key="GridCell.Tab.1.center" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.1.center" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.1.left" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.1.left" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
-    <state width="1237" height="163" key="GridCell.Tab.1.right" timestamp="1606415518400">
+    <state width="1237" height="496" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state width="1237" height="496" key="GridCell.Tab.1.right" timestamp="1606416192953">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1606415518400" />
+    <state width="1237" height="496" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1606416192953" />
+    <state x="194" y="52" width="893" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606416167605">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="194" y="52" width="893" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1606416167605" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
