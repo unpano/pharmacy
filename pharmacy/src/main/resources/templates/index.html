@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -40,7 +40,7 @@
                 <li class="active"><a href="#banner">Home</a></li>
                 <li class=""><a href="#service">Services</a></li>
                 <li class=""><a href="#about">About</a></li>
-                <li class=""><a href="#testimonial">Testimonial</a></li>
+                <li class=""><a th:href="${'/myProfile'}">My profile</a></li>
                 <li class=""><a href="#contact">Contact</a></li>
               </ul>
             </div>
