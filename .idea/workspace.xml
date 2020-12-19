@@ -118,7 +118,6 @@
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +143,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -152,9 +152,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Webshop" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pharmacy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
@@ -177,6 +192,11 @@
       <workItem from="1607193824687" duration="916000" />
       <workItem from="1607194805130" duration="957000" />
       <workItem from="1607812111638" duration="1208000" />
+      <workItem from="1607814085773" duration="18000" />
+      <workItem from="1607814252311" duration="188000" />
+      <workItem from="1607964671860" duration="4934000" />
+      <workItem from="1607970846118" duration="1417000" />
+      <workItem from="1608388758150" duration="1793000" />
     </task>
     <servers />
   </component>
@@ -196,46 +216,58 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606415967305">
+    <state x="121" y="0" key="#Project_Structure" timestamp="1607973551879">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606415967305" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1607194875467">
+    <state x="121" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1607973551879" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607969133925">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607194875467" />
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1607813323434">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1607969133925" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1607969194473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1607813323434">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607969194473" />
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1608388826703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1607813323434">
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1608388826702">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1607813323434">
+    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608388826702" />
+    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1608388826702">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1607813323435">
+    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608388826702" />
+    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1608388826703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1607813323435">
+    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1608388826703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1607813323435">
+    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1608388826703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1607813323435">
+    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1608388826703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
+    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1608388826703">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1608388826703" />
+    <state width="266" height="457" key="HiddenNamespacesPopup" timestamp="1607814369334">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="266" height="457" key="HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680" timestamp="1607814369334" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1607970316118">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607970316118" />
     <state x="194" y="52" width="893" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606416167605">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
