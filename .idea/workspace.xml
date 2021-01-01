@@ -14,7 +14,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Projects/Webshop/.idea/Webshop.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/.name" afterDir="false" />
@@ -120,7 +119,6 @@
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,17 +174,6 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pharmacy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
@@ -245,38 +232,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608395010303" />
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
-    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1608398225637">
+    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
+    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1608411614635">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1608398225637" />
+    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1608411614635" />
     <state width="266" height="457" key="HiddenNamespacesPopup" timestamp="1607814369334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
