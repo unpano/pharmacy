@@ -11,7 +11,7 @@ public class AnonymousUser {
         return "index";
     }
 
-    @RequestMapping("/myProfile")
+    @RequestMapping("/login")
     public String myProfile() {
         return "Login";
     }
