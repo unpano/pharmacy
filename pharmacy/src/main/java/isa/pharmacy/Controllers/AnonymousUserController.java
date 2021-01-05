@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class AnonymousUser {
+public class AnonymousUserController {
 
     @RequestMapping("/")
     public String index() {
@@ -12,7 +12,12 @@ public class AnonymousUser {
     }
 
     @RequestMapping("/login")
-    public String myProfile() {
+    public String login() {
         return "Login";
+    }
+
+    @RequestMapping("/signup")
+    public String signup() {
+        return "index";
     }
 }

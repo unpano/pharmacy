@@ -119,9 +119,11 @@
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/static/css/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/static/js/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/static/js/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/Login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +136,8 @@
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -176,6 +180,11 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="isa.pharmacy.Models" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pharmacy" />
@@ -205,6 +214,9 @@
       <workItem from="1607970846118" duration="1417000" />
       <workItem from="1608388758150" duration="1793000" />
       <workItem from="1609592018060" duration="4663000" />
+      <workItem from="1609659759010" duration="3623000" />
+      <workItem from="1609790761421" duration="3359000" />
+      <workItem from="1609849454769" duration="8113000" />
     </task>
     <servers />
   </component>
@@ -232,42 +244,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1607969133925" />
+    <state x="466" y="95" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609660966966">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="466" y="95" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1609660966966" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1608395010303">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608395010303" />
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.1.bottom" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.1.center" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.1.left" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
-    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1609595338677">
+    <state width="1237" height="116" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
+    <state width="1237" height="116" key="GridCell.Tab.1.right" timestamp="1609863341548">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609595338677" />
+    <state width="1237" height="116" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609863341548" />
     <state width="266" height="457" key="HiddenNamespacesPopup" timestamp="1607814369334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

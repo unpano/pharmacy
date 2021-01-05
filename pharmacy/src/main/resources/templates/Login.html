@@ -14,12 +14,12 @@
         <div class="login-form">
             <div class="sign-in-htm">
                 <div class="group">
-                    <label for="user" class="label">Username</label>
-                    <input id="user" type="text" class="input">
+                    <label for="pass" class="label">Email address</label>
+                    <input id="emailAddress" type="text" class="input">
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <input id="password" type="password" class="input" data-type="password">
                 </div>
                 <div class="group">
                     <input id="check" type="checkbox" class="check" checked>
@@ -30,36 +30,56 @@
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
-                    <a href="#forgot">Forgot Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
-                <a class="foot-lnk" th:href="${'/'}" for="tab-1">Back</a>
+                <a class="foot-lnk" th:href="${'/'}">Back</a>
             </div>
             <div class="sign-up-htm">
                 <div class="group">
-                    <label for="user" class="label">Username</label>
-                    <input id="user" type="text" class="input">
+                    <label for="pass" class="label">First name</label>
+                    <input id="firstName" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Last Name</label>
+                    <input id="lastName" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Email address</label>
+                    <input id="email" type="text" class="input" data-type="password">
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Password</label>
                     <input id="pass" type="password" class="input" data-type="password">
                 </div>
                 <div class="group">
-                    <label for="pass" class="label">Repeat Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <label for="pass" class="label">Confirm password</label>
+                    <input id="pass1" type="password" class="input" data-type="password">
                 </div>
                 <div class="group">
-                    <label for="pass" class="label">Email Address</label>
-                    <input id="pass" type="text" class="input">
+                    <label for="pass" class="label">Address</label>
+                    <input id="address" type="text" class="input">
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Sign Up">
+                    <label for="pass" class="label">City</label>
+                    <input id="city" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Country</label>
+                    <input id="country" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Phone number</label>
+                    <input id="phoneNumber" type="text" class="input">
+                </div>
+                <div class="group">
+                    <button id="myBtn" class="button" value="Sign Up">SIGN UP</button>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
                     <label for="tab-1">Already Member?</label>>
                 </div>
 
-                <a class="foot-lnk" th:href="${'/'}" for="tab-1">Back</a>
+                <a class="foot-lnk" th:href="${'/'}" >Back</a>
 
             </div>
         </div>
