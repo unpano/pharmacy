@@ -9,7 +9,7 @@ public class Med {
     private Form form;
     private String [] ingredients;
     private String producer;
-    private String replacementCode;
+    private String [] replacementCode;
     private IssuanceRegime issuanceRegime; //rezim izdavanja
     private String additionalNotes;
 

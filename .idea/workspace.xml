@@ -172,9 +172,7 @@
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Controllers/AnonymousUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/static/js/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/static/js/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/templates/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +221,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Webshop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -237,17 +235,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="pharmacy" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
@@ -279,7 +266,8 @@
       <workItem from="1609659759010" duration="3623000" />
       <workItem from="1609790761421" duration="3359000" />
       <workItem from="1609849454769" duration="8113000" />
-      <workItem from="1611406859212" duration="8923000" />
+      <workItem from="1611406859212" duration="10285000" />
+      <workItem from="1611484872907" duration="1979000" />
     </task>
     <servers />
   </component>
@@ -319,38 +307,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1611411166868" />
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.0.center" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.0.left" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.0.right" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.1.bottom" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.1.bottom" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.1.center" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.1.center" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.1.left" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.1.left" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
-    <state width="1237" height="116" key="GridCell.Tab.1.right" timestamp="1611416151033">
+    <state width="1237" height="116" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
+    <state width="1237" height="116" key="GridCell.Tab.1.right" timestamp="1611423644472">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="116" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1611416151033" />
+    <state width="1237" height="116" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1611423644472" />
     <state width="266" height="457" key="HiddenNamespacesPopup" timestamp="1607814369334">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
