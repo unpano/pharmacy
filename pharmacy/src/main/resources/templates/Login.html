@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/Login.css}">
-    <script th:href="@{/js/Login.js}"></script>
+    <script type="text/script" th:href="@{/js/Login.js}"></script>
+
 </head>
 <body>
 <div class="login-wrap">
@@ -12,14 +13,14 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
         <div class="login-form">
-            <div class="sign-in-htm">
+            <form class="sign-in-htm" th:action="findUser" th:object="${user}" th:method="post">
                 <div class="group">
-                    <label for="user" class="label">Username</label>
-                    <input id="user" type="text" class="input">
+                    <label for="pass" class="label">Email address</label>
+                    <input id="emailAddress" type="text" class="input" th:field="*{email}">
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <input id="password" type="password" class="input" data-type="password" th:field="*{password}">
                 </div>
                 <div class="group">
                     <input id="check" type="checkbox" class="check" checked>
@@ -30,38 +31,58 @@
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
-                    <a href="#forgot">Forgot Password?</a>
+                    <a href="#">Forgot Password?</a>
                 </div>
-                <a class="foot-lnk" th:href="${'/'}" for="tab-1">Back</a>
-            </div>
-            <div class="sign-up-htm">
+                <a class="foot-lnk" th:href="${'/'}">Back</a>
+            </form>
+            <form class="sign-up-htm" th:action="createUser" th:object="${user}" th:method="post">
                 <div class="group">
-                    <label for="user" class="label">Username</label>
-                    <input id="user" type="text" class="input">
+                    <label for="pass" class="label">First name</label>
+                    <input id="firstName" type="text" class="input" th:field="*{firstName}">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Last Name</label>
+                    <input id="lastName" type="text" class="input" th:field="*{lastName}">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Email address</label>
+                    <input id="email" type="text" class="input" data-type="password" th:field="*{email}">
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <input id="pass" type="password" class="input" data-type="password" th:field="*{password}">
                 </div>
                 <div class="group">
-                    <label for="pass" class="label">Repeat Password</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                    <label for="pass" class="label">Confirm password</label>
+                    <input id="pass1" type="password" class="input" data-type="password">
                 </div>
                 <div class="group">
-                    <label for="pass" class="label">Email Address</label>
-                    <input id="pass" type="text" class="input">
+                    <label for="pass" class="label">Address</label>
+                    <input id="address" type="text" class="input" th:field="*{address}">
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Sign Up">
+                    <label for="pass" class="label">City</label>
+                    <input id="city" type="text" class="input" th:field="*{city}">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Country</label>
+                    <input id="country" type="text" class="input" th:field="*{country}">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Phone number</label>
+                    <input id="phoneNumber" type="text" class="input" th:field="*{phoneNumber}">
+                </div>
+                <div class="group">
+                    <button type="submit" id="myBtn" class="button" value="Sign Up">SIGN UP</button>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
                     <label for="tab-1">Already Member?</label>>
                 </div>
 
-                <a class="foot-lnk" th:href="${'/'}" for="tab-1">Back</a>
+                <a class="foot-lnk" th:href="${'/'}" >Back</a>
 
-            </div>
+            </form>
         </div>
     </div>
 </div>
