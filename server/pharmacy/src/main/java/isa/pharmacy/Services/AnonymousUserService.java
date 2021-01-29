@@ -1,27 +1,21 @@
 package isa.pharmacy.Services;
 
-
-import isa.pharmacy.Models.Pharmacy;
-import isa.pharmacy.Repositories.PharmacyRepository;
+import isa.pharmacy.Models.User;
+import isa.pharmacy.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 import java.util.Optional;
 
 @Service
 @Transactional
 public class AnonymousUserService {
 
-    /*@Autowired
-    private PharmacyRepository pharmacyRepository;
+    @Autowired
+    private UserRepository userRepository;
 
-    public List<Pharmacy> findAll() {
-        return pharmacyRepository.findAll();
-    }
-    public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
+    public Optional<User> findById(Long id){ return userRepository.findById(id); }
 
 }
-     */
-}
+

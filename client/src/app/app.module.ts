@@ -26,7 +26,7 @@ import { LoginComponent } from './components/login/login.component'
     MDBBootstrapModule.forRoot()
   ],
   providers: [
-    {provide : HTTP_INTERCEPTORS, useClass : BasicAuthInterceptor, multi:true}
+    {provide : HTTP_INTERCEPTORS, useClass : BasicAuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

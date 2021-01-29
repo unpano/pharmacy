@@ -1,1 +1,48 @@
-<p>login works!</p>
+<div mdbModal #authenticationModal="mdbModal" id="authenticationModal" class="modal fade" tabindex="-1" 
+role="dialog" style="overflow-y: auto;" aria-labelledby="authenticationModal" aria-hidden="true" 
+(closed)="showModal(); clearFormData();">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <div class="row alert alert-primary" role="alert" *ngIf="errorMessage">
+                    <div class="col-md-12">
+                        {{errorMessage}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>
+                            <mdb-badge>
+                                Username:
+                            </mdb-badge>
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <input mdbInput type="text" id="username" class="form-control" name="username" placeholder="Username"
+                            [(ngModel)]="username" required focus>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>
+                            <mdb-badge>
+                                Password:
+                            </mdb-badge>
+                        </h4>
+                    </div>
+                    <div class="col-md-6">
+                        <input mdbInput type="password" id="password" class="form-control" name="password" placeholder="Password"
+                            [(ngModel)]="password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" mdbBtn color="primary" class="waves-light" aria-label="Authentication" (click)="logIn();"
+                    mdbWavesEffect>Authentication</button>
+            </div>
+        </div>
+    </div>
+</div>
