@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class AnonymousUserController {
-
     @RequestMapping("/")
-    public String index() {
+    public String home()
+    {
         return "index";
     }
 
@@ -19,10 +19,11 @@ public class AnonymousUserController {
 
         return "Login";}
 
-    @PostMapping("/createUser")
-    public String createUser(@ModelAttribute User user) {
+    @PostMapping("/findUser")
+    public String findUser(@ModelAttribute User user) {
 
-        //Ovde treba da se kreira novi User i da se sacuva u bazi
+        //Ovde treba proveriti da li email i password odgovaraju nekom od vec
+        //registrovanih korisnika u bazi
         //Podaci su pokupljeni iz html-a i prosledjeni preko user-a ovoj metodi
         //Zatim se redirektuje na index pocetnu stranicu
 
@@ -36,14 +37,14 @@ public class AnonymousUserController {
         return "index";
     }
 
-    @PostMapping("/findUser")
-    public String findUser(@ModelAttribute User user) {
+    @PostMapping("/createUser")
+    public String createUser(@ModelAttribute User user) {
 
-        //Ovde treba proveriti da li email i password odgovaraju nekom od vec
-        //registrovanih korisnika u bazi
+        //Ovde treba da se kreira novi User i da se sacuva u bazi
         //Podaci su pokupljeni iz html-a i prosledjeni preko user-a ovoj metodi
         //Zatim se redirektuje na index pocetnu stranicu
 
         return "redirect:/";
     }
+
 }
