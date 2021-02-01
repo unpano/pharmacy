@@ -39,18 +39,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
   }
 
   logIn(): void {
-    this.auth.authenticate(this.username,this.password).subscribe(data => {
-      if(!localStorage.getItem('user')) {
-        this.errorMessage = 'Username/Password are invalid.'
-      }else{
-        this.router.navigate(['/users']);
-      }
-    },
-      error => {
-        this.errorMessage = Constants.INTERNAL_SERVER_ERROR_MESSAGE;
-      }
-      
-    )
+    this.router.navigate(['/users']);
   }
 
   clearFormData(): void {

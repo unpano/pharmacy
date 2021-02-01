@@ -1,1 +1,21 @@
-<p>user works!</p>
+<!-------------------------------------->
+<!-- 1. Tabel utilizatori -->
+<table mdbTable>
+    <thead class="black white-text">
+      <tr>
+        <th *ngFor="let head of usersTableHeaders" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let user of usersArray">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.country}}</td>
+      </tr>
+    </tbody>
+</table>
+<!----------->

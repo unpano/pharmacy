@@ -1,5 +1,6 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -34,6 +35,7 @@ public class User {
     }
 
     public User(String firstName, String lastName, String email, String password, String address, String city, String country, String phoneNumber) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

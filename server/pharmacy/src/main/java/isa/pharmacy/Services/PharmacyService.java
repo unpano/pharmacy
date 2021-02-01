@@ -20,4 +20,5 @@ public class PharmacyService {
         return pharmacyRepository.findAll();
     }
     public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
+
 }
