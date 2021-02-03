@@ -16,16 +16,16 @@ public class LoadPharmaciesInDB implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Pharmacy pharmacy = new Pharmacy("Krsenkovic","Uspenska 37", 4.5f);
+        Pharmacy pharmacy = new Pharmacy("Krsenkovic","Uspenska 37","Novi Sad", 4.5f);
         pharmacyRepository.save(pharmacy);
 
-        pharmacy = new Pharmacy("Benu","Miselukova 13",3.0f);
+        pharmacy = new Pharmacy("Benu","Miselukova 13","Novi Sad",3.0f);
         pharmacyRepository.save(pharmacy);
 
-        pharmacy = new Pharmacy("Jankovic","Zmaj Jovina 3", 4.8f);
+        pharmacy = new Pharmacy("Jankovic","Zmaj Jovina 3","Novi Sad", 4.8f);
         pharmacyRepository.save(pharmacy);
 
-        pharmacy = new Pharmacy("Drzavna", "Putnikova 3", 4.7f);
+        pharmacy = new Pharmacy("Drzavna", "Putnikova 3","Novi Sad", 4.7f);
         pharmacyRepository.save(pharmacy);
     }
 }

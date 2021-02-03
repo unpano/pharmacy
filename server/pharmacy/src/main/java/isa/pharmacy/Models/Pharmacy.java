@@ -19,15 +19,19 @@ public class Pharmacy {
     private String address;
 
     @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
     private float avgRank;
 
     public Pharmacy(){
         super();
     }
 
-    public Pharmacy(String name, String address, float avgRank) {
+    public Pharmacy(String name, String address, String city, float avgRank) {
         this.name = name;
         this.address = address;
+        this.city = city;
         this.avgRank = avgRank;
     }
 
