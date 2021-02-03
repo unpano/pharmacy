@@ -24,6 +24,10 @@ public class Pharmacy {
     @Column(nullable = false)
     private float avgRank;
 
+    //Apoteka ima listu lekova,
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Med> meds = new HashSet<>();
+
     public Pharmacy(){
         super();
     }
@@ -35,10 +39,13 @@ public class Pharmacy {
         this.avgRank = avgRank;
     }
 
-    //Apoteka ima listu lekova, a lek pripada tacno odredjenoj apoteci
-    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Med> meds = new HashSet<>();
+    public String getCity() {
+        return city;
+    }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public float getAvgRank() {
         return avgRank;

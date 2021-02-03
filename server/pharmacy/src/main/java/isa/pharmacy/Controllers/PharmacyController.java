@@ -5,11 +5,9 @@ import isa.pharmacy.Services.PharmacyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -20,7 +18,7 @@ public class PharmacyController {
     private PharmacyService pharmacyService;
 
     @GetMapping
-    public ResponseEntity<?> showPharmacies() {
+    public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.pharmacyService.findAll(), HttpStatus.OK) ;
     }
 
@@ -33,5 +31,10 @@ public class PharmacyController {
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<?> findByCriteria(@RequestParam(name = "searchItem", required = true) String searchItem) {
+        return new ResponseEntity<List<Pharmacy>>(pharmacyService.findByCriteria(searchItem), HttpStatus.OK);
     }
 }

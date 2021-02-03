@@ -25,9 +25,13 @@
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Component/LoadPharmaciesInDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Component/LoadPharmaciesInDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/PharmacyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/PharmacyApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/PharmacyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/PharmacyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +103,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.PharmacyApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (client)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -160,7 +175,7 @@
       <workItem from="1612203909654" duration="614000" />
       <workItem from="1612205117864" duration="575000" />
       <workItem from="1612205845528" duration="631000" />
-      <workItem from="1612362030667" duration="179000" />
+      <workItem from="1612362030667" duration="973000" />
     </task>
     <servers />
   </component>
@@ -204,38 +219,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1612180994806" />
-    <state width="1237" height="156" key="GridCell.Tab.0.bottom" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.0.bottom" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.0.center" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.0.center" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.0.left" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.0.left" timestamp="1612362634010">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.0.right" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612362634010" />
+    <state width="1237" height="156" key="GridCell.Tab.0.right" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.1.bottom" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.1.bottom" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.1.center" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.1.center" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.1.left" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.1.left" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
-    <state width="1237" height="156" key="GridCell.Tab.1.right" timestamp="1612361992015">
+    <state width="1237" height="156" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
+    <state width="1237" height="156" key="GridCell.Tab.1.right" timestamp="1612362634012">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="156" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1612361992015" />
+    <state width="1237" height="156" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1612362634012" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1611594240879">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

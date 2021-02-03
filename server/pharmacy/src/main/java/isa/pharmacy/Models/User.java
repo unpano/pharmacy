@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -29,6 +31,10 @@ public class User {
     private String country;
     @Column(nullable = false)
     private String phoneNumber;
+
+    //User ima listu rezervisanih lekova
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Prescription> prescriptions = new HashSet<>();
 
     public User() {
         super();

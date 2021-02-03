@@ -11,12 +11,18 @@ import javax.transaction.Transactional;
 @Component
 @Transactional
 public class LoadPharmaciesInDB implements CommandLineRunner {
+
     @Autowired
     private PharmacyRepository pharmacyRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        Pharmacy pharmacy = new Pharmacy("Krsenkovic","Uspenska 37","Novi Sad", 4.5f);
+
+        if (pharmacyRepository.count() > 0) {
+            return;
+        }
+
+        Pharmacy pharmacy = new Pharmacy("Krsenkovic","Uspenska 37", "Novi Sad", 4.5f);
         pharmacyRepository.save(pharmacy);
 
         pharmacy = new Pharmacy("Benu","Miselukova 13","Novi Sad",3.0f);
