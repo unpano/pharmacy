@@ -1,0 +1,26 @@
+<mat-toolbar>
+    <span>Ništagram</span>
+    <p></p>
+    <div>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon (click)="homeClicked()">home</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>control_point</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>chat</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon (click)="myPostsClicked()">photo_camera</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon (click)="clickedProfile()">person</mat-icon>
+        </button>
+    </div>
+  </mat-toolbar>
+
+  
+  <app-nistagramer-profile *ngIf="profile == true"></app-nistagramer-profile>
+  <app-my-posts *ngIf="myPosts == true"></app-my-posts>
+  

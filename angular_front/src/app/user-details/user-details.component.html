@@ -1,0 +1,67 @@
+<form role="form" novalidate class="form-inline" name="personForm">
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Full Name</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.fullName}}</label>								
+        	
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Username</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela">{{user.username}}</label>    
+        								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Email Address</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.email}}</label>	
+        
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Phone number</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.mobile}}</label>
+       							
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Gender</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.gender}}</label>
+        								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Birth date</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.birthDate}}</label>
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Website</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.website}}</label>
+        
+      								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Bio</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.biography}}</label>	
+        
+       							
+    </div>
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Public</label>
+        <label *ngIf="user.isPublic">public</label>
+        <label *ngIf="!user.isPublic">private</label>
+        								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Receive messages from people you don't follow?</label>
+        <label *ngIf="user.receiveMessages">yes</label>
+        <label *ngIf="!user.receiveMessages">no</label>
+        								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Enable tags from people you don't follow?</label>
+        <label *ngIf="user.enableTags">yes</label>
+        <label *ngIf="!user.enableTags">no</label>
+        									
+    </div>
+ 
+    
+    
+</form>

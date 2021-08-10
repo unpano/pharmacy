@@ -1,0 +1,13 @@
+<form>
+  <mat-label>Category</mat-label>
+  <mat-select [(ngModel)]="category" name="new" required>
+    <mat-option value="influencer">influencer</mat-option>
+      <mat-option value="sports">sports</mat-option>
+      <mat-option value="new/media">new/media</mat-option>
+      <mat-option value="business">business</mat-option>
+      <mat-option value="brand">brand</mat-option>
+      <mat-option value="organization">organization</mat-option>
+  </mat-select>
+  <input type="file" (change)="uploadFiles($event.target.files)">
+  <button (click)="onSendRequest()">Send request</button>
+</form>

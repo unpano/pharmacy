@@ -20,8 +20,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<?> findAll(Pageable pageable) {
-        return new ResponseEntity<Page<User>>(userService.findAll(pageable), HttpStatus.OK);
+    public ResponseEntity<?> findAll() {
+        return new ResponseEntity<Page<User>>(userService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

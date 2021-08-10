@@ -7,7 +7,7 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 //canActivate nam govori ko moze da aktivira komponentu, po default-u mogu svi
 const routes: Routes = [
   { path: 'users', component: UserComponent, canActivate: [AuthenticationGuard]},
-  { path: 'login', component: LoginComponent},
+  { path: '/', component: LoginComponent},
   { path: '** ', redirectTo: '/login'}
 ];
 
