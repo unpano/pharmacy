@@ -44,10 +44,10 @@ public class UserServiceImpl implements UserService {
     public User add(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(true);
-        //List<Authority> auth = authService.findByName("ROLE_USER");
-        //user.setAuthorities(auth);
+        List<Authority> auth = authService.findByName("ROLE_USER");
+        user.setAuthorities(auth);
 
-        
+
         userRepository.save(user);
 
 

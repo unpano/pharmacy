@@ -7,13 +7,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
@@ -54,6 +56,7 @@ public class UserController {
     }
 
     @PutMapping("/update")
+    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> update(@RequestBody User user) {
         Optional<User> optUser = userService.update(user);
 
@@ -62,6 +65,13 @@ public class UserController {
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/profile")
+    @PreAuthorize("hasRole('USER')")
+    public User user(Principal user) {
+        //System.out.println(user.getName()); //VRACA USERNAME
+        return this.userService.findByUsername(user.getName());
     }
 
 }

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './components/user/user.component'
-import { LoginComponent } from './components/login/login.component' 
-import { AuthenticationGuard } from './guards/authentication.guard';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
 
-//canActivate nam govori ko moze da aktivira komponentu, po default-u mogu svi
+import { HomePageComponent } from './home-page/home-page.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 const routes: Routes = [
-  { path: 'users', component: UserComponent, canActivate: [AuthenticationGuard]},
-  { path: '/', component: LoginComponent},
-  { path: '** ', redirectTo: '/login'}
+  {path: 'loggedUser', component: LoggedUserHomePageComponent},
+  {path: '', component: HomePageComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({

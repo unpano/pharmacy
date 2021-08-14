@@ -28,6 +28,10 @@ public class Pharmacy {
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Med> meds = new HashSet<>();
 
+    //Apoteka ima listu slobodnih termina kod dermatolooga
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<DermAppointment> dermAppointments = new HashSet<>();
+
     public Pharmacy(){
         super();
     }
