@@ -11,8 +11,6 @@ public class Med {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String code;
     private String name;
     private String type;
     private Form form;
@@ -29,7 +27,5 @@ public class Med {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
-    @OneToOne(mappedBy = "med")
-    private Prescription prescription;
 
 }

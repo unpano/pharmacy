@@ -4,6 +4,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "prescriptions")
@@ -16,11 +19,14 @@ public class Prescription {
     @Column(nullable = false)
     private Date date;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "meds_id", referencedColumnName = "id")
-    private Med med;
+    //Recept ima listu lekova
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "prescription_med",
+            joinColumns = @JoinColumn(name = "prescription_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
+    private List<Med> meds;
 
-    //Rezervisani lek pripada tacno jednom useru
+    //Recept pripada tacno jednom useru
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
 }

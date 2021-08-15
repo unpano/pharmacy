@@ -1,0 +1,22 @@
+--SQL skripta Pharmacy
+
+--PHARMACIES
+
+insert into pharmacies values(1,'Ul.29.novembra 25',3.7,'Apoteka Viva','Aleksandrovac');
+insert into pharmacies values(2,'Ul.Vinogradarska',4.3,'Apoteka Hrast','Aleksandrovac');
+insert into pharmacies values(3,'Trg oslobodjenja',3.7,'Apoteka Menta','Apatin');
+insert into pharmacies values(4,'Narodne revolucije 1',4.0,'Apoteka Belladonna','Backi Petrovac');
+insert into pharmacies values(5,'Svetosavska 4B',3.6,'Apoteka Kod Svetog duha','Beocin');
+insert into pharmacies values(6,'Jovanke Radakovic 50a',3.7,'Apoteka 101 pharm','Beograd');
+insert into pharmacies values(7,'Skadarska 1',4.7,'Apoteka Nikolic','Cacak');
+insert into pharmacies values(8,'Dragiše Mišovica',3.8,'Apoteka Medica-S','Cacak');
+insert into pharmacies values(9,'Skadarska 11',3.9,'Apoteka Mišovic 1','Cacak');
+insert into pharmacies values(10,'Kneza Miloša bb',4.5,'Apoteka Moc prirode','Kosovska Mitrovica');
+insert into pharmacies values(11,'Porecka 2',3.0,'Apoteka Beladona','Kostolac');
+insert into pharmacies values(12,'Brace Hadzica 67',3.4,'Apoteka Hygieia','Kragujevac');
+insert into pharmacies values(13,'Dula Karaklajica 22',3.0,'Apoteka Juricic','Lazarevac');
+insert into pharmacies values(14,'29.Novembra bb',3.6,'Apoteka Tilija','Leposavic');
+insert into pharmacies values(15,'Sutjeska',3.4,'Apoteka Leskovac','Leskovac');
+insert into pharmacies values(16,'Badnjevska 4',4.3,'Apoteka Zivkovic','Negotin');
+insert into pharmacies values(17,'Cele kula ,Vozdova 24',3.6,'Apoteka Niš','Niš');
+insert into pharmacies values(18,'Bulevar Nemanjica 92',3.4,'Apoteka Farmakop','Niš');
