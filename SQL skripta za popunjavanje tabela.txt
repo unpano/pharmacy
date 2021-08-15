@@ -20,3 +20,17 @@ insert into pharmacies values(15,'Sutjeska',3.4,'Apoteka Leskovac','Leskovac');
 insert into pharmacies values(16,'Badnjevska 4',4.3,'Apoteka Zivkovic','Negotin');
 insert into pharmacies values(17,'Cele kula ,Vozdova 24',3.6,'Apoteka Niš','Niš');
 insert into pharmacies values(18,'Bulevar Nemanjica 92',3.4,'Apoteka Farmakop','Niš');
+
+--MEDS
+
+insert into meds values(1,'150mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(2,'200mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(3,'300mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(4,'150mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(5,'50mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(6,'75mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(7,'500mg+500mg+250mg; bocica staklena, 25x500mg + 500 mg + 250 mg',0,1,'RECARBRIO®',1040,'LABORATOIRES MERCK SHARP & DOHME CHIBRET, Route de Marsat, Riom, Clermont-Ferrand, Francuska','imipenem, cilastatin, relebaktam');
+insert into meds values(8,'rastvor za injekciju/infuziju; 1000mg+200mg; bocica staklena, 10x1.2g',0,1,'Amoxiplus 1,2g',756,'ANTIBIOTICE SA, Str. Valea Lupului nr. 1, Iasi, jud. Iasi, Rumunija','amoksicilin, klavulanska kiselina');
+insert into meds values(9,'25mg/g; tuba, 1x50g',5,1,'Ketonal®',427,'SALUTAS PHARMA GMBH, Lange Göhren 3, Sülzetal, Osterweddingen, Nemacka','ketoprofen');
+insert into meds values(10,'100mg/2mL; ampula, 10x2mL',6,1,'Ketonal®',180,'LEK FARMACEVTSKA DRU@BA D.D., Verovckova 57, Ljubljana, Slovenija','ketoprofen');
+insert into meds values(11,'; 8mg/mL; boca staklena, 1x100mL',7,1,'HEDELIX®',823,'KREWEL-MEUSELBACH GMBH, Krewelstr.2, Eitorf, Nemacka','br{ljan (Hedera helix L.), meki ekstrakt lista');

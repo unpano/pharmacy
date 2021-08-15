@@ -23,9 +23,7 @@ public class Med {
     private String additionalNotes;
     private float price;
 
-    //Lek pripada tacno jednoj apoteci
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Pharmacy pharmacy;
+
 
 
 }

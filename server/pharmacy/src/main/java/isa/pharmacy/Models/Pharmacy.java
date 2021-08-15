@@ -2,6 +2,7 @@ package isa.pharmacy.Models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -24,9 +25,12 @@ public class Pharmacy {
     @Column(nullable = false)
     private float avgRank;
 
-    //Apoteka ima listu lekova,
-    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Med> meds = new HashSet<>();
+    //Apoteka ima listu lekova
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "pharmacy_med",
+            joinColumns = @JoinColumn(name = "pharmacy_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
+    private List<Med> meds;
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
