@@ -1,0 +1,222 @@
+--SQL skripta Pharmacy
+
+--PHARMACIES
+
+insert into pharmacies values(1,'Ul.29.novembra 25',3.7,'Apoteka Viva','Aleksandrovac');
+insert into pharmacies values(2,'Ul.Vinogradarska',4.3,'Apoteka Hrast','Aleksandrovac');
+insert into pharmacies values(3,'Trg oslobodjenja',3.7,'Apoteka Menta','Apatin');
+insert into pharmacies values(4,'Narodne revolucije 1',4.0,'Apoteka Belladonna','Backi Petrovac');
+insert into pharmacies values(5,'Svetosavska 4B',3.6,'Apoteka Kod Svetog duha','Beocin');
+insert into pharmacies values(6,'Jovanke Radakovic 50a',3.7,'Apoteka 101 pharm','Beograd');
+insert into pharmacies values(7,'Skadarska 1',4.7,'Apoteka Nikolic','Cacak');
+insert into pharmacies values(8,'Dragiše Mišovica',3.8,'Apoteka Medica-S','Cacak');
+insert into pharmacies values(9,'Skadarska 11',3.9,'Apoteka Mišovic 1','Cacak');
+insert into pharmacies values(10,'Kneza Miloša bb',4.5,'Apoteka Moc prirode','Kosovska Mitrovica');
+insert into pharmacies values(11,'Porecka 2',3.0,'Apoteka Beladona','Kostolac');
+insert into pharmacies values(12,'Brace Hadzica 67',3.4,'Apoteka Hygieia','Kragujevac');
+insert into pharmacies values(13,'Dula Karaklajica 22',3.0,'Apoteka Juricic','Lazarevac');
+insert into pharmacies values(14,'29.Novembra bb',3.6,'Apoteka Tilija','Leposavic');
+insert into pharmacies values(15,'Sutjeska',3.4,'Apoteka Leskovac','Leskovac');
+insert into pharmacies values(16,'Badnjevska 4',4.3,'Apoteka Zivkovic','Negotin');
+insert into pharmacies values(17,'Cele kula ,Vozdova 24',3.6,'Apoteka Niš','Niš');
+insert into pharmacies values(18,'Bulevar Nemanjica 92',3.4,'Apoteka Farmakop','Niš');
+
+--MEDS
+
+insert into meds values(1,'150mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(2,'200mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(3,'300mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin');
+insert into meds values(4,'150mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(5,'50mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(6,'75mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin');
+insert into meds values(7,'500mg+500mg+250mg; bocica staklena, 25x500mg + 500 mg + 250 mg',0,1,'RECARBRIO®',1040,'LABORATOIRES MERCK SHARP & DOHME CHIBRET, Route de Marsat, Riom, Clermont-Ferrand, Francuska','imipenem, cilastatin, relebaktam');
+insert into meds values(8,'rastvor za injekciju/infuziju; 1000mg+200mg; bocica staklena, 10x1.2g',0,1,'Amoxiplus 1,2g',756,'ANTIBIOTICE SA, Str. Valea Lupului nr. 1, Iasi, jud. Iasi, Rumunija','amoksicilin, klavulanska kiselina');
+insert into meds values(9,'25mg/g; tuba, 1x50g',5,1,'Ketonal®',427,'SALUTAS PHARMA GMBH, Lange Göhren 3, Sülzetal, Osterweddingen, Nemacka','ketoprofen');
+insert into meds values(10,'100mg/2mL; ampula, 10x2mL',6,1,'Ketonal®',180,'LEK FARMACEVTSKA DRU@BA D.D., Verovckova 57, Ljubljana, Slovenija','ketoprofen');
+insert into meds values(11,'; 8mg/mL; boca staklena, 1x100mL',7,1,'HEDELIX®',823,'KREWEL-MEUSELBACH GMBH, Krewelstr.2, Eitorf, Nemacka','br{ljan (Hedera helix L.), meki ekstrakt lista');
+
+--PHARMACY_MED
+
+insert into pharmacy_med values(1,1);
+insert into pharmacy_med values(1,2);
+insert into pharmacy_med values(1,3);
+insert into pharmacy_med values(1,4);
+insert into pharmacy_med values(1,5);
+insert into pharmacy_med values(1,6);
+insert into pharmacy_med values(1,7);
+insert into pharmacy_med values(1,8);
+insert into pharmacy_med values(1,9);
+insert into pharmacy_med values(1,10);
+
+insert into pharmacy_med values(2,10);
+insert into pharmacy_med values(2,11);
+insert into pharmacy_med values(2,7);
+insert into pharmacy_med values(2,8);
+insert into pharmacy_med values(2,3);
+insert into pharmacy_med values(2,1);
+
+insert into pharmacy_med values(3,6);
+insert into pharmacy_med values(3,7);
+insert into pharmacy_med values(3,8);
+insert into pharmacy_med values(3,9);
+insert into pharmacy_med values(3,10);
+
+insert into pharmacy_med values(4,2);
+insert into pharmacy_med values(4,3);
+insert into pharmacy_med values(4,4);
+insert into pharmacy_med values(4,5);
+insert into pharmacy_med values(4,6);
+insert into pharmacy_med values(4,7);
+insert into pharmacy_med values(4,8);
+insert into pharmacy_med values(4,9);
+insert into pharmacy_med values(4,10);
+
+insert into pharmacy_med values(5,2);
+insert into pharmacy_med values(5,3);
+insert into pharmacy_med values(5,4);
+insert into pharmacy_med values(5,5);
+insert into pharmacy_med values(5,6);
+insert into pharmacy_med values(5,7);
+insert into pharmacy_med values(5,8);
+insert into pharmacy_med values(5,9);
+insert into pharmacy_med values(5,10);
+
+insert into pharmacy_med values(6,2);
+insert into pharmacy_med values(6,3);
+insert into pharmacy_med values(6,4);
+insert into pharmacy_med values(6,5);
+insert into pharmacy_med values(6,6);
+insert into pharmacy_med values(6,7);
+insert into pharmacy_med values(6,8);
+insert into pharmacy_med values(6,9);
+insert into pharmacy_med values(6,10);
+
+insert into pharmacy_med values(7,6);
+insert into pharmacy_med values(7,7);
+insert into pharmacy_med values(7,8);
+insert into pharmacy_med values(7,9);
+insert into pharmacy_med values(7,10);
+
+insert into pharmacy_med values(8,6);
+insert into pharmacy_med values(8,7);
+insert into pharmacy_med values(8,8);
+insert into pharmacy_med values(8,9);
+insert into pharmacy_med values(8,10);
+
+insert into pharmacy_med values(9,6);
+insert into pharmacy_med values(9,7);
+insert into pharmacy_med values(9,8);
+insert into pharmacy_med values(9,9);
+insert into pharmacy_med values(9,10);
+
+insert into pharmacy_med values(10,2);
+insert into pharmacy_med values(10,3);
+insert into pharmacy_med values(10,4);
+insert into pharmacy_med values(10,5);
+insert into pharmacy_med values(10,6);
+insert into pharmacy_med values(10,7);
+insert into pharmacy_med values(10,8);
+insert into pharmacy_med values(10,9);
+insert into pharmacy_med values(10,11);
+
+insert into pharmacy_med values(11,2);
+insert into pharmacy_med values(11,3);
+insert into pharmacy_med values(11,4);
+insert into pharmacy_med values(11,5);
+insert into pharmacy_med values(11,6);
+insert into pharmacy_med values(11,7);
+insert into pharmacy_med values(11,8);
+insert into pharmacy_med values(11,9);
+insert into pharmacy_med values(11,11);
+
+insert into pharmacy_med values(12,5);
+insert into pharmacy_med values(12,6);
+insert into pharmacy_med values(12,7);
+insert into pharmacy_med values(12,8);
+insert into pharmacy_med values(12,9);
+insert into pharmacy_med values(12,11);
+
+insert into pharmacy_med values(13,5);
+insert into pharmacy_med values(13,6);
+insert into pharmacy_med values(13,7);
+insert into pharmacy_med values(13,8);
+insert into pharmacy_med values(13,9);
+insert into pharmacy_med values(13,11);
+
+insert into pharmacy_med values(14,5);
+insert into pharmacy_med values(14,6);
+insert into pharmacy_med values(14,7);
+insert into pharmacy_med values(14,8);
+insert into pharmacy_med values(14,9);
+insert into pharmacy_med values(14,11);
+
+insert into pharmacy_med values(15,2);
+insert into pharmacy_med values(15,3);
+insert into pharmacy_med values(15,4);
+insert into pharmacy_med values(15,5);
+insert into pharmacy_med values(15,6);
+insert into pharmacy_med values(15,7);
+insert into pharmacy_med values(15,8);
+insert into pharmacy_med values(15,9);
+insert into pharmacy_med values(15,11);
+
+insert into pharmacy_med values(16,2);
+insert into pharmacy_med values(16,3);
+insert into pharmacy_med values(16,4);
+insert into pharmacy_med values(16,5);
+insert into pharmacy_med values(16,6);
+insert into pharmacy_med values(16,7);
+insert into pharmacy_med values(16,8);
+insert into pharmacy_med values(16,9);
+insert into pharmacy_med values(16,11);
+
+insert into pharmacy_med values(17,1);
+insert into pharmacy_med values(17,2);
+insert into pharmacy_med values(17,3);
+insert into pharmacy_med values(17,4);
+insert into pharmacy_med values(17,5);
+insert into pharmacy_med values(17,6);
+insert into pharmacy_med values(17,7);
+insert into pharmacy_med values(17,8);
+insert into pharmacy_med values(17,9);
+insert into pharmacy_med values(17,10);
+
+insert into pharmacy_med values(18,1);
+insert into pharmacy_med values(18,2);
+insert into pharmacy_med values(18,3);
+insert into pharmacy_med values(18,4);
+insert into pharmacy_med values(18,5);
+insert into pharmacy_med values(18,6);
+insert into pharmacy_med values(18,7);
+insert into pharmacy_med values(18,8);
+insert into pharmacy_med values(18,9);
+insert into pharmacy_med values(18,10);
+
+--AUTHORITY
+
+insert into authority values (1,'ROLE_USER');
+
+--USER
+--KREIRATI PREKO FORME ZA REGISTRACIJU ILI POSTMAN ZAHTEVA:
+URL:
+    localhost:8084/auth/signup
+JSON:
+{
+    "id":1,
+    "firstName":"Andjela",
+    "lastName":"Paunovic",
+    "email":"andjelapaunovic99@gmail.com",
+    "username":"unpano",
+    "password":"andjica",
+    "address":"Potocanje BB",
+    "city":"Uzice",
+    "country":"Srbija",
+    "phoneNumber":"0616972406",
+    "enabled":true,
+    "lastPasswordResetDate":""
+}
+
+--USER_AUTHORITY
+insert into user_authority values(1,1);
+
+--DERM_APPOINTMENT

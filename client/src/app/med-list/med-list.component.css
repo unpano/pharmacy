@@ -1,0 +1,24 @@
+button{
+    color: white;
+    background: lightskyblue;
+    border-radius: 1rem;
+    border: none;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+mat-card{
+    
+}
+
+input,select{
+    
+    border-color: lightskyblue;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    
+}

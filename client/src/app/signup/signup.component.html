@@ -1,0 +1,86 @@
+<mat-card class="example-card">
+  <button id="btn1" routerLink="">ᐊ</button>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Full name" name = "fullName" [(ngModel)]="fullName" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" name = "username" [(ngModel)]="username" required>
+            </mat-form-field></td>
+          </tr>
+          <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" type="password" name = "password" [(ngModel)]="password" required>
+          </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input type="email" matInput placeholder="E-mail" name = "email" [(ngModel)]="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Gender</mat-label>
+              <mat-select placeholder="Select" [value]="gender" required>
+                <mat-option value="option1" >male</mat-option>
+                <mat-option value="option2" >female</mat-option>
+            </mat-select>
+              
+            </mat-form-field>
+          </td>
+        </tr>
+        
+          <tr>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Birth date</mat-label>
+                  <input matInput [matDatepicker]="picker3" [(ngModel)]="birthDate" name = "birthDate">
+                  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                  <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+           
+            </td>
+          </tr>
+          
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Phone number" name = "mobile" [(ngModel)]="mobile"  required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Website" name = "website" [(ngModel)]="website" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Biography" name = "biography" [(ngModel)]="biography" required>
+              </mat-form-field>
+            </td>
+          </tr>
+    
+    </table>
+      </form>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button id="btn3" mat-raised-button (click)="signUp()">Create my account</button>
+      
+    </mat-card-actions>
+  </mat-card>
+ 

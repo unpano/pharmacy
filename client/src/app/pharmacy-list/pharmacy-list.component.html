@@ -1,0 +1,44 @@
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Pharmacy name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Rate</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pharmacy of pharmacies | filter:searchText">
+                    
+                    <td>{{pharmacy.name}}</td>
+                    <td>{{pharmacy.address}}</td>
+                    <td>{{pharmacy.city}}</td>
+                    <td>{{pharmacy.avgRank}}</td>
+                    
+                    
+                    <button id="eyeBtn" (click)="viewMeds(pharmacy)">View meds</button>
+                    <button id="eyeBtn" (click)="clickedPharmacy(pharmacy)">Info</button>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>

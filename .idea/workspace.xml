@@ -9,121 +9,55 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/artifacts/pharmacy_war.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/artifacts/pharmacy_war_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_11_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_39.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_assertj_assertj_core_3_18_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_hamcrest_hamcrest_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_23_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_jboss_jandex_2_1_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_mockito_mockito_core_3_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_mockito_mockito_junit_jupiter_3_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_objenesis_objenesis_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_aop_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_beans_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_context_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_core_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_expression_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_orm_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_test_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_tx_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_web_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/libraries/Maven__org_yaml_snakeyaml_1_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/pharmacy (2).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../pharmacy (2)/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pharmacy/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home-page/home-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/home-page/home-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/home-page/home-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/logged-user-home-page/logged-user-home-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/logged-user-home-page/logged-user-home-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/user-profile/user-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/user-profile/user-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/util/global.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/global.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,15 +69,18 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1kq5DDyrqZKfJv8UQHQaUd0aQTk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1nWRJGRVXzaP6dbfxu5YqhRTeYl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -151,32 +88,124 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Webshop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client/node_modules/protractor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
-    <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="pharmacy" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\pharmacy\src\main\resources\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\server\pharmacy\src\main\java\isa\pharmacy\Configuration" />
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\pharmacy\src\main\java\isa\pharmacy\Models" />
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\pharmacy\src\main\java\isa\pharmacy\Services" />
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\pharmacy\src\main\java\isa\pharmacy" />
+      <recent name="C:\Users\Andjela Paunovic\Desktop\Pharmacy\pharmacy\src\main\java\isa\pharmacy\Configuration" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="isa.pharmacy" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.PharmacyApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="E2E Tests (client)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/client/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$PROJECT_DIR$/client/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="PharmacyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pharmacy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="isa.pharmacy.PharmacyApplication" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-15" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Angular Application" />
+      <item itemvalue="npm.Angular CLI Server" />
+      <item itemvalue="Protractor.E2E Tests (client)" />
+      <item itemvalue="Spring Boot.PharmacyApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="" />
-      <created>1606415160248</created>
+      <created>1611503787094</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606415160248</updated>
-      <workItem from="1606415161389" duration="355000" />
-      <workItem from="1606415629962" duration="1133000" />
-      <workItem from="1606416792694" duration="889000" />
-      <workItem from="1607193824687" duration="916000" />
-      <workItem from="1607194805130" duration="957000" />
-      <workItem from="1607812111638" duration="1208000" />
+      <updated>1611503787094</updated>
+      <workItem from="1611503789606" duration="3710000" />
+      <workItem from="1611586410689" duration="7593000" />
+      <workItem from="1611608189186" duration="2492000" />
+      <workItem from="1611651924586" duration="4174000" />
+      <workItem from="1611656143116" duration="7578000" />
+      <workItem from="1611867886553" duration="2375000" />
+      <workItem from="1611911672950" duration="11568000" />
+      <workItem from="1611932314148" duration="146000" />
+      <workItem from="1611932473353" duration="37000" />
+      <workItem from="1611932633830" duration="6339000" />
+      <workItem from="1612180959044" duration="11279000" />
+      <workItem from="1612194179218" duration="4600000" />
+      <workItem from="1612203909654" duration="614000" />
+      <workItem from="1612205117864" duration="575000" />
+      <workItem from="1612205845528" duration="631000" />
+      <workItem from="1612362030667" duration="1491000" />
+      <workItem from="1612619934399" duration="416000" />
+      <workItem from="1612631534812" duration="11000" />
+      <workItem from="1618998773810" duration="17000" />
+      <workItem from="1624639013593" duration="43000" />
+      <workItem from="1628508350749" duration="10330000" />
+      <workItem from="1628519168975" duration="1636000" />
+      <workItem from="1628583153393" duration="527000" />
+      <workItem from="1628584177071" duration="90000" />
+      <workItem from="1628584350520" duration="3372000" />
+      <workItem from="1628604920447" duration="1291000" />
+      <workItem from="1628666409148" duration="5952000" />
+      <workItem from="1628755584340" duration="8912000" />
+      <workItem from="1628965157309" duration="1889000" />
+      <workItem from="1629013290900" duration="9587000" />
+      <workItem from="1629106829766" duration="3863000" />
+      <workItem from="1629125560804" duration="4243000" />
+      <workItem from="1629133342970" duration="1487000" />
     </task>
     <servers />
   </component>
@@ -196,59 +225,77 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606415967305">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1629135312824">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1606415967305" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1607194875467">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1629135312824" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628677353124">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607194875467" />
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1607813323434">
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1628677353124" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1624639054300">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1607813323434">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1624639054300" />
+    <state width="1237" height="375" key="GridCell.Tab.0.bottom" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1607813323434">
+    <state width="1237" height="375" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.0.center" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1607813323434">
+    <state width="1237" height="375" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.0.left" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1607813323434" />
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom" timestamp="1607813323435">
+    <state width="1237" height="375" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.0.right" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.center" timestamp="1607813323435">
+    <state width="1237" height="375" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.1.bottom" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.left" timestamp="1607813323435">
+    <state width="1237" height="375" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.1.center" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state width="1237" height="283" key="GridCell.Tab.1.right" timestamp="1607813323435">
+    <state width="1237" height="375" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.1.left" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="283" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1607813323435" />
-    <state x="194" y="52" width="893" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1606416167605">
+    <state width="1237" height="375" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="375" key="GridCell.Tab.1.right" timestamp="1629135423626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="194" y="52" width="893" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1606416167605" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.sql.SQLException" package="java.sql" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state width="1237" height="375" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629135423626" />
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1628519150721">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1628519150721" />
+    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1628519150720">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1628519150720" />
+    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1628519150720">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1628519150720" />
+    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1628519150720">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1628519150720" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1628518885283">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1628518885283" />
+    <state x="251" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1628520184743">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="251" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1628520184743" />
+    <state x="0" y="0" width="587" height="680" key="find.popup" timestamp="1628773770272">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1628773770272" />
   </component>
 </project>
