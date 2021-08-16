@@ -1,7 +1,6 @@
 form {
     position : relative;
     width  : 450px;
-    height : 400px;
     margin : 0 auto;
     padding: 1em;
     box-sizing: border-box;
@@ -26,4 +25,11 @@ form {
       margin: 0px 10px 10px 0px;
       width: 200px;
       
+  }
+  table{
+    margin-left: 45%;
+  }
+
+  thead{
+    margin-bottom: 15px;
   }

@@ -53,6 +53,21 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Prescription> prescriptions = new HashSet<>();
 
+    //User ima listu lekova na koje je alergican
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_allergy",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
+    private List<Med> allergies;
+
+    public List<Med> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<Med> allergies) {
+        this.allergies = allergies;
+    }
+
     public User() {
 
     }

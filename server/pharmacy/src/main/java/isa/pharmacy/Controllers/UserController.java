@@ -1,5 +1,7 @@
 package isa.pharmacy.Controllers;
 
+import isa.pharmacy.Models.Med;
+import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Models.User;
 import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,6 +35,19 @@ public class UserController {
 
         if (userOpt.isPresent()){
             return new ResponseEntity<>(userOpt.get(), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/meds/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findMedsByUserId(@PathVariable Long id){
+        Optional<User> user = this.userService.findById(id);
+        List<Med> allergies = user.get().getAllergies();
+
+        if (user.isPresent()){
+            return new ResponseEntity<>(allergies, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);

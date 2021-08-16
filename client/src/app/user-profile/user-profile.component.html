@@ -54,6 +54,27 @@
        							
     </div>
     
-
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              
+              <th>Allergies</th>
+              
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let med of meds">
+              
+              <td>{{med.name}}</td>
+              
+              
+              
+              <button *ngIf="clickedMeds == true" id="eyeBtn" (click)="viewPharmacies(med)">View pharmacies</button>
+              
+            </tr>
+            </tbody>
+          </table>
+    </div>
    
 </form>

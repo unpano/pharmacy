@@ -14,6 +14,7 @@ import { Global } from '../util/global';
 export class UserProfileComponent implements OnInit {
 
   user: User = Global.loggedUser
+  meds: any
   onEditButton: Boolean = false
 
   newFirstName: String;
@@ -30,7 +31,17 @@ export class UserProfileComponent implements OnInit {
   constructor(private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+    this.http
+      .get(this.endpoint.USER_MED_LIST + Global.loggedUser.id,options)
+      .pipe(
+        map(returnedAllergies=> {
+          this.meds = returnedAllergies
+        })
+      ).subscribe()
   }
 
   onEditProfile(){
