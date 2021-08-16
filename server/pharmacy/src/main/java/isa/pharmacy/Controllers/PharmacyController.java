@@ -1,10 +1,12 @@
 package isa.pharmacy.Controllers;
 
+import isa.pharmacy.Models.Med;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Services.PharmacyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,6 +30,18 @@ public class PharmacyController {
 
         if (pharmOpt.isPresent()){
             return new ResponseEntity<>(pharmOpt.get(), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/meds/{id}")
+    public ResponseEntity<?> findMedsByPharmacyId(@PathVariable Long id){
+        Optional<Pharmacy> pharm = this.pharmacyService.findById(id);
+        List<Med> meds = pharm.get().getMeds();
+
+        if (pharm.isPresent()){
+            return new ResponseEntity<>(meds, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);

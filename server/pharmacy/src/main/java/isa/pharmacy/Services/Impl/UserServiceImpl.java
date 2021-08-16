@@ -79,13 +79,10 @@ public class UserServiceImpl implements UserService {
                 existingUser.setLastName(user.getLastName());
             }
 
-            if (user.getEmail() != null) {
-                existingUser.setEmail(user.getEmail());
+            if (user.getUsername() != null) {
+                existingUser.setUsername(user.getUsername());
             }
 
-            if (user.getPassword() != null) {
-                existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
-            }
 
             if (user.getAddress() != null) {
                 existingUser.setAddress(user.getAddress());

@@ -12,24 +12,30 @@
                   <thead>
                   <tr>
                     
-                    <th>Pharmacy name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>Rate</th>
+                    <th>Med name</th>
+                    <th>Type</th>
+                    <th>Form</th>
+                    <th>Producer</th>
+                    <th>Inssuance regime</th>
+                    <th>Additional notes</th>
+                    <th>Price</th>
                     <th></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let pharmacy of pharmacies | filter:searchText">
+                  <tr *ngFor="let med of meds | filter:searchText">
                     
-                    <td>{{pharmacy.name}}</td>
-                    <td>{{pharmacy.address}}</td>
-                    <td>{{pharmacy.city}}</td>
-                    <td>{{pharmacy.avgRank}}</td>
+                    <td>{{med.name}}</td>
+                    <td>{{med.type}}</td>
+                    <td>{{med.form}}</td>
+                    <td>{{med.producer}}</td>
+                    <td>{{med.issuanceRegime}}</td>
+                    <td>{{med.additionalNotes}}</td>
+                    <td>{{med.price}}</td>
                     
                     
-                    <button id="eyeBtn" (click)="viewMeds(pharmacy)">View meds</button>
-                    <button id="eyeBtn" (click)="clickedPharmacy(pharmacy)">Info</button>
+                    <button *ngIf="clickedMeds == true" id="eyeBtn" (click)="viewPharmacies(med)">View pharmacies</button>
+                    
                   </tr>
                   </tbody>
                 </table>

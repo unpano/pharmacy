@@ -1,6 +1,7 @@
 package isa.pharmacy.Models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,7 +31,7 @@ public class Pharmacy {
     @JoinTable(name = "pharmacy_med",
             joinColumns = @JoinColumn(name = "pharmacy_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
-    private List<Med> meds;
+    private List<Med> meds = new ArrayList<>();
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -83,4 +84,23 @@ public class Pharmacy {
         this.address = address;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public List<Med> getMeds() {
+        return meds;
+    }
+
+    public void setMeds(List<Med> meds) {
+        this.meds = meds;
+    }
+
+    public Set<DermAppointment> getDermAppointments() {
+        return dermAppointments;
+    }
+
+    public void setDermAppointments(Set<DermAppointment> dermAppointments) {
+        this.dermAppointments = dermAppointments;
+    }
 }

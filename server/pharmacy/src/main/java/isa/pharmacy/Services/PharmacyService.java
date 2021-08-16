@@ -19,11 +19,8 @@ public class PharmacyService {
     @Autowired
     private PharmacyRepository pharmacyRepository;
 
-    public List<Pharmacy> findAll() {
-        return pharmacyRepository.findAll();
-    }
+    public List<Pharmacy> findAll() { return pharmacyRepository.findAll(); }
     public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
-
     public List<Pharmacy> findByCriteria(String searchItem) {
 
         List<Pharmacy> newList = new ArrayList<>();

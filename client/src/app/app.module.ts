@@ -42,6 +42,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PharmacyListComponent } from './pharmacy-list/pharmacy-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PharmacyProfileComponent } from './pharmacy-profile/pharmacy-profile.component';
+import { MedListComponent } from './med-list/med-list.component';
 
 
 
@@ -54,7 +55,8 @@ import { PharmacyProfileComponent } from './pharmacy-profile/pharmacy-profile.co
     HomePageComponent,
     PharmacyListComponent,
     UserProfileComponent,
-    PharmacyProfileComponent
+    PharmacyProfileComponent,
+    MedListComponent
   ],
   imports: [
     BrowserModule,

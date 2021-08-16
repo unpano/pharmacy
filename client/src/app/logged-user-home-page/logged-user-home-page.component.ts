@@ -19,16 +19,18 @@ export class LoggedUserHomePageComponent implements OnInit {
   constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+    Global.clickedMeds = false
   }
 
   clickedProfile(){
     this.profile = true
-    
+    Global.clickedMeds = false
   }
 
   homeClicked(){
     //SVE STO SE NE PRIKAZUJE POSTAVITI NA FALSE
     this.profile = false
+
   }
  
 

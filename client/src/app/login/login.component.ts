@@ -80,8 +80,9 @@ export class LoginComponent implements OnInit {
       .pipe(
         map(returnedUser => {
           let user: any
-          user = returnedUser
+          user = returnedUser  
           Global.loggedUser = user
+         
         })
       ).subscribe()
       })

@@ -7,12 +7,17 @@
           <mat-icon (click)="homeClicked()">home</mat-icon>
       </button>
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon (click)="onClickedMeds()">medication</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon (click)="onClickedLogin()">login</mat-icon>
       </button>
+      
   </div>
 </mat-toolbar>
 
 
 <app-login *ngIf="login == true"></app-login>
-<app-pharmacy-list *ngIf="login != true"></app-pharmacy-list>
+<app-pharmacy-list *ngIf="login != true && meds != true"></app-pharmacy-list>
+<app-med-list *ngIf="meds == true"></app-med-list>
 

@@ -191,3 +191,32 @@ insert into pharmacy_med values(18,7);
 insert into pharmacy_med values(18,8);
 insert into pharmacy_med values(18,9);
 insert into pharmacy_med values(18,10);
+
+--AUTHORITY
+
+insert into authority values (1,'ROLE_USER');
+
+--USER
+--KREIRATI PREKO FORME ZA REGISTRACIJU ILI POSTMAN ZAHTEVA:
+URL:
+    localhost:8084/auth/signup
+JSON:
+{
+    "id":1,
+    "firstName":"Andjela",
+    "lastName":"Paunovic",
+    "email":"andjelapaunovic99@gmail.com",
+    "username":"unpano",
+    "password":"andjica",
+    "address":"Potocanje BB",
+    "city":"Uzice",
+    "country":"Srbija",
+    "phoneNumber":"0616972406",
+    "enabled":true,
+    "lastPasswordResetDate":""
+}
+
+--USER_AUTHORITY
+insert into user_authority values(1,1);
+
+--DERM_APPOINTMENT

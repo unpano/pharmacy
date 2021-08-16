@@ -54,19 +54,24 @@ public class User implements UserDetails {
     private Set<Prescription> prescriptions = new HashSet<>();
 
     public User() {
-        super();
+
     }
 
-    public User(String firstName, String lastName, String email, String password, String address, String city, String country, String phoneNumber) {
-        super();
+    public User(Long id, String firstName, String lastName, String email, String password, String username, String address, String city, String country, String phoneNumber, boolean enabled, Timestamp lastPasswordResetDate, List<Authority> authorities, Set<Prescription> prescriptions) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.username = username;
         this.address = address;
         this.city = city;
         this.country = country;
         this.phoneNumber = phoneNumber;
+        this.enabled = enabled;
+        this.lastPasswordResetDate = lastPasswordResetDate;
+        this.authorities = authorities;
+        this.prescriptions = prescriptions;
     }
 
     public Long getId() {
@@ -189,4 +194,19 @@ public class User implements UserDetails {
         return this.authorities;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Set<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(Set<Prescription> prescriptions) {
+        this.prescriptions = prescriptions;
+    }
 }

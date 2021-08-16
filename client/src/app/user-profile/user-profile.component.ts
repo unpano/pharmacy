@@ -30,6 +30,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+    
   }
 
   onEditProfile(){
@@ -63,11 +64,9 @@ export class UserProfileComponent implements OnInit {
 
     this.http
     .put(this.endpoint.USER_UPDATE,body,options)
-    .pipe(
-      map(returnedUser => {
-        this.router.navigate["loggedUser"];
-      })
-    ).subscribe()
+    .pipe().subscribe(() => {if(confirm("Successfully updated profile.")) {
+      this.router.navigate(["loggedUser"]);}}
+    )
   }
 
 }

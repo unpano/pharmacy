@@ -6,12 +6,15 @@ import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MedListComponent } from './med-list/med-list.component';
 
 const routes: Routes = [
   {path: 'loggedUser', component: LoggedUserHomePageComponent},
   {path: '', component: HomePageComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: SignupComponent}
+  {path: 'signup', component: SignupComponent},
+  {path: 'meds', component: MedListComponent},
+  {path: 'profile', component: UserProfileComponent}
 ];
 
 @NgModule({
