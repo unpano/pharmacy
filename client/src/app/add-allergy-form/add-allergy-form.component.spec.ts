@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AllergyFormComponent } from './allergy-form.component';
+import { AddAllergyFormComponent } from './add-allergy-form.component';
 
-describe('AllergyFormComponent', () => {
-  let component: AllergyFormComponent;
-  let fixture: ComponentFixture<AllergyFormComponent>;
+describe('AddAllergyFormComponent', () => {
+  let component: AddAllergyFormComponent;
+  let fixture: ComponentFixture<AddAllergyFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AllergyFormComponent ]
+      declarations: [ AddAllergyFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AllergyFormComponent);
+    fixture = TestBed.createComponent(AddAllergyFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

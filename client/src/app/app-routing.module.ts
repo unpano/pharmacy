@@ -9,6 +9,7 @@ import { PharmacyListComponent } from './pharmacy-list/pharmacy-list.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
 import { MedsComponent } from './meds/meds.component';
+import { DermAppointmentListComponent } from './derm-appointment-list/derm-appointment-list.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},

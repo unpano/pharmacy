@@ -41,7 +41,6 @@ import { PharmacyListComponent } from './pharmacy-list/pharmacy-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PharmacyProfileComponent } from './pharmacy-profile/pharmacy-profile.component';
 import { MedListComponent } from './med-list/med-list.component';
-import { AllergyFormComponent } from './allergy-form/allergy-form.component';
 import { DermAppointmentListComponent } from './derm-appointment-list/derm-appointment-list.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderLComponent } from './header-l/header-l.component';
@@ -49,6 +48,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
 import { PharmacyMedsComponent } from './pharmacy-meds/pharmacy-meds.component';
 import { MedsComponent } from './meds/meds.component';
+import { AddAllergyFormComponent } from './add-allergy-form/add-allergy-form.component';
 
 
 
@@ -61,14 +61,14 @@ import { MedsComponent } from './meds/meds.component';
     UserProfileComponent,
     PharmacyProfileComponent,
     MedListComponent,
-    AllergyFormComponent,
     DermAppointmentListComponent,
     HeaderComponent,
     HeaderLComponent,
     HomePageComponent,
     LoggedUserHomePageComponent,
     PharmacyMedsComponent,
-    MedsComponent
+    MedsComponent,
+    AddAllergyFormComponent
   ],
   imports: [
     BrowserModule,

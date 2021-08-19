@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
-import { AllergyFormComponent } from '../allergy-form/allergy-form.component';
+import { AddAllergyFormComponent } from '../add-allergy-form/add-allergy-form.component';
 import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -10,8 +11,7 @@ import { Global } from '../util/global';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css'],
-  providers: [AllergyFormComponent]
+  styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
 
@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit {
   meds: any
   onEditButton: Boolean = false
   dataArray = []
-  allergy : AllergyFormComponent
+
 
   newFirstName: String;
   newLastName: String;
@@ -32,7 +32,7 @@ export class UserProfileComponent implements OnInit {
 
   endpoint = Endpoint;
 
-  constructor(private router: Router,private http: HttpClient) { }
+  constructor(public dialog: MatDialog,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
     const headers = { 
@@ -84,12 +84,12 @@ export class UserProfileComponent implements OnInit {
     )
   }
 
-  addForm() {
-    this.dataArray.push(this.allergy);
+  onAddAllergy(){
+    let dialogRef = this.dialog.open(AddAllergyFormComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+})
+    dialogRef.afterClosed().subscribe();
   }
-
-  removeForm(index: number) {
-    this.dataArray.splice(index, 1);   
-  }
-
+ 
 }

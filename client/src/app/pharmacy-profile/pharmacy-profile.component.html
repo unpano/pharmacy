@@ -1,4 +1,3 @@
-<button *ngIf="userLogged == true" (click)="onScheduleDermatologist()">Schedule dermatologist</button>   
 <form role="form" novalidate class="form-inline" name="personForm">
     <div class="form-group">
         <label for="find-form-first-name" id="prvaKolonaLabela">Pharmacy</label>
@@ -18,3 +17,6 @@
     </div>
    
 </form>
+<button *ngIf="userLogged == true" (click)="onSchedule()">Schedule dermatologist</button>   
+<button type="submit" mat-dialog-close mat-button>Close</button>
+

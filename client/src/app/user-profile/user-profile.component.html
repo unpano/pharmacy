@@ -62,17 +62,13 @@
             <tr>
               
               <th>Allergies</th>
-              
+              <th><button (click)="onAddAllergy()">Add allergy</button></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let med of meds">
               
-              <td>{{med.name}}</td>
-              
-              
-              
-              <button  id="eyeBtn" (click)="viewPharmacies(med)">View pharmacies</button>
+              <td>{{med.name}}</td>    
               
             </tr>
             </tbody>
@@ -80,15 +76,7 @@
     </div>
     <p></p>
 
-    <button *ngIf="onEditButton == true" type="button" class="btn btn-success"  (click)="addForm()">+</button>
     
-    <form role="form" novalidate class="form-inline" name="accidentsForm" *ngFor="let obj of dataArray; let i = index">
-        <div class="form-group" >
-            <app-accident></app-accident>	
-            <button type="button" class="btn btn-danger" (click)="removeForm(i)">-</button>
-        </div><hr>
-        
-        
-    </form>
+    
    
 </form>

@@ -83,6 +83,24 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    @PutMapping("/addAllergy")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> addAllergy(Principal user,@RequestBody Med med) {
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+        List<Med> allergies = optUser.get().getAllergies();
+        if(!allergies.contains(med))
+            allergies.add(med);
+
+        optUser.get().setAllergies(allergies);
+        Optional<User> optUser1 = userService.update(optUser.get());
+
+        if (optUser.isPresent()) {
+            return new ResponseEntity<User>(optUser1.get(), HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping("/profile")
     @PreAuthorize("hasRole('USER')")
     public User user(Principal user) {

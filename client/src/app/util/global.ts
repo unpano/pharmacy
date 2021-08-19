@@ -14,6 +14,5 @@ export namespace Global {
     export var viewUserDetails: User = new User();
     export var mappedUser: boolean = false;
     export var clickedMed: Med = new Med();
-    export var clickedScheduleDA: boolean = false
     export var allMeds: boolean = false;
 }

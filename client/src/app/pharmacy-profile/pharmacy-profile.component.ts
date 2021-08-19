@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { DermAppointmentListComponent } from '../derm-appointment-list/derm-appointment-list.component';
 import { Pharmacy } from '../dto/pharmacy';
 import { Global } from '../util/global';
 
@@ -13,7 +15,7 @@ export class PharmacyProfileComponent implements OnInit {
   pharmacy: Pharmacy = Global.clickedPharmacy
   userLogged = false
 
-  constructor(private router: Router) { }
+  constructor(public dialog: MatDialog,private router: Router) { }
 
   ngOnInit(): void {
     if(Global.loggedUser.lastName != undefined){
@@ -21,10 +23,13 @@ export class PharmacyProfileComponent implements OnInit {
     }
   }
 
-  onScheduleDermatologist(){
-    Global.clickedScheduleDA = true
+  onSchedule(){
+    let dialogRef = this.dialog.open(DermAppointmentListComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+})
+    dialogRef.afterClosed().subscribe();
     
-    this.router.navigate(["dermAppointments"])
   }
 
 }
