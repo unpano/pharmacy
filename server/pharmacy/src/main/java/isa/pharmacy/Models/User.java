@@ -53,6 +53,22 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Prescription> prescriptions = new HashSet<>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<DermAppointment> dermAppointments = new HashSet<>();
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Set<DermAppointment> getDermAppointments() {
+        return dermAppointments;
+    }
+
+    public void setDermAppointments(Set<DermAppointment> dermAppointments) {
+        this.dermAppointments = dermAppointments;
+    }
+
     //User ima listu lekova na koje je alergican
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_allergy",

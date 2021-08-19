@@ -1,0 +1,50 @@
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Date</th>
+                    <th>Duration</th>
+                    <th>Price</th>
+                    <th>Patient</th>
+                    <th></th>
+                    <th>Pharmacy</th>
+                    <th>Dermatologist</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let app of appointments | filter:searchText">
+                    
+                    <td>{{app.date}}</td>
+                    <td>{{app.duration}}</td>
+                    <td>{{app.price}}</td>
+                    <td>{{app.user.firstName}}</td>
+                    <td>{{app.user.lastName}}</td>
+                    <td>{{app.pharmacy.name}}</td>
+                    <td>{{app.dermatologist.firstName}}</td>
+                    <td>{{app.dermatologist.lastName}}</td>
+                    
+                    
+                    <button id="eyeBtn" (click)="scheduleAppointment(app)">Schedule</button>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>

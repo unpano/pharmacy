@@ -31,9 +31,7 @@ import { MatToolbar, MatToolbarModule, MatToolbarRow} from '@angular/material/to
 import { MatIcon, MatIconModule} from '@angular/material/icon'
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
 
-import { HomePageComponent } from './home-page/home-page.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
@@ -43,6 +41,14 @@ import { PharmacyListComponent } from './pharmacy-list/pharmacy-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PharmacyProfileComponent } from './pharmacy-profile/pharmacy-profile.component';
 import { MedListComponent } from './med-list/med-list.component';
+import { AllergyFormComponent } from './allergy-form/allergy-form.component';
+import { DermAppointmentListComponent } from './derm-appointment-list/derm-appointment-list.component';
+import { HeaderComponent } from './header/header.component';
+import { HeaderLComponent } from './header-l/header-l.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
+import { PharmacyMedsComponent } from './pharmacy-meds/pharmacy-meds.component';
+import { MedsComponent } from './meds/meds.component';
 
 
 
@@ -51,12 +57,18 @@ import { MedListComponent } from './med-list/med-list.component';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    LoggedUserHomePageComponent,
-    HomePageComponent,
     PharmacyListComponent,
     UserProfileComponent,
     PharmacyProfileComponent,
-    MedListComponent
+    MedListComponent,
+    AllergyFormComponent,
+    DermAppointmentListComponent,
+    HeaderComponent,
+    HeaderLComponent,
+    HomePageComponent,
+    LoggedUserHomePageComponent,
+    PharmacyMedsComponent,
+    MedsComponent
   ],
   imports: [
     BrowserModule,

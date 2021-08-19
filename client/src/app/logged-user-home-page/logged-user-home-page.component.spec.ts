@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoggedUserHomePageComponent } from './logged-user-home-page.component';
 
-describe('NistagramerHomePageComponent', () => {
+describe('LoggedUserHomePageComponent', () => {
   let component: LoggedUserHomePageComponent;
   let fixture: ComponentFixture<LoggedUserHomePageComponent>;
 

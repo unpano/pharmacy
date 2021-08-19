@@ -1,5 +1,7 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -34,6 +36,7 @@ public class Pharmacy {
     private List<Med> meds = new ArrayList<>();
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
+    @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 

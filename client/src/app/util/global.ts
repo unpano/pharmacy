@@ -13,6 +13,7 @@ export namespace Global {
     export var clickedLogin: boolean = false;
     export var viewUserDetails: User = new User();
     export var mappedUser: boolean = false;
-    export var clickedMeds: boolean = false;
     export var clickedMed: Med = new Med();
+    export var clickedScheduleDA: boolean = false
+    export var allMeds: boolean = false;
 }

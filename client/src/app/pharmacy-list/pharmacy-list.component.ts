@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
 import { MedListComponent } from '../med-list/med-list.component';
+import { MedsComponent } from '../meds/meds.component';
+import { PharmacyMedsComponent } from '../pharmacy-meds/pharmacy-meds.component';
 import { PharmacyProfileComponent } from '../pharmacy-profile/pharmacy-profile.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -22,14 +24,14 @@ export class PharmacyListComponent implements OnInit {
   constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
-    if(Global.clickedMeds == true){
+    if(Global.clickedMed.id != undefined){
       this.http
       .get(this.endpoint.MED_PHARMACY_LIST + Global.clickedMed.id)
       .pipe(
         map(returnedPharmacies=> {
           this.pharmacies = returnedPharmacies
         })
-      ).subscribe()
+      ).subscribe( Global.clickedMed = undefined)
     }else{
       this.http
       .get(this.endpoint.PHARMACY_LIST)
@@ -53,7 +55,7 @@ export class PharmacyListComponent implements OnInit {
 
   viewMeds(pharmacy: Pharmacy){
     Global.clickedPharmacy = pharmacy
-    let dialogRef = this.dialog.open(MedListComponent,{
+    let dialogRef = this.dialog.open(PharmacyMedsComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
 })

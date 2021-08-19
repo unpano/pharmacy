@@ -11,4 +11,5 @@ export class User{
     country: String;
     enabled: Boolean;
     lastPasswordResetDate: Date
+    stars: Number
 }

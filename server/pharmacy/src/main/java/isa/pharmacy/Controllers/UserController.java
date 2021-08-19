@@ -87,6 +87,7 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public User user(Principal user) {
         //System.out.println(user.getName()); //VRACA USERNAME
+        //System.out.println("Dosao sam bre dovde");
         return this.userService.findByUsername(user.getName());
     }
 

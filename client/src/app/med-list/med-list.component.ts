@@ -15,21 +15,23 @@ import { Global } from '../util/global';
 export class MedListComponent implements OnInit {
 
   meds: any
-  clickedMeds : Boolean = Global.clickedMeds
+  
   searchText
   endpoint = Endpoint;
+  
 
   constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
-    if(Global.clickedMeds == true){
+   
+    if(Global.allMeds == true){
       this.http
       .get(this.endpoint.MED_LIST)
       .pipe(
         map(returnedMeds=> {
           this.meds = returnedMeds
         })
-      ).subscribe()
+      ).subscribe(res=> Global.allMeds = false)
     }else{
       this.http
       .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)

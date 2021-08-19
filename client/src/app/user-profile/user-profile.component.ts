@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AllergyFormComponent } from '../allergy-form/allergy-form.component';
 import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -9,13 +10,16 @@ import { Global } from '../util/global';
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
+  providers: [AllergyFormComponent]
 })
 export class UserProfileComponent implements OnInit {
 
   user: User = Global.loggedUser
   meds: any
   onEditButton: Boolean = false
+  dataArray = []
+  allergy : AllergyFormComponent
 
   newFirstName: String;
   newLastName: String;
@@ -78,6 +82,14 @@ export class UserProfileComponent implements OnInit {
     .pipe().subscribe(() => {if(confirm("Successfully updated profile.")) {
       this.router.navigate(["loggedUser"]);}}
     )
+  }
+
+  addForm() {
+    this.dataArray.push(this.allergy);
+  }
+
+  removeForm(index: number) {
+    this.dataArray.splice(index, 1);   
   }
 
 }

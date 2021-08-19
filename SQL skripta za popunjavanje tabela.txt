@@ -195,6 +195,7 @@ insert into pharmacy_med values(18,10);
 --AUTHORITY
 
 insert into authority values (1,'ROLE_USER');
+insert into authority values (2,'ROLE_DERMATOLOGIST');
 
 --USER
 --KREIRATI PREKO FORME ZA REGISTRACIJU ILI POSTMAN ZAHTEVA:
@@ -218,6 +219,7 @@ JSON:
 
 --USER_AUTHORITY
 insert into user_authority values(1,1);
+insert into user_authority values(2,2);
 
 --DERM_APPOINTMENT
 
@@ -226,3 +228,7 @@ insert into user_authority values(1,1);
 insert into user_allergy values(1,1);
 insert into user_allergy values(1,7);
 insert into user_allergy values(1,8);
+
+--DERM_APPOINTMENT
+insert into derm_appointment values (1,"2021-08-16 14:30:00",30,1000,3,1,1);
+insert into derm_appointment values (2,"2021-08-15 14:30:00",30,700,3,2,1);

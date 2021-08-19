@@ -33,3 +33,6 @@ form {
   thead{
     margin-bottom: 15px;
   }
+  p{
+    width: 100%;
+  }

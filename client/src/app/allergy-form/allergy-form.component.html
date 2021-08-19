@@ -1,0 +1,21 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      
+      <th>Med name</th>
+      <th></th>
+     
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let med of meds | filter:searchText">
+      
+      <td>{{med.name}}</td>
+      <td><button>+</button></td>
+      
+      
+      
+      
+    </tr>
+    </tbody>
+  </table>

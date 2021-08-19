@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pharmacy } from '../dto/pharmacy';
 import { Global } from '../util/global';
 
@@ -10,14 +11,20 @@ import { Global } from '../util/global';
 export class PharmacyProfileComponent implements OnInit {
 
   pharmacy: Pharmacy = Global.clickedPharmacy
+  userLogged = false
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if(Global.loggedUser.lastName != undefined){
+      this.userLogged = true
+    }
   }
 
   onScheduleDermatologist(){
-
+    Global.clickedScheduleDA = true
+    
+    this.router.navigate(["dermAppointments"])
   }
 
 }

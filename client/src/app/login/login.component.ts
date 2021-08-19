@@ -65,12 +65,12 @@ export class LoginComponent implements OnInit {
           
           Global.token.access_token = returnedToken["access_token"]
           Global.token.expires_in = returnedToken["expires_in"]
+
           
-          this.router.navigate(["/loggedUser"]);
+          this.router.navigate(["/loggedUserHomePage"]);
 
 })
     ).subscribe(res =>{
-      //console.log(Global.token.access_token)
       const headers = { 
         'content-type': 'application/json',
         'Authorization': 'Bearer ' + Global.token.access_token}  
@@ -82,7 +82,6 @@ export class LoginComponent implements OnInit {
           let user: any
           user = returnedUser  
           Global.loggedUser = user
-         
         })
       ).subscribe()
       })

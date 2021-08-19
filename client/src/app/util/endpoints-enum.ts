@@ -6,5 +6,6 @@ export enum Endpoint{
     PHARMACY_MED_LIST = "http://localhost:8084/pharmacies/meds/",
     MED_LIST = "http://localhost:8084/meds",
     MED_PHARMACY_LIST = "http://localhost:8084/meds/pharmacies/",
-    USER_MED_LIST = "http://localhost:8084/users/meds/"
+    USER_MED_LIST = "http://localhost:8084/users/meds/",
+    DERM_APPOINTMENT_LIST = "http://localhost:8084/dermAppointments/"
 }

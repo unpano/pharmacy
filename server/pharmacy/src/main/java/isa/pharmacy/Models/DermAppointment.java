@@ -1,5 +1,9 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,14 +19,20 @@ public class DermAppointment {
     private Integer duration;
     private Integer price;
 
-    //DA li je mozda neka druga veza???
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "dermatologist_id", referencedColumnName = "id")
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @NotFound(action = NotFoundAction.IGNORE)
     private Dermatologist dermatologist;
+
 
     //Pregled pripada tacno jednoj apoteci
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private User user;
+
 
     public Long getId() {
         return id;
@@ -70,5 +80,13 @@ public class DermAppointment {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
