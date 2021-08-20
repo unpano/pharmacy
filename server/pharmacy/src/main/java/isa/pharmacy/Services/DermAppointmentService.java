@@ -14,4 +14,6 @@ public interface DermAppointmentService {
     List<DermAppointment> findFutureAppointmentsByUserId(Long id);
 
     List<DermAppointment> findPastAppointmentsByUserId(Long id);
+
+    Optional<DermAppointment> freeDermAppointment(Long id, Long id1);
 }

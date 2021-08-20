@@ -46,7 +46,7 @@ export class DermAppointmentListComponent implements OnInit {
     this.http
     .put(this.endpoint.USER_ADD_DERM_APPOINTMENT, app.id,options)
     .pipe().subscribe(() => {if(confirm("Successfully scheduled appointment.")) {
-      this.router.navigate(["profile"]);}}
+      this.router.navigate(["futureDermAppointments"]);}}
     )
   }
 

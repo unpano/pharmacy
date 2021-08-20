@@ -66,4 +66,22 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
         }
         return pastAppointments;
     }
+
+    @Override
+    public Optional<DermAppointment> freeDermAppointment(Long id, Long id1) {
+        Optional<DermAppointment> dermAppointment = dermAppointmentRepository.findById(id1);
+
+        //Ne moze da otkaze pregled ako je manje od 24h do pocetka istog
+        long createdBefore = dermAppointment.get().getDate().getTime();
+        long now = new Date().getTime();
+        long oneDayMILS = 86400000;
+        long difference = createdBefore-now;
+
+        if (difference > oneDayMILS){
+            dermAppointment.get().setUser(null);
+            DermAppointment dermAppointment1 = update(dermAppointment.get());
+            return null;
+        }
+        return dermAppointment;
+    }
 }

@@ -17,6 +17,8 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 @RestController
 @RequestMapping("/dermAppointments")
@@ -64,6 +66,15 @@ public class DermAppointmentController {
         return new ResponseEntity<>(dermAppointmentService.findPastAppointmentsByUserId(optUser.get().getId()), HttpStatus.OK);
 
     }
-    
+
+    //User otkazuje pregled
+    @PutMapping("/frees/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> freeDermAppointment(Principal user,@PathVariable Long id){
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+        return new ResponseEntity<>(dermAppointmentService.freeDermAppointment(optUser.get().getId(),id), HttpStatus.OK);
+
+    }
 
 }

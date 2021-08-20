@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -36,7 +37,18 @@ export class FutureDermAppointmentListComponent implements OnInit {
   }
 
   removeAppointment(app: DermAppointment){
-
-  }
+      const headers = { 
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + Global.token.access_token}  
+      let options = { headers: headers };
+      this.http
+        .put(this.endpoint.FREE_SCHEDULED_DERM_APPOINTMENT + app.id,null,options)
+        .pipe(map(returnedApp=> {
+          if(returnedApp == undefined)
+            alert("Deleted appointment!")
+          else
+            alert("Could not cencel appointment less than 24 hours before!")
+        })).subscribe()
+      }
 
 }
