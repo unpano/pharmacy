@@ -7,26 +7,26 @@ import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
 @Component({
-  selector: 'app-derm-appointment-list',
-  templateUrl: './derm-appointment-list.component.html',
-  styleUrls: ['./derm-appointment-list.component.css']
+  selector: 'app-future-derm-appointment-list',
+  templateUrl: './future-derm-appointment-list.component.html',
+  styleUrls: ['./future-derm-appointment-list.component.css']
 })
-export class DermAppointmentListComponent implements OnInit {
-
+export class FutureDermAppointmentListComponent implements OnInit {
   appointments : any
   searchText
   endpoint = Endpoint
 
   constructor(private http: HttpClient,private router: Router) { }
 
+
   ngOnInit(): void {
-    //VRACAM SLOBODNE TERMINE U APOTECI
+    //VRACAM BUDUCE PREGLEDE PACIJENTA KOD DERMATOLOGA
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
     let options = { headers: headers };
     this.http
-      .get(this.endpoint.DERM_APPOINTMENT_LIST + Global.clickedPharmacy.id,options)
+      .get(this.endpoint.FUTURE_DERM_APPOINTMENT_LIST,options)
       .pipe(
         map(returnedAppointments=> {
           this.appointments = returnedAppointments
@@ -35,19 +35,8 @@ export class DermAppointmentListComponent implements OnInit {
       ).subscribe()
   }
 
-  scheduleAppointment(app: DermAppointment){
-    const headers = { 
-      'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
-    let options = { headers: headers };
+  removeAppointment(app: DermAppointment){
 
-    
-
-    this.http
-    .put(this.endpoint.USER_ADD_DERM_APPOINTMENT, app.id,options)
-    .pipe().subscribe(() => {if(confirm("Successfully scheduled appointment.")) {
-      this.router.navigate(["profile"]);}}
-    )
   }
 
 }

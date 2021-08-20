@@ -19,9 +19,8 @@ public class DermAppointment {
     private Integer duration;
     private Integer price;
 
-
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @NotFound(action = NotFoundAction.IGNORE)
+    //@NotFound(action = NotFoundAction.IGNORE)
     private Dermatologist dermatologist;
 
 
@@ -33,6 +32,19 @@ public class DermAppointment {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
 
+    public DermAppointment(){
+
+    }
+
+    public DermAppointment(Long id, Date date, Integer duration, Integer price, Dermatologist dermatologist, Pharmacy pharmacy, User user) {
+        this.id = id;
+        this.date = date;
+        this.duration = duration;
+        this.price = price;
+        this.dermatologist = dermatologist;
+        this.pharmacy = pharmacy;
+        this.user = user;
+    }
 
     public Long getId() {
         return id;

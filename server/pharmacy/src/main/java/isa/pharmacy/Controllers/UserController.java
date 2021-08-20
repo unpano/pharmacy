@@ -107,25 +107,27 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/addDermAppointment/{userId}")
+    @PutMapping("/addDermAppointment")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addAllergy(@PathVariable("userId") Long userId, @RequestBody Long appId) {
-        Optional<User> optUser = userService.findById(userId);
-        System.out.println(optUser.get().getFirstName());
+    public ResponseEntity<?> addAllergy(Principal user, @RequestBody Long appId) {
+        //nadjem user-a koji hoce da zakaze pregled
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
-
+        //nadjem pregled koji hoce da zakaze
         Optional<DermAppointment> dermApp = dermAppointmentService.findById(appId);
-        System.out.println(dermApp.get().getDate());
 
+        //nadjem preglede koje user ima i dodam im ovaj koji hoce da zakaze i update-ujem ga
         Set<DermAppointment> dermAppointments = optUser.get().getDermAppointments();
-        if(!dermAppointments.contains(dermApp.get()))
-            dermAppointments.add(dermApp.get());
-
+        dermAppointments.add(dermApp.get());
         optUser.get().setDermAppointments(dermAppointments);
-        Optional<User> user = userService.update(optUser.get());
+        Optional<User> user1 = userService.update(optUser.get());
+
+        //isto uradim i za pregled, setujem usera na pregled
+        dermApp.get().setUser(optUser.get());
+        dermAppointmentService.update(dermApp.get());
 
         if (optUser.isPresent()) {
-            return new ResponseEntity<User>(user.get(), HttpStatus.NO_CONTENT);
+            return new ResponseEntity<User>(user1.get(), HttpStatus.NO_CONTENT);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
