@@ -23,13 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/pharmacy_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/pharmacy_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/future-derm-appointment-list/future-derm-appointment-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/future-derm-appointment-list/future-derm-appointment-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/past-derm-appointment-list/past-derm-appointment-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/past-derm-appointment-list/past-derm-appointment-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +38,8 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -80,7 +77,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -102,13 +99,15 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.PharmacyApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,7 +203,8 @@
       <workItem from="1629317992180" duration="393000" />
       <workItem from="1629355392868" duration="2280000" />
       <workItem from="1629377005537" duration="7514000" />
-      <workItem from="1629462006822" duration="13003000" />
+      <workItem from="1629462006822" duration="14784000" />
+      <workItem from="1629494848985" duration="1503000" />
     </task>
     <servers />
   </component>
@@ -240,42 +240,42 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1628677353124" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1629315025021">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1629494486509">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629315025021" />
-    <state width="1237" height="278" key="GridCell.Tab.0.bottom" timestamp="1629485550829">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629494486509" />
+    <state width="1237" height="14" key="GridCell.Tab.0.bottom" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.0.center" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.0.center" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.0.left" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.0.left" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.0.right" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.0.right" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.1.bottom" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.1.bottom" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.1.center" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.1.center" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.1.left" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.1.left" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
-    <state width="1237" height="278" key="GridCell.Tab.1.right" timestamp="1629485550829">
+    <state width="1237" height="14" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
+    <state width="1237" height="14" key="GridCell.Tab.1.right" timestamp="1629496365043">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="278" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629485550829" />
+    <state width="1237" height="14" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629496365043" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1629318390527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -292,10 +292,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1629318390527" />
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1628518885283">
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1629494653074">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1628518885283" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1629494653074" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1629494598056">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1629494598056" />
     <state x="251" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1628520184743">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
