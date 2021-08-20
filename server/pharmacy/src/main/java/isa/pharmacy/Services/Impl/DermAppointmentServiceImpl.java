@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DermAppointmentServiceImpl implements DermAppointmentService {
@@ -20,7 +21,18 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     }
 
     @Override
+    public Optional<DermAppointment> findById(Long id) {
+        return dermAppointmentRepository.findById(id);
+    }
+
+    @Override
+    public DermAppointment update(DermAppointment dermAppointment) {
+        return dermAppointmentRepository.save(dermAppointment);
+    }
+
+    @Override
     public List<DermAppointment> findAppointmentsByPharmacyId(Long id) {
+
         return dermAppointmentRepository.findAllByPharmacyId(id);
     }
 }

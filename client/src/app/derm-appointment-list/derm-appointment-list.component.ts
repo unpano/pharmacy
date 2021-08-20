@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { DermAppointment } from '../dto/dermAppointment';
 import { Endpoint } from '../util/endpoints-enum';
@@ -16,7 +17,7 @@ export class DermAppointmentListComponent implements OnInit {
   searchText
   endpoint = Endpoint
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
     const headers = { 
@@ -28,13 +29,24 @@ export class DermAppointmentListComponent implements OnInit {
       .pipe(
         map(returnedAppointments=> {
           this.appointments = returnedAppointments
-          console.log(returnedAppointments)
+          console.log(this.appointments)
         })
       ).subscribe()
   }
 
   scheduleAppointment(app: DermAppointment){
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
 
+    
+
+    this.http
+    .put(this.endpoint.USER_ADD_DERM_APPOINTMENT + Global.loggedUser.id, app.id,options)
+    .pipe().subscribe(() => {if(confirm("Successfully added allergy.")) {
+      this.router.navigate(["profile"]);}}
+    )
   }
 
 }

@@ -10,12 +10,11 @@ import java.util.Set;
 @DiscriminatorValue("ROLE_DERMATOLOGIST")
 public class Dermatologist extends User{
 
-
     //Prosecna ocena dermatologa
     private Float stars;
 
 
-    @OneToMany(mappedBy = "dermatologist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "dermatologist", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
     public Dermatologist() {

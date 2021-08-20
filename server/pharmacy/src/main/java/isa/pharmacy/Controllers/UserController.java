@@ -1,8 +1,10 @@
 package isa.pharmacy.Controllers;
 
+import isa.pharmacy.Models.DermAppointment;
 import isa.pharmacy.Models.Med;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Models.User;
+import isa.pharmacy.Services.DermAppointmentService;
 import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,12 +12,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/users")
@@ -23,6 +27,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private DermAppointmentService dermAppointmentService;
 
     @GetMapping
     public ResponseEntity<?> findAll() {
@@ -96,6 +102,30 @@ public class UserController {
 
         if (optUser.isPresent()) {
             return new ResponseEntity<User>(optUser1.get(), HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping("/addDermAppointment/{userId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> addAllergy(@PathVariable("userId") Long userId, @RequestBody Long appId) {
+        Optional<User> optUser = userService.findById(userId);
+        System.out.println(optUser.get().getFirstName());
+
+
+        Optional<DermAppointment> dermApp = dermAppointmentService.findById(appId);
+        System.out.println(dermApp.get().getDate());
+
+        Set<DermAppointment> dermAppointments = optUser.get().getDermAppointments();
+        if(!dermAppointments.contains(dermApp.get()))
+            dermAppointments.add(dermApp.get());
+
+        optUser.get().setDermAppointments(dermAppointments);
+        Optional<User> user = userService.update(optUser.get());
+
+        if (optUser.isPresent()) {
+            return new ResponseEntity<User>(user.get(), HttpStatus.NO_CONTENT);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
