@@ -28,6 +28,9 @@ public class Pharmacy {
     @Column(nullable = false)
     private float avgRank;
 
+    @Column(nullable = false)
+    private float pharmacistCouncelingPrice;
+
     //Apoteka ima listu lekova
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "pharmacy_med",
@@ -40,8 +43,24 @@ public class Pharmacy {
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
+    //Apoteka ima listu farmaceuta
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Pharmacist> pharmacists = new HashSet<>();
+
     public Pharmacy(){
         super();
+    }
+
+    public Pharmacy(Long id, String name, String address, String city, float avgRank, float pharmacistCouncelingPrice, List<Med> meds, Set<DermAppointment> dermAppointments) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.avgRank = avgRank;
+        this.pharmacistCouncelingPrice = pharmacistCouncelingPrice;
+        this.meds = meds;
+        this.dermAppointments = dermAppointments;
     }
 
     public Pharmacy(String name, String address, String city, float avgRank) {
@@ -49,6 +68,14 @@ public class Pharmacy {
         this.address = address;
         this.city = city;
         this.avgRank = avgRank;
+    }
+
+    public float getPharmacistCouncelingPrice() {
+        return pharmacistCouncelingPrice;
+    }
+
+    public void setPharmacistCouncelingPrice(float pharmacistCouncelingPrice) {
+        this.pharmacistCouncelingPrice = pharmacistCouncelingPrice;
     }
 
     public String getCity() {
