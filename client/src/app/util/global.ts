@@ -15,4 +15,6 @@ export namespace Global {
     export var mappedUser: boolean = false;
     export var clickedMed: Med = new Med();
     export var allMeds: boolean = false;
+    export var reserveFromPickedPharmacy: boolean = false;
+    export var medToReserve: Med = new Med();
 }

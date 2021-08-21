@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Med } from '../dto/med';
 import { PharmacyListComponent } from '../pharmacy-list/pharmacy-list.component';
+import { PickDateComponent } from '../pick-date/pick-date.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -15,14 +17,17 @@ import { Global } from '../util/global';
 export class MedListComponent implements OnInit {
 
   meds: any
-  
+  reserveFromPickedPharmacy: boolean = Global.reserveFromPickedPharmacy
   searchText
   endpoint = Endpoint;
+  loggedUser: boolean = false
   
 
-  constructor(public dialog: MatDialog,private http: HttpClient) { }
+  constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+    if(Global.loggedUser.id != undefined)
+      this.loggedUser = true
    
     if(Global.allMeds == true){
       this.http
@@ -38,6 +43,7 @@ export class MedListComponent implements OnInit {
       .pipe(
         map(returnedMeds=> {
           this.meds = returnedMeds
+          console.log(returnedMeds)
         })
       ).subscribe()
     }
@@ -51,6 +57,19 @@ export class MedListComponent implements OnInit {
       maxHeight: '90vh' //you can adjust the value as per your view
 })
     dialogRef.afterClosed().subscribe();
+  }
+
+  reserveMed(med: Med){
+    //imam u globalu koja je kliknuta apoteka
+    Global.medToReserve = med
+    let dialogRef = this.dialog.open((PickDateComponent),{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+  })
+    dialogRef.afterClosed().subscribe();
+
+
+    
   }
 
 }

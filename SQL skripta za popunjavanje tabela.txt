@@ -239,3 +239,15 @@ insert into derm_appointment values (6,"2021-08-16 17:30:00",45,0,600,2,2,null);
 insert into derm_appointment values (7,"2021-08-20 20:30:00",45,0,600,2,1,1);
 insert into derm_appointment values (9,"2021-08-20 22:30:00",45,0,600,2,1,1);
 insert into derm_appointment values (10,"2021-08-27 22:30:00",45,0,600,2,1,null);
+
+--WORK_HOURS
+insert into work_hours values (1,'2021-08-21','16:00:00','17:00:00',3);
+insert into work_hours values (2,'2021-08-21','17:00:00','18:00:00',3);
+insert into work_hours values (3,'2021-08-21','18:00:00','19:00:00',3);
+insert into work_hours values (4,'2021-08-21','19:00:00','20:00:00',3);
+insert into work_hours values (5,'2021-08-21','20:00:00','21:00:00',3);
+insert into work_hours values (6,'2021-08-21','21:00:00','22:00:00',3);
+
+--PHARMACY_MED
+insert into pharmacy_med values(1,10,1,1);
+insert into pharmacy_med values(2,13,1,2);

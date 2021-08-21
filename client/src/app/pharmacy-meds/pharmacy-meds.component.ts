@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Global } from '../util/global';
 
 @Component({
   selector: 'app-pharmacy-meds',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PharmacyMedsComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
+   
   }
 
 }

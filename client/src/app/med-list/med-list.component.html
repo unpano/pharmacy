@@ -35,7 +35,8 @@
                     
                     
                     <button  id="eyeBtn" (click)="viewPharmacies(med)">View pharmacies</button>
-                    
+                    <button *ngIf="reserveFromPickedPharmacy == true && loggedUser == true" (click)="reserveMed(med)">Reserve med</button>   
+
                   </tr>
                   </tbody>
                 </table>

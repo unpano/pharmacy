@@ -5,7 +5,7 @@ import java.sql.Time;
 import java.util.Date;
 
 @Entity
-public class WorkHours {
+public class Term {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,6 +13,9 @@ public class WorkHours {
     private Date date;
     private Time start;
     private Time end;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private User user;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Pharmacist pharmacist;
@@ -49,9 +52,9 @@ public class WorkHours {
         this.end = end;
     }
 
-    public WorkHours(){}
+    public Term(){}
 
-    public WorkHours(Long id, Date date, Time start, Time end) {
+    public Term(Long id, Date date, Time start, Time end) {
         this.id = id;
         this.date = date;
         this.start = start;

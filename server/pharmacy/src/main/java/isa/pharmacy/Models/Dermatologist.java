@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-public class Dermatologist extends User{
+public class Dermatologist extends GeneralUser{
 
     //Prosecna ocena dermatologa
     private Float stars;
@@ -43,9 +43,5 @@ public class Dermatologist extends User{
         this.dermAppointments = dermAppointments;
     }
 
-    public Dermatologist(Long id, String firstName, String lastName, String email, String password, String username, String address, String city, String country, String phoneNumber, boolean enabled, Timestamp lastPasswordResetDate, List<Authority> authorities, Set<Prescription> prescriptions, Float stars, Set<DermAppointment> dermAppointments) {
-        super(id, firstName, lastName, email, password, username, address, city, country, phoneNumber, enabled, lastPasswordResetDate, authorities, prescriptions);
-        this.stars = stars;
-        this.dermAppointments = dermAppointments;
-    }
+
 }

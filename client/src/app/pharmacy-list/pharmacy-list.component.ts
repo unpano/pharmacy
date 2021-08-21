@@ -24,6 +24,7 @@ export class PharmacyListComponent implements OnInit {
   constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+    
     if(Global.clickedMed.id != undefined){
       this.http
       .get(this.endpoint.MED_PHARMACY_LIST + Global.clickedMed.id)
@@ -55,11 +56,12 @@ export class PharmacyListComponent implements OnInit {
 
   viewMeds(pharmacy: Pharmacy){
     Global.clickedPharmacy = pharmacy
+    Global.reserveFromPickedPharmacy = true
     let dialogRef = this.dialog.open(PharmacyMedsComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
 })
-    dialogRef.afterClosed().subscribe();
+    dialogRef.afterClosed().subscribe(res => Global.reserveFromPickedPharmacy = false);
   }
 
 }

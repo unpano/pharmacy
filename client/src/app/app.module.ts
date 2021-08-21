@@ -52,6 +52,7 @@ import { AddAllergyFormComponent } from './add-allergy-form/add-allergy-form.com
 import { FutureDermAppointmentListComponent } from './future-derm-appointment-list/future-derm-appointment-list.component';
 import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
+import { PickDateComponent } from './pick-date/pick-date.component';
 
 
 
@@ -74,7 +75,8 @@ import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-ap
     AddAllergyFormComponent,
     FutureDermAppointmentListComponent,
     PastDermAppointmentListComponent,
-    SchedulePharmacistAppointmentComponent
+    SchedulePharmacistAppointmentComponent,
+    PickDateComponent
   ],
   imports: [
     BrowserModule,

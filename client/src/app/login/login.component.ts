@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
           Global.token.expires_in = returnedToken["expires_in"]
 
           
-          this.router.navigate(["/loggedUserHomePage"]);
+          
 
 })
     ).subscribe(res =>{
@@ -82,6 +82,10 @@ export class LoginComponent implements OnInit {
           let user: any
           user = returnedUser  
           Global.loggedUser = user
+          console.log(Global.loggedUser)
+
+          if(returnedUser["authorities"][0]["authority"] == 'ROLE_USER')
+            this.router.navigate(["/loggedUserHomePage"]);
         })
       ).subscribe()
       })

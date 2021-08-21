@@ -32,11 +32,9 @@ public class Pharmacy {
     private float pharmacistCouncelingPrice;
 
     //Apoteka ima listu lekova
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "pharmacy_med",
-            joinColumns = @JoinColumn(name = "pharmacy_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
-    private List<Med> meds = new ArrayList<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PharmacyMed> meds = new ArrayList<>();
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
     @JsonIgnore
@@ -52,16 +50,7 @@ public class Pharmacy {
         super();
     }
 
-    public Pharmacy(Long id, String name, String address, String city, float avgRank, float pharmacistCouncelingPrice, List<Med> meds, Set<DermAppointment> dermAppointments) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.city = city;
-        this.avgRank = avgRank;
-        this.pharmacistCouncelingPrice = pharmacistCouncelingPrice;
-        this.meds = meds;
-        this.dermAppointments = dermAppointments;
-    }
+
 
     public Pharmacy(String name, String address, String city, float avgRank) {
         this.name = name;
@@ -118,12 +107,20 @@ public class Pharmacy {
         this.id = id;
     }
 
-    public List<Med> getMeds() {
+    public List<PharmacyMed> getMeds() {
         return meds;
     }
 
-    public void setMeds(List<Med> meds) {
+    public void setMeds(List<PharmacyMed> meds) {
         this.meds = meds;
+    }
+
+    public Set<Pharmacist> getPharmacists() {
+        return pharmacists;
+    }
+
+    public void setPharmacists(Set<Pharmacist> pharmacists) {
+        this.pharmacists = pharmacists;
     }
 
     public Set<DermAppointment> getDermAppointments() {
