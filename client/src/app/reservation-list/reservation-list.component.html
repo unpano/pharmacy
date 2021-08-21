@@ -1,0 +1,46 @@
+<app-header-l></app-header-l>
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Id</th>
+                    <th>Pick up date</th>
+                    <th>Med</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let res of reservations | filter:searchText">
+                    
+                    <td>{{res.id}}</td>
+                    <td>{{res.pickUpDate}}</td>
+                    <td>{{res.med.name}}</td>
+                    
+                    
+                    
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                      <mat-icon (click)="removeReservation(res)">delete</mat-icon>
+                    </button>
+                    
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>

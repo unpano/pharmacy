@@ -24,19 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/dto/pharmacy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/dto/pharmacy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/MedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/MedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Dermatologist.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Dermatologist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Med.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacist.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Pharmacy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/WorkHours.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Term.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +201,7 @@
       <workItem from="1629377005537" duration="7514000" />
       <workItem from="1629462006822" duration="14784000" />
       <workItem from="1629494848985" duration="1503000" />
-      <workItem from="1629533534084" duration="20158000" />
+      <workItem from="1629533534084" duration="21168000" />
     </task>
     <servers />
   </component>
@@ -253,38 +241,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629494486509" />
-    <state width="1237" height="85" key="GridCell.Tab.0.bottom" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.0.bottom" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.0.center" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.0.center" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.0.left" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.0.left" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.0.right" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.0.right" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.1.bottom" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.1.bottom" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.1.center" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.1.center" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.1.left" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.1.left" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
-    <state width="1237" height="85" key="GridCell.Tab.1.right" timestamp="1629567125876">
+    <state width="1237" height="196" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
+    <state width="1237" height="196" key="GridCell.Tab.1.right" timestamp="1629567410424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="85" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629567125876" />
+    <state width="1237" height="196" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629567410424" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1629318390527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

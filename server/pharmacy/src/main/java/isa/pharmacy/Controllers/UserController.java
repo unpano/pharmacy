@@ -1,9 +1,6 @@
 package isa.pharmacy.Controllers;
 
-import isa.pharmacy.Models.DermAppointment;
-import isa.pharmacy.Models.Med;
-import isa.pharmacy.Models.Pharmacy;
-import isa.pharmacy.Models.User;
+import isa.pharmacy.Models.*;
 import isa.pharmacy.Services.DermAppointmentService;
 import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,6 +51,19 @@ public class UserController {
 
         if (user.isPresent()){
             return new ResponseEntity<>(allergies, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/reservations")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findUserReservations(Principal user){
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+        List<Reservation> reservations = user1.get().getReservations();
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(reservations, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);

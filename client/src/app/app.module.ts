@@ -53,6 +53,7 @@ import { FutureDermAppointmentListComponent } from './future-derm-appointment-li
 import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { PickDateComponent } from './pick-date/pick-date.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 
 
@@ -76,7 +77,8 @@ import { PickDateComponent } from './pick-date/pick-date.component';
     FutureDermAppointmentListComponent,
     PastDermAppointmentListComponent,
     SchedulePharmacistAppointmentComponent,
-    PickDateComponent
+    PickDateComponent,
+    ReservationListComponent
   ],
   imports: [
     BrowserModule,

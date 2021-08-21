@@ -14,5 +14,6 @@ export enum Endpoint{
     PAST_DERM_APPOINTMENT_LIST = "http://localhost:8084/dermAppointments/pastAppointments",
     FREE_SCHEDULED_DERM_APPOINTMENT = "http://localhost:8084/dermAppointments/frees/",
     SEND_EMAIL = "http://localhost:8084/email/send",
-    RESERVE_MED = "http://localhost:8084/pharmacyMed/reserve/"
+    RESERVE_MED = "http://localhost:8084/pharmacyMed/reserve/",
+    USER_RESERVATIONS = "http://localhost:8084/users/reservations"
 }
