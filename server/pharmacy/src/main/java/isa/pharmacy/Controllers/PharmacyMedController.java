@@ -46,6 +46,8 @@ public class PharmacyMedController {
             }
         }
 
+        Reservation reservation1 = new Reservation();
+
         if(alreadyReserved == false){
             //smanji kolicinu
             Optional<PharmacyMed> pharmacyMed = pharmacyMedService.findByMedIdAndPharmacyId(medId,pharmacyId);
@@ -58,7 +60,7 @@ public class PharmacyMedController {
             reservation.setUser(optUser.get());
             reservation.setPickUpDate(date);
             //dodaj je u bazu i povratnu vrednost dodeli useru
-            Reservation reservation1 = reservationService.add(reservation);
+            reservation1 = reservationService.add(reservation);
 
             //dodeli je korisniku
             reservations.add(reservation1);
@@ -66,6 +68,6 @@ public class PharmacyMedController {
             userService.update(optUser.get());
         }
 
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseEntity<Reservation>(reservation1, HttpStatus.NO_CONTENT);
     }
 }
