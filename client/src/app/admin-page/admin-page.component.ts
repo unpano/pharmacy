@@ -18,8 +18,8 @@ import { PharmacyDetailsComponent } from '../pharmacy-details/pharmacy-details.c
 })
 export class AdminPageComponent implements OnInit {
 
+  pharmacies: any
   searchText
-  pharmacies: any;
   endpoint = Endpoint;
   
   constructor(public dialog: MatDialog,private http: HttpClient, private router: Router) { }
@@ -50,9 +50,8 @@ export class AdminPageComponent implements OnInit {
     let dialogRef = this.dialog.open(PharmacyDetailsComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
-})
+              })
     dialogRef.afterClosed().subscribe();
-
   }
 
 
