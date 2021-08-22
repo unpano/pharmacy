@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "carInsuranceAngular": {
+    "pharmacyAngular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/carInsuranceAngular",
+            "outputPath": "dist/pharmacyAngular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "carInsuranceAngular:build"
+            "browserTarget": "pharmacyAngular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "carInsuranceAngular:build:production"
+              "browserTarget": "pharmacyAngular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "carInsuranceAngular:build"
+            "browserTarget": "pharmacyAngular:build"
           }
         },
         "test": {
@@ -116,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "carInsuranceAngular:serve"
+            "devServerTarget": "pharmacyAngular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "carInsuranceAngular:serve:production"
+              "devServerTarget": "pharmacyAngular:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "carInsuranceAngular"
+  "defaultProject": "pharmacyAngular"
 }
