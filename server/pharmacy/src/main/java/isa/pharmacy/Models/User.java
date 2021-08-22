@@ -2,6 +2,7 @@ package isa.pharmacy.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
+import jdk.jfr.Category;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,6 +12,40 @@ import java.util.*;
 
 @Entity
 public class User extends GeneralUser  {
+
+    //Osvojeni poeni
+    private Integer points;
+
+    //Kategorija korisnika
+    private UserCategory userCategory;
+
+    //Loyalty program
+    @OneToOne
+    private LoyaltyProgram loyaltyProgram;
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+    public UserCategory getUserCategory() {
+        return userCategory;
+    }
+
+    public void setUserCategory(UserCategory userCategory) {
+        this.userCategory = userCategory;
+    }
+
+    public LoyaltyProgram getLoyaltyProgram() {
+        return loyaltyProgram;
+    }
+
+    public void setLoyaltyProgram(LoyaltyProgram loyaltyProgram) {
+        this.loyaltyProgram = loyaltyProgram;
+    }
 
     //User ima listu recepata
     @JsonIgnore

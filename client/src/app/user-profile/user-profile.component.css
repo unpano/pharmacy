@@ -6,6 +6,7 @@ form {
     box-sizing: border-box;
     background : lightgrey;
     color: black;
+    margin-top: 20px;
   }
   button {
     padding      : 5px;  
@@ -27,7 +28,7 @@ form {
       
   }
   table{
-    margin-left: 45%;
+    margin-left: 40%;
   }
 
   thead{

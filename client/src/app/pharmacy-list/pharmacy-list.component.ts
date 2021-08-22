@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Sort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
 import { MedListComponent } from '../med-list/med-list.component';
@@ -18,10 +19,13 @@ import { Global } from '../util/global';
 export class PharmacyListComponent implements OnInit {
 
   pharmacies: any
+  sortedData: any
   searchText
   endpoint = Endpoint;
 
-  constructor(public dialog: MatDialog,private http: HttpClient) { }
+  constructor(public dialog: MatDialog,private http: HttpClient) { 
+   
+  }
 
   ngOnInit(): void {
     
@@ -31,6 +35,7 @@ export class PharmacyListComponent implements OnInit {
       .pipe(
         map(returnedPharmacies=> {
           this.pharmacies = returnedPharmacies
+          this.sortedData = this.pharmacies.slice()
         })
       ).subscribe( Global.clickedMed = undefined)
     }else{
@@ -39,6 +44,7 @@ export class PharmacyListComponent implements OnInit {
       .pipe(
         map(returnedPharmacies=> {
           this.pharmacies = returnedPharmacies
+          this.sortedData = this.pharmacies.slice()
         })
       ).subscribe()
     }
@@ -64,4 +70,28 @@ export class PharmacyListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(res => Global.reserveFromPickedPharmacy = false);
   }
 
+  sortData(sort: Sort) {
+    const data = this.pharmacies.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'name': return compare(a.name, b.name, isAsc);
+        case 'address': return compare(a.calories, b.calories, isAsc);
+        case 'city': return compare(a.fat, b.fat, isAsc);
+        case 'rate': return compare(a.carbs, b.carbs, isAsc);
+        default: return 0;
+      }
+    });
+  }
+ 
+
+}
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

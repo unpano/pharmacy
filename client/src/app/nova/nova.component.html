@@ -1,0 +1,16 @@
+<table matSort (matSortChange) = "sortFood($event)">
+  <tr>
+     <th mat-sort-header = "name">Dessert (100g)</th>
+     <th mat-sort-header = "calories">Calories</th>
+     <th mat-sort-header = "fat">Fat (g)</th>
+     <th mat-sort-header = "carbs">Carbs (g)</th>
+     <th mat-sort-header = "protein">Protein (g)</th>
+  </tr>
+  <tr *ngFor = "let food of sortedFood">
+     <td>{{food.name}}</td>
+     <td>{{food.calories}}</td>
+     <td>{{food.fat}}</td>
+     <td>{{food.carbs}}</td>
+     <td>{{food.protein}}</td>
+  </tr>
+</table>

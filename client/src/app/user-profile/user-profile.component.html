@@ -1,7 +1,10 @@
 <app-header-l></app-header-l>
 <button *ngIf="onEditButton != true " (click)="onEditProfile()">Edit profile</button>
+<button *ngIf="onEditButton == true " (click)="onSubmit()">Submit changes</button> 
+<button (click)="onAddAllergy()">Add allergy</button> 
 <button *ngIf="onEditButton != true " routerLink="/reservations">Reserved meds</button>
-<button *ngIf="onEditButton == true " (click)="onSubmit()">Submit changes</button>   
+ 
+
 <form role="form" novalidate class="form-inline" name="personForm">
     <div class="form-group">
         <label for="find-form-first-name" id="prvaKolonaLabela">First Name</label>
@@ -55,15 +58,33 @@
         
        							
     </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Category</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.userCategory}}</label>    
+       
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Points</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.points}}</label>    
+       
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Loyalty program</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.loyaltyProgram.name}}</label>    
+       
+       								
+    </div>
 
-   
+    
     <div>
         <table class="table table-striped">
             <thead>
             <tr>
               
               <th>Allergies</th>
-              <th><button (click)="onAddAllergy()">Add allergy</button></th>
+              <th></th>
             </tr>
             </thead>
             <tbody>

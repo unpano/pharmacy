@@ -1,3 +1,6 @@
+import { Category } from "./category";
+import { LoyaltyProgram } from "./loyaltyProgram";
+
 export class User{
     id: Number;
     username: String;
@@ -12,4 +15,7 @@ export class User{
     enabled: Boolean;
     lastPasswordResetDate: Date
     stars: Number
+    points: Number
+    userCategory: Category
+    loyaltyProgram: LoyaltyProgram
 }

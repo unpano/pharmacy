@@ -54,6 +54,8 @@ import { PastDermAppointmentListComponent } from './past-derm-appointment-list/p
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { PickDateComponent } from './pick-date/pick-date.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { NovaComponent } from './nova/nova.component';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -78,7 +80,8 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
     PastDermAppointmentListComponent,
     SchedulePharmacistAppointmentComponent,
     PickDateComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    NovaComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +102,10 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
     MatSelectModule,
     MatToolbarModule,
     MatIconModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatSortModule,
+    
+    MatTableModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
