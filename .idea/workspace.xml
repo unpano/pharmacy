@@ -23,9 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SQL skripta za popunjavanje tabela.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
