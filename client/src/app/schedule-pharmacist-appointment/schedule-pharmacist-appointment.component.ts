@@ -9,20 +9,28 @@ import { Endpoint } from '../util/endpoints-enum';
   templateUrl: './schedule-pharmacist-appointment.component.html',
   styleUrls: ['./schedule-pharmacist-appointment.component.css']
 })
+
+
 export class SchedulePharmacistAppointmentComponent implements OnInit {
 
   date = new FormControl(new Date());
   pharmacies: any
   searchText
+  newDate: Date
   endpoint = Endpoint;
   constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
+  
+  
+
   onViewPharmacies(){
-    console.log(this.date.value)
+    console.log(JSON.stringify(this.newDate))
+    
     //poziv metode koja na osnovu datuma prolazi kroz sve radne sate farmaceuta i pronalazi slobodne termine 
+    
   }
 
   pickPharmacy(){

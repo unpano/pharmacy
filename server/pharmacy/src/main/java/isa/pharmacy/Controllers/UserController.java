@@ -56,11 +56,19 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    //treba vratiti samo one koji nisu pokupljeni
     @GetMapping("/reservations")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findUserReservations(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
         List<Reservation> reservations = user1.get().getReservations();
+
+        //prodji kroz listu i uzmi samo one rezervacije koje nisu preuzete
+        for(int i=0; i<reservations.size(); i++){
+            if(reservations.get(i).getPickedUp()){
+                reservations.remove(reservations.get(i));
+            }
+        }
 
         if (user1.isPresent()){
             return new ResponseEntity<>(reservations, HttpStatus.OK);

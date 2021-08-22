@@ -36,5 +36,15 @@ public class ReservationController {
 
     }
 
+    //User preuzima lek
+    @PutMapping("/pickUpMed/{resId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> pickUpMedication(Principal user, @PathVariable Long resId){
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+        return new ResponseEntity<>(reservationService.pickUpMed(optUser.get(),resId), HttpStatus.OK);
+
+    }
+
 
 }

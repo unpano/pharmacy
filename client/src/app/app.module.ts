@@ -56,6 +56,7 @@ import { PickDateComponent } from './pick-date/pick-date.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 import { MatSortModule } from '@angular/material/sort';
+import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
 
 
 
@@ -80,7 +81,8 @@ import { MatSortModule } from '@angular/material/sort';
     PastDermAppointmentListComponent,
     SchedulePharmacistAppointmentComponent,
     PickDateComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    WriteComplaintComponent
   ],
   imports: [
     BrowserModule,

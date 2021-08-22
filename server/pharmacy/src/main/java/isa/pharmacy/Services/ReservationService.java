@@ -7,4 +7,6 @@ public interface ReservationService {
     Reservation add(Reservation reservation);
 
     Object freeReservation(User user, Long resId);
+
+    Object pickUpMed(User user, Long resId);
 }

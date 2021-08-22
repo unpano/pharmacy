@@ -16,5 +16,6 @@ export enum Endpoint{
     SEND_EMAIL = "http://localhost:8084/email/send",
     RESERVE_MED = "http://localhost:8084/pharmacyMed/reserve/",
     USER_RESERVATIONS = "http://localhost:8084/users/reservations",
-    FREE_RESERVED_MED = "http://localhost:8084/reservations/free/"
+    FREE_RESERVED_MED = "http://localhost:8084/reservations/free/",
+    PICK_UP_MED = "http://localhost:8084/reservations/pickUpMed/"
 }

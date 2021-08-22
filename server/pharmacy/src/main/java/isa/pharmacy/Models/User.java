@@ -53,7 +53,7 @@ public class User extends GeneralUser  {
     private Set<Prescription> prescriptions = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user" )
     private List<Reservation> reservations = new ArrayList<>();
 
     public Set<Prescription> getPrescriptions() {

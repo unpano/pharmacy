@@ -10,6 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user-home-page.component';
 import { MedsComponent } from './meds/meds.component';
 import { DermAppointmentListComponent } from './derm-appointment-list/derm-appointment-list.component';
+
+import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
 import { FutureDermAppointmentListComponent } from './future-derm-appointment-list/future-derm-appointment-list.component';
 import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path: 'futureDermAppointments', component: FutureDermAppointmentListComponent},
   {path: 'pastDermAppointments', component: PastDermAppointmentListComponent},
   {path: 'schedulePharmacistAppointment', component: SchedulePharmacistAppointmentComponent},
-  {path: 'reservations', component: ReservationListComponent}
+  {path: 'reservations', component: ReservationListComponent},
+  {path: 'writeComplaint', component: WriteComplaintComponent}
 
 
 ];

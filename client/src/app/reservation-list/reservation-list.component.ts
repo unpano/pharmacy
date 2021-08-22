@@ -48,4 +48,18 @@ export class ReservationListComponent implements OnInit {
       })).subscribe()
   }
 
+  pickUp(res){
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+    this.http
+      .put(this.endpoint.PICK_UP_MED + res.id,null,options)
+      .pipe(map(returnedRes=> {
+        if(returnedRes == true)
+          alert("Medication picked up successfully!")
+        
+      })).subscribe()
+  }
+
 }

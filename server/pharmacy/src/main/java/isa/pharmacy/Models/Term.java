@@ -14,6 +14,7 @@ public class Term {
     private Time start;
     private Time end;
 
+    //za sta mi je ovo???
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
 

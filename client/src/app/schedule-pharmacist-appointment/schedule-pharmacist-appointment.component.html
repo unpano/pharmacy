@@ -1,11 +1,10 @@
 <app-header-l></app-header-l>
 
-<mat-form-field appearance="fill">
-    <mat-label>Pick date</mat-label>
-    <input matInput [matDatepicker]="picker3" [value]="date.value">
-    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-    <mat-datepicker #picker3></mat-datepicker>
-  </mat-form-field>
+<div class="form-group">
+  <label>Pick a date</label>
+  <input [(ngModel)]="newDate" name="newF" type="date">								
+            
+</div>
 
   <button (click)="onViewPharmacies()">Find available terms</button>
 

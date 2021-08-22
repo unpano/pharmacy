@@ -31,7 +31,7 @@ public class PharmacyMedController {
     @PutMapping("/reserve/{pharmacyId}/{medId}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> reserveMed(Principal user, @RequestBody Date date, @PathVariable Long pharmacyId,@PathVariable Long medId) {
-        System.out.println(date);
+        //System.out.println(date);
         //nadji korisnikove rezervacije
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
         List<Reservation> reservations = optUser.get().getReservations();
@@ -59,6 +59,7 @@ public class PharmacyMedController {
             reservation.setMed(foundMed.get());
             reservation.setUser(optUser.get());
             reservation.setPickUpDate(date);
+            reservation.setPickedUp(false);
             //dodaj je u bazu i povratnu vrednost dodeli useru
             reservation1 = reservationService.add(reservation);
 

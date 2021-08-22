@@ -88,8 +88,12 @@ export class UserProfileComponent implements OnInit {
     let dialogRef = this.dialog.open(AddAllergyFormComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
-})
+    })
     dialogRef.afterClosed().subscribe();
+  }
+
+  onAddComplaint(){
+    this.router.navigate(["writeComplaint"]);
   }
  
 }
