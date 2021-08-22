@@ -49,6 +49,8 @@ import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user
 import { PharmacyMedsComponent } from './pharmacy-meds/pharmacy-meds.component';
 import { MedsComponent } from './meds/meds.component';
 import { AddAllergyFormComponent } from './add-allergy-form/add-allergy-form.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { PharmacyDetailsComponent } from './pharmacy-details/pharmacy-details.component';
 
 
 
@@ -68,7 +70,9 @@ import { AddAllergyFormComponent } from './add-allergy-form/add-allergy-form.com
     LoggedUserHomePageComponent,
     PharmacyMedsComponent,
     MedsComponent,
-    AddAllergyFormComponent
+    AddAllergyFormComponent,
+    AdminPageComponent,
+    PharmacyDetailsComponent
   ],
   imports: [
     BrowserModule,

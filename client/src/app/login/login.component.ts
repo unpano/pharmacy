@@ -42,6 +42,9 @@ export class LoginComponent implements OnInit {
     const body=JSON.stringify(this.credentials);  
     
     this.http.post<any>(this.endpoint.LOGIN, body, options).pipe(
+
+
+
       catchError((error: HttpErrorResponse) => {
         if (error.error instanceof Error) {
           // A client-side or network error occurred. Handle it accordingly.
@@ -61,15 +64,15 @@ export class LoginComponent implements OnInit {
         // or just return nothing:
         return EMPTY;
       }),
+
+
       map(returnedToken => {
           
           Global.token.access_token = returnedToken["access_token"]
           Global.token.expires_in = returnedToken["expires_in"]
 
-          
-          this.router.navigate(["/loggedUserHomePage"]);
 
-})
+                            })
     ).subscribe(res =>{
       const headers = { 
         'content-type': 'application/json',
@@ -82,6 +85,23 @@ export class LoginComponent implements OnInit {
           let user: any
           user = returnedUser  
           Global.loggedUser = user
+
+          console.log(Global.loggedUser["authorities"][0] == 3)
+          
+          if(Global.loggedUser["authorities"][0]["authority"] == 'ROLE_USER')
+          {
+         
+            this.router.navigate(["/loggedUserHomePage"]);
+          }
+
+          if(Global.loggedUser["authorities"][0]["authority"] == 'ROLE_ADMIN')
+          {
+         
+            this.router.navigate(["/adminPage"]);
+          }
+
+
+
         })
       ).subscribe()
       })

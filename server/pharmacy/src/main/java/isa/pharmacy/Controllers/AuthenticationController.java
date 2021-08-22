@@ -50,6 +50,9 @@ public class AuthenticationController {
 
     // Prvi endpoint koji pogadja korisnik kada se loguje.
     // Tada zna samo svoje korisnicko ime i lozinku i to prosledjuje na backend.
+
+
+
     @PostMapping("/login")
     public ResponseEntity<UserTokenState> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest,
                                                                     HttpServletResponse response) {
@@ -70,6 +73,11 @@ public class AuthenticationController {
         // Vrati token kao odgovor na uspesnu autentifikaciju
         return ResponseEntity.ok(new UserTokenState(jwt, expiresIn));
     }
+
+
+
+
+
 
     // Endpoint za registraciju novog korisnika
     @PostMapping("/signup")

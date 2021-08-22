@@ -1,6 +1,6 @@
 {
     "/car-insurance/*": {
-        "target": "http://localhost:8081",
+        "target": "http://localhost:8084",
         "secure": false,
         "logLevel": "debug"
     }
