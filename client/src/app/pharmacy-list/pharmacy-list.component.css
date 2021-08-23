@@ -22,3 +22,15 @@ input,select{
     margin: 10px 10px 10px 10px;
     
 }
+
+table {
+    width: 100%;
+  }
+
+
+  
+
+.mat-sort-header-container {
+  align-items: center;
+}
+  

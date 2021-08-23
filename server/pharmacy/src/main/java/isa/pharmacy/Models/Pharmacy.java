@@ -28,27 +28,43 @@ public class Pharmacy {
     @Column(nullable = false)
     private float avgRank;
 
+    @Column(nullable = false)
+    private float pharmacistCouncelingPrice;
+
     //Apoteka ima listu lekova
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "pharmacy_med",
-            joinColumns = @JoinColumn(name = "pharmacy_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
-    private List<Med> meds = new ArrayList<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PharmacyMed> meds = new ArrayList<>();
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
     @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
+    //Apoteka ima listu farmaceuta
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Pharmacist> pharmacists = new HashSet<>();
+
     public Pharmacy(){
         super();
     }
+
+
 
     public Pharmacy(String name, String address, String city, float avgRank) {
         this.name = name;
         this.address = address;
         this.city = city;
         this.avgRank = avgRank;
+    }
+
+    public float getPharmacistCouncelingPrice() {
+        return pharmacistCouncelingPrice;
+    }
+
+    public void setPharmacistCouncelingPrice(float pharmacistCouncelingPrice) {
+        this.pharmacistCouncelingPrice = pharmacistCouncelingPrice;
     }
 
     public String getCity() {
@@ -91,12 +107,20 @@ public class Pharmacy {
         this.id = id;
     }
 
-    public List<Med> getMeds() {
+    public List<PharmacyMed> getMeds() {
         return meds;
     }
 
-    public void setMeds(List<Med> meds) {
+    public void setMeds(List<PharmacyMed> meds) {
         this.meds = meds;
+    }
+
+    public Set<Pharmacist> getPharmacists() {
+        return pharmacists;
+    }
+
+    public void setPharmacists(Set<Pharmacist> pharmacists) {
+        this.pharmacists = pharmacists;
     }
 
     public Set<DermAppointment> getDermAppointments() {

@@ -8,19 +8,19 @@
                 <div class="search-hero">
                   <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
                 </div>
-                <table class="table table-striped">
+                <table matSort (matSortChange)="sortData($event)">
                   <thead>
                   <tr>
                     
-                    <th>Pharmacy name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>Rate</th>
+                    <th mat-sort-header="name">Pharmacy name</th>
+                    <th mat-sort-header="address">Address</th>
+                    <th mat-sort-header="city">City</th>
+                    <th mat-sort-header="rate">Rate</th>
                     <th></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let pharmacy of pharmacies | filter:searchText">
+                  <tr *ngFor="let pharmacy of sortedData | filter:searchText">
                     
                     <td>{{pharmacy.name}}</td>
                     <td>{{pharmacy.address}}</td>

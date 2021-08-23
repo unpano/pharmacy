@@ -15,10 +15,9 @@
                     <th>Date</th>
                     <th>Duration</th>
                     <th>Price</th>
-                    <th>Patient</th>
-                    <th></th>
-                    <th>Pharmacy</th>
-                    
+                    <th>Dermatologist</th>
+                    <th></th> 
+                    <th>Dermatologist rank</th>                   
                   </tr>
                   </thead>
                   <tbody>
@@ -27,10 +26,9 @@
                     <td>{{app.date}}</td>
                     <td>{{app.duration}}</td>
                     <td>{{app.price}}</td>
-                    <td>{{app.user.firstName}}</td>
-                    <td>{{app.user.lastName}}</td>
-                    <td>{{app.pharmacy.name}}</td>
-                    
+                    <td>{{app.dermatologist.firstName}}</td>
+                    <td>{{app.dermatologist.lastName}}</td>
+                    <td>{{app.dermatologist.stars}}</td>
                     
                     <button id="eyeBtn" (click)="scheduleAppointment(app)">Schedule</button>
                   </tr>

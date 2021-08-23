@@ -72,6 +72,8 @@ export class LoginComponent implements OnInit {
           Global.token.expires_in = returnedToken["expires_in"]
 
 
+          
+
                             })
     ).subscribe(res =>{
       const headers = { 
@@ -99,6 +101,7 @@ export class LoginComponent implements OnInit {
          
             this.router.navigate(["/adminPage"]);
           }
+
 
 
 

@@ -23,14 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Dermatologist.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/Dermatologist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/DermAppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/DermAppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/nova/nova.component.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +78,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -103,6 +100,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.PharmacyApplication">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests (client)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -194,6 +204,10 @@
       <workItem from="1629317992180" duration="393000" />
       <workItem from="1629355392868" duration="2280000" />
       <workItem from="1629377005537" duration="7514000" />
+      <workItem from="1629462006822" duration="14784000" />
+      <workItem from="1629494848985" duration="1503000" />
+      <workItem from="1629533534084" duration="25193000" />
+      <workItem from="1629631807588" duration="3520000" />
     </task>
     <servers />
   </component>
@@ -221,50 +235,50 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1629202989876" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1629380318522">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1629637618163">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1629380318522" />
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1629637618163" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1628677353124">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1628677353124" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1629315025021">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1629494486509">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629315025021" />
-    <state width="1237" height="173" key="GridCell.Tab.0.bottom" timestamp="1629384579087">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629494486509" />
+    <state width="1237" height="135" key="GridCell.Tab.0.bottom" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.0.center" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.0.center" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.0.left" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.0.left" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.0.right" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.0.right" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.1.bottom" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.1.bottom" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.1.center" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.1.center" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.1.left" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.1.left" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
-    <state width="1237" height="173" key="GridCell.Tab.1.right" timestamp="1629384579087">
+    <state width="1237" height="135" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
+    <state width="1237" height="135" key="GridCell.Tab.1.right" timestamp="1629637817825">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="173" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629384579087" />
+    <state width="1237" height="135" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1629637817825" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1629318390527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -281,10 +295,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1629318390527" />
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1628518885283">
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1629553891952">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1628518885283" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1629553891952" />
+    <state x="121" y="0" key="SettingsEditor" timestamp="1629494598056">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1629494598056" />
     <state x="251" y="30" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1628520184743">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -293,9 +311,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="0" width="587" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1628773770272" />
-    <state x="417" y="99" key="refactoring.ChangeSignatureDialog" timestamp="1629280493904">
+    <state x="417" y="99" key="refactoring.ChangeSignatureDialog" timestamp="1629572586828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="417" y="99" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1629280493904" />
+    <state x="417" y="99" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1629572586828" />
   </component>
 </project>

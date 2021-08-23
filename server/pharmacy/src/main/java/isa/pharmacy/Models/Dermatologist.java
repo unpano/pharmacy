@@ -1,5 +1,7 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.HashSet;
@@ -7,18 +9,17 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@DiscriminatorValue("ROLE_DERMATOLOGIST")
-public class Dermatologist extends User{
+public class Dermatologist extends GeneralUser{
 
     //Prosecna ocena dermatologa
     private Float stars;
 
-
-    @OneToMany(mappedBy = "dermatologist", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnore
+    @OneToMany(mappedBy = "dermatologist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
     public Dermatologist() {
-
+        super();
     }
 
     public Set<DermAppointment> getDermAppointments() {
@@ -42,9 +43,5 @@ public class Dermatologist extends User{
         this.dermAppointments = dermAppointments;
     }
 
-    public Dermatologist(Long id, String firstName, String lastName, String email, String password, String username, String address, String city, String country, String phoneNumber, boolean enabled, Timestamp lastPasswordResetDate, List<Authority> authorities, Set<Prescription> prescriptions, Float stars, Set<DermAppointment> dermAppointments) {
-        super(id, firstName, lastName, email, password, username, address, city, country, phoneNumber, enabled, lastPasswordResetDate, authorities, prescriptions);
-        this.stars = stars;
-        this.dermAppointments = dermAppointments;
-    }
+
 }

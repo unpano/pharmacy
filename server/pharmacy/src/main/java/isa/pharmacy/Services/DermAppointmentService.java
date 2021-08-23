@@ -9,5 +9,11 @@ public interface DermAppointmentService {
     List<DermAppointment> findAll();
     Optional<DermAppointment> findById(Long id);
     DermAppointment update(DermAppointment dermAppointment);
-    List<DermAppointment> findAppointmentsByPharmacyId(Long id);
+    List<DermAppointment> findFreeAppointmentsByPharmacyId(Long id);
+
+    List<DermAppointment> findFutureAppointmentsByUserId(Long id);
+
+    List<DermAppointment> findPastAppointmentsByUserId(Long id);
+
+    Optional<DermAppointment> freeDermAppointment(Long id, Long id1);
 }

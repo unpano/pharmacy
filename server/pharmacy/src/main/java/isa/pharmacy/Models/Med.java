@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="meds")
@@ -27,14 +29,16 @@ public class Med {
 
     //Lek ima listu apoteka u kojima je zastupljen
     @JsonIgnore
-    @ManyToMany(mappedBy = "meds")
-    private List<Pharmacy> pharms = new ArrayList<>();
+    @OneToMany(mappedBy = "med", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PharmacyMed> pharms = new ArrayList<>();
 
-    public List<Pharmacy> getPharms() {
+
+
+    public List<PharmacyMed> getPharms() {
         return pharms;
     }
 
-    public void setPharms(List<Pharmacy> pharms) {
+    public void setPharms(List<PharmacyMed> pharms) {
         this.pharms = pharms;
     }
 

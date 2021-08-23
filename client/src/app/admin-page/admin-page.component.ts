@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
-import { PharmacyProfileComponent } from '../pharmacy-profile/pharmacy-profile.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 import { PharmacyMedsComponent } from '../pharmacy-meds/pharmacy-meds.component';

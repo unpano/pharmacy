@@ -49,8 +49,18 @@ import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user
 import { PharmacyMedsComponent } from './pharmacy-meds/pharmacy-meds.component';
 import { MedsComponent } from './meds/meds.component';
 import { AddAllergyFormComponent } from './add-allergy-form/add-allergy-form.component';
+
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PharmacyDetailsComponent } from './pharmacy-details/pharmacy-details.component';
+
+import { FutureDermAppointmentListComponent } from './future-derm-appointment-list/future-derm-appointment-list.component';
+import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
+import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
+import { PickDateComponent } from './pick-date/pick-date.component';
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
+
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 
@@ -71,8 +81,16 @@ import { PharmacyDetailsComponent } from './pharmacy-details/pharmacy-details.co
     PharmacyMedsComponent,
     MedsComponent,
     AddAllergyFormComponent,
+
     AdminPageComponent,
-    PharmacyDetailsComponent
+    PharmacyDetailsComponent,
+
+    FutureDermAppointmentListComponent,
+    PastDermAppointmentListComponent,
+    SchedulePharmacistAppointmentComponent,
+    PickDateComponent,
+    ReservationListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -93,7 +111,10 @@ import { PharmacyDetailsComponent } from './pharmacy-details/pharmacy-details.co
     MatSelectModule,
     MatToolbarModule,
     MatIconModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatSortModule,
+    
+    MatTableModule
   ],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
