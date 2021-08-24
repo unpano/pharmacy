@@ -1,5 +1,7 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -14,11 +16,13 @@ public class Term {
     private Date end;
 
     //User koji rezervise termin za savetovanje
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToOne
     private User user;
 
     //Farmaceut koji drzi savetovanje
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @ManyToOne
     private Pharmacist pharmacist;
 
     public Date getStart() {

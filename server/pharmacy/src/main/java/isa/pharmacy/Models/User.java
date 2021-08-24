@@ -77,14 +77,14 @@ public class User extends GeneralUser  {
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<DermAppointment> pharmAppointments = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<Term> pharmAppointments = new HashSet<>();
 
-    public Set<DermAppointment> getPharmAppointments() {
+    public Set<Term> getPharmAppointments() {
         return pharmAppointments;
     }
 
-    public void setPharmAppointments(Set<DermAppointment> pharmAppointments) {
+    public void setPharmAppointments(Set<Term> pharmAppointments) {
         this.pharmAppointments = pharmAppointments;
     }
 

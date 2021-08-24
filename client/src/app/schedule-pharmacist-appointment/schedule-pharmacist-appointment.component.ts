@@ -7,6 +7,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'
 import { Time } from '@angular/common';
 import { Global } from '../util/global';
 import { map } from 'rxjs/operators';
+import { Pharmacy } from '../dto/pharmacy';
+import { User } from '../dto/user';
 
 @Component({
   selector: 'app-schedule-pharmacist-appointment',
@@ -20,8 +22,9 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
   dateInput
   timeInput
   pharmacies: any
+  pharmacists: any
   searchText
-  
+  searchText1
   endpoint = Endpoint;
   
   constructor(public dialog: MatDialog,private http: HttpClient) { }
@@ -43,16 +46,37 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
     let options = { headers: headers };
 
     this.http
-      .put(this.endpoint.FREE_PHARMACIES + '/' + this.timeInput + ':00' + '/'  + this.dateInput,null,options)
+      .get(this.endpoint.FREE_PHARMACIES + '/' + this.timeInput + ':00' + '/'  + this.dateInput,options)
       .pipe(
         map(returnedPharmacies => this.pharmacies = returnedPharmacies)).subscribe()
     
 
-        console.log(this.pharmacies)
     
   }
 
-  pickPharmacy(){
-    
+  pickPharmacy(pharmacy: Pharmacy){
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token} 
+    let options = { headers: headers };
+
+    this.http
+      .get(this.endpoint.FREE_PHARMACISTS + '/' + this.timeInput + ':00' + '/'  + this.dateInput +
+      '/' + pharmacy.id,options)
+      .pipe(
+        map(returnedPharmacists => {this.pharmacists = returnedPharmacists
+          console.log(returnedPharmacists)})).subscribe()
+  }
+
+  schedule(pharmacist: User){
+    //kreiranje novog term-a
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+    this.http
+      .put(this.endpoint.SCHEDULE_PHARMACIST + pharmacist.id + '/' + Global.loggedUser.id
+      + '/' + this.dateInput + '/' + this.timeInput,null,options)
+      .pipe().subscribe()
   }
 }

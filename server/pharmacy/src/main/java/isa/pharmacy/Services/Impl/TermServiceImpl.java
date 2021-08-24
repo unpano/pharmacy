@@ -6,14 +6,10 @@ import isa.pharmacy.Repositories.TermRepository;
 import isa.pharmacy.Repositories.UserRepository;
 import isa.pharmacy.Services.TermService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
-import javax.sound.midi.SysexMessage;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class TermServiceImpl implements TermService {
@@ -24,12 +20,16 @@ public class TermServiceImpl implements TermService {
     @Autowired
     private PharmacyRepository pharmacyRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
-    public Object findAllFree(DateTimeJSON dateTimeJSON) {
+    public List<Pharmacy> findAllFree(DateTimeJSON dateTimeJSON) {
         Date date = dateTimeJSON.getDate();
 
         //lista termina
         List<Term> terms = termRepository.findAll();
+
         //zauzeti farmaceuti, farmaceut radi u jednoj apoteci, apoteka ima vise farmaceuta
         List<Pharmacist> busyPharmacist = new ArrayList<>();
 
@@ -41,13 +41,10 @@ public class TermServiceImpl implements TermService {
         for (int i=0; i<terms.size(); i++){
             //da li je izabrano vreme u opsegu vec zakazanog termina
             if(date.after(terms.get(i).getStart()) && date.before(terms.get(i).getEnd())){
-                //System.out.println("Jedan true");
                 busyPharmacist.add(terms.get(i).getPharmacist());
-                //System.out.println(busyPharmacist.get(0).getId());
             }
             //pregled traje 30 min., Da li je vreme kraja u opsegu vec zakazanog termina
             if(date1.after(terms.get(i).getStart()) && date1.before(terms.get(i).getEnd())){
-                //System.out.println("JEdan true");
                 busyPharmacist.add(terms.get(i).getPharmacist());
             }
 
@@ -56,39 +53,97 @@ public class TermServiceImpl implements TermService {
         //lista svih apoteka
         List<Pharmacy> pharmacies = pharmacyRepository.findAll();
 
-        for(int i=0; i<pharmacies.size(); i++){
-            System.out.printf("Apoteka %d ima %d farmaceuta",i,pharmacies.get(i).getPharmacists().size());
-        }
+        for(int j=0; j<pharmacies.size(); j++){
 
-        //OVDE JE GRESKA u dvostrukom for-u
-        //proci kroz sve apoteke
-        for(int j=0; j<busyPharmacist.size(); j++){
-            //System.out.println(j);
-            //odnosno kroz sve zauzete farmaceute
-            for(int k=0; k<pharmacies.size(); k++){
-                if(pharmacies.get(k).getPharmacists().contains(busyPharmacist.get(j))){
-                    pharmacies.remove(pharmacies.get(k));
+            for(int k=0; k<busyPharmacist.size(); k++){
+                if(pharmacies.get(j).getPharmacists().contains(busyPharmacist.get(k))){
+                    pharmacies.get(j).getPharmacists().remove(busyPharmacist.get(k));
                 }
             }
 
         }
 
-        for(int i=0; i<pharmacies.size(); i++){
-            System.out.printf("Apoteka %d ima %d farmaceuta",i,pharmacies.get(i).getPharmacists().size());
-            }
-        System.out.println(pharmacies.size());
-
         List<Pharmacy> retPharmacies = new ArrayList<>();
+
         //vrati apoteke cija lista farmaceuta nije prazna, izbacila sam zauzete
         for(int i=0; i<pharmacies.size(); i++){
             if(pharmacies.get(i).getPharmacists().size() != 0){
-
                 retPharmacies.add(pharmacies.get(i));
             }
         }
 
-        System.out.println(retPharmacies.size());
-
         return retPharmacies;
+    }
+
+    @Override
+    public List<Pharmacist> findAllFreePharmacists(DateTimeJSON dateTimeJSON, Long id) {
+        Date date = dateTimeJSON.getDate();
+
+        //lista termina
+        List<Term> terms = termRepository.findAll();
+
+        //zauzeti farmaceuti, farmaceut radi u jednoj apoteci, apoteka ima vise farmaceuta
+        List<Pharmacist> busyPharmacist = new ArrayList<>();
+
+        //izabrano vreme plus 30 min koliko traje pregled
+        long ONE_MINUTE_IN_MILLIS=60000; //millisecs
+        long t= date.getTime();
+        Date date1=new Date(t + (30 * ONE_MINUTE_IN_MILLIS));
+
+        for (int i=0; i<terms.size(); i++){
+            //da li je izabrano vreme u opsegu vec zakazanog termina
+            if(date.after(terms.get(i).getStart()) && date.before(terms.get(i).getEnd())){
+                busyPharmacist.add(terms.get(i).getPharmacist());
+            }
+            //pregled traje 30 min., Da li je vreme kraja u opsegu vec zakazanog termina
+            if(date1.after(terms.get(i).getStart()) && date1.before(terms.get(i).getEnd())){
+                busyPharmacist.add(terms.get(i).getPharmacist());
+            }
+
+        }
+
+        //lista svih apoteka
+        List<Pharmacy> pharmacies = pharmacyRepository.findAll();
+
+        for(int j=0; j<pharmacies.size(); j++){
+
+            for(int k=0; k<busyPharmacist.size(); k++){
+                if(pharmacies.get(j).getPharmacists().contains(busyPharmacist.get(k))){
+                    pharmacies.get(j).getPharmacists().remove(busyPharmacist.get(k));
+                }
+            }
+
+        }
+
+        //apoteka po id-ju
+        Optional<Pharmacy> pharmacy = pharmacyRepository.findById(id);
+
+       for(int i=0; i<pharmacies.size(); i++){
+           if(pharmacies.get(i).getId().equals(pharmacy.get().getId()))
+               return pharmacies.get(i).getPharmacists();
+       }
+
+       return null;
+    }
+
+    @Override
+    public Object add(Date dateValue, Long userId, Long pharmacistId) {
+
+        Term term = new Term();
+
+        Optional<User> user = userRepository.findById(userId);
+        //izabrano vreme plus 30 min koliko traje pregled
+        long ONE_MINUTE_IN_MILLIS=60000; //millisecs
+        long t= dateValue.getTime();
+        Date date1=new Date(t + (30 * ONE_MINUTE_IN_MILLIS));
+
+        Pharmacist pharmacist = new Pharmacist();
+        pharmacist.setId(pharmacistId);
+        term.setPharmacist(pharmacist);
+        term.setStart(dateValue);
+        term.setEnd(date1);
+        term.setUser(user.get());
+
+        return termRepository.save(term);
     }
 }
