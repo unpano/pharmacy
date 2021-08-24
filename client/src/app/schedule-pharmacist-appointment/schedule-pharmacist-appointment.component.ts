@@ -9,6 +9,8 @@ import { Global } from '../util/global';
 import { map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
 import { User } from '../dto/user';
+import { Email } from '../dto/email';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-pharmacist-appointment',
@@ -27,7 +29,7 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
   searchText1
   endpoint = Endpoint;
   
-  constructor(public dialog: MatDialog,private http: HttpClient) { }
+  constructor(public dialog: MatDialog,private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -74,9 +76,22 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
     let options = { headers: headers };
+
+    let email: Email = new Email()
+    email.recipient = Global.loggedUser.email
+    email.subject = "Confirmation info of scheduled pharmacist appointment"
+    email.message = 'You have scheduled appointment for pharmacist  ' + pharmacist.firstName + '.'
+
     this.http
       .put(this.endpoint.SCHEDULE_PHARMACIST + pharmacist.id + '/' + Global.loggedUser.id
       + '/' + this.dateInput + '/' + this.timeInput,null,options)
-      .pipe().subscribe()
+      .pipe().subscribe(() => 
+      {
+        if(confirm("Successfully scheduled appointment. Information were sent to your email address.")) {
+        this.http
+          .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe()
+          .subscribe(res => this.router.navigate(["loggedUserHomePage"]))
+        }
+      })
   }
 }
