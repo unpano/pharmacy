@@ -1,0 +1,49 @@
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Med name</th>
+                    <th>Type</th>
+                    <th>Form</th>
+                    <th>Producer</th>
+                    <th>Inssuance regime</th>
+                    <th>Additional notes</th>
+                    <th>Price</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let med of meds | filter:searchText">
+                    
+                    <td>{{med.name}}</td>
+                    <td>{{med.type}}</td>
+                    <td>{{med.form}}</td>
+                    <td>{{med.producer}}</td>
+                    <td>{{med.issuanceRegime}}</td>
+                    <td>{{med.additionalNotes}}</td>
+                    <td>{{med.price}}</td>
+                    
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+

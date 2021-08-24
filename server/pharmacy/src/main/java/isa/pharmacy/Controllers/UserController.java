@@ -144,8 +144,15 @@ public class UserController {
     }
 
     @GetMapping("/profile")
-    @PreAuthorize("hasRole('USER')")
     public User user(Principal user) {
+        //System.out.println(user.getName()); //VRACA USERNAME
+        //System.out.println("Dosao sam bre dovde");
+        return this.userService.findByUsername(user.getName());
+    }
+
+    @GetMapping("/adminProfile")
+    @PreAuthorize("hasRole('ADMIN')")
+    public User adminProfile(Principal user) {
         //System.out.println(user.getName()); //VRACA USERNAME
         //System.out.println("Dosao sam bre dovde");
         return this.userService.findByUsername(user.getName());

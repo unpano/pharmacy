@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import isa.pharmacy.Exception.ResourceConflictException;
+import isa.pharmacy.Models.GeneralUser;
 import isa.pharmacy.Models.User;
 import isa.pharmacy.Models.UserTokenState;
 import isa.pharmacy.Security.TokenUtils;
@@ -66,7 +67,7 @@ public class AuthenticationController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         // Kreiraj token za tog korisnika
-        User user = (User) authentication.getPrincipal();
+        GeneralUser user = (GeneralUser) authentication.getPrincipal();
         String jwt = tokenUtils.generateToken(user.getUsername());
         int expiresIn = tokenUtils.getExpiredIn();
 

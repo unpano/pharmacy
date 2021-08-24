@@ -1,6 +1,8 @@
 package isa.pharmacy.Services;
 
+import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.Pharmacy;
+import isa.pharmacy.Repositories.PharmacyPharmacistsRepository;
 import isa.pharmacy.Repositories.PharmacyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,9 @@ public class PharmacyService {
     @Autowired
     private PharmacyRepository pharmacyRepository;
 
+    @Autowired
+    private PharmacyPharmacistsRepository pharmacyPharmacistRepository;
+
     public List<Pharmacy> findAll() { return pharmacyRepository.findAll(); }
     public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
     public List<Pharmacy> findByCriteria(String searchItem) {
@@ -34,5 +39,6 @@ public class PharmacyService {
 
         return newList;
     }
+    public List<Pharmacist> findPharmacistById(Long id) { return pharmacyPharmacistRepository.findAllByPharmacyId(id); }
 
 }

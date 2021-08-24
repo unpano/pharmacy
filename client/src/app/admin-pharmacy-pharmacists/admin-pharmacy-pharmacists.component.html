@@ -1,0 +1,36 @@
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+        
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Pharmacist name</th>
+ 
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pharmacist of pharmacists | filter:searchText">
+                    
+                    <td>{{pharmacist.firstName}}</td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+
+

@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
     Global.clickedSignUp = true;
   }
 
+
+  
+
   login() {
     const headers = { 'content-type': 'application/json'}  
     let options = { headers: headers };
@@ -88,7 +91,6 @@ export class LoginComponent implements OnInit {
           user = returnedUser  
           Global.loggedUser = user
 
-          console.log(Global.loggedUser["authorities"][0] == 3)
           
           if(Global.loggedUser["authorities"][0]["authority"] == 'ROLE_USER')
           {
@@ -98,12 +100,12 @@ export class LoginComponent implements OnInit {
 
           if(Global.loggedUser["authorities"][0]["authority"] == 'ROLE_ADMIN')
           {
-         
+         console.log("blalalala")
             this.router.navigate(["/adminPage"]);
           }
 
 
-
+          console.log("blalalala")
 
         })
       ).subscribe()

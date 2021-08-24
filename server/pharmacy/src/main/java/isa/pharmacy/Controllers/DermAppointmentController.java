@@ -31,14 +31,15 @@ public class DermAppointmentController {
 
 
     @GetMapping
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('USER')" + "&& hasRole('ADMIN')")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.dermAppointmentService.findAll(), HttpStatus.OK) ;
     }
 
     //vraca slobodne termine na osnovu id-ja apoteke
+    //vraca slobodne termine na osnovu id-ja apoteke
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity<?> findFreeAppointmentsByPharmacyId(@PathVariable Long id){
 
         return new ResponseEntity<>(dermAppointmentService.findFreeAppointmentsByPharmacyId(id), HttpStatus.OK);

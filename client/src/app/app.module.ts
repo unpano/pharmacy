@@ -60,6 +60,9 @@ import { PickDateComponent } from './pick-date/pick-date.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 import { MatSortModule } from '@angular/material/sort';
+import { AdminPharmacyMedsComponent } from './admin-pharmacy-meds/admin-pharmacy-meds.component';
+import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
+import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
 
 
 
@@ -89,7 +92,10 @@ import { MatSortModule } from '@angular/material/sort';
     PastDermAppointmentListComponent,
     SchedulePharmacistAppointmentComponent,
     PickDateComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    AdminPharmacyMedsComponent,
+    AdminPharmacyPharmacistsComponent,
+    AdminDermAppointmentsComponent
 
   ],
   imports: [

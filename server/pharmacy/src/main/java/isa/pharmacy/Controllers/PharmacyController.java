@@ -1,6 +1,7 @@
 package isa.pharmacy.Controllers;
 
 import isa.pharmacy.Models.Med;
+import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Models.PharmacyMed;
 import isa.pharmacy.Services.PharmacyService;
@@ -37,8 +38,24 @@ public class PharmacyController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+
+    ///hristina -> treba mi lista svih farmaceuta koji rade u apoteci sa tim id-jem
+
+    @GetMapping("/pharmacist/{id}")
+    public ResponseEntity<?> findPharmacistById(@PathVariable Long id){
+        List<Pharmacist> pharmacists = this.pharmacyService.findPharmacistById(id);
+
+
+        return new ResponseEntity<>(pharmacists,HttpStatus.NOT_FOUND);
+    }
+
+
+
+
+
     @GetMapping("/meds/{id}")
     public ResponseEntity<?> findMedsByPharmacyId(@PathVariable Long id){
+
         Optional<Pharmacy> pharm = this.pharmacyService.findById(id);
         List<PharmacyMed> ms = pharm.get().getMeds();
 
@@ -53,6 +70,9 @@ public class PharmacyController {
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
+
+
+
 
     @GetMapping("/search")
     public ResponseEntity<?> findByCriteria(@RequestParam(name = "searchItem", required = true) String searchItem) {

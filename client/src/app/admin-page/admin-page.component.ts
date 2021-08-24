@@ -46,12 +46,12 @@ export class AdminPageComponent implements OnInit {
 
   clickedPharmacy(pharmacy: Pharmacy){
     Global.clickedPharmacy = pharmacy
-    let dialogRef = this.dialog.open(PharmacyDetailsComponent,{
-      autoFocus: false,
-      maxHeight: '90vh' //you can adjust the value as per your view
-              })
-    dialogRef.afterClosed().subscribe();
+
+
+    this.router.navigate(['/pharmacyDetails'])
   }
+
+  
 
 
 }
