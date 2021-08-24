@@ -146,4 +146,49 @@ public class TermServiceImpl implements TermService {
 
         return termRepository.save(term);
     }
+
+    @Override
+    public List<Term>  findFutureTermsByUserId(Long id) {
+        List<Term> appointments = termRepository.findAllByUserId(id);
+        List<Term> futureAppointments = new ArrayList<>();
+        Date now = new Date();
+
+        for(int i = 0; i< appointments.size();i++){
+            if(appointments.get(i).getStart().after(now)){
+                futureAppointments.add(appointments.get(i));
+            }
+        }
+        return futureAppointments;
+    }
+
+    @Override
+    public List<Term> findPastTermsByUserId(Long id) {
+        List<Term> appointments = termRepository.findAllByUserId(id);
+        List<Term> pastAppointments = new ArrayList<>();
+        Date now = new Date();
+
+        for(int i = 0; i< appointments.size();i++){
+            if(appointments.get(i).getStart().before(now)){
+                pastAppointments.add(appointments.get(i));
+            }
+        }
+        return pastAppointments;
+    }
+
+    @Override
+    public Optional<Term> freeTerm(Long id, Long id1) {
+        Optional<Term> term = termRepository.findById(id1);
+
+        //Ne moze da otkaze pregled ako je manje od 24h do pocetka istog
+        long createdBefore = term.get().getStart().getTime();
+        long now = new Date().getTime();
+        long oneDayMILS = 86400000;
+        long difference = createdBefore-now;
+
+        if (difference > oneDayMILS){
+            termRepository.delete(term.get());
+            return null;
+        }
+        return term;
+    }
 }

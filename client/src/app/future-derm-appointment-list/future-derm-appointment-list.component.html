@@ -22,7 +22,7 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let app of appointments | filter:searchText">
+                  <tr *ngFor="let app of dermAppointments | filter:searchText">
                     
                     <td>{{app.date}}</td>
                     <td>{{app.duration}}</td>
@@ -32,7 +32,49 @@
                     <td>{{app.dermatologist.stars}}</td>
                     
                     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                      <mat-icon (click)="removeAppointment(app)">delete</mat-icon>
+                      <mat-icon (click)="removeDermAppointment(app)">delete</mat-icon>
+                    </button>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+
+  <mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText1" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Start</th>
+                    <th>End</th>
+                    <th></th>                 
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let app1 of pharmAppointments | filter:searchText1">
+                    
+                    <td>{{app1.start}}</td>
+                    <td>{{app1.end}}</td>
+                    
+                    
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                      <mat-icon (click)="removePharmAppointment(app1)">delete</mat-icon>
                     </button>
                   </tr>
                   </tbody>

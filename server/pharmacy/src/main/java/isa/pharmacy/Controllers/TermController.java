@@ -1,18 +1,22 @@
 package isa.pharmacy.Controllers;
 
 import isa.pharmacy.Models.DateTimeJSON;
+import isa.pharmacy.Models.User;
 import isa.pharmacy.Services.TermService;
+import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/terms")
@@ -20,6 +24,9 @@ public class TermController {
 
     @Autowired
     private TermService termService;
+
+    @Autowired
+    private UserService userService;
 
     //Nadji sve apoteke koje imaju slobodan termin kod farmaceuta
     @GetMapping("/getAllFreePharmacies/{time}/{date}")
@@ -69,6 +76,38 @@ public class TermController {
 
 
         return new ResponseEntity<>(this.termService.add(dateValue,userId,pharmacistId), HttpStatus.OK) ;
+
+    }
+
+    //vraca buduce termine na osnovu id-ja korisnika
+    @GetMapping("/futureTerms")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findFutureTermsByUserId(Principal user){
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+
+        return new ResponseEntity<>(termService.findFutureTermsByUserId(optUser.get().getId()), HttpStatus.OK);
+
+    }
+
+    //vraca buduce termine na osnovu id-ja korisnika
+    @GetMapping("/pastTerms")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findPastTermsByUserId(Principal user){
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+
+        return new ResponseEntity<>(termService.findPastTermsByUserId(optUser.get().getId()), HttpStatus.OK);
+
+    }
+
+    //User otkazuje pregled
+    @PutMapping("/frees/{id}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> freeTerm(Principal user,@PathVariable Long id){
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+        return new ResponseEntity<>(termService.freeTerm(optUser.get().getId(),id), HttpStatus.OK);
 
     }
 }
