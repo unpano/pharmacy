@@ -35,6 +35,7 @@ export class UserProfileComponent implements OnInit {
   constructor(public dialog: MatDialog,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+    //console.log(this.user)
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  

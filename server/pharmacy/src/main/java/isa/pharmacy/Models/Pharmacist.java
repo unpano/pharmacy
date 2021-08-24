@@ -13,8 +13,8 @@ public class Pharmacist extends GeneralUser {
     //Prosecna ocena farmaceuta
     private Float stars;
 
-    private Time startWorking;
-    private Time endWorking;
+
+
 
     public Float getStars() {
         return stars;
@@ -24,21 +24,7 @@ public class Pharmacist extends GeneralUser {
         this.stars = stars;
     }
 
-    public Time getStartWorking() {
-        return startWorking;
-    }
 
-    public void setStartWorking(Time startWorking) {
-        this.startWorking = startWorking;
-    }
-
-    public Time getEndWorking() {
-        return endWorking;
-    }
-
-    public void setEndWorking(Time endWorking) {
-        this.endWorking = endWorking;
-    }
 
     public Pharmacy getPharmacy() {
         return pharmacy;
