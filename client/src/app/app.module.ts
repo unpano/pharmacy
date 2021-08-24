@@ -54,7 +54,7 @@ import { PastDermAppointmentListComponent } from './past-derm-appointment-list/p
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { PickDateComponent } from './pick-date/pick-date.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
-
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'
 import { MatSortModule } from '@angular/material/sort';
 import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
 
@@ -105,7 +105,7 @@ import { WriteComplaintComponent } from './write-complaint/write-complaint.compo
     MatIconModule,
     Ng2SearchPipeModule,
     MatSortModule,
-    
+    NgxMaterialTimepickerModule,
     MatTableModule
   ],
   providers: [MatDatepickerModule],

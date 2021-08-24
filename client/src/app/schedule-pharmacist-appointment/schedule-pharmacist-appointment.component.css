@@ -14,3 +14,16 @@ button{
     margin-left: 30px;
     font-weight: bold;
 }
+input{
+    width: 180px;
+    height: 40px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 2px 0 5px 5px;
+    border-width: 0ch;
+}
+
+label,input{
+    color: lightslategray;
+    margin-left: 30px;
+}

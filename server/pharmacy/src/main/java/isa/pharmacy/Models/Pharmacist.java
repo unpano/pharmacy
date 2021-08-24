@@ -59,7 +59,7 @@ public class Pharmacist extends GeneralUser {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
-    //Farmaceut ima radne sate
+    //Farmaceut ima radne sate/termine za preglede koji nisu unapred definisani
     @OneToMany(mappedBy = "pharmacist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Term> terms = new HashSet<>();
 

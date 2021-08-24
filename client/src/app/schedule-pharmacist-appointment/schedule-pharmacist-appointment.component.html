@@ -1,9 +1,28 @@
 <app-header-l></app-header-l>
 
-<div class="form-group">
-  <label>Pick a date</label>
-  <input [(ngModel)]="newDate" name="newF" type="date">								
-            
+<div class="md-form" >
+<label > Pick date: </label>
+<form >
+  <input
+    type="date"
+    class="form-control"
+    name="examinationDateInput"
+    [(ngModel)]="dateInput"
+  />
+</form>
+
+
+
+  <label for="input">Pick time:</label>
+  <input
+    type="time"
+    id="input"
+    class="form-control"
+    value="13:00"
+    mdbInput
+    [(ngModel)]="timeInput"
+  />
+
 </div>
 
   <button (click)="onViewPharmacies()">Find available terms</button>

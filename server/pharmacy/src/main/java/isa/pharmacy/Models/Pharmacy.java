@@ -44,13 +44,19 @@ public class Pharmacy {
     //Apoteka ima listu farmaceuta
     @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Pharmacist> pharmacists = new HashSet<>();
+    private List<Pharmacist> pharmacists = new ArrayList<>();
 
     public Pharmacy(){
         super();
     }
 
+    public List<Pharmacist> getPharmacists() {
+        return pharmacists;
+    }
 
+    public void setPharmacists(List<Pharmacist> pharmacists) {
+        this.pharmacists = pharmacists;
+    }
 
     public Pharmacy(String name, String address, String city, float avgRank) {
         this.name = name;
@@ -115,13 +121,6 @@ public class Pharmacy {
         this.meds = meds;
     }
 
-    public Set<Pharmacist> getPharmacists() {
-        return pharmacists;
-    }
-
-    public void setPharmacists(Set<Pharmacist> pharmacists) {
-        this.pharmacists = pharmacists;
-    }
 
     public Set<DermAppointment> getDermAppointments() {
         return dermAppointments;
