@@ -27,6 +27,17 @@ public class Reservation {
     @OneToOne
     private Med med;
 
+    @OneToOne
+    private Pharmacy pharmacy;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
     public Med getMed() {
         return med;
     }

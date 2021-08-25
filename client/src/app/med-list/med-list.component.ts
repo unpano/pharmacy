@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Sort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Med } from '../dto/med';
@@ -17,6 +18,7 @@ import { Global } from '../util/global';
 export class MedListComponent implements OnInit {
 
   meds: any
+  sortedData: any
   reserveFromPickedPharmacy: boolean = Global.reserveFromPickedPharmacy
   searchText
   endpoint = Endpoint;
@@ -35,6 +37,7 @@ export class MedListComponent implements OnInit {
       .pipe(
         map(returnedMeds=> {
           this.meds = returnedMeds
+          this.sortedData = this.meds.slice()
         })
       ).subscribe(res=> Global.allMeds = false)
     }else{
@@ -43,7 +46,8 @@ export class MedListComponent implements OnInit {
       .pipe(
         map(returnedMeds=> {
           this.meds = returnedMeds
-          console.log(returnedMeds)
+          this.sortedData = this.meds.slice()
+          //console.log(returnedMeds)
         })
       ).subscribe()
     }
@@ -72,4 +76,32 @@ export class MedListComponent implements OnInit {
     
   }
 
+  sortData(sort: Sort) {
+    const data = this.meds.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'name': return compare(a.name, b.name, isAsc);
+        case 'type': return compare(a.type, b.type, isAsc);
+        case 'form': return compare(a.form, b.form, isAsc);
+        case 'producer': return compare(a.producer, b.producer, isAsc);
+        case 'price': return compare(a.price, b.price, isAsc);
+        default: return 0;
+      }
+    });
+  }
+ 
+
 }
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
+
+
+

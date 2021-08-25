@@ -1,11 +1,12 @@
 <app-header-l></app-header-l>
+<div class="forma">
 
-<div class="md-form" >
-<label > Pick date: </label>
+<div class="pocetak" >
+<label class="label"> Pick date: </label>
 <form >
   <input
     type="date"
-    class="form-control"
+    class="input"
     name="examinationDateInput"
     [(ngModel)]="dateInput"
   />
@@ -13,11 +14,11 @@
 
 
 
-  <label for="input">Pick time:</label>
+  <label class="label">Pick time:</label>
   <input
     type="time"
     id="input"
-    class="form-control"
+    class="input"
     value="13:00"
     mdbInput
     [(ngModel)]="timeInput"
@@ -25,7 +26,8 @@
 
 </div>
 
-<button (click)="onViewPharmacies()">Find available terms</button>
+<button class="dugme" (click)="onViewPharmacies()">Find available terms</button>
+</div>
 
   <mat-card class="example-card">
     

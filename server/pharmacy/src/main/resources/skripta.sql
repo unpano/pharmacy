@@ -1,37 +1,6 @@
 insert into loyalty_program (id,name,lower_bound,upper_bound,discount_percentage) values (1,'Sil 1',100,200,10);
 insert into loyalty_program (id,name,lower_bound,upper_bound,discount_percentage) values (2,'Sil 2',200,300,30);
 
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
-values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true, '2021-01-02 18:57:58',0,0,1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
-values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true, '2021-01-02 18:57:48',0,1,2);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
-values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true, '2021-01-02 17:57:58',3.4,1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
-values ('Pharmacist',4,'Momcilo','Stefanovic','momcilo','$2a$12$EOE8SNMv2P0lw.E7zZ0seuHx6cZgw212odgJjtIriVJ9MBFjUlXlm','momcilohej334@gmail.com','0616972409','Srbija','Pec','Mitra Misovica 7',true, '2021-01-02 18:57:58',4.0,1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
-values ('Pharmacist',5,'Marta','Savic','marta','$2a$12$t5Kqg4ujfrRa/mCVVV/u5.IqfEWm5J3ECCuWus7Vzx02ZIUtl9bve','marta_savic3@gmail.com','0616972411','Srbija','Sremska Mitrovica','Ilije Glamocanina 9',true, '2021-01-02 18:57:58',4.4,2);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
-values ('Dermatologist',6,'Kristina','Masjstorovic','kristina','$2a$12$X0eATE8En94kA35Fav4mmOTRkqvaPbCap/M0ANJWrAQYv.iQwvOtu','kiki123@gmail.com','0616944505','Srbija','Knjazevac','Save Stojkovica BB',true, '2021-01-02 18:57:58',4.4);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
-values ('Dermatologist',7,'Kosta','Lalic','kosta','$2a$12$o2kCZuolSjV4T0LRvqzckuuQ2D74wYsgHYsebb645xiv.zjJUlWee','koco97@gmail.com','0616972403','Srbija','Cacak','Vesniceva 9',true, '2021-01-02 18:57:58',4.8);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
-values ('Dermatologist',8,'Kalina','Stankovic','kalina','$2a$12$OiTckpq1kQn9F9a6ppubKO0zfncYnX3l1dtjqi8p5A6T3BGKQsSne','kalinica11@gmail.com','0617072406','Srbija','Uzice','Zicka 2',true, '2021-01-02 18:57:58',5.0);
-
-insert into authority (id,name) values (1,'ROLE_USER');
-insert into authority (id,name) values (2,'ROLE_PHARMACIST');
-insert into authority (id,name) values (3,'ROLE_DERMATOLOGIST');
-insert into authority (id,name) values (4,'ROLE_ADMIN');
-
-insert into user_authority (user_id,authority_id) values (1,1);
-insert into user_authority (user_id,authority_id) values (2,1);
-insert into user_authority (user_id,authority_id) values (3,2);
-insert into user_authority (user_id,authority_id) values (4,2);
-insert into user_authority (user_id,authority_id) values (5,2);
-insert into user_authority (user_id,authority_id) values (6,3);
-insert into user_authority (user_id,authority_id) values (7,3);
-insert into user_authority (user_id,authority_id) values (8,3);
-
 insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price) values(1,'Ul.29.novembra 25',3.7,'Viva','Aleksandrovac',600);
 insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price) values(2,'Ul.Vinogradarska',4.3,'Hrast','Aleksandrovac',700);
 insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price) values(3,'Trg oslobodjenja',3.7,'Menta','Apatin',600);
@@ -62,12 +31,6 @@ insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,t
 insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type) values(9,'25mg/g; tuba, 1x50g',5,1,'Ketonal®',427,'SALUTAS PHARMA GMBH, Lange Göhren 3, Sülzetal, Osterweddingen, Nemacka','ketoprofen');
 insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type) values(10,'100mg/2mL; ampula, 10x2mL',6,1,'Ketonal®',180,'LEK FARMACEVTSKA DRU@BA D.D., Verovckova 57, Ljubljana, Slovenija','ketoprofen');
 insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type) values(11,'; 8mg/mL; boca staklena, 1x100mL',7,1,'HEDELIX®',823,'KREWEL-MEUSELBACH GMBH, Krewelstr.2, Eitorf, Nemacka','br{ljan (Hedera helix L.), meki ekstrakt lista');
-
-insert into user_allergy (user_id,med_id) values (1,1);
-insert into user_allergy (user_id,med_id) values (1,2);
-insert into user_allergy (user_id,med_id) values (1,3);
-insert into user_allergy (user_id,med_id) values (2,7);
-insert into user_allergy (user_id,med_id) values (2,8);
 
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(1,1,1,16);
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(2,1,2,16);
@@ -224,6 +187,43 @@ insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(135,18,8,16);
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(136,18,9,16);
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(137,18,10,16);
 
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
+values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true, '2021-01-02 18:57:58',0,0,1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
+values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true, '2021-01-02 18:57:48',0,1,2);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
+values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true, '2021-01-02 17:57:58',3.4,1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
+values ('Pharmacist',4,'Momcilo','Stefanovic','momcilo','$2a$12$EOE8SNMv2P0lw.E7zZ0seuHx6cZgw212odgJjtIriVJ9MBFjUlXlm','momcilohej334@gmail.com','0616972409','Srbija','Pec','Mitra Misovica 7',true, '2021-01-02 18:57:58',4.0,1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
+values ('Pharmacist',5,'Marta','Savic','marta','$2a$12$t5Kqg4ujfrRa/mCVVV/u5.IqfEWm5J3ECCuWus7Vzx02ZIUtl9bve','marta_savic3@gmail.com','0616972411','Srbija','Sremska Mitrovica','Ilije Glamocanina 9',true, '2021-01-02 18:57:58',4.4,2);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
+values ('Dermatologist',6,'Kristina','Masjstorovic','kristina','$2a$12$X0eATE8En94kA35Fav4mmOTRkqvaPbCap/M0ANJWrAQYv.iQwvOtu','kiki123@gmail.com','0616944505','Srbija','Knjazevac','Save Stojkovica BB',true, '2021-01-02 18:57:58',4.4);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
+values ('Dermatologist',7,'Kosta','Lalic','kosta','$2a$12$o2kCZuolSjV4T0LRvqzckuuQ2D74wYsgHYsebb645xiv.zjJUlWee','koco97@gmail.com','0616972403','Srbija','Cacak','Vesniceva 9',true, '2021-01-02 18:57:58',4.8);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars)
+values ('Dermatologist',8,'Kalina','Stankovic','kalina','$2a$12$OiTckpq1kQn9F9a6ppubKO0zfncYnX3l1dtjqi8p5A6T3BGKQsSne','kalinica11@gmail.com','0617072406','Srbija','Uzice','Zicka 2',true, '2021-01-02 18:57:58',5.0);
+
+insert into authority (id,name) values (1,'ROLE_USER');
+insert into authority (id,name) values (2,'ROLE_PHARMACIST');
+insert into authority (id,name) values (3,'ROLE_DERMATOLOGIST');
+insert into authority (id,name) values (4,'ROLE_ADMIN');
+
+insert into user_authority (user_id,authority_id) values (1,1);
+insert into user_authority (user_id,authority_id) values (2,1);
+insert into user_authority (user_id,authority_id) values (3,2);
+insert into user_authority (user_id,authority_id) values (4,2);
+insert into user_authority (user_id,authority_id) values (5,2);
+insert into user_authority (user_id,authority_id) values (6,3);
+insert into user_authority (user_id,authority_id) values (7,3);
+insert into user_authority (user_id,authority_id) values (8,3);
+
+insert into user_allergy (user_id,med_id) values (1,1);
+insert into user_allergy (user_id,med_id) values (1,2);
+insert into user_allergy (user_id,med_id) values (1,3);
+insert into user_allergy (user_id,med_id) values (2,7);
+insert into user_allergy (user_id,med_id) values (2,8);
+
 insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (1,1,1,'2021-08-30',0);
 insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (2,1,3,'2021-08-31',0);
 insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (3,1,5,'2021-08-30',0);
@@ -252,3 +252,19 @@ insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,durat
 values (5,2,7,3,'2021-08-25 13:00:00',45,1100);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
 values (6,2,8,4,'2021-08-25 13:00:00',60,1400);
+
+insert into prescriptions (id,user_id,date,prescription_status) values (1,1,'2021-08-25 13:47:53',0);
+insert into prescriptions (id,user_id,date,prescription_status) values (2,1,'2021-09-25 13:47:53',1);
+insert into prescriptions (id,user_id,date,prescription_status) values (3,1,'2021-10-25 13:47:53',0);
+insert into prescriptions (id,user_id,date,prescription_status) values (4,2,'2021-07-25 13:47:53',2);
+insert into prescriptions (id,user_id,date,prescription_status) values (5,2,'2021-08-25 13:47:53',1);
+insert into prescriptions (id,user_id,date,prescription_status) values (6,2,'2021-09-25 13:47:53',1);
+
+insert into prescription_med (prescription_id,med_id) values (1,1);
+insert into prescription_med (prescription_id,med_id) values (1,2);
+insert into prescription_med (prescription_id,med_id) values (2,3);
+insert into prescription_med (prescription_id,med_id) values (3,4);
+insert into prescription_med (prescription_id,med_id) values (3,5);
+insert into prescription_med (prescription_id,med_id) values (4,6);
+insert into prescription_med (prescription_id,med_id) values (6,1);
+insert into prescription_med (prescription_id,med_id) values (6,2);

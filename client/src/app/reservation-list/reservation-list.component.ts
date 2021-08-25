@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Sort } from '@angular/material/sort';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Reservation } from '../dto/reservation';
@@ -14,6 +15,7 @@ import { Global } from '../util/global';
 })
 export class ReservationListComponent implements OnInit {
   reservations: any
+  sortedData: any
   searchText
   endpoint = Endpoint;
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
@@ -29,6 +31,7 @@ export class ReservationListComponent implements OnInit {
       .pipe(
         map(returnedReservations=> {
           this.reservations = returnedReservations
+          this.sortedData = this.reservations.slice()
         })
       ).subscribe()
   }
@@ -62,4 +65,29 @@ export class ReservationListComponent implements OnInit {
       })).subscribe()
   }
 
+  sortData(sort: Sort) {
+    const data = this.reservations.slice();
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'date': return compare(a.date, b.date, isAsc);
+        case 'med': return compare(a.med.name, b.med.name, isAsc);
+        case 'pharmacy': return compare(a.pharmacy.name, b.pharmacy.name, isAsc);
+        default: return 0;
+      }
+    });
+  }
+ 
+
 }
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+}
+
+

@@ -27,6 +27,8 @@ public class PharmacyMedController {
     private MedService medService;
     @Autowired
     private ReservationService reservationService;
+    @Autowired
+    private PharmacyService pharmacyService;
 
     @PutMapping("/reserve/{pharmacyId}/{medId}")
     @PreAuthorize("hasRole('USER')")
@@ -55,11 +57,14 @@ public class PharmacyMedController {
             pharmacyMedService.update(pharmacyMed.get());
 
             //napravi rezervaciju
+            Optional<Pharmacy> pharmacy = pharmacyService.findById(pharmacyId);
+
             Reservation reservation = new Reservation();
             reservation.setMed(foundMed.get());
             reservation.setUser(optUser.get());
             reservation.setPickUpDate(date);
             reservation.setPickedUp(false);
+            reservation.setPharmacy(pharmacy.get());
             //dodaj je u bazu i povratnu vrednost dodeli useru
             reservation1 = reservationService.add(reservation);
 

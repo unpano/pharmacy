@@ -26,10 +26,10 @@ public class ReservationController {
     @Autowired
     private UserService userService;
 
-    //User otkazuje pregled
+    //User otkazuje rezervaciju leka
     @PutMapping("/free/{resId}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> freeDermAppointment(Principal user, @PathVariable Long resId){
+    public ResponseEntity<?> freeReservation(Principal user, @PathVariable Long resId){
         //nadjem user-a
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
         return new ResponseEntity<>(reservationService.freeReservation(optUser.get(),resId), HttpStatus.OK);

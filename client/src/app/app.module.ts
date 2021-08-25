@@ -57,6 +57,10 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'
 import { MatSortModule } from '@angular/material/sort';
 import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
+import { RateComponent } from './rate/rate.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { PickWhomToRateComponent } from './pick-whom-to-rate/pick-whom-to-rate.component';
+import { DermatologistListComponent } from './dermatologist-list/dermatologist-list.component';
 
 
 
@@ -82,7 +86,11 @@ import { WriteComplaintComponent } from './write-complaint/write-complaint.compo
     SchedulePharmacistAppointmentComponent,
     PickDateComponent,
     ReservationListComponent,
-    WriteComplaintComponent
+    WriteComplaintComponent,
+    RateComponent,
+    PrescriptionListComponent,
+    PickWhomToRateComponent,
+    DermatologistListComponent
   ],
   imports: [
     BrowserModule,

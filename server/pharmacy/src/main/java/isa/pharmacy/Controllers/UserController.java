@@ -77,6 +77,22 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    //lista recepata
+    //ONAJ KO KREIRA RECEPTE NE SME PREPORUCITI UOPSTE LEK NA KOJI JE USER ALERGICAN
+    //TO NIJE DEO ULOGE PACIJENTA
+    @GetMapping("/prescriptions")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findUserPrescriptions(Principal user){
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+        Set<Prescription> prescriptions = user1.get().getPrescriptions();
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(prescriptions, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<?> add(@Valid @RequestBody User user) {
         userService.add(user);

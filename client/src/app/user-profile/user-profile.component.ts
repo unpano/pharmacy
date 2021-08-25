@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AddAllergyFormComponent } from '../add-allergy-form/add-allergy-form.component';
 import { User } from '../dto/user';
+import { PickWhomToRateComponent } from '../pick-whom-to-rate/pick-whom-to-rate.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -95,6 +96,14 @@ export class UserProfileComponent implements OnInit {
 
   onAddComplaint(){
     this.router.navigate(["writeComplaint"]);
+  }
+
+  onRate(){
+    let dialogRef = this.dialog.open(PickWhomToRateComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+    })
+    dialogRef.afterClosed().subscribe();
   }
  
 }

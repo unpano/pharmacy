@@ -30,8 +30,6 @@ export class PickDateComponent implements OnInit {
       'Authorization': 'Bearer ' + Global.token.access_token}  
     let options = { headers: headers };
 
-    
-    
     this.http
     .put(this.endpoint.RESERVE_MED + Global.clickedPharmacy.id + '/' + Global.medToReserve.id,JSON.stringify(this.newDate),options)
     .pipe().subscribe(() => {
