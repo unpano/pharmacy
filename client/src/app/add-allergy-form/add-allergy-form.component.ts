@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Med } from '../dto/med';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-add-allergy-form',
