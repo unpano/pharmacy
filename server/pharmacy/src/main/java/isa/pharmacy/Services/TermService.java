@@ -21,4 +21,6 @@ public interface TermService {
     List<Term> findPastTermsByUserId(Long id);
 
     Optional<Term> freeTerm(Long id, Long id1);
+
+    List<Term> findAllByUserId(Long id);
 }

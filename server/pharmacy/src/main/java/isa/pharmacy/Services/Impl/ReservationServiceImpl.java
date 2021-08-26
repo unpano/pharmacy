@@ -1,5 +1,6 @@
 package isa.pharmacy.Services.Impl;
 
+import isa.pharmacy.Models.Med;
 import isa.pharmacy.Models.Reservation;
 import isa.pharmacy.Models.User;
 import isa.pharmacy.Repositories.ReservationRepository;
@@ -62,4 +63,11 @@ public class ReservationServiceImpl implements ReservationService {
 
         return true;
     }
+
+    @Override
+    public List<Reservation> findByUserId(Long id) {
+        return reservationRepository.findAllByUserId(id);
+    }
+
+
 }

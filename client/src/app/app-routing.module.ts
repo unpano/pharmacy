@@ -19,6 +19,10 @@ import { ReservationListComponent } from './reservation-list/reservation-list.co
 import { RateComponent } from './rate/rate.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { DermatologistListComponent } from './dermatologist-list/dermatologist-list.component';
+import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
+import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
+import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
+
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -35,9 +39,10 @@ const routes: Routes = [
   {path: 'writeComplaint', component: WriteComplaintComponent},
   {path: 'rate', component: RateComponent},
   {path: 'prescriptions', component: PrescriptionListComponent},
-  {path: 'rateDermatologist', component: DermatologistListComponent}
-
-
+  {path: 'rateDermatologist', component: DermatologistListComponent},
+  {path: 'ratePharmacist', component: PharmacistListComponent},
+  {path: 'rateMedication', component: MedicationRateListComponent},
+  {path: 'ratePharmacy', component: PharmacyRateListComponent}
 ];
 
 @NgModule({

@@ -82,7 +82,7 @@ export class UserProfileComponent implements OnInit {
     this.http
     .put(this.endpoint.USER_UPDATE,body,options)
     .pipe().subscribe(() => {if(confirm("Successfully updated profile.")) {
-      this.router.navigate(["loggedUser"]);}}
+      this.router.navigate(["loggedUserHomePage"]);}}
     )
   }
 

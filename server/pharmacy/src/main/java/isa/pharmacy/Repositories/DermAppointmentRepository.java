@@ -10,4 +10,6 @@ public interface DermAppointmentRepository extends JpaRepository<DermAppointment
     List<DermAppointment> findAllByPharmacyIdAndUserId(Long pharmacyId,Long userId);
     Optional<DermAppointment> findById(Long id);
     List<DermAppointment> findAllByUserId(Long id);
+
+    List<DermAppointment> findAllByDermatologistIdAndUserId(Long dermId, Long userId);
 }

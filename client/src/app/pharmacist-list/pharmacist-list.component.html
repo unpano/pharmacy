@@ -14,7 +14,7 @@
                   <thead>
                   <tr>
                     
-                    <th>Dermatologist</th>
+                    <th>Pharmacist</th>
                     <th></th>
                     <th>Stars</th>
                     
@@ -22,29 +22,17 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let derm of dermatologists | filter:searchText">
+                  <tr *ngFor="let pharm of pharmacists | filter:searchText">
                     
-                    <td>{{derm.firstName}}</td>
-                    <td>{{derm.lastName}}</td>
-                    <td>{{derm.stars}}</td>
+                    <td>{{pharm.firstName}}</td>
+                    <td>{{pharm.lastName}}</td>
+                    <td>{{pharm.stars}}</td>
                     <td><input name="ocena" [(ngModel)]="ocena"></td>
-                    <td><button id="eyeBtn" (click)="rateDermatologist(derm.id)">
+                    <td><button id="eyeBtn" (click)="ratePharmacist(pharm.id)">
                       <mat-icon>star</mat-icon>
                   </button></td>
                     
                   </tr>
-                  <tr *ngFor="let derm1 of ratedDermatologists | filter:searchText1">
-                    
-                    <td>{{derm1.firstName}}</td>
-                    <td>{{derm1.lastName}}</td>
-                    <td>{{derm1.stars}}</td>
-                    <td><input name="ocena" [(ngModel)]="ocena1"></td>
-                    <td><button id="eyeBtn" (click)="changeRate(derm.id)">
-                      <mat-icon>star</mat-icon>
-                  </button></td>
-                    
-                  </tr>
-                  
                   </tbody>
                 </table>
               </div>

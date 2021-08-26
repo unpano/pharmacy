@@ -24,6 +24,16 @@ export enum Endpoint{
     FUTURE_PHARM_APPOINTMENT_LIST = "http://localhost:8084/terms/futureTerms",
     PAST_PHARM_APPOINTMENT_LIST = "http://localhost:8084/terms/pastTerms",
     FREE_SCHEDULED_PHARM_APPOINTMENT = "http://localhost:8084/terms/frees/",
-    USER_PRESCRIPTIONS = "http://localhost:8084/users/prescriptions"
-    
+    USER_PRESCRIPTIONS = "http://localhost:8084/users/prescriptions",
+    RATE_DERMATOLOGIST = "http://localhost:8084/rates/rateDermatologist/",
+    DERMATOLOGIST_LIST = "http://localhost:8084/users/dermatologists",
+    PHARMACIST_LIST = "http://localhost:8084/users/pharmacists",
+    MEDS_RATE_LIST = "http://localhost:8084/reservations/medications",
+    PHARMACY_RATE_LIST = "http://localhost:8084/pharmacies/pharmaciesToRate",
+    RATE_PHARMACIST = "http://localhost:8084/rates/ratePharmacist/",
+    RATE_MED = "http://localhost:8084/rates/rateMed/",
+    RATE_PHARMACY = "http://localhost:8084/rates/ratePharmacy/",
+    RATE_LIST = "http://localhost:8084/rates",
+    CHANGE_RATE = "http://localhost:8084/rates/changeRate/",
+    RATED = "http://localhost:8084/rates/rated/",
 }

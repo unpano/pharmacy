@@ -1,5 +1,6 @@
 import { Category } from "./category";
 import { LoyaltyProgram } from "./loyaltyProgram";
+import { Pharmacy } from "./pharmacy";
 
 export class User{
     id: Number;
@@ -18,4 +19,5 @@ export class User{
     points: Number
     userCategory: Category
     loyaltyProgram: LoyaltyProgram
+    pharmacy: Pharmacy
 }

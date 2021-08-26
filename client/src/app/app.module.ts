@@ -61,6 +61,9 @@ import { RateComponent } from './rate/rate.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
 import { PickWhomToRateComponent } from './pick-whom-to-rate/pick-whom-to-rate.component';
 import { DermatologistListComponent } from './dermatologist-list/dermatologist-list.component';
+import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
+import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
+import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
 
 
 
@@ -90,7 +93,10 @@ import { DermatologistListComponent } from './dermatologist-list/dermatologist-l
     RateComponent,
     PrescriptionListComponent,
     PickWhomToRateComponent,
-    DermatologistListComponent
+    DermatologistListComponent,
+    PharmacistListComponent,
+    PharmacyRateListComponent,
+    MedicationRateListComponent
   ],
   imports: [
     BrowserModule,

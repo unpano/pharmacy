@@ -191,4 +191,9 @@ public class TermServiceImpl implements TermService {
         }
         return term;
     }
+
+    @Override
+    public List<Term> findAllByUserId(Long id) {
+        return termRepository.findAllByUserId(id);
+    }
 }

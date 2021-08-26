@@ -4,6 +4,7 @@ import isa.pharmacy.Models.DermAppointment;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface DermAppointmentService {
     List<DermAppointment> findAll();
@@ -16,4 +17,7 @@ public interface DermAppointmentService {
     List<DermAppointment> findPastAppointmentsByUserId(Long id);
 
     Optional<DermAppointment> freeDermAppointment(Long id, Long id1);
+
+
+    List<DermAppointment> findAllByUserId(Long id);
 }

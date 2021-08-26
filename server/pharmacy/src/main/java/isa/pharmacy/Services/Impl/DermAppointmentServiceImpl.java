@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class DermAppointmentServiceImpl implements DermAppointmentService {
@@ -84,4 +81,12 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
         }
         return dermAppointment;
     }
+
+    @Override
+    public List<DermAppointment> findAllByUserId(Long id) {
+        return dermAppointmentRepository.findAllByUserId(id);
+
+    }
+
+
 }

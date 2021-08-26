@@ -56,6 +56,18 @@ public class User extends GeneralUser  {
     @OneToMany(mappedBy = "user" )
     private List<Reservation> reservations = new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany
+    private List<Rate> rates = new ArrayList<>();
+
+    public List<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(List<Rate> rates) {
+        this.rates = rates;
+    }
+
     public Set<Prescription> getPrescriptions() {
         return prescriptions;
     }
