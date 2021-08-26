@@ -32,6 +32,7 @@ public class UserController {
         return new ResponseEntity<Page<User>>(userService.findAll(), HttpStatus.OK);
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){
         Optional<User> userOpt = this.userService.findById(id);

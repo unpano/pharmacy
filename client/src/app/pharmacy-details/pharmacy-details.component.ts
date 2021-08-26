@@ -31,8 +31,6 @@ export class PharmacyDetailsComponent implements OnInit {
   }
 
   viewMeds(pharmacy: Pharmacy){
-    Global.clickedPharmacy = pharmacy
-    Global.reserveFromPickedPharmacy = true
     let dialogRef = this.dialog.open(AdminPharmacyMedsComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
@@ -42,7 +40,6 @@ export class PharmacyDetailsComponent implements OnInit {
 
 
   viewPharmacists(pharmacy: Pharmacy){
-    Global.clickedPharmacy = pharmacy
     let dialogRef = this.dialog.open(AdminPharmacyPharmacistsComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view

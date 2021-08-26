@@ -19,6 +19,13 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     private DermAppointmentRepository dermAppointmentRepository;
 
     @Override
+    public DermAppointment addNewAppointment(DermAppointment dermAppointment) {
+
+        return dermAppointmentRepository.save(dermAppointment);
+    }
+
+
+    @Override
     public List<DermAppointment> findAll() {
         return dermAppointmentRepository.findAll();
     }

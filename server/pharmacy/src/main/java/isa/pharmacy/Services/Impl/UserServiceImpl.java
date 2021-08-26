@@ -41,6 +41,7 @@ public class UserServiceImpl implements UserService {
     }
 
 
+
     public User add(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(true);

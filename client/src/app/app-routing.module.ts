@@ -18,6 +18,7 @@ import { FutureDermAppointmentListComponent } from './future-derm-appointment-li
 import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
+import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'futureDermAppointments', component: FutureDermAppointmentListComponent},
   {path: 'pastDermAppointments', component: PastDermAppointmentListComponent},
   {path: 'schedulePharmacistAppointment', component: SchedulePharmacistAppointmentComponent},
-  {path: 'reservations', component: ReservationListComponent}
+  {path: 'reservations', component: ReservationListComponent},
+  {path: 'addTerm', component: AddDermAppointmentComponent}
 
 
 ];

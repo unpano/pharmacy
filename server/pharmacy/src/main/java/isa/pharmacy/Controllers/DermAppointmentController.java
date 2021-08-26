@@ -8,6 +8,7 @@ import isa.pharmacy.Services.UserService;
 import org.hibernate.engine.transaction.jta.platform.internal.SynchronizationRegistryBasedSynchronizationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.MultiValueMap;
@@ -28,6 +29,15 @@ public class DermAppointmentController {
     private DermAppointmentService dermAppointmentService;
     @Autowired
     private UserService userService;
+
+
+
+    //dodavanje slobodnih termina
+    @PostMapping("/add_appointment/")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+    public ResponseEntity<?> addNewAppointment(@RequestBody DermAppointment app) {
+        return new ResponseEntity<DermAppointment>(dermAppointmentService.addNewAppointment(app), HttpStatus.OK);
+    }
 
 
     @GetMapping

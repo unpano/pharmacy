@@ -63,6 +63,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { AdminPharmacyMedsComponent } from './admin-pharmacy-meds/admin-pharmacy-meds.component';
 import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
 import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
+import { AdminHeaderComponent } from './admin-header/admin-header.component';
+import { PharmacyPricesComponent } from './pharmacy-prices/pharmacy-prices.component';
+import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
 
 
 
@@ -95,7 +98,10 @@ import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-
     ReservationListComponent,
     AdminPharmacyMedsComponent,
     AdminPharmacyPharmacistsComponent,
-    AdminDermAppointmentsComponent
+    AdminDermAppointmentsComponent,
+    AdminHeaderComponent,
+    PharmacyPricesComponent,
+    AddDermAppointmentComponent
 
   ],
   imports: [

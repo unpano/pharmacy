@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AddDermAppointmentComponent } from '../add-derm-appointment/add-derm-appointment.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -16,7 +18,7 @@ export class AdminDermAppointmentsComponent implements OnInit {
   searchText
   endpoint = Endpoint
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -34,6 +36,19 @@ export class AdminDermAppointmentsComponent implements OnInit {
       })
     ).subscribe()
    
+  }
+
+
+
+
+  addDermAppointment(){
+    
+    let dialogRef = this.dialog.open(AddDermAppointmentComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+})
+    dialogRef.afterClosed().subscribe();
+    
   }
 
 }
