@@ -13,8 +13,11 @@ import { Global } from '../util/global';
 export class MedicationRateListComponent implements OnInit {
 
   meds: any
+  ratedMeds: any
   ocena: Number
+  ocena1: Number
   searchText
+  searchText1
   endpoint = Endpoint
 
   constructor(private http: HttpClient,private router: Router) { }
@@ -32,7 +35,16 @@ export class MedicationRateListComponent implements OnInit {
         map(returnedMeds => {
           this.meds = returnedMeds
         })
-      ).subscribe()
+      ).subscribe(() => {
+        //nadjem vec ocenjene lekove
+            this.http
+          .get(this.endpoint.MEDS_RATE_LIST + '/rated',options)
+          .pipe(
+            map(returnedMeds => {
+              this.ratedMeds = returnedMeds
+            })
+          ).subscribe()
+      })
   }
 
   rateMed(medId: Number){
@@ -45,6 +57,20 @@ export class MedicationRateListComponent implements OnInit {
     this.http
     .put(this.endpoint.RATE_MED + medId,this.ocena,options)
     .pipe().subscribe(() => {if(confirm("Successfully rated med.")) {
+      this.router.navigate(["loggedUserHomePage"]);}}
+    )
+  }
+  changeRate(medId: Number){
+    
+    //promeni ocenu dermatologa
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+
+    this.http
+    .put(this.endpoint.CHANGE_RATE + medId + '/MED',this.ocena1,options)
+    .pipe().subscribe(() => {if(confirm("Successfully changed rate.")) {
       this.router.navigate(["loggedUserHomePage"]);}}
     )
   }

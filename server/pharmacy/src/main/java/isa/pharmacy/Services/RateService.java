@@ -16,4 +16,6 @@ public interface RateService {
     Optional<Rate> findById(Long rateId);
 
     Rate update(Rate rate1);
+
+    Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom);
 }

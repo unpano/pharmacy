@@ -18,7 +18,7 @@
                         <th>Type</th>
                         <th>Form</th>
                         <th>Producer</th>
-                        <th>Insert your rate</th>
+                        <th>Your rate</th>
                       </tr>
                       </thead>
                       <tbody>
@@ -28,10 +28,26 @@
                         <td>{{med.type}}</td>
                         <td>{{med.form}}</td>
                         <td>{{med.producer}}</td>
+                        <td>{{med.stars}}</td>
                         <td><input name="ocena" [(ngModel)]="ocena"></td>
                         <td><button id="eyeBtn" (click)="rateMed(med.id)">
-                          <mat-icon>star</mat-icon>
+                         Rate
                       </button></td>
+                      </tr>
+                      <tr>RATED MEDS</tr>
+                  <tr *ngFor="let med1 of ratedMeds | filter:searchText1">
+                    
+                    <td>{{med1.name}}</td>
+                        <td>{{med1.type}}</td>
+                        <td>{{med1.form}}</td>
+                        <td>{{med1.producer}}</td>
+                        <td>{{med1.stars}}</td>
+                        <td><input name="ocena" [(ngModel)]="ocena1"></td>
+                        <td><button id="eyeBtn" (click)="changeRate(med1.id)">
+                          Change your rate
+                      </button></td>
+                    
+                  </tr>
                  
                   </tbody>
                 </table>

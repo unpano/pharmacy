@@ -10,7 +10,7 @@ public class Rate {
 
     private Long idOfRatedObject;
     private WhomRates whomRates;
-    private Long rate;
+    private Float rate;
     @ManyToOne
     private User user;
 
@@ -38,11 +38,11 @@ public class Rate {
         this.whomRates = whomRates;
     }
 
-    public Long getRate() {
+    public Float getRate() {
         return rate;
     }
 
-    public void setRate(Long rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
     }
 

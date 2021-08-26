@@ -38,7 +38,7 @@ public class RateController {
     //Ocenjivanje dermatologa
     @PutMapping("/rateDermatologist/{dermatologistId}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> rateDermatologist(Principal user, @PathVariable Long dermatologistId, @RequestBody Long rate){
+    public ResponseEntity<?> rateDermatologist(Principal user, @PathVariable Long dermatologistId, @RequestBody Float rate){
         //nadjem user-a
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
@@ -55,7 +55,7 @@ public class RateController {
     //Ocenjivanje dermatologa
     @PutMapping("/ratePharmacist/{pharmacistId}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> ratePharmacist(Principal user, @PathVariable Long pharmacistId, @RequestBody Long rate){
+    public ResponseEntity<?> ratePharmacist(Principal user, @PathVariable Long pharmacistId, @RequestBody Float rate){
         //nadjem user-a
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
@@ -73,7 +73,7 @@ public class RateController {
     //Ocenjivanje dermatologa
     @PutMapping("/rateMed/{medId}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> rateMed(Principal user, @PathVariable Long medId, @RequestBody Long rate){
+    public ResponseEntity<?> rateMed(Principal user, @PathVariable Long medId, @RequestBody Float rate){
         //nadjem user-a
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
@@ -91,7 +91,7 @@ public class RateController {
     //Ocenjivanje apoteke
     @PutMapping("/ratePharmacy/{pharmacyId}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> ratePharmacy(Principal user, @PathVariable Long pharmacyId, @RequestBody Long rate){
+    public ResponseEntity<?> ratePharmacy(Principal user, @PathVariable Long pharmacyId, @RequestBody Float rate){
         //nadjem user-a
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
@@ -106,12 +106,26 @@ public class RateController {
 
     }
     //Menjanje ocene
-    @PutMapping("/changeRate/{rateId}")
+    @PutMapping("/changeRate/{objectId}/{whom}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> changeRate(@PathVariable Long rateId, @RequestBody Long rate){
+    public ResponseEntity<?> changeRate(Principal user,@PathVariable Long objectId, @RequestBody Float rate,
+    @PathVariable String whom){
+
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
         //Nadjem rate i izmenim ga
-        Optional<Rate> rate1 = rateService.findById(rateId);
+        Optional<Rate> rate1 = Optional.of(new Rate());
+        if(whom.equals("DERMATOLOGIST"))
+            rate1 = rateService.findByUserIdAndIdOfRatedObjectAndWhomRates(optUser.get().getId(),objectId,WhomRates.DERMATOLOGIST);
+        else if(whom.equals("DERMATOLOGIST"))
+            rate1 = rateService.findByUserIdAndIdOfRatedObjectAndWhomRates(optUser.get().getId(),objectId,WhomRates.PHARMACIST);
+        else if(whom.equals("MED"))
+            rate1 = rateService.findByUserIdAndIdOfRatedObjectAndWhomRates(optUser.get().getId(),objectId,WhomRates.MED);
+        else
+            rate1 = rateService.findByUserIdAndIdOfRatedObjectAndWhomRates(optUser.get().getId(),objectId,WhomRates.PHARMACY);
+
+
         rate1.get().setRate(rate);
         rateService.update(rate1.get());
 

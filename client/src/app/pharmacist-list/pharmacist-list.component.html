@@ -18,7 +18,7 @@
                     <th></th>
                     <th>Stars</th>
                     
-                    <th>Insert your rate</th>
+                    <th>Your rate</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -29,7 +29,19 @@
                     <td>{{pharm.stars}}</td>
                     <td><input name="ocena" [(ngModel)]="ocena"></td>
                     <td><button id="eyeBtn" (click)="ratePharmacist(pharm.id)">
-                      <mat-icon>star</mat-icon>
+                      <mat-icon>Rate</mat-icon>
+                  </button></td>
+                    
+                  </tr>
+                  <tr>RATED PHARMACISTS</tr>
+                  <tr *ngFor="let pharm1 of ratedPharmacists | filter:searchText1">
+                    
+                    <td>{{pharm1.firstName}}</td>
+                    <td>{{pharm1.lastName}}</td>
+                    <td>{{pharm1.stars}}</td>
+                    <td><input name="ocena" [(ngModel)]="ocena1"></td>
+                    <td><button id="eyeBtn" (click)="changeRate(pharm1.id)">
+                      Change your rate
                   </button></td>
                     
                   </tr>

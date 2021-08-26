@@ -101,6 +101,57 @@ public class ReservationController {
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
+    @GetMapping("/medications/rated")
+    public ResponseEntity<?> findRatedMeds(Principal user){
+
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+        List<Reservation> reservations = this.reservationService.findByUserId(user1.get().getId());
+        List<Prescription> prescriptions = this.prescriptionService.findAllByUserId(user1.get().getId());
+
+        List<Med> meds = new ArrayList<>();
+
+        for (int i=0; i<prescriptions.size(); i++){
+            //da ne ponavljam iste lekove
+            for(int j=0; j<prescriptions.get(i).getMeds().size(); j++){
+
+                if(!meds.contains(prescriptions.get(i).getMeds().get(j))){
+                    meds.add(prescriptions.get(i).getMeds().get(j));
+                }
+            }
+        }
+
+
+
+        for (int i=0; i<reservations.size(); i++){
+            //da ne ponavljam iste lekove
+            if(!meds.contains(reservations.get(i).getMed()))
+                meds.add(reservations.get(i).getMed());
+        }
+
+        //izbaci iz liste one koji su vec ocenjeni
+        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.MED);
+        List<Med> ratedMeds = new ArrayList<>();
+
+        for(int i=0; i<meds.size(); i++){
+            for(int j=0; j<rates.size(); j++){
+                if(meds.get(i).getId() == rates.get(j).getIdOfRatedObject()){
+                    meds.get(i).setStars(rates.get(j).getRate());
+                    ratedMeds.add(meds.get(i));
+                }
+            }
+
+        }
+
+
+
+        //System.out.println(meds.size());
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(ratedMeds, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
 
 
 }

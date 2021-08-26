@@ -36,7 +36,16 @@ export class DermatologistListComponent implements OnInit {
         map(returnedDermatologists=> {
           this.dermatologists = returnedDermatologists
         })
-      ).subscribe()
+      ).subscribe(() => {
+              //nadjem vec ocenjene dermatologe
+                this.http
+              .get(this.endpoint.DERMATOLOGIST_LIST + '/rated' ,options)
+              .pipe(
+                map(returnedDermatologists=> {
+                  this.ratedDermatologists = returnedDermatologists
+                })
+              ).subscribe()
+      })
   }
 
   rateDermatologist(dermatologistId: Number){
@@ -54,7 +63,17 @@ export class DermatologistListComponent implements OnInit {
   }
 
   changeRate(dermId: Number){
-    //vrati listu dermatologa koje je ocenio i omoguci izmenu ocene
+    
+    //promeni ocenu dermatologa
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
 
+    this.http
+    .put(this.endpoint.CHANGE_RATE + dermId + '/DERMATOLOGIST',this.ocena1,options)
+    .pipe().subscribe(() => {if(confirm("Successfully changed rate.")) {
+      this.router.navigate(["loggedUserHomePage"]);}}
+    )
   }
 }

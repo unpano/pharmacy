@@ -214,6 +214,43 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/dermatologists/rated")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findRatedDermatologists(Principal user){
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+        List<DermAppointment> appointments = dermAppointmentService.findAllByUserId(user1.get().getId());
+        List<Dermatologist> dermatologists = new ArrayList<>();
+
+        //proci i vratiti dermatologe
+        for (int i=0; i<appointments.size(); i++){
+            //da ne ponavljam dermatologe i ako user nije setovan znaci da se pregled nije ni desio
+            if(appointments.get(i).getUser() != null && !dermatologists.contains(appointments.get(i).getDermatologist()))
+                dermatologists.add(appointments.get(i).getDermatologist());
+        }
+
+        //naci one koji su ocenjeni
+        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.DERMATOLOGIST);
+        List<Dermatologist> ratedDermatologists = new ArrayList<>();
+
+        for(int i=0; i<dermatologists.size(); i++){
+            for(int j=0; j<rates.size(); j++){
+                if(dermatologists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
+                    dermatologists.get(i).setStars(rates.get(j).getRate());
+                    ratedDermatologists.add(dermatologists.get(i));
+
+                }
+            }
+
+        }
+
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(ratedDermatologists, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping("/pharmacists")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findPharmacists(Principal user){
@@ -243,6 +280,41 @@ public class UserController {
 
         if (user1.isPresent()){
             return new ResponseEntity<>((pharmacists), HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+    @GetMapping("/pharmacists/rated")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findRatedPharmacists(Principal user){
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+        List<Term> terms = termService.findAllByUserId(user1.get().getId());
+        List<Pharmacist> pharmacists = new ArrayList<>();
+
+        //proci i vratiti farmaceute
+        for (int i=0; i<terms.size(); i++){
+            //da ne ponavljam iste farmaceute
+            if(!pharmacists.contains(terms.get(i).getPharmacist()))
+                pharmacists.add(terms.get(i).getPharmacist());
+        }
+
+        //naci one koji su ocenjeni
+        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACIST);
+        List<Pharmacist> ratedPharmacists = new ArrayList<>();
+
+        for(int i=0; i<pharmacists.size(); i++){
+            for(int j=0; j<rates.size(); j++){
+                if(pharmacists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
+                    pharmacists.get(i).setStars(rates.get(j).getRate());
+                    ratedPharmacists.add(pharmacists.get(i));
+                }
+            }
+
+        }
+
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(ratedPharmacists, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);

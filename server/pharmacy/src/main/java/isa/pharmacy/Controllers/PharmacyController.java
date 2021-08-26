@@ -124,6 +124,63 @@ public class PharmacyController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/pharmaciesToRate/rated")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findRatedPharmacies(Principal user){
+
+        List<Pharmacy> pharmacies = new ArrayList<>();
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+
+        //lista apoteka na osnovu pregleda kod dermatologa
+        List<DermAppointment> appointments = dermAppointmentService.findAllByUserId(user1.get().getId());
+        for (int i=0; i< appointments.size(); i++){
+            if(!pharmacies.contains(appointments.get(i).getPharmacy())){
+                pharmacies.add(appointments.get(i).getPharmacy());
+            }
+        }
+
+        //lista apoteka na osnovu pregleda farmaceuta
+        List<Term> terms = termService.findAllByUserId(user1.get().getId());
+        List<Pharmacist> pharmacists = new ArrayList<>();
+        for(int i=0; i<terms.size(); i++){
+            if(!pharmacists.contains(terms.get(i).getPharmacist()))
+                pharmacists.add(terms.get(i).getPharmacist());
+        }
+        for(int i=0; i<pharmacists.size(); i++){
+            if(!pharmacies.contains(pharmacists.get(i).getPharmacy())){
+                pharmacies.add(pharmacists.get(i).getPharmacy());
+            }
+        }
+
+        //lista apoteka na osnovu rezervacija lekova (eRecept nema smisla da ima podatak o apoteci)
+        List<Reservation> reservations = reservationService.findByUserId(user1.get().getId());
+        for(int i=0; i<reservations.size(); i++){
+            if(!pharmacies.contains(reservations.get(i).getPharmacy())){
+                pharmacies.add(reservations.get(i).getPharmacy());
+            }
+        }
+
+        //izbaci iz liste one koji su vec ocenjeni
+        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACY);
+        List<Pharmacy> ratedPharmacies = new ArrayList<>();
+
+        for(int i=0; i<pharmacies.size(); i++){
+            for(int j=0; j<rates.size(); j++){
+                if(pharmacies.get(i).getId() == rates.get(j).getIdOfRatedObject()){
+                    pharmacies.get(i).setAvgRank(rates.get(j).getRate());
+                    ratedPharmacies.add(pharmacies.get(i));
+                }
+            }
+
+        }
+
+        if (user1.isPresent()){
+            return new ResponseEntity<>(ratedPharmacies, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
 
 
 }

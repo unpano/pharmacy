@@ -26,6 +26,15 @@ public class Med {
     private IssuanceRegime issuanceRegime; //rezim izdavanja
     private String additionalNotes;
     private float price;
+    private Float stars;
+
+    public Float getStars() {
+        return stars;
+    }
+
+    public void setStars(Float stars) {
+        this.stars = stars;
+    }
 
     //Lek ima listu apoteka u kojima je zastupljen
     @JsonIgnore

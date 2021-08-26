@@ -40,4 +40,9 @@ public class RateServiceImpl implements RateService {
     public Rate update(Rate rate1) {
         return rateRepository.save(rate1);
     }
+
+    @Override
+    public Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom) {
+        return rateRepository.findByUserIdAndIdOfRatedObjectAndWhomRates(id,objectId,whom);
+    }
 }

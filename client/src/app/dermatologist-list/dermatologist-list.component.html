@@ -18,7 +18,7 @@
                     <th></th>
                     <th>Stars</th>
                     
-                    <th>Insert your rate</th>
+                    <th>Your rate</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -29,18 +29,19 @@
                     <td>{{derm.stars}}</td>
                     <td><input name="ocena" [(ngModel)]="ocena"></td>
                     <td><button id="eyeBtn" (click)="rateDermatologist(derm.id)">
-                      <mat-icon>star</mat-icon>
+                      Rate
                   </button></td>
                     
                   </tr>
+                  <tr>RATED DERMATOLOGISTS</tr>
                   <tr *ngFor="let derm1 of ratedDermatologists | filter:searchText1">
                     
                     <td>{{derm1.firstName}}</td>
                     <td>{{derm1.lastName}}</td>
                     <td>{{derm1.stars}}</td>
                     <td><input name="ocena" [(ngModel)]="ocena1"></td>
-                    <td><button id="eyeBtn" (click)="changeRate(derm.id)">
-                      <mat-icon>star</mat-icon>
+                    <td><button id="eyeBtn" (click)="changeRate(derm1.id)">
+                      Change your rate
                   </button></td>
                     
                   </tr>
