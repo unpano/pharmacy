@@ -18,4 +18,6 @@ public interface RateService {
     Rate update(Rate rate1);
 
     Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom);
+
+    List<Rate> findAllByIdOfRatedObjectAndWhomRates(Long objId, WhomRates whomRates);
 }

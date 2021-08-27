@@ -11,4 +11,6 @@ public interface RateRepository extends JpaRepository<Rate,Long> {
     List<Rate> findAllByUserIdAndWhomRates(Long id, WhomRates dermatologist);
 
     Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom);
+
+    List<Rate> findAllByIdOfRatedObjectAndWhomRates(Long objId, WhomRates whomRates);
 }

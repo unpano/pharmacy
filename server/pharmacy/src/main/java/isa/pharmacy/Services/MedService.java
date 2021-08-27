@@ -9,4 +9,6 @@ public interface MedService {
     List<Med> findAll();
 
     Optional<Med> findById(Long id);
+
+    Med save(Med med);
 }

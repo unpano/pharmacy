@@ -1,6 +1,5 @@
 package isa.pharmacy.Services.Impl;
 
-import isa.pharmacy.Models.DateTimeJSON;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Repositories.PharmacyRepository;
 import isa.pharmacy.Services.PharmacyService;
@@ -8,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,6 +35,11 @@ public class PharmacyServiceImpl implements PharmacyService {
                 .collect(Collectors.toList());
 
         return newList;
+    }
+
+    @Override
+    public Pharmacy save(Pharmacy pharmacy) {
+        return pharmacyRepository.save(pharmacy);
     }
 
 

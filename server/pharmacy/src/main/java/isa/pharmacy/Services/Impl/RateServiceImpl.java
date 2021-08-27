@@ -45,4 +45,9 @@ public class RateServiceImpl implements RateService {
     public Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom) {
         return rateRepository.findByUserIdAndIdOfRatedObjectAndWhomRates(id,objectId,whom);
     }
+
+    @Override
+    public List<Rate> findAllByIdOfRatedObjectAndWhomRates(Long objId, WhomRates whomRates) {
+        return rateRepository.findAllByIdOfRatedObjectAndWhomRates(objId,whomRates);
+    }
 }
