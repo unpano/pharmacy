@@ -11,12 +11,32 @@ public class Reservation {
     private Long id;
 
     private Date pickUpDate;
+    private Boolean pickedUp;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    public Boolean getPickedUp() {
+        return pickedUp;
+    }
+
+    public void setPickedUp(Boolean pickedUp) {
+        this.pickedUp = pickedUp;
+    }
+
+    @ManyToOne
     private User user;
 
     @OneToOne
     private Med med;
+
+    @OneToOne
+    private Pharmacy pharmacy;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
 
     public Med getMed() {
         return med;

@@ -58,14 +58,27 @@ import { PastDermAppointmentListComponent } from './past-derm-appointment-list/p
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { PickDateComponent } from './pick-date/pick-date.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
-
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { MatSortModule } from '@angular/material/sort';
+
 import { AdminPharmacyMedsComponent } from './admin-pharmacy-meds/admin-pharmacy-meds.component';
 import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
 import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { PharmacyPricesComponent } from './pharmacy-prices/pharmacy-prices.component';
 import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
+
+
+import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
+import { RateComponent } from './rate/rate.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { PickWhomToRateComponent } from './pick-whom-to-rate/pick-whom-to-rate.component';
+import { DermatologistListComponent } from './dermatologist-list/dermatologist-list.component';
+import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
+import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
+import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -101,7 +114,18 @@ import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-app
     AdminDermAppointmentsComponent,
     AdminHeaderComponent,
     PharmacyPricesComponent,
-    AddDermAppointmentComponent
+    AddDermAppointmentComponent,
+
+
+
+    WriteComplaintComponent,
+    RateComponent,
+    PrescriptionListComponent,
+    PickWhomToRateComponent,
+    DermatologistListComponent,
+    PharmacistListComponent,
+    PharmacyRateListComponent,
+    MedicationRateListComponent
 
   ],
   imports: [
@@ -125,11 +149,13 @@ import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-app
     MatIconModule,
     Ng2SearchPipeModule,
     MatSortModule,
-    
-    MatTableModule
+    NgxMaterialTimepickerModule,
+    MatTableModule,
+    CommonModule
   ],
   providers: [MatDatepickerModule],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class AppModule { }

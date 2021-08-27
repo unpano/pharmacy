@@ -23,31 +23,36 @@
             <div class="form-group">
               <label for="vehicle-form-model">Pharmacy:</label>
               <select class="form-control" name="pharmacy" required>
-                <option value="" disabled selected>Select pharmacy name</option>
-                <option *ngFor="let ph of pharmacies" (click)="onSelectedPharmacy(ph)" >{{ph.name}}</option>               
+                <option value="pharmacy" disabled selected>Select pharmacy</option>
+                <option *ngFor="let ph of pharmacies" (click)="onSelectedPharmacy(ph)" >{{ph.name}} {{ph.address}}</option>               
               </select>
             </div>
 
             <div class="form-group">
               <label for="vehicle-form-model">Dermatologist:</label>
               <select class="form-control" name="pharmacy" required>
-                <option value="" disabled selected>Select dermatologist</option>
-                <option *ngFor="let derm of dermatologist" (click)="onSelectedDermatologist(derm)" >{{derm.name}}</option>               
+                <option value="dermatologist" disabled selected>Select dermatologist</option>
+                <option *ngFor="let derm of dermatologists" (click)="onSelectedDermatologist(derm)" >{{derm.firstName}} {{derm.lastName}}</option>               
               </select>
             </div>
 
-            <label>Price:</label>
-            <input [(ngModel)]="duration"  name="duration" required>
+            <label>Duration:</label>
+  
 
-            <label>Dermatologist: </label>
 
             <label>Price:</label>
+          
 
           </mat-form-field></td>
         </tr>
       </table>
       </form>  
     </mat-card-content>
+
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="addTerm()">Add appointment term</button>
+    </mat-card-actions>
   
   </mat-card>
  

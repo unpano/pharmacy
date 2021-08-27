@@ -1,13 +1,33 @@
 <app-header-l></app-header-l>
+<div class="forma">
 
-<mat-form-field appearance="fill">
-    <mat-label>Pick date</mat-label>
-    <input matInput [matDatepicker]="picker3" [value]="date.value">
-    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-    <mat-datepicker #picker3></mat-datepicker>
-  </mat-form-field>
+<div class="pocetak" >
+<label class="label"> Pick date: </label>
+<form >
+  <input
+    type="date"
+    class="input"
+    name="examinationDateInput"
+    [(ngModel)]="dateInput"
+  />
+</form>
 
-  <button (click)="onViewPharmacies()">Find available terms</button>
+
+
+  <label class="label">Pick time:</label>
+  <input
+    type="time"
+    id="input"
+    class="input"
+    value="13:00"
+    mdbInput
+    [(ngModel)]="timeInput"
+  />
+
+</div>
+
+<button class="dugme" (click)="onViewPharmacies()">Find available terms</button>
+</div>
 
   <mat-card class="example-card">
     
@@ -40,7 +60,49 @@
                     <td>{{pharmacy.pharmacistCouncelingPrice}}</td>
                     
                     
-                    <button id="eyeBtn" (click)="pickPharmacy()">Pick pharmacy</button>
+                    <button id="eyeBtn" (click)="pickPharmacy(pharmacy)">Pick pharmacy</button>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+
+  <mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText1" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Pharmacist</th>
+                    <th></th>
+                    <th>Rate</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pharmacist of pharmacists | filter:searchText1">
+                    
+                    <td>{{pharmacist.firstName}}</td>
+                    <td>{{pharmacist.lastName}}</td>
+                    <td>{{pharmacist.stars}}</td>
+                    
+                    
+                    <button id="eyeBtn" (click)="schedule(pharmacist)">Pick pharmacist</button>
                   </tr>
                   </tbody>
                 </table>

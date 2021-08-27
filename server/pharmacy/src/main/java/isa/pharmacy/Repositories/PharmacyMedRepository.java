@@ -8,4 +8,9 @@ import java.util.Optional;
 
 public interface PharmacyMedRepository extends JpaRepository<PharmacyMed,Long> {
     Optional<PharmacyMed> findByMedIdAndPharmacyId(Long medId, Long pharmacyId);
+
+
+    Optional<PharmacyMed> deleteByMedIdAndPharmacyId(Long medId, Long pharmacyId);
+
+
 }

@@ -1,4 +1,5 @@
 import { Med } from "./med"
+import { Pharmacy } from "./pharmacy"
 import { User } from "./user"
 
 export class Reservation{
@@ -6,4 +7,5 @@ export class Reservation{
     pickUpDate: Date
     med: Med
     user: User
+    pharmacy: Pharmacy
 }

@@ -1,5 +1,6 @@
 package isa.pharmacy.Services.Impl;
 
+import isa.pharmacy.Models.Med;
 import isa.pharmacy.Models.Reservation;
 import isa.pharmacy.Models.User;
 import isa.pharmacy.Repositories.ReservationRepository;
@@ -44,6 +45,7 @@ public class ReservationServiceImpl implements ReservationService {
             user.setReservations(reservations);
             userRepository.save(user);
 
+
             //obrisi rez
             reservationRepository.delete(reservation.get());
 
@@ -51,4 +53,21 @@ public class ReservationServiceImpl implements ReservationService {
         }
         return reservation;
     }
+
+    @Override
+    public Object pickUpMed(User user, Long resId) {
+        Optional<Reservation> reservation = reservationRepository.findById(resId);
+
+        reservation.get().setPickedUp(true);
+        reservationRepository.save(reservation.get());
+
+        return true;
+    }
+
+    @Override
+    public List<Reservation> findByUserId(Long id) {
+        return reservationRepository.findAllByUserId(id);
+    }
+
+
 }

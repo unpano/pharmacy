@@ -69,6 +69,7 @@ public class UserServiceImpl implements UserService {
     public Optional<User> update(User user) {
         Optional<User> userOpt = userRepository.findById(user.getId());
 
+
         if (userOpt.isPresent()) {
             User existingUser = userOpt.get();
 

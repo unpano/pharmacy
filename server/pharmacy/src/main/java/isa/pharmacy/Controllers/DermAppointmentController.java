@@ -32,16 +32,17 @@ public class DermAppointmentController {
 
 
 
+
     //dodavanje slobodnih termina
     @PostMapping("/add_appointment/")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-    public ResponseEntity<?> addNewAppointment(@RequestBody DermAppointment app) {
-        return new ResponseEntity<DermAppointment>(dermAppointmentService.addNewAppointment(app), HttpStatus.OK);
+    public ResponseEntity<?> addNewAppointment(DermAppointment app) {
+        return new ResponseEntity<>(dermAppointmentService.addNewAppointment(app), HttpStatus.OK);
     }
 
 
     @GetMapping
-    @PreAuthorize("hasRole('USER')" + "&& hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.dermAppointmentService.findAll(), HttpStatus.OK) ;
     }
@@ -87,5 +88,7 @@ public class DermAppointmentController {
         return new ResponseEntity<>(dermAppointmentService.freeDermAppointment(optUser.get().getId(),id), HttpStatus.OK);
 
     }
+
+
 
 }

@@ -4,13 +4,77 @@ mat-form-field{
     color: lightskyblue;
 }
 
+.dugme{
+    background-color: white;
+    color: gray;
+    border-radius: 1rem;
+    border: none;
+    width: 200px;
+    height: 40px;
+    margin-left: 25%;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.input{
+    width: 280px;
+    height: 50px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 2px 0 5px 5px;
+    border-width: 0ch;
+}
+
+.forma{
+    background-color: rgb(170, 170, 170);
+    width: 400px;
+    height: 400px;
+    margin-left: 33%;
+    margin-top: 60px;
+    border-radius: 2pc;
+}
+
+.input,.label{
+    margin-left: 60px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
 button{
     color: white;
     background: lightskyblue;
     border-radius: 1rem;
     border: none;
-    width: 200px;
-    height: 40px;
+    width: 120px;
+    height: 30px;
     margin-left: 30px;
     font-weight: bold;
+    margin-top: 7px;
 }
+
+mat-card{
+    margin: 2% 10% 10% 10%;
+}
+
+input,select{
+    
+    border-color: lightskyblue;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    
+}
+
+table {
+    width: 100%;
+  }
+
+
+  
+
+.mat-sort-header-container {
+  align-items: center;
+}
+  
+
+
+

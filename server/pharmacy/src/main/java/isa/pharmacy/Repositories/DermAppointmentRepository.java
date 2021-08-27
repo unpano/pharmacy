@@ -9,8 +9,14 @@ import java.util.Optional;
 public interface DermAppointmentRepository extends JpaRepository<DermAppointment,Long> {
     List<DermAppointment> findAllByPharmacyIdAndUserId(Long pharmacyId,Long userId);
     Optional<DermAppointment> findById(Long id);
+
+    DermAppointment save(DermAppointment derm);
     List<DermAppointment> findAllByUserId(Long id);
+
         //naci sve termine koji su zauzeti za apoteku, da bi mogli naci one koji su slobodni
     List<DermAppointment> findAllByPharmacyId(Long pharmacyId);
+
+
+    List<DermAppointment> findAllByDermatologistIdAndUserId(Long dermId, Long userId);
 
 }

@@ -28,7 +28,7 @@ export class AdminDermAppointmentsComponent implements OnInit {
     'Authorization': 'Bearer ' + Global.token.access_token}  
   let options = { headers: headers };
   this.http
-    .get("http://localhost:8084/dermAppointments/" + Global.clickedPharmacy.id,options)
+    .get(this.endpoint.DERM_APPOINTMENT_LIST + Global.clickedPharmacy.id,options)
     .pipe(
       map(returnedAppointments=> {
         this.appointments = returnedAppointments

@@ -15,7 +15,8 @@ import { Global } from '../util/global';
   styleUrls: ['./pick-date.component.css']
 })
 export class PickDateComponent implements OnInit {
-  date = new FormControl(new Date());
+
+  newDate: Date
   reservation: any
   endpoint = Endpoint;
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
@@ -29,9 +30,8 @@ export class PickDateComponent implements OnInit {
       'Authorization': 'Bearer ' + Global.token.access_token}  
     let options = { headers: headers };
 
-    console.log(this.date.value)
     this.http
-    .put(this.endpoint.RESERVE_MED + Global.clickedPharmacy.id + '/' + Global.medToReserve.id,this.date.value,options)
+    .put(this.endpoint.RESERVE_MED + Global.clickedPharmacy.id + '/' + Global.medToReserve.id,JSON.stringify(this.newDate),options)
     .pipe().subscribe(() => {
               
         let email: Email = new Email()

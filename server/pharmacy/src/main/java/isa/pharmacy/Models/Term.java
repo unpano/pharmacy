@@ -1,5 +1,7 @@
 package isa.pharmacy.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -10,15 +12,52 @@ public class Term {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Date date;
-    private Time start;
-    private Time end;
+    private Date start;
+    private Date end;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //User koji rezervise termin za savetovanje
+    @JsonIgnore
+    @ManyToOne
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //Farmaceut koji drzi savetovanje
+    @JsonIgnore
+    @ManyToOne
     private Pharmacist pharmacist;
+
+    public Date getStart() {
+        return start;
+    }
+
+    public void setStart(Date start) {
+        this.start = start;
+    }
+
+    public Date getEnd() {
+        return end;
+    }
+
+    public void setEnd(Date end) {
+        this.end = end;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Pharmacist getPharmacist() {
+        return pharmacist;
+    }
+
+    public void setPharmacist(Pharmacist pharmacist) {
+        this.pharmacist = pharmacist;
+    }
+
+
 
     public Long getId() {
         return id;
@@ -28,36 +67,11 @@ public class Term {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
-    }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 
-    public Time getStart() {
-        return start;
-    }
 
-    public void setStart(Time start) {
-        this.start = start;
-    }
-
-    public Time getEnd() {
-        return end;
-    }
-
-    public void setEnd(Time end) {
-        this.end = end;
-    }
 
     public Term(){}
 
-    public Term(Long id, Date date, Time start, Time end) {
-        this.id = id;
-        this.date = date;
-        this.start = start;
-        this.end = end;
-    }
+
 }

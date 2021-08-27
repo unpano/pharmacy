@@ -1,0 +1,63 @@
+<app-header-l></app-header-l>
+
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table>
+                  <thead>
+                    <tr>
+                    
+                        <th>Med name</th>
+                        <th>Type</th>
+                        <th>Form</th>
+                        <th>Producer</th>
+                        <th>Your rate</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let med of meds | filter:searchText">
+                        
+                        <td>{{med.name}}</td>
+                        <td>{{med.type}}</td>
+                        <td>{{med.form}}</td>
+                        <td>{{med.producer}}</td>
+                        <td>{{med.stars}}</td>
+                        <td><input name="ocena" [(ngModel)]="ocena"></td>
+                        <td><button id="eyeBtn" (click)="rateMed(med.id)">
+                         Rate
+                      </button></td>
+                      </tr>
+                      <tr>RATED MEDS</tr>
+                  <tr *ngFor="let med1 of ratedMeds | filter:searchText1">
+                    
+                    <td>{{med1.name}}</td>
+                        <td>{{med1.type}}</td>
+                        <td>{{med1.form}}</td>
+                        <td>{{med1.producer}}</td>
+                        <td>{{med1.stars}}</td>
+                        <td><input name="ocena" [(ngModel)]="ocena1"></td>
+                        <td><button id="eyeBtn" (click)="changeRate(med1.id)">
+                          Change your rate
+                      </button></td>
+                    
+                  </tr>
+                 
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+

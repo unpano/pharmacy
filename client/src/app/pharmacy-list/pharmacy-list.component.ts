@@ -81,9 +81,9 @@ export class PharmacyListComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
-        case 'address': return compare(a.calories, b.calories, isAsc);
-        case 'city': return compare(a.fat, b.fat, isAsc);
-        case 'rate': return compare(a.carbs, b.carbs, isAsc);
+        case 'address': return compare(a.address, b.address, isAsc);
+        case 'city': return compare(a.city, b.city, isAsc);
+        case 'rate': return compare(a.rate, b.rate, isAsc);
         default: return 0;
       }
     });

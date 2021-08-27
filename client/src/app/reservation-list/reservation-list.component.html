@@ -9,29 +9,33 @@
                 <div class="search-hero">
                   <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
                 </div>
-                <table class="table table-striped">
+                <table matSort (matSortChange)="sortData($event)" class="table table-striped">
                   <thead>
                   <tr>
                     
                     <th>Id</th>
-                    <th>Pick up date</th>
-                    <th>Med</th>
+                    <th mat-sort-header="date">Pick up date</th>
+                    <th mat-sort-header="med">Med</th>
+                    <th mat-sort-header="pharmacy">Pharmacy</th>
                     <th></th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let res of reservations | filter:searchText">
+                  <tr *ngFor="let res of sortedData | filter:searchText">
                     
                     <td>{{res.id}}</td>
                     <td>{{res.pickUpDate}}</td>
                     <td>{{res.med.name}}</td>
+                    <td>{{res.pharmacy.name}}</td>
                     
-                    
+              
                     
                     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
                       <mat-icon (click)="removeReservation(res)">delete</mat-icon>
                     </button>
-                    
+                    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                      <mat-icon (click)="pickUp(res)">done_outline</mat-icon>
+                    </button>
                   </tr>
                   </tbody>
                 </table>

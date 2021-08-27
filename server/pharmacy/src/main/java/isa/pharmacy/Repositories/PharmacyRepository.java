@@ -1,6 +1,5 @@
 package isa.pharmacy.Repositories;
 
-import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.Pharmacy;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -14,23 +14,38 @@ import { Global } from '../util/global';
 export class AdminPharmacyPharmacistsComponent implements OnInit {
 
   pharmacists: any
+  ratedPharmacists: any
+  ocena: Number
+  ocena1: Number
   searchText
-  endpoint = Endpoint;
-  loggedUser: boolean = false
+  searchText1
+  endpoint = Endpoint
   
-
-  constructor(public router: Router, public dialog: MatDialog,private http: HttpClient) { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
- 
-      this.http
-      .get(this.endpoint.PHARMACY_PHARMACIST_LIST + Global.clickedPharmacy.id)
+    //dobavi listu farmaceuta
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+
+    this.http
+      .get(this.endpoint.PHARMACIST_LIST,options)
       .pipe(
-        map(returnedPh=> {
-          this.pharmacists = returnedPh
+        map(returnedPharmacists => {
+          this.pharmacists = returnedPharmacists
         })
-      ).subscribe(res => this.pharmacists)
-  
+      ).subscribe(() => {
+        //nadjem vec ocenjene farmaceute
+          this.http
+        .get(this.endpoint.PHARMACIST_LIST + '/rated' ,options)
+        .pipe(
+          map(returnedDermatologists=> {
+            this.ratedPharmacists = returnedDermatologists
+          })
+        ).subscribe()
+})
   }
 
 }

@@ -1,0 +1,59 @@
+<app-header-l></app-header-l>
+
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table>
+                  <thead>
+                  <tr>
+                    
+                    <th>Pharmacist</th>
+                    <th></th>
+                    <th>Stars</th>
+                    
+                    <th>Your rate</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pharm of pharmacists | filter:searchText">
+                    
+                    <td>{{pharm.firstName}}</td>
+                    <td>{{pharm.lastName}}</td>
+                    <td>{{pharm.stars}}</td>
+                    <td><input name="ocena" [(ngModel)]="ocena"></td>
+                    <td><button id="eyeBtn" (click)="ratePharmacist(pharm.id)">
+                      <mat-icon>Rate</mat-icon>
+                  </button></td>
+                    
+                  </tr>
+                  <tr>RATED PHARMACISTS</tr>
+                  <tr *ngFor="let pharm1 of ratedPharmacists | filter:searchText1">
+                    
+                    <td>{{pharm1.firstName}}</td>
+                    <td>{{pharm1.lastName}}</td>
+                    <td>{{pharm1.stars}}</td>
+                    <td><input name="ocena" [(ngModel)]="ocena1"></td>
+                    <td><button id="eyeBtn" (click)="changeRate(pharm1.id)">
+                      Change your rate
+                  </button></td>
+                    
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+      
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+

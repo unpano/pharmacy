@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AddAllergyFormComponent } from '../add-allergy-form/add-allergy-form.component';
 import { User } from '../dto/user';
+import { PickWhomToRateComponent } from '../pick-whom-to-rate/pick-whom-to-rate.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -35,6 +36,7 @@ export class UserProfileComponent implements OnInit {
   constructor(public dialog: MatDialog,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+    //console.log(this.user)
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
@@ -80,7 +82,7 @@ export class UserProfileComponent implements OnInit {
     this.http
     .put(this.endpoint.USER_UPDATE,body,options)
     .pipe().subscribe(() => {if(confirm("Successfully updated profile.")) {
-      this.router.navigate(["loggedUser"]);}}
+      this.router.navigate(["loggedUserHomePage"]);}}
     )
   }
 
@@ -88,7 +90,19 @@ export class UserProfileComponent implements OnInit {
     let dialogRef = this.dialog.open(AddAllergyFormComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
-})
+    })
+    dialogRef.afterClosed().subscribe();
+  }
+
+  onAddComplaint(){
+    this.router.navigate(["writeComplaint"]);
+  }
+
+  onRate(){
+    let dialogRef = this.dialog.open(PickWhomToRateComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+    })
     dialogRef.afterClosed().subscribe();
   }
  

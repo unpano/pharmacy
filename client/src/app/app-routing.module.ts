@@ -11,6 +11,7 @@ import { LoggedUserHomePageComponent } from './logged-user-home-page/logged-user
 import { MedsComponent } from './meds/meds.component';
 import { DermAppointmentListComponent } from './derm-appointment-list/derm-appointment-list.component';
 
+
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { PharmacyDetailsComponent } from './pharmacy-details/pharmacy-details.component';
 
@@ -19,6 +20,15 @@ import { PastDermAppointmentListComponent } from './past-derm-appointment-list/p
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
 import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
+
+import { RateComponent } from './rate/rate.component';
+import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
+import { DermatologistListComponent } from './dermatologist-list/dermatologist-list.component';
+import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
+import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
+import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
+import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
+
 
 
 const routes: Routes = [
@@ -38,9 +48,17 @@ const routes: Routes = [
   {path: 'pastDermAppointments', component: PastDermAppointmentListComponent},
   {path: 'schedulePharmacistAppointment', component: SchedulePharmacistAppointmentComponent},
   {path: 'reservations', component: ReservationListComponent},
-  {path: 'addTerm', component: AddDermAppointmentComponent}
+
+  {path: 'addTerm', component: AddDermAppointmentComponent},
 
 
+  {path: 'writeComplaint', component: WriteComplaintComponent},
+  {path: 'rate', component: RateComponent},
+  {path: 'prescriptions', component: PrescriptionListComponent},
+  {path: 'rateDermatologist', component: DermatologistListComponent},
+  {path: 'ratePharmacist', component: PharmacistListComponent},
+  {path: 'rateMedication', component: MedicationRateListComponent},
+  {path: 'ratePharmacy', component: PharmacyRateListComponent}
 ];
 
 @NgModule({

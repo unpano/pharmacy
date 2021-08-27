@@ -13,7 +13,9 @@ import { Global } from '../util/global';
 export class PastDermAppointmentListComponent implements OnInit {
   appointments : any
   searchText
+  searchText1
   endpoint = Endpoint
+  pharmAppointments: any
 
   constructor(private http: HttpClient,private router: Router) { }
 
@@ -29,6 +31,16 @@ export class PastDermAppointmentListComponent implements OnInit {
         map(returnedAppointments=> {
           this.appointments = returnedAppointments
           //console.log(this.appointments)
+        })
+      ).subscribe()
+
+      //VRACAM PROSLE PREGLEDE PACIJENTA KOD FARMACEUTA
+      this.http
+      .get(this.endpoint.PAST_PHARM_APPOINTMENT_LIST,options)
+      .pipe(
+        map(returnedAppointments=> {
+          this.pharmAppointments = returnedAppointments
+          console.log(this.pharmAppointments)
         })
       ).subscribe()
   }

@@ -8,20 +8,20 @@
                 <div class="search-hero">
                   <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
                 </div>
-                <table class="table table-striped">
+                <table matSort (matSortChange)="sortData($event)" class="table table-striped">
                   <thead>
                   <tr>
                     
-                    <th>Date</th>
-                    <th>Duration</th>
-                    <th>Price</th>
-                    <th>Dermatologist</th>
-                    <th></th> 
-                    <th>Dermatologist rank</th>                   
+                    <th mat-sort-header="date">Date</th>
+                    <th mat-sort-header="duration">Duration</th>
+                    <th mat-sort-header="price">Price</th>
+                    <th mat-sort-header="dermatologistName">Dermatologist</th>
+                    <th mat-sort-header="dermatologistSurname"></th> 
+                    <th mat-sort-header="rank">Dermatologist rank</th>                   
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let app of appointments | filter:searchText">
+                  <tr *ngFor="let app of sortedData | filter:searchText">
                     
                     <td>{{app.date}}</td>
                     <td>{{app.duration}}</td>

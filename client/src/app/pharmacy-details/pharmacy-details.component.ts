@@ -21,6 +21,7 @@ export class PharmacyDetailsComponent implements OnInit {
   pharmacy: Pharmacy = Global.clickedPharmacy
   appointments : any;
   endpoint : Endpoint
+  showMap = false;
 
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 

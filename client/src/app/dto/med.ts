@@ -10,4 +10,5 @@ export class Med{
     issuanceRegime: IssuanceRegime;
     additionalNotes: String;
     price: Number;
+    stars: Number
 }

@@ -1,8 +1,7 @@
 package isa.pharmacy.Services;
 
-import isa.pharmacy.Models.Pharmacist;
+import isa.pharmacy.Models.DateTimeJSON;
 import isa.pharmacy.Models.Pharmacy;
-import isa.pharmacy.Repositories.PharmacyPharmacistsRepository;
 import isa.pharmacy.Repositories.PharmacyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,31 +13,16 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Service
-@Transactional
-public class PharmacyService {
 
-    @Autowired
-    private PharmacyRepository pharmacyRepository;
+public interface PharmacyService {
 
-    @Autowired
-    private PharmacyPharmacistsRepository pharmacyPharmacistRepository;
 
-    public List<Pharmacy> findAll() { return pharmacyRepository.findAll(); }
-    public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
-    public List<Pharmacy> findByCriteria(String searchItem) {
+    Object findAll();
 
-        List<Pharmacy> newList = new ArrayList<>();
+    Optional<Pharmacy> findById(Long id);
 
-        //Search name or city
-        List<Pharmacy> pharmaciesByName = pharmacyRepository.findAllByName(searchItem);
-        List<Pharmacy> pharmaciesByCity = pharmacyRepository.findAllByCity(searchItem);
+    List<Pharmacy> findByCriteria(String searchItem);
 
-        newList = Stream.concat(pharmaciesByName.stream(), pharmaciesByCity.stream())
-                .collect(Collectors.toList());
-
-        return newList;
-    }
-    public List<Pharmacist> findPharmacistById(Long id) { return pharmacyPharmacistRepository.findAllByPharmacyId(id); }
+    Object deleteMed(Pharmacy ph, Long medId);
 
 }

@@ -53,8 +53,20 @@ public class User extends GeneralUser  {
     private Set<Prescription> prescriptions = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user" )
     private List<Reservation> reservations = new ArrayList<>();
+
+    @JsonIgnore
+    @OneToMany
+    private List<Rate> rates = new ArrayList<>();
+
+    public List<Rate> getRates() {
+        return rates;
+    }
+
+    public void setRates(List<Rate> rates) {
+        this.rates = rates;
+    }
 
     public Set<Prescription> getPrescriptions() {
         return prescriptions;
@@ -77,14 +89,14 @@ public class User extends GeneralUser  {
     private Set<DermAppointment> dermAppointments = new HashSet<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<DermAppointment> pharmAppointments = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<Term> pharmAppointments = new HashSet<>();
 
-    public Set<DermAppointment> getPharmAppointments() {
+    public Set<Term> getPharmAppointments() {
         return pharmAppointments;
     }
 
-    public void setPharmAppointments(Set<DermAppointment> pharmAppointments) {
+    public void setPharmAppointments(Set<Term> pharmAppointments) {
         this.pharmAppointments = pharmAppointments;
     }
 
