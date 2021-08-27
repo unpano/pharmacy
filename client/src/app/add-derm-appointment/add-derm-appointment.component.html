@@ -13,11 +13,13 @@
           <tr>
           <td><mat-form-field class="example-full-width">
 
+
+
             <mat-form-field appearance="fill">
               <mat-label>Pick date</mat-label>
-              <input matInput [matDatepicker]="picker3" [value]="date">
-              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-              <mat-datepicker #picker3></mat-datepicker>
+              <input matInput [matDatepicker]="picker3" (dateChange)="pickDate()" [(ngModel)]="date" name = "date">
+              <mat-datepicker-toggle matSuffix [for]="picker3" ></mat-datepicker-toggle>
+              <mat-datepicker #picker3 ></mat-datepicker>
             </mat-form-field>
 
             <div class="form-group">

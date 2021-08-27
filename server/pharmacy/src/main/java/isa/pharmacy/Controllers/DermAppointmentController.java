@@ -35,8 +35,8 @@ public class DermAppointmentController {
 
     //dodavanje slobodnih termina
     @PostMapping("/add_appointment/")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-    public ResponseEntity<?> addNewAppointment(DermAppointment app) {
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> addNewAppointment(@RequestBody DermAppointment app) {
         return new ResponseEntity<>(dermAppointmentService.addNewAppointment(app), HttpStatus.OK);
     }
 

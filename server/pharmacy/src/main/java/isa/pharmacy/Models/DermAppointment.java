@@ -19,17 +19,17 @@ public class DermAppointment {
     private Integer duration;
     private Integer price;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne( fetch = FetchType.EAGER)
     //@NotFound(action = NotFoundAction.IGNORE)
     private Dermatologist dermatologist;
 
 
     //Pregled pripada tacno jednoj apoteci
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     public DermAppointment(){

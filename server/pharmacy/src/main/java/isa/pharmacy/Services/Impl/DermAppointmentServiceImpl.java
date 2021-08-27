@@ -1,6 +1,8 @@
 package isa.pharmacy.Services.Impl;
 
 import isa.pharmacy.Models.DermAppointment;
+import isa.pharmacy.Models.Dermatologist;
+import isa.pharmacy.Models.User;
 import isa.pharmacy.Repositories.DermAppointmentRepository;
 import isa.pharmacy.Services.DermAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,53 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     @Override
     public DermAppointment addNewAppointment(DermAppointment dermAppointment) {
 
-        return dermAppointmentRepository.save(dermAppointment);
+        //proveravamo da li dermatologu tada radno vreme
+        Dermatologist derm = dermAppointment.getDermatologist();
+        Date dateTime = dermAppointment.getDate();
+        boolean i = false;
+
+        //dermAppointmentRepository.findAllByDermatologistId(derm.getId());
+        Set<DermAppointment> lista_svih_zakazanih_pregleda = derm.getDermAppointments();
+
+        //proveravamo da li dermatolog vec ima zakazan termin
+
+        for (DermAppointment pregled : lista_svih_zakazanih_pregleda)
+        {
+            System.out.println(pregled.getDermatologist());
+
+            long ONE_MINUTE_IN_MILLIS=60000; //millisecs
+            long t= pregled.getDate().getTime();    //pregled u vremenu
+            long t2= dermAppointment.getDate().getTime();    //pregled u vremenu
+
+            Date kraj_nekog=new Date(t + (pregled.getDuration() * ONE_MINUTE_IN_MILLIS));
+            Date kraj_ovog=new Date(t2 + (dermAppointment.getDuration() * ONE_MINUTE_IN_MILLIS));
+
+            //ako je vreme novog pregleda izmedju pocetka i kraja nekog vec postojeceg, onda ga necemo cuvati
+            if ( dermAppointment.getDate().after( pregled.getDate() )  || dermAppointment.getDate().before( kraj_nekog) )
+            {
+                i = true;
+
+            }
+            if ( dermAppointment.getDate().after( pregled.getDate() )  && dermAppointment.getDate().before( kraj_ovog) )
+            {
+                i = true;
+
+            }
+            if(dermAppointment.getDate() ==pregled.getDate())
+            {
+                i = true;
+            }
+
+
+        }
+        System.out.println(i);
+        if(i == true)
+        {
+            return null;
+
+        }
+        else
+            return dermAppointmentRepository.save(dermAppointment);
     }
 
 

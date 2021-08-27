@@ -27,19 +27,16 @@ export class AddDermAppointmentComponent implements OnInit {
   sortedData: any
   searchText
   endpoint = Endpoint;
-  pharmacy : Pharmacy
 
   term : DermAppointment;
 
 
-  dermatologist : User
-
   constructor(public dialog: MatDialog,private http: HttpClient) { 
 
 
-    this.pharmacy = new Pharmacy();
-    this.dermatologist = new User();
     this.term = new DermAppointment();
+    this.term.duration = 100;
+    this.term.price = 1000;
     
    
   }
@@ -73,16 +70,13 @@ export class AddDermAppointmentComponent implements OnInit {
 
   onSelectedPharmacy(ph: Pharmacy)
   {
-      this.pharmacy = ph;
       this.term.pharmacy = ph;
-      alert(this.term.pharmacy.name);
   }
 
   onSelectedDermatologist(derm: User)
   {
-      this.dermatologist = derm;
       this.term.dermatologist = derm;
-      alert(this.term.dermatologist.firstName);
+
   }
 
 
@@ -90,6 +84,7 @@ export class AddDermAppointmentComponent implements OnInit {
 
 
     this.term.date = this.date;
+    alert(this.term.date)
   }
 
 
@@ -103,16 +98,19 @@ export class AddDermAppointmentComponent implements OnInit {
 
   
       this.http
-        .post(this.endpoint.ADD_NEW_TERM,options)
-        .pipe().subscribe(() => 
+        .post(this.endpoint.ADD_NEW_TERM, this.term, options)
+        .pipe().subscribe(returnTerm => 
         {
     
           this.term.date = this.date;
-          this.term.dermatologist = this.dermatologist;
           this.term.duration = 100;
           this.term.price = 1000;
-          this.term.pharmacy = this.pharmacy;
           this.term.user = null;
+
+          if (returnTerm == null)
+            alert("Dermatologist already has an appointment. Try with another date!")
+          else
+            alert("You created new free dermatology appointment!")
         })
     }
 
