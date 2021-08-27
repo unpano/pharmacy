@@ -73,9 +73,14 @@ public class TermController {
                                      @PathVariable String date, @PathVariable String time) throws ParseException {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
         Date dateValue = formatter.parse(date+' '+time);
+        Optional<User> optUser = userService.findById(userId);
 
+        if(optUser.get().getPenalties() <= 3){
+            return new ResponseEntity<>(this.termService.add(dateValue,userId,pharmacistId), HttpStatus.OK) ;
 
-        return new ResponseEntity<>(this.termService.add(dateValue,userId,pharmacistId), HttpStatus.OK) ;
+        }
+
+        return new ResponseEntity<>(null,HttpStatus.OK);
 
     }
 

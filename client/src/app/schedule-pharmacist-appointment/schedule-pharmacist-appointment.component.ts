@@ -72,6 +72,9 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
 
   schedule(pharmacist: User){
     //kreiranje novog term-a
+
+    //Samoako je broj penala 
+    if(Global.loggedUser.penalties < 3){
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
@@ -93,5 +96,6 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
           .subscribe(res => this.router.navigate(["loggedUserHomePage"]))
         }
       })
-  }
+  }else
+  alert("Number of panelties is 3. You cannot finish this action.")}
 }

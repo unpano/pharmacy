@@ -40,26 +40,29 @@ export class DermAppointmentListComponent implements OnInit {
   }
 
   scheduleAppointment(app: DermAppointment){
-    const headers = { 
-      'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
-    let options = { headers: headers };
-
-    let email: Email = new Email()
-    email.recipient = Global.loggedUser.email
-    email.subject = "Confirmation info of scheduled dermatologist appointment"
-    email.message = 'You have scheduled appointment on ' + app.date.toString() + '.'
-
-    this.http
-    .put(this.endpoint.USER_ADD_DERM_APPOINTMENT, app.id,options)
-    .pipe().subscribe(() => 
-    {
-      if(confirm("Successfully scheduled appointment. Information were sent to your email address.")) {
+    if(Global.loggedUser.penalties < 3){
+      const headers = { 
+        'content-type': 'application/json',
+        'Authorization': 'Bearer ' + Global.token.access_token}  
+      let options = { headers: headers };
+  
+      let email: Email = new Email()
+      email.recipient = Global.loggedUser.email
+      email.subject = "Confirmation info of scheduled dermatologist appointment"
+      email.message = 'You have scheduled appointment on ' + app.date.toString() + '.'
+  
       this.http
-        .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe().subscribe(res => this.router.navigate(["futureDermAppointments"]))
+      .put(this.endpoint.USER_ADD_DERM_APPOINTMENT, app.id,options)
+      .pipe().subscribe(() => 
+      {
+        if(confirm("Successfully scheduled appointment. Information were sent to your email address.")) {
+        this.http
+          .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe().subscribe(res => this.router.navigate(["futureDermAppointments"]))
+        }
       }
-    }
-    )
+      )
+    }else
+    alert("Number of panelties is 3. You cannot finish this action.")
   }
 
   sortData(sort: Sort) {

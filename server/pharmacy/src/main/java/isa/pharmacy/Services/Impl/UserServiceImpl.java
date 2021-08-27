@@ -7,6 +7,8 @@ import isa.pharmacy.Services.AuthorityService;
 import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -107,5 +109,20 @@ public class UserServiceImpl implements UserService {
         }
 
         return Optional.empty();
+    }
+
+    //metoda koje se okine svakog prvog u mesecu i obrise sve penale svih user-a
+    //testirano za svaki minut po sablonu cron="0 0/1 * * * ?" i radi
+    //Penali se inace dobijaju tako sto se uvecava polje penalties u klasi User
+    //kada ne dodje na termin i sl.
+    @Scheduled(cron = "0 0 0 1 * ?")
+    public void erasePenalties(){
+        //System.out.println("Opalio");
+        List<User> users = userRepository.findAll();
+
+        for(int i=0; i< users.size(); i++){
+            users.get(i).setPenalties(0);
+            userRepository.save(users.get(i));
+        }
     }
 }

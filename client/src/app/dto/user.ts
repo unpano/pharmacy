@@ -20,4 +20,5 @@ export class User{
     userCategory: Category
     loyaltyProgram: LoyaltyProgram
     pharmacy: Pharmacy
+    penalties: Number
 }

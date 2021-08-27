@@ -151,19 +151,22 @@ public class UserController {
     public ResponseEntity<?> addAllergy(Principal user, @RequestBody Long appId) {
         //nadjem user-a koji hoce da zakaze pregled
         Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
+        Optional<User> user1 = Optional.of(new User());
+        if(optUser.get().getPenalties() <= 3){
+            //nadjem pregled koji hoce da zakaze
+            Optional<DermAppointment> dermApp = dermAppointmentService.findById(appId);
 
-        //nadjem pregled koji hoce da zakaze
-        Optional<DermAppointment> dermApp = dermAppointmentService.findById(appId);
+            //nadjem preglede koje user ima i dodam im ovaj koji hoce da zakaze i update-ujem ga
+            Set<DermAppointment> dermAppointments = optUser.get().getDermAppointments();
+            dermAppointments.add(dermApp.get());
+            optUser.get().setDermAppointments(dermAppointments);
+            user1 = userService.update(optUser.get());
 
-        //nadjem preglede koje user ima i dodam im ovaj koji hoce da zakaze i update-ujem ga
-        Set<DermAppointment> dermAppointments = optUser.get().getDermAppointments();
-        dermAppointments.add(dermApp.get());
-        optUser.get().setDermAppointments(dermAppointments);
-        Optional<User> user1 = userService.update(optUser.get());
+            //isto uradim i za pregled, setujem usera na pregled
+            dermApp.get().setUser(optUser.get());
+            dermAppointmentService.update(dermApp.get());
+        }
 
-        //isto uradim i za pregled, setujem usera na pregled
-        dermApp.get().setUser(optUser.get());
-        dermAppointmentService.update(dermApp.get());
 
         if (optUser.isPresent()) {
             return new ResponseEntity<User>(user1.get(), HttpStatus.NO_CONTENT);

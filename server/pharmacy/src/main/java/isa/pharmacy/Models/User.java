@@ -13,6 +13,17 @@ import java.util.*;
 @Entity
 public class User extends GeneralUser  {
 
+    //broj penala
+    private Integer penalties;
+
+    public Integer getPenalties() {
+        return penalties;
+    }
+
+    public void setPenalties(Integer penalties) {
+        this.penalties = penalties;
+    }
+
     //Osvojeni poeni
     private Integer points;
 
