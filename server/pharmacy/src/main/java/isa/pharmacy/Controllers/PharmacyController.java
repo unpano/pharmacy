@@ -143,6 +143,10 @@ public class PharmacyController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+
+
+
+
     @GetMapping("/pharmaciesToRate/rated")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findRatedPharmacies(Principal user){

@@ -79,6 +79,8 @@ import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-li
 import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { EditMedComponent } from './edit-med/edit-med.component';
 
 
 
@@ -125,7 +127,9 @@ import { CommonModule } from '@angular/common';
     DermatologistListComponent,
     PharmacistListComponent,
     PharmacyRateListComponent,
-    MedicationRateListComponent
+    MedicationRateListComponent,
+    AdminProfileComponent,
+    EditMedComponent
 
   ],
   imports: [

@@ -26,4 +26,55 @@ public class MedServiceImpl implements MedService {
     public Optional<Med> findById(Long id) {
         return medRepository.findById(id);
     }
+
+
+
+
+
+
+    public Optional<Med> update(Med med) {
+        Optional<Med> medOpt = medRepository.findById(med.getId());
+
+
+        if (medOpt.isPresent()) {
+            Med newMed = medOpt.get();
+
+            if (med.getName() != null) {
+                newMed.setName(med.getName());
+            }
+
+            if (med.getForm() != null) {
+                newMed.setForm(med.getForm());
+            }
+
+            if (med.getProducer() != null) {
+                newMed.setProducer(med.getProducer());
+            }
+
+            if (med.getAdditionalNotes() != null) {
+                newMed.setAdditionalNotes(med.getAdditionalNotes());
+            }
+
+            if (med.getType()!= null) {
+                newMed.setType(med.getType());
+            }
+
+            if (med.getIssuanceRegime()!= null) {
+                newMed.setIssuanceRegime(med.getIssuanceRegime());
+            }
+
+            if (med.getPrice() != 0) {
+                newMed.setPrice(med.getPrice());
+            }
+
+
+
+
+            medRepository.save(newMed);
+
+            return Optional.of(newMed);
+        }
+
+        return Optional.empty();
+    }
 }

@@ -1,0 +1,108 @@
+<app-admin-header></app-admin-header>
+<button *ngIf="onEditButton != true " (click)="onEditProfile()">Edit profile</button>
+<button *ngIf="onEditButton == true " (click)="onSubmit()">Submit changes</button> 
+
+
+
+<form role="form" novalidate class="form-inline" name="personForm">
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">First Name</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela" >{{user.firstName}}</label>								
+        <input *ngIf="onEditButton == true" [(ngModel)]="newFirstName"  name="newF" [value]="user.firstName">
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Last Name</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela" >{{user.lastName}}</label>								
+        <input *ngIf="onEditButton == true" [(ngModel)]="newLastName"  name="newF" [value]="user.lastName">
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Username</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.username}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newUsername"  name="newF" [value]="user.username">								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Password</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.password}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newPassword"  name="newF" [value]="user.password" >							
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Email Address</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.email}}</label>    
+       
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Phone number</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.phoneNumber}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newPhoneNumber"  name="newF" [value]="user.phoneNumber">								
+    				
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Address</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.address}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newAddress"  name="newF" [value]="user.address">								
+    								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">City</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.city}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newCity"  name="newF" [value]="user.city">								
+    							
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Country</label>
+        <label *ngIf="onEditButton == false" for="find-form-first-name" id="prvaKolonaLabela">{{user.country}}</label>    
+        <input *ngIf="onEditButton == true" [(ngModel)]="newCountry"  name="newF" [value]="user.country">								
+    
+      								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Reseted password</label>
+        <label for="find-form-first-name" id="prvaKolonaLabela" >{{user.lastPasswordResetDate}}</label>	
+        
+       							
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Category</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.userCategory}}</label>    
+       
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Points</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.points}}</label>    
+       
+       								
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Loyalty program</label>
+        <label  for="find-form-first-name" id="prvaKolonaLabela">{{user.loyaltyProgram.name}}</label>    
+       
+       								
+    </div>
+
+    
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              
+              <th>Allergies</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let med of meds">
+              
+              <td>{{med.name}}</td>    
+              
+            </tr>
+            </tbody>
+          </table>
+    </div>
+    <p></p>
+
+    
+    
+   
+</form>

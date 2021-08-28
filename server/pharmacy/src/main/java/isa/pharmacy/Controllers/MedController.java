@@ -31,6 +31,18 @@ public class MedController {
         return new ResponseEntity<>(this.medService.findAll(), HttpStatus.OK) ;
     }
 
+    @PutMapping("/update")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> update(@RequestBody Med med) {
+        Optional<Med> optMed = medService.update(med);
+
+        if (optMed.isPresent()) {
+            return new ResponseEntity<Med>(optMed.get(), HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping("/pharmacies/{id}")
     public ResponseEntity<?> findPharmaciessByMedId(@PathVariable Long id){
         System.out.println("-------------------");

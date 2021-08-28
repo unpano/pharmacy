@@ -1,10 +1,7 @@
 package isa.pharmacy.Controllers;
 
 import isa.pharmacy.Models.*;
-import isa.pharmacy.Services.DermAppointmentService;
-import isa.pharmacy.Services.RateService;
-import isa.pharmacy.Services.TermService;
-import isa.pharmacy.Services.UserService;
+import isa.pharmacy.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -31,6 +28,9 @@ public class UserController {
     private TermService termService;
     @Autowired
     private RateService rateService;
+
+    @Autowired
+    private PharmacyService pharmacyService;
 
     @GetMapping
     public ResponseEntity<?> findAll() {
@@ -260,31 +260,49 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/pharmacists")
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-    public ResponseEntity<?> findPharmacists(Principal user){
-        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Term> terms = termService.findAllByUserId(user1.get().getId());
-        List<Pharmacist> pharmacists = new ArrayList<>();
+    @GetMapping("/allPharmacists/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> findPharmacistsByPharmacyId(@PathVariable Long id) {
 
-        //proci i vratiti farmaceute
-        for (int i=0; i<terms.size(); i++){
-            //da ne ponavljam iste farmaceute
-            if(!pharmacists.contains(terms.get(i).getPharmacist()))
-                pharmacists.add(terms.get(i).getPharmacist());
+        Optional<Pharmacy> pharm = this.pharmacyService.findById(id);
+        List<Pharmacist> pharmacists = pharm.get().getPharmacists();
+
+        if (pharm.isPresent()){
+            return new ResponseEntity<>(pharmacists, HttpStatus.OK);
         }
 
-        //izbaci iz liste one koji su vec ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACIST);
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
 
-        for(int i=0; i<pharmacists.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(pharmacists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    pharmacists.remove(pharmacists.get(i));
-                }
+    }
+
+
+
+
+        @GetMapping("/pharmacists")
+        @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
+        public ResponseEntity<?> findPharmacists(Principal user){
+            Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+            List<Term> terms = termService.findAllByUserId(user1.get().getId());
+            List<Pharmacist> pharmacists = new ArrayList<>();
+
+            //proci i vratiti farmaceute
+            for (int i=0; i<terms.size(); i++){
+                //da ne ponavljam iste farmaceute
+                if(!pharmacists.contains(terms.get(i).getPharmacist()))
+                    pharmacists.add(terms.get(i).getPharmacist());
             }
 
-        }
+            //izbaci iz liste one koji su vec ocenjeni
+            List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACIST);
+
+            for(int i=0; i<pharmacists.size(); i++){
+                for(int j=0; j<rates.size(); j++){
+                    if(pharmacists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
+                        pharmacists.remove(pharmacists.get(i));
+                    }
+                }
+
+            }
 
 
         if (user1.isPresent()){

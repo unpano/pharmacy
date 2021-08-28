@@ -31,21 +31,14 @@ export class AdminPharmacyPharmacistsComponent implements OnInit {
     let options = { headers: headers };
 
     this.http
-      .get(this.endpoint.PHARMACIST_LIST,options)
+      .get(this.endpoint.ALL_PHARMACIST_LIST + Global.clickedPharmacy.id, options)
       .pipe(
         map(returnedPharmacists => {
           this.pharmacists = returnedPharmacists
         })
-      ).subscribe(() => {
-        //nadjem vec ocenjene farmaceute
-          this.http
-        .get(this.endpoint.PHARMACIST_LIST + '/rated' ,options)
-        .pipe(
-          map(returnedDermatologists=> {
-            this.ratedPharmacists = returnedDermatologists
-          })
-        ).subscribe()
-})
+      ).subscribe(() => {})
   }
+
+
 
 }

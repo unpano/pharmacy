@@ -1,0 +1,39 @@
+form {
+    position : relative;
+    width  : 450px;
+    margin : 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+    background : lightgrey;
+    color: black;
+    margin-top: 20px;
+  }
+  button {
+    padding      : 5px;  
+    cursor       : pointer;
+    margin: 60px 0px 0px 45px;
+    color: white;
+    background: lightskyblue;
+    border-radius: 1rem;
+    border: none;
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+  }
+
+  label{
+      font-weight: bold;
+      margin: 0px 10px 10px 0px;
+      width: 200px;
+      
+  }
+  table{
+    margin-left: 40%;
+  }
+
+  thead{
+    margin-bottom: 15px;
+  }
+  p{
+    width: 100%;
+  }
