@@ -8,8 +8,6 @@ import { Credentials } from '../dto/credentials';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +15,6 @@ import { Global } from '../util/global';
 })
 export class LoginComponent implements OnInit {
 
-  
   username: string;
   password: string;
   credentials: Credentials = new Credentials();
@@ -44,55 +41,35 @@ export class LoginComponent implements OnInit {
     this.http.post<any>(this.endpoint.LOGIN, body, options).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.error instanceof Error) {
-          // A client-side or network error occurred. Handle it accordingly.
           alert("Bad request, please try again later.");
         } else {
-          // The backend returned an unsuccessful response code.
-          // The response body may contain clues as to what went wrong,
-          alert("Username is not unique or you didn`t fill all of the fields. Please try again.");
+          alert("Invalid login. Please try again.");
         }
-
-        // If you want to return a new response:
-        //return of(new HttpResponse({body: [{name: "Default value..."}]}));
-
-        // If you want to return the error on the upper level:
-        //return throwError(error);
-
-        // or just return nothing:
         return EMPTY;
       }),
-      map(returnedToken => {
-          
+      map(returnedToken => { 
           Global.token.access_token = returnedToken["access_token"]
           Global.token.expires_in = returnedToken["expires_in"]
+      })).subscribe(res =>{
+              const headers = { 
+                'content-type': 'application/json',
+                'Authorization': 'Bearer ' + Global.token.access_token}  
+              let options = { headers: headers };
 
-          
-          
+              this.http
+              .get(this.endpoint.USER_PROFILE,options)
+                .pipe(
+                  map(returnedUser => {
+                    let user: any
+                    user = returnedUser  
+                    Global.loggedUser = user
+                    console.log(Global.loggedUser)
 
-})
-    ).subscribe(res =>{
-      const headers = { 
-        'content-type': 'application/json',
-        'Authorization': 'Bearer ' + Global.token.access_token}  
-      let options = { headers: headers };
-      this.http
-      .get(this.endpoint.USER_PROFILE,options)
-      .pipe(
-        map(returnedUser => {
-          let user: any
-          user = returnedUser  
-          Global.loggedUser = user
-          console.log(Global.loggedUser)
-
-          if(returnedUser["authorities"][0]["authority"] == 'ROLE_USER')
-            this.router.navigate(["/loggedUserHomePage"]);
-        })
-      ).subscribe()
-      })
-  
+                    if(returnedUser["authorities"][0]["authority"] == 'ROLE_USER')
+                      this.router.navigate(["/loggedUserHomePage"]);
+                  })).subscribe()
+              })
   }
-
-
 }
 
 

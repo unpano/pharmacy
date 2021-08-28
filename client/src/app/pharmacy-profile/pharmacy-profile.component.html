@@ -1,22 +1,22 @@
-<form role="form" novalidate class="form-inline" name="personForm">
+<form role="form" novalidate class="form-inline">
     <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Pharmacy</label>
-        <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.name}}</label>								
+        <label>Pharmacy</label>
+        <label>{{pharmacy.name}}</label>								
     </div>
     <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Address</label>
-        <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.address}}</label>								
+        <label>Address</label>
+        <label>{{pharmacy.address}}</label>								
     </div>
     <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">City</label>
-        <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.city}}</label>								
+        <label>City</label>
+        <label>{{pharmacy.city}}</label>								
     </div>
     <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Rate</label>
-        <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.avgRank}}</label>								
-    </div>
-   
+        <label>Rate</label>
+        <label>{{pharmacy.avgRank}}</label>								
+    </div> 
 </form>
+
 <button *ngIf="userLogged == true" (click)="onSchedule()">Schedule dermatologist</button>   
 <button type="submit" mat-dialog-close mat-button>Close</button>
 

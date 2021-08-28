@@ -1,7 +1,9 @@
 package isa.pharmacy.Services.Impl;
 
 import isa.pharmacy.Models.DermAppointment;
+import isa.pharmacy.Models.User;
 import isa.pharmacy.Repositories.DermAppointmentRepository;
+import isa.pharmacy.Repositories.UserRepository;
 import isa.pharmacy.Services.DermAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,9 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
 
     @Autowired
     private DermAppointmentRepository dermAppointmentRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<DermAppointment> findAll() {
@@ -85,6 +90,16 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     @Override
     public List<DermAppointment> findAllByUserId(Long id) {
         return dermAppointmentRepository.findAllByUserId(id);
+
+    }
+
+    @Override
+    public DermAppointment addDermAppointment(User user, Long appId) {
+        //nadjem pregled koji hoce da zakaze
+        Optional<DermAppointment> dermApp = dermAppointmentRepository.findById(appId);
+
+        dermApp.get().setUser(user);
+        return dermAppointmentRepository.save(dermApp.get());
 
     }
 

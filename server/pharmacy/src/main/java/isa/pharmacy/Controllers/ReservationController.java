@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,11 +27,15 @@ public class ReservationController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private RateService rateService;
+    //User rezervise lek
+    @PutMapping("/reserve/{pharmacyId}/{medId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> reserveMed(Principal user, @RequestBody Date date, @PathVariable Long pharmacyId, @PathVariable Long medId) {
+        //nadjem user-a
+        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
 
-    @Autowired
-    private PrescriptionService prescriptionService;
+        return new ResponseEntity<Reservation>(reservationService.reserve(optUser.get(),date,medId,pharmacyId), HttpStatus.OK);
+    }
 
     //User otkazuje rezervaciju leka
     @PutMapping("/free/{resId}")
@@ -52,106 +57,21 @@ public class ReservationController {
 
     }
 
-    @GetMapping("/medications")
-    public ResponseEntity<?> findMedsForRate(Principal user){
-
+    //treba vratiti samo one koji nisu pokupljeni
+    @GetMapping("/userReservations")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findUserReservations(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Reservation> reservations = this.reservationService.findByUserId(user1.get().getId());
-        List<Prescription> prescriptions = this.prescriptionService.findAllByUserId(user1.get().getId());
 
-        List<Med> meds = new ArrayList<>();
-
-        for (int i=0; i<prescriptions.size(); i++){
-            //da ne ponavljam iste lekove
-            for(int j=0; j<prescriptions.get(i).getMeds().size(); j++){
-
-                if(!meds.contains(prescriptions.get(i).getMeds().get(j))){
-                    meds.add(prescriptions.get(i).getMeds().get(j));
-                }
-            }
-        }
-
-
-
-        for (int i=0; i<reservations.size(); i++){
-            //da ne ponavljam iste lekove
-            if(!meds.contains(reservations.get(i).getMed()))
-                meds.add(reservations.get(i).getMed());
-        }
-
-        //izbaci iz liste one koji su vec ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.MED);
-
-        for(int i=0; i<meds.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(meds.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    meds.remove(meds.get(i));
-                }
-            }
-
-        }
-
-
-
-        //System.out.println(meds.size());
+        List<Reservation> reservations = reservationService.findAllByUserId(user1.get().getId());
 
         if (user1.isPresent()){
-            return new ResponseEntity<>(meds, HttpStatus.OK);
+            return new ResponseEntity<>(reservations, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
-    @GetMapping("/medications/rated")
-    public ResponseEntity<?> findRatedMeds(Principal user){
 
-        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Reservation> reservations = this.reservationService.findByUserId(user1.get().getId());
-        List<Prescription> prescriptions = this.prescriptionService.findAllByUserId(user1.get().getId());
-
-        List<Med> meds = new ArrayList<>();
-
-        for (int i=0; i<prescriptions.size(); i++){
-            //da ne ponavljam iste lekove
-            for(int j=0; j<prescriptions.get(i).getMeds().size(); j++){
-
-                if(!meds.contains(prescriptions.get(i).getMeds().get(j))){
-                    meds.add(prescriptions.get(i).getMeds().get(j));
-                }
-            }
-        }
-
-
-
-        for (int i=0; i<reservations.size(); i++){
-            //da ne ponavljam iste lekove
-            if(!meds.contains(reservations.get(i).getMed()))
-                meds.add(reservations.get(i).getMed());
-        }
-
-        //izbaci iz liste one koji su vec ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.MED);
-        List<Med> ratedMeds = new ArrayList<>();
-
-        for(int i=0; i<meds.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(meds.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    meds.get(i).setStars(rates.get(j).getRate());
-                    ratedMeds.add(meds.get(i));
-                }
-            }
-
-        }
-
-
-
-        //System.out.println(meds.size());
-
-        if (user1.isPresent()){
-            return new ResponseEntity<>(ratedMeds, HttpStatus.OK);
-        }
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-    }
 
 
 }

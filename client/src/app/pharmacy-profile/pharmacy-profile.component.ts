@@ -27,7 +27,7 @@ export class PharmacyProfileComponent implements OnInit {
     let dialogRef = this.dialog.open(DermAppointmentListComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
-})
+    })
     dialogRef.afterClosed().subscribe();
     
   }

@@ -28,28 +28,28 @@ export class MedListComponent implements OnInit {
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+
     if(Global.loggedUser.id != undefined)
       this.loggedUser = true
    
     if(Global.allMeds == true){
       this.http
-      .get(this.endpoint.MED_LIST)
-      .pipe(
-        map(returnedMeds=> {
-          this.meds = returnedMeds
-          this.sortedData = this.meds.slice()
-        })
-      ).subscribe(res=> Global.allMeds = false)
+        .get(this.endpoint.MED_LIST)
+          .pipe(
+            map(returnedMeds=> {
+              this.meds = returnedMeds
+              this.sortedData = this.meds.slice()
+            })
+          ).subscribe(res=> Global.allMeds = false)
     }else{
       this.http
-      .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)
-      .pipe(
-        map(returnedMeds=> {
-          this.meds = returnedMeds
-          this.sortedData = this.meds.slice()
-          //console.log(returnedMeds)
-        })
-      ).subscribe()
+        .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)
+          .pipe(
+            map(returnedMeds=> {
+              this.meds = returnedMeds
+              this.sortedData = this.meds.slice()
+            })
+          ).subscribe()
     }
     
   }
@@ -70,11 +70,8 @@ export class MedListComponent implements OnInit {
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
   })
-    dialogRef.afterClosed().subscribe();
-
-
-    
-  }
+    dialogRef.afterClosed().subscribe(); 
+}
 
   sortData(sort: Sort) {
     const data = this.meds.slice();
@@ -95,8 +92,6 @@ export class MedListComponent implements OnInit {
       }
     });
   }
- 
-
 }
 
 function compare(a: number | string, b: number | string, isAsc: boolean) {

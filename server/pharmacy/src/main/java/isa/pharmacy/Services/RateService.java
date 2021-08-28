@@ -1,6 +1,7 @@
 package isa.pharmacy.Services;
 
 import isa.pharmacy.Models.Rate;
+import isa.pharmacy.Models.User;
 import isa.pharmacy.Models.WhomRates;
 
 import java.util.List;
@@ -20,4 +21,10 @@ public interface RateService {
     Optional<Rate> findByUserIdAndIdOfRatedObjectAndWhomRates(Long id, Long objectId, WhomRates whom);
 
     List<Rate> findAllByIdOfRatedObjectAndWhomRates(Long objId, WhomRates whomRates);
+
+    Object rate(User user, Long objectId, Float rate, WhomRates whom);
+
+
+
+    Rate changeRate(User user, Long objectId, Float rate, String whom);
 }

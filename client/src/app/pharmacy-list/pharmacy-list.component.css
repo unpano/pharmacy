@@ -15,7 +15,6 @@ mat-card{
 }
 
 input,select{
-    
     border-color: lightskyblue;
     border-width: 2px;
     border-radius: 10px;
@@ -25,10 +24,7 @@ input,select{
 
 table {
     width: 100%;
-  }
-
-
-  
+}
 
 .mat-sort-header-container {
   align-items: center;

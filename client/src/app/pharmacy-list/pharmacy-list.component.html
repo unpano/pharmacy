@@ -1,8 +1,6 @@
-<mat-card class="example-card">
-    
+<mat-card> 
     <mat-card-content>
-      <form role="form" novalidate class="form-inline" name="vehicleForm">
-          
+      <form novalidate class="form-inline">
           <div class="container">
               <div class="row">
                 <div class="search-hero">
@@ -10,8 +8,7 @@
                 </div>
                 <table matSort (matSortChange)="sortData($event)">
                   <thead>
-                  <tr>
-                    
+                  <tr> 
                     <th mat-sort-header="name">Pharmacy name</th>
                     <th mat-sort-header="address">Address</th>
                     <th mat-sort-header="city">City</th>
@@ -21,12 +18,10 @@
                   </thead>
                   <tbody>
                   <tr *ngFor="let pharmacy of sortedData | filter:searchText">
-                    
                     <td>{{pharmacy.name}}</td>
                     <td>{{pharmacy.address}}</td>
                     <td>{{pharmacy.city}}</td>
-                    <td>{{pharmacy.avgRank}}</td>
-                    
+                    <td>{{pharmacy.avgRank}}</td>   
                     
                     <button id="eyeBtn" (click)="viewMeds(pharmacy)">View meds</button>
                     <button id="eyeBtn" (click)="clickedPharmacy(pharmacy)">Info</button>
@@ -35,10 +30,6 @@
                 </table>
               </div>
             </div>
-      </form>
-      
-      
+      </form> 
     </mat-card-content>
-
-    
   </mat-card>

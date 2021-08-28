@@ -25,12 +25,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private DermAppointmentService dermAppointmentService;
-    @Autowired
-    private TermService termService;
-    @Autowired
-    private RateService rateService;
 
     @GetMapping
     public ResponseEntity<?> findAll() {
@@ -56,27 +50,6 @@ public class UserController {
 
         if (user.isPresent()){
             return new ResponseEntity<>(allergies, HttpStatus.OK);
-        }
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-    }
-
-    //treba vratiti samo one koji nisu pokupljeni
-    @GetMapping("/reservations")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> findUserReservations(Principal user){
-        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Reservation> reservations = user1.get().getReservations();
-
-        //prodji kroz listu i uzmi samo one rezervacije koje nisu preuzete
-        for(int i=0; i<reservations.size(); i++){
-            if(reservations.get(i).getPickedUp()){
-                reservations.remove(reservations.get(i));
-            }
-        }
-
-        if (user1.isPresent()){
-            return new ResponseEntity<>(reservations, HttpStatus.OK);
         }
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
@@ -146,40 +119,9 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/addDermAppointment")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addAllergy(Principal user, @RequestBody Long appId) {
-        //nadjem user-a koji hoce da zakaze pregled
-        Optional<User> optUser = Optional.ofNullable(userService.findByUsername(user.getName()));
-        Optional<User> user1 = Optional.of(new User());
-        if(optUser.get().getPenalties() <= 3){
-            //nadjem pregled koji hoce da zakaze
-            Optional<DermAppointment> dermApp = dermAppointmentService.findById(appId);
-
-            //nadjem preglede koje user ima i dodam im ovaj koji hoce da zakaze i update-ujem ga
-            Set<DermAppointment> dermAppointments = optUser.get().getDermAppointments();
-            dermAppointments.add(dermApp.get());
-            optUser.get().setDermAppointments(dermAppointments);
-            user1 = userService.update(optUser.get());
-
-            //isto uradim i za pregled, setujem usera na pregled
-            dermApp.get().setUser(optUser.get());
-            dermAppointmentService.update(dermApp.get());
-        }
-
-
-        if (optUser.isPresent()) {
-            return new ResponseEntity<User>(user1.get(), HttpStatus.NO_CONTENT);
-        }
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-    }
-
     @GetMapping("/profile")
     @PreAuthorize("hasRole('USER')")
     public User user(Principal user) {
-        //System.out.println(user.getName()); //VRACA USERNAME
-        //System.out.println("Dosao sam bre dovde");
         return this.userService.findByUsername(user.getName());
     }
 
@@ -187,27 +129,8 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findDermatologists(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<DermAppointment> appointments = dermAppointmentService.findAllByUserId(user1.get().getId());
-        List<Dermatologist> dermatologists = new ArrayList<>();
 
-        //proci i vratiti dermatologe
-        for (int i=0; i<appointments.size(); i++){
-            //da ne ponavljam dermatologe i ako user nije setovan znaci da se pregled nije ni desio
-            if(appointments.get(i).getUser() != null && !dermatologists.contains(appointments.get(i).getDermatologist()))
-                dermatologists.add(appointments.get(i).getDermatologist());
-        }
-
-        //izbaci iz liste one koji su vec ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.DERMATOLOGIST);
-
-        for(int i=0; i<dermatologists.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(dermatologists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    dermatologists.remove(dermatologists.get(i));
-                }
-            }
-
-        }
+        List<Dermatologist> dermatologists = userService.findDermatologists(user1.get().getId());
 
 
         if (user1.isPresent()){
@@ -221,30 +144,8 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findRatedDermatologists(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<DermAppointment> appointments = dermAppointmentService.findAllByUserId(user1.get().getId());
-        List<Dermatologist> dermatologists = new ArrayList<>();
 
-        //proci i vratiti dermatologe
-        for (int i=0; i<appointments.size(); i++){
-            //da ne ponavljam dermatologe i ako user nije setovan znaci da se pregled nije ni desio
-            if(appointments.get(i).getUser() != null && !dermatologists.contains(appointments.get(i).getDermatologist()))
-                dermatologists.add(appointments.get(i).getDermatologist());
-        }
-
-        //naci one koji su ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.DERMATOLOGIST);
-        List<Dermatologist> ratedDermatologists = new ArrayList<>();
-
-        for(int i=0; i<dermatologists.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(dermatologists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    dermatologists.get(i).setStars(rates.get(j).getRate());
-                    ratedDermatologists.add(dermatologists.get(i));
-
-                }
-            }
-
-        }
+        List<Dermatologist> ratedDermatologists = userService.findRatedDermatologists(user1.get().getId());
 
 
         if (user1.isPresent()){
@@ -258,27 +159,8 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findPharmacists(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Term> terms = termService.findAllByUserId(user1.get().getId());
-        List<Pharmacist> pharmacists = new ArrayList<>();
 
-        //proci i vratiti farmaceute
-        for (int i=0; i<terms.size(); i++){
-            //da ne ponavljam iste farmaceute
-            if(!pharmacists.contains(terms.get(i).getPharmacist()))
-                pharmacists.add(terms.get(i).getPharmacist());
-        }
-
-        //izbaci iz liste one koji su vec ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACIST);
-
-        for(int i=0; i<pharmacists.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(pharmacists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    pharmacists.remove(pharmacists.get(i));
-                }
-            }
-
-        }
+        List<Pharmacist> pharmacists = userService.findPharmacists(user1.get().getId());
 
 
         if (user1.isPresent()){
@@ -291,30 +173,8 @@ public class UserController {
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findRatedPharmacists(Principal user){
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
-        List<Term> terms = termService.findAllByUserId(user1.get().getId());
-        List<Pharmacist> pharmacists = new ArrayList<>();
 
-        //proci i vratiti farmaceute
-        for (int i=0; i<terms.size(); i++){
-            //da ne ponavljam iste farmaceute
-            if(!pharmacists.contains(terms.get(i).getPharmacist()))
-                pharmacists.add(terms.get(i).getPharmacist());
-        }
-
-        //naci one koji su ocenjeni
-        List<Rate> rates = rateService.findAllByUserIdAndWhomRates(user1.get().getId(),WhomRates.PHARMACIST);
-        List<Pharmacist> ratedPharmacists = new ArrayList<>();
-
-        for(int i=0; i<pharmacists.size(); i++){
-            for(int j=0; j<rates.size(); j++){
-                if(pharmacists.get(i).getId() == rates.get(j).getIdOfRatedObject()){
-                    pharmacists.get(i).setStars(rates.get(j).getRate());
-                    ratedPharmacists.add(pharmacists.get(i));
-                }
-            }
-
-        }
-
+        List<Pharmacist> ratedPharmacists = userService.findRatedPharmacists(user1.get().getId());
 
         if (user1.isPresent()){
             return new ResponseEntity<>(ratedPharmacists, HttpStatus.OK);

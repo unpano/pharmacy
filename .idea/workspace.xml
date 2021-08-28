@@ -24,12 +24,42 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/TermController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/TermController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/header-l/header-l.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/header-l/header-l.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/med-list/med-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/med-list/med-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-list/pharmacy-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-profile/pharmacy-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-profile/pharmacy-profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-profile/pharmacy-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-profile/pharmacy-profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/pick-date/pick-date.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pick-date/pick-date.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/DermAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/MedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/MedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyMedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/RateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/RateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/ReservationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/PharmacyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/PharmacyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermAppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/MedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/MedServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/PharmacyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/PharmacyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/RateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/RateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/ReservationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/MedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/MedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/PharmacyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/RateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/RateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/ReservationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,19 +132,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.PharmacyApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="E2E Tests (client)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/client/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -224,7 +241,9 @@
       <workItem from="1629883242551" duration="22845000" />
       <workItem from="1629966651730" duration="5008000" />
       <workItem from="1630053764622" duration="5732000" />
-      <workItem from="1630070314898" duration="3704000" />
+      <workItem from="1630070314898" duration="3913000" />
+      <workItem from="1630166323686" duration="12763000" />
+      <workItem from="1630179505237" duration="3072000" />
     </task>
     <servers />
   </component>
@@ -256,10 +275,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1629833184882" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1630072152309">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1630182425756">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1630072152309" />
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1630182425756" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629790760047">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -272,38 +291,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629494486509" />
-    <state width="1237" height="243" key="GridCell.Tab.0.bottom" timestamp="1630073182252">
+    <state width="1237" height="184" key="GridCell.Tab.0.bottom" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630073182252" />
-    <state width="1237" height="243" key="GridCell.Tab.0.center" timestamp="1630073182252">
+    <state width="1237" height="184" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.0.center" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1630073182252" />
-    <state width="1237" height="243" key="GridCell.Tab.0.left" timestamp="1630073182252">
+    <state width="1237" height="184" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.0.left" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1630073182252" />
-    <state width="1237" height="243" key="GridCell.Tab.0.right" timestamp="1630073182252">
+    <state width="1237" height="184" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.0.right" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1630073182252" />
-    <state width="1237" height="243" key="GridCell.Tab.1.bottom" timestamp="1630073182253">
+    <state width="1237" height="184" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.1.bottom" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630073182253" />
-    <state width="1237" height="243" key="GridCell.Tab.1.center" timestamp="1630073182253">
+    <state width="1237" height="184" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.1.center" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1630073182253" />
-    <state width="1237" height="243" key="GridCell.Tab.1.left" timestamp="1630073182253">
+    <state width="1237" height="184" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.1.left" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1630073182253" />
-    <state width="1237" height="243" key="GridCell.Tab.1.right" timestamp="1630073182253">
+    <state width="1237" height="184" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
+    <state width="1237" height="184" key="GridCell.Tab.1.right" timestamp="1630182597919">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="243" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1630073182253" />
+    <state width="1237" height="184" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1630182597919" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1629318390527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

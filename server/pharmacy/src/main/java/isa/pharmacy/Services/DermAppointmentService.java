@@ -1,6 +1,7 @@
 package isa.pharmacy.Services;
 
 import isa.pharmacy.Models.DermAppointment;
+import isa.pharmacy.Models.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,4 +21,6 @@ public interface DermAppointmentService {
 
 
     List<DermAppointment> findAllByUserId(Long id);
+
+    DermAppointment addDermAppointment(User user1, Long appId);
 }

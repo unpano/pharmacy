@@ -18,6 +18,7 @@ export class PickDateComponent implements OnInit {
 
   newDate: Date
   reservation: any
+  retRes: any
   endpoint = Endpoint;
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
@@ -25,6 +26,7 @@ export class PickDateComponent implements OnInit {
   }
 
   pickDate(){
+    //Prvim rezervaciju za lek
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
@@ -32,16 +34,20 @@ export class PickDateComponent implements OnInit {
 
     this.http
     .put(this.endpoint.RESERVE_MED + Global.clickedPharmacy.id + '/' + Global.medToReserve.id,JSON.stringify(this.newDate),options)
-    .pipe().subscribe(() => {
-              
+    .pipe().subscribe(returnedRes => {
+             
+        this.retRes = returnedRes
         let email: Email = new Email()
         email.recipient = Global.loggedUser.email
         email.subject = "Confirmation info of reserved med"
-        email.message = 'You have reserved med. Reservation id: ' + 'ovde fali id rez' + '.'
+        email.message = 'You have reserved med. Reservation id: ' + this.retRes.id + '.'
+
+        if(confirm("Successfully reserved med. Information were sent to your email address.")) {
         this.http
             .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe().subscribe()
-          
-        this.router.navigate(["loggedUserHomePage"]);
+            this.router.navigate(["loggedUserHomePage"]);
+          }
+        
     }
     )
   }

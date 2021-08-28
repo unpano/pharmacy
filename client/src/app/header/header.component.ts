@@ -8,8 +8,6 @@ import { Global } from '../util/global';
 })
 export class HeaderComponent implements OnInit {
 
-  userLogged: Boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {

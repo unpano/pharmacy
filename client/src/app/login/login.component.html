@@ -1,29 +1,30 @@
 <app-header></app-header>
 <mat-card class="example-card">
-  
     <mat-card-content>
       <form class="example-form">
         <table class="example-full-width" cellspacing="0">
-          
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
               </mat-form-field>
             </td>
           </tr>
           <tr>
-          <td><mat-form-field class="example-full-width">
-            <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-          </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
+            </mat-form-field>
+          </td>
         </tr></table>
-      </form>
-      
+      </form>  
     </mat-card-content>
+
     <mat-card-actions>
       <button mat-raised-button (click)="login()">Login</button>
       <p></p>
-      <div>Don`t have an account? <button id="signButton" routerLink="/signup">Sign up here.</button></div>
+      <div>Don`t have an account? 
+        <button id="signButton" routerLink="/signup">Sign up here.</button>
+      </div>
     </mat-card-actions>
   </mat-card>
  
