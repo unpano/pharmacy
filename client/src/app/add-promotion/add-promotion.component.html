@@ -1,0 +1,59 @@
+
+
+
+
+
+<mat-card class="example-card">
+  
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          
+
+          <tr>
+          <td><mat-form-field class="example-full-width">
+            <mat-form-field appearance="fill">
+              <mat-label>Pick start date</mat-label>
+              <input matInput [matDatepicker]="picker3" (click)="pickStartDate()" [(ngModel)]="startDate" name = "startDate">
+              <mat-datepicker-toggle matSuffix [for]="picker3" ></mat-datepicker-toggle>
+              <mat-datepicker #picker3 ></mat-datepicker>
+            </mat-form-field>
+          </mat-form-field></td>
+        </tr>
+  
+
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-form-field appearance="fill">
+            <mat-label>Pick end date</mat-label>
+            <input matInput [matDatepicker]="picker1" (click)="pickEndDate()" [(ngModel)]="endDate" name = "endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1" ></mat-datepicker-toggle>
+            <mat-datepicker #picker1 ></mat-datepicker>
+          </mat-form-field>
+        </mat-form-field></td>
+    </tr>
+
+        
+        <div class="form-group">
+          <label for="find-form-first-name" id="prvaKolonaLabela">Title</label>
+          <input  [(ngModel)]="title"  name="newF" [value]="title" >	
+
+      </div>
+
+      <div class="form-group">
+          <label for="find-form-first-name" id="prvaKolonaLabela">Content</label>
+          <input [(ngModel)]="content"  name="newF" [value]="content" >							
+      </div>
+
+      </table>
+      </form>  
+    </mat-card-content>
+
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="addPromotion()">Add promotion</button>
+    </mat-card-actions>
+  
+  </mat-card>
+ 
+

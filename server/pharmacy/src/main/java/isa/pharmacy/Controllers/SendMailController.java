@@ -22,7 +22,7 @@ public class SendMailController {
     }
 
     @PostMapping("/send")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity<String> sendMail(@RequestBody Mail mail) {
         service.sendMail(mail);
         return new ResponseEntity<>("Email Sent successfully", HttpStatus.OK);

@@ -31,6 +31,18 @@ public class Pharmacy {
     @Column(nullable = false)
     private float pharmacistCouncelingPrice;
 
+    @JsonIgnore
+    @OneToMany
+    private List<User> subscribedUsers = new ArrayList<>();
+
+    public List<User> getSubscribedUsers() {
+        return subscribedUsers;
+    }
+
+    public void setSubscribedUsers(List<User> subscribedUsers) {
+        this.subscribedUsers = subscribedUsers;
+    }
+
     //Apoteka ima listu lekova
     @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

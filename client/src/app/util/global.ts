@@ -1,6 +1,7 @@
 
 import { Med } from "../dto/med";
 import { Pharmacy } from "../dto/pharmacy";
+import { Promotion } from "../dto/promotion";
 import { Token } from "../dto/token";
 import { User } from "../dto/user";
 
@@ -17,4 +18,5 @@ export namespace Global {
     export var allMeds: boolean = false;
     export var reserveFromPickedPharmacy: boolean = false;
     export var medToReserve: Med = new Med();
+    export var lastPromotion: Promotion= new Promotion();
 }

@@ -81,6 +81,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { EditMedComponent } from './edit-med/edit-med.component';
+import { AddPromotionComponent } from './add-promotion/add-promotion.component';
 
 
 
@@ -129,7 +130,8 @@ import { EditMedComponent } from './edit-med/edit-med.component';
     PharmacyRateListComponent,
     MedicationRateListComponent,
     AdminProfileComponent,
-    EditMedComponent
+    EditMedComponent,
+    AddPromotionComponent
 
   ],
   imports: [

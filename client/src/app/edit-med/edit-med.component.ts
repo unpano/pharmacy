@@ -6,6 +6,7 @@ import { Form } from '../dto/form';
 import { IssuanceRegime } from '../dto/issuanceRegime';
 import { Med } from '../dto/med';
 import { User } from '../dto/user';
+import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
 @Component({
@@ -24,7 +25,7 @@ newPorducer:String;
 newIssuanceRegime : IssuanceRegime;
 newNotes  : String;
 newPrice : Number;
-endpoint: any;
+endpoint = Endpoint;
 
 user: User = Global.loggedUser
 onEditButton: Boolean = false

@@ -9,6 +9,8 @@ import { AdminPharmacyPharmacistsComponent } from '../admin-pharmacy-pharmacists
 import { Endpoint } from '../util/endpoints-enum';
 import { map } from 'rxjs/operators';
 import { AdminDermAppointmentsComponent } from '../admin-derm-appointments/admin-derm-appointments.component';
+import { Promotion } from '../dto/promotion';
+import { AddPromotionComponent } from '../add-promotion/add-promotion.component';
 
 @Component({
   selector: 'app-pharmacy-details',
@@ -20,15 +22,19 @@ export class PharmacyDetailsComponent implements OnInit {
   meds : any;
   pharmacy: Pharmacy = Global.clickedPharmacy
   appointments : any;
-  endpoint : Endpoint
+  endpoint = Endpoint;
   showMap = false;
+
+  promotion : Promotion;
+
+
+
+
+
 
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
-  
-
-  
   }
 
   viewMeds(pharmacy: Pharmacy){
@@ -57,6 +63,16 @@ export class PharmacyDetailsComponent implements OnInit {
       dialogRef.afterClosed().subscribe();
       
   }
+
+  addPromotion()
+  {
+    let dialogRef = this.dialog.open(AddPromotionComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+})
+    dialogRef.afterClosed().subscribe();
+  }
+
 
 
   

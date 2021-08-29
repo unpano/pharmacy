@@ -118,7 +118,7 @@ public class UserController {
     }
 
     @PutMapping("/update")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
     public ResponseEntity<?> update(@RequestBody User user) {
         Optional<User> optUser = userService.update(user);
 

@@ -102,6 +102,10 @@ public class UserServiceImpl implements UserService {
                 existingUser.setPhoneNumber(user.getPhoneNumber());
             }
 
+            if (user.getEmail() != null) {
+                existingUser.setEmail(user.getEmail());
+            }
+
             userRepository.save(existingUser);
 
             return Optional.of(existingUser);

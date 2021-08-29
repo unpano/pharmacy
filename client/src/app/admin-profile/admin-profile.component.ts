@@ -2,10 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { AddAllergyFormComponent } from '../add-allergy-form/add-allergy-form.component';
+
 import { User } from '../dto/user';
-import { PickWhomToRateComponent } from '../pick-whom-to-rate/pick-whom-to-rate.component';
+
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -19,7 +18,7 @@ export class AdminProfileComponent implements OnInit {
   user: User = Global.loggedUser
   meds: any
   onEditButton: Boolean = false
-  dataArray = []
+  
 
 
   newFirstName: String;
@@ -31,24 +30,13 @@ export class AdminProfileComponent implements OnInit {
   newAddress: String;
   newCity: String;
   newCountry: String;
-
+  newEmail: String;
   endpoint = Endpoint;
 
   constructor(public dialog: MatDialog,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
-    //console.log(this.user)
-    const headers = { 
-      'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
-    let options = { headers: headers };
-    this.http
-      .get(this.endpoint.USER_MED_LIST + Global.loggedUser.id,options)
-      .pipe(
-        map(returnedAllergies=> {
-          this.meds = returnedAllergies
-        })
-      ).subscribe()
+  
   }
 
   onEditProfile(){
@@ -78,35 +66,21 @@ export class AdminProfileComponent implements OnInit {
       Global.loggedUser.city = this.newCity
     if(this.newCountry != undefined)
       Global.loggedUser.country = this.newCountry
+    if(this.newEmail != undefined)
+      Global.loggedUser.email = this.newEmail
     
     const body=JSON.stringify(Global.loggedUser);   //konverzija objekta subscriber u json
     
 
     this.http
-    .put(this.endpoint.USER_UPDATE,body,options)
+    .put(this.endpoint.USER_UPDATE ,body,options)
     .pipe().subscribe(() => {if(confirm("Successfully updated profile.")) {
-      this.router.navigate(["loggedUserHomePage"]);}}
+      this.router.navigate(["adminPage"]);}}
     )
+
+    this.onEditButton = false;
   }
 
-  onAddAllergy(){
-    let dialogRef = this.dialog.open(AddAllergyFormComponent,{
-      autoFocus: false,
-      maxHeight: '90vh' //you can adjust the value as per your view
-    })
-    dialogRef.afterClosed().subscribe();
-  }
 
-  onAddComplaint(){
-    this.router.navigate(["writeComplaint"]);
-  }
-
-  onRate(){
-    let dialogRef = this.dialog.open(PickWhomToRateComponent,{
-      autoFocus: false,
-      maxHeight: '90vh' //you can adjust the value as per your view
-    })
-    dialogRef.afterClosed().subscribe();
-  }
 
 }
