@@ -82,6 +82,7 @@ import { CommonModule } from '@angular/common';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { EditMedComponent } from './edit-med/edit-med.component';
 import { AddPromotionComponent } from './add-promotion/add-promotion.component';
+import { AddMedComponent } from './add-med/add-med.component';
 
 
 
@@ -131,7 +132,8 @@ import { AddPromotionComponent } from './add-promotion/add-promotion.component';
     MedicationRateListComponent,
     AdminProfileComponent,
     EditMedComponent,
-    AddPromotionComponent
+    AddPromotionComponent,
+    AddMedComponent
 
   ],
   imports: [

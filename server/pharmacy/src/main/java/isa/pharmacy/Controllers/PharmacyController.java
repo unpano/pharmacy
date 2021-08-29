@@ -7,6 +7,7 @@ import isa.pharmacy.Models.*;
 import isa.pharmacy.Services.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -36,6 +37,22 @@ public class PharmacyController {
     private RateService rateService;
 
 
+
+    //Admin dodaje novi lek u apoteku
+    @PutMapping("/addMed/{medId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> addMedToPharmacy(@RequestBody Pharmacy ph, @PathVariable Long medId) {
+
+
+        return new ResponseEntity<>(pharmacyService.addMed(ph, medId), HttpStatus.OK);
+    }
+
+
+
+
+
+
+
     @GetMapping
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.pharmacyService.findAll(), HttpStatus.OK) ;
@@ -54,6 +71,8 @@ public class PharmacyController {
         return new ResponseEntity<>(pharmacyService.deleteMed(ph, medId), HttpStatus.OK);
 
     }
+
+
 
     @GetMapping("/{id}")
     public ResponseEntity<?> findById(@PathVariable Long id){

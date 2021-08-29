@@ -1,9 +1,6 @@
 package isa.pharmacy.Controllers;
 
-import isa.pharmacy.Models.Med;
-import isa.pharmacy.Models.Pharmacy;
-import isa.pharmacy.Models.PharmacyMed;
-import isa.pharmacy.Models.User;
+import isa.pharmacy.Models.*;
 import isa.pharmacy.Services.MedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +19,10 @@ public class MedController {
 
     @Autowired
     private MedService medService;
+
+
+
+
 
 
 

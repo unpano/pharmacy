@@ -25,4 +25,6 @@ public interface PharmacyService {
 
     Object deleteMed(Pharmacy ph, Long medId);
 
+    Object addMed(Pharmacy ph, Long medId);
+
 }

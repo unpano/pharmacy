@@ -11,4 +11,6 @@ public interface MedService {
     Optional<Med> findById(Long id);
 
     Optional<Med> update(Med med);
+
+    Med add(Med m);
 }

@@ -1,6 +1,7 @@
 package isa.pharmacy.Services.Impl;
 
 import isa.pharmacy.Models.Med;
+import isa.pharmacy.Models.Promotion;
 import isa.pharmacy.Models.User;
 import isa.pharmacy.Repositories.MedRepository;
 import isa.pharmacy.Services.MedService;
@@ -17,6 +18,12 @@ public class MedServiceImpl implements MedService {
 
     @Autowired
     private MedRepository medRepository;
+
+    @Override
+    public Med add(Med m)
+    {
+        return medRepository.save(m);
+    }
 
     public List<Med> findAll() throws AccessDeniedException {
         return medRepository.findAll();

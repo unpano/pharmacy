@@ -8,6 +8,7 @@ export enum Endpoint {
 
   MED_UPDATE = "http://localhost:8084/meds/update",
 
+
   PHARMACY_MED_LIST = "http://localhost:8084/pharmacies/meds/",
   MED_LIST = "http://localhost:8084/meds",
   MED_PHARMACY_LIST = "http://localhost:8084/meds/pharmacies/",
@@ -48,6 +49,7 @@ export enum Endpoint {
 
   ADD_NEW_TERM = "http://localhost:8084/dermAppointments/add_appointment/",
   DELETE_MED = "http://localhost:8084/pharmacies/deleteMed/",
+  ADD_MED = "http://localhost:8084/pharmacies/addMed/",
   
   ALL_PHARMACIST_LIST = "http://localhost:8084/users/allPharmacists/",
 

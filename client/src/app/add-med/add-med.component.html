@@ -1,7 +1,6 @@
 <mat-card class="example-card">
     
     <mat-card-content>
-      <button (click)="add()">Add new meds</button>
       <form role="form" novalidate class="form-inline" name="vehicleForm">
           
           <div class="container">
@@ -34,17 +33,15 @@
                     <td>{{med.additionalNotes}}</td>
                     <td>{{med.price}}</td>
 
-                    <button (click)="update(med)">Update</button>
+                    <button (click)="add(med)">Add med</button>
                    
 
-                    <button id="eyeBtn" (click)="deleteMed(med)">Delete</button>
                   </tr>
                   </tbody>
                 </table>
               </div>
             </div>
       </form>
-
       
     </mat-card-content>
 

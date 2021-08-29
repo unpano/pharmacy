@@ -11,6 +11,7 @@ import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 import { EditMedComponent } from '../edit-med/edit-med.component';
+import { AddMedComponent } from '../add-med/add-med.component';
 
 @Component({
   selector: 'app-admin-pharmacy-meds',
@@ -49,7 +50,15 @@ export class AdminPharmacyMedsComponent implements OnInit {
   }
 
 
-
+  add()
+  {
+    let dialogRef = this.dialog.open(AddMedComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+  })
+    dialogRef.afterClosed().subscribe();
+  }
+  
 
   deleteMed(med : Med)
   {

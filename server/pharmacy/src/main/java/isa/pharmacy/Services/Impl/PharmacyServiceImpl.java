@@ -27,6 +27,8 @@ public class PharmacyServiceImpl implements PharmacyService {
     @Autowired
     private PharmacyMedRepository pharmacyMedRepository;
 
+    @Autowired
+    private MedRepository medRepository;
 
     @Autowired
     private ReservationRepository reservationRepository;
@@ -38,6 +40,8 @@ public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public Object deleteMed(Pharmacy ph, Long medId) {
+
+
         Optional<PharmacyMed> med = pharmacyMedRepository.findByMedIdAndPharmacyId(medId, ph.getId());
 
         Boolean i = false;
@@ -46,9 +50,11 @@ public class PharmacyServiceImpl implements PharmacyService {
 
         for (Reservation res : reservations)
         {
-            if(res.getMed().getId() == medId)
-            {
+            if(res.getPharmacy() == ph) {
+                if (res.getMed().getId() == medId) {
                     i = true;
+                }
+
             }
         }
 
@@ -67,9 +73,50 @@ public class PharmacyServiceImpl implements PharmacyService {
         return 1;
     }
 
+    @Override
+    public Pharmacy addMed(Pharmacy ph, Long medId) {
+
+        //pronadjimo oznaceni lek
+        Med m = medRepository.findById(medId).get();
+
+        //formirajmo vezu izmedju apoteke i leka
+        PharmacyMed postoji = pharmacyMedRepository.findByMedIdAndPharmacyId(medId, ph.getId()).orElse(null);
+
+        PharmacyMed pm = new PharmacyMed();
+        System.out.println(pm);
+
+        //ukoliko vec postoji taj lek u apoteci , onda samo povecaj kolicinu
+        if ( postoji == null)
+        {
 
 
-        public List<Pharmacy> findByCriteria(String searchItem) {
+            pm.setMed(m);
+            pm.setPharmacy(ph);
+            pm.setQuantity(1);
+
+            ph.getMeds().add(pm);
+        }
+        else
+        {
+            //posto postoji, prvo ga ukloni, a onda dodaj sa povecanom kolicinom
+            pm = postoji;
+            ph.getMeds().remove(pm);
+
+            pm.setQuantity( pm.getQuantity() + 1);
+
+            ph.getMeds().add(pm);
+
+        }
+
+            return pharmacyRepository.save(ph);
+
+    }
+
+
+
+
+
+    public List<Pharmacy> findByCriteria(String searchItem) {
 
         List<Pharmacy> newList = new ArrayList<>();
 
