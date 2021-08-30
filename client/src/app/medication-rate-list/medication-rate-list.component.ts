@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -56,7 +57,15 @@ export class MedicationRateListComponent implements OnInit {
 
     this.http
     .put(this.endpoint.RATE_MED + medId,this.ocena,options)
-    .pipe().subscribe(() => {if(confirm("Successfully rated med.")) {
+    .pipe(catchError((error: HttpErrorResponse) => {
+      if (error.error instanceof Error) {
+        alert("Bad request, please try again later.");
+      } else {
+        alert("You`ve already rated this med.");
+        
+      }
+      return EMPTY;
+    })).subscribe(() => {if(confirm("Successfully rated med.")) {
       this.router.navigate(["loggedUserHomePage"]);}}
     )
   }

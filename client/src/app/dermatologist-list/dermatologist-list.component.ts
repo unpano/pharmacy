@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -57,7 +58,15 @@ export class DermatologistListComponent implements OnInit {
 
     this.http
     .put(this.endpoint.RATE_DERMATOLOGIST + dermatologistId,this.ocena,options)
-    .pipe().subscribe(() => {if(confirm("Successfully rated dermatologist.")) {
+    .pipe(catchError((error: HttpErrorResponse) => {
+      if (error.error instanceof Error) {
+        alert("Bad request, please try again later.");
+      } else {
+        alert("You`ve already rated this dermatologist.");
+        
+      }
+      return EMPTY;
+    })).subscribe(() => {if(confirm("Successfully rated dermatologist.")) {
       this.router.navigate(["loggedUserHomePage"]);}}
     )
   }

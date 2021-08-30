@@ -6,6 +6,7 @@ import isa.pharmacy.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.OptimisticLockException;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,6 +71,13 @@ public class RateServiceImpl implements RateService {
         rate1.setRate(rate);
         rate1.setUser(user);
         rate1.setWhomRates(whom);
+
+        //provera da li je vec kreirana takva ocena
+        if(!rateRepository.findByUserIdAndIdOfRatedObjectAndWhomRates(user.getId(),objectId, whom)
+                .equals(Optional.empty())){
+            throw new OptimisticLockException();
+        }
+
         Object o = addRate(rate1);
 
         //poziv metode koja ce ponovo da izracuna prosecnu ocenu
@@ -85,18 +93,17 @@ public class RateServiceImpl implements RateService {
             float avg = calculateAvgRate(objectId,WhomRates.PHARMACIST);
             pharmacist.get().setStars(avg);
             pharmacistService.save(pharmacist.get());
-        }else if(whom == WhomRates.PHARMACY){
+        }else if(whom == WhomRates.MED){
             Optional<Med> med = medService.findById(objectId);
             float avg = calculateAvgRate(objectId,WhomRates.MED);
             med.get().setStars(avg);
             medService.save(med.get());
         }else{
             Optional<Pharmacy> pharmacy = pharmacyService.findById(objectId);
-            float avg = calculateAvgRate(objectId,WhomRates.MED);
+            float avg = calculateAvgRate(objectId,WhomRates.PHARMACY);
             pharmacy.get().setAvgRank(avg);
             pharmacyService.save(pharmacy.get());
         }
-
         return o;
 
     }

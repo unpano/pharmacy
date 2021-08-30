@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TermRepository extends JpaRepository<Term,Long> {
     List<Term> findAllByUserId(Long id);
+
+    List<Term> findAllByPharmacistId(Long pharmacistId);
 }

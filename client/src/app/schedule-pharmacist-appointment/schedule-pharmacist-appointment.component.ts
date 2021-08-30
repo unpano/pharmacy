@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
@@ -6,11 +6,12 @@ import { Endpoint } from '../util/endpoints-enum';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker'
 import { Time } from '@angular/common';
 import { Global } from '../util/global';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
 import { User } from '../dto/user';
 import { Email } from '../dto/email';
 import { Router } from '@angular/router';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-schedule-pharmacist-appointment',
@@ -88,7 +89,15 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
     this.http
       .put(this.endpoint.SCHEDULE_PHARMACIST + pharmacist.id + '/' + Global.loggedUser.id
       + '/' + this.dateInput + '/' + this.timeInput,null,options)
-      .pipe().subscribe(() => 
+      .pipe(catchError((error: HttpErrorResponse) => {
+        if (error.error instanceof Error) {
+          alert("Bad request, please try again later.");
+        } else {
+          alert("Somebody scheduled this appointment in meanwhile. Please choose another one.");
+          
+        }
+        return EMPTY;
+      })).subscribe(() => 
       {
         if(confirm("Successfully scheduled appointment. Information were sent to your email address.")) {
         this.http

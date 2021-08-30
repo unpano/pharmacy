@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.OptimisticLockException;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -48,6 +49,9 @@ public class ReservationServiceImpl implements ReservationService {
         long difference = createdBefore-now;
 
         if (difference > oneDayMILS){
+            Optional<PharmacyMed> pharmacyMed = pharmacyMedService.findByMedIdAndPharmacyId(reservation.get().getMed().getId(),reservation.get().getPharmacy().getId());
+            pharmacyMed.get().setQuantity(pharmacyMed.get().getQuantity()+1);
+            pharmacyMedService.update(pharmacyMed.get());
 
             //obrisi rez
             reservationRepository.delete(reservation.get());
@@ -89,16 +93,20 @@ public class ReservationServiceImpl implements ReservationService {
         }
 
         Reservation reservation1 = new Reservation();
-
         if(alreadyReserved == false){
             //smanji kolicinu
             Optional<PharmacyMed> pharmacyMed = pharmacyMedService.findByMedIdAndPharmacyId(medId,pharmacyId);
+
+            //pre nego sto smanji proveri da li je u medjuvremenu promenjeno stanje leka na 0
+            if(pharmacyMed.get().getQuantity() == 0){
+                throw  new OptimisticLockException();
+            }
+
             pharmacyMed.get().setQuantity(pharmacyMed.get().getQuantity()-1);
             pharmacyMedService.update(pharmacyMed.get());
 
             //napravi rezervaciju
             Optional<Pharmacy> pharmacy = pharmacyService.findById(pharmacyId);
-
             Reservation reservation = new Reservation();
             reservation.setMed(foundMed.get());
             reservation.setUser(user);

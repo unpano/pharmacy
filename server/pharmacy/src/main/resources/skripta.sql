@@ -187,10 +187,10 @@ insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(135,18,8,16);
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(136,18,9,16);
 insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(137,18,10,16);
 
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
-values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true, '2021-01-02 18:57:58',0,0,1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id)
-values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true, '2021-01-02 18:57:48',0,1,2);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id,penalties)
+values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true, '2021-01-02 18:57:58',0,0,1,0);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,points,user_category,loyalty_program_id,penalties)
+values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true, '2021-01-02 18:57:48',0,1,2,0);
 insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)
 values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true, '2021-01-02 17:57:58',3.4,1);
 insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, last_password_reset_date,stars,pharmacy_id)

@@ -32,6 +32,7 @@ export class ReservationListComponent implements OnInit {
         map(returnedReservations=> {
           this.reservations = returnedReservations
           this.sortedData = this.reservations.slice()
+          console.log(this.sortedData)
         })
       ).subscribe()
   }

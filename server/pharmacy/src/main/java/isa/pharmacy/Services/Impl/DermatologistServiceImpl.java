@@ -1,6 +1,7 @@
 package isa.pharmacy.Services.Impl;
 
 import isa.pharmacy.Models.Dermatologist;
+import isa.pharmacy.Models.WhomRates;
 import isa.pharmacy.Repositories.DermatologistRepository;
 import isa.pharmacy.Services.DermatologistService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +24,7 @@ public class DermatologistServiceImpl implements DermatologistService {
     public Dermatologist save(Dermatologist dermatologist) {
         return dermatologistRepository.save(dermatologist);
     }
+
+
+
 }

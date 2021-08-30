@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Email } from '../dto/email';
 import { Reservation } from '../dto/reservation';
 import { Endpoint } from '../util/endpoints-enum';
@@ -34,7 +35,15 @@ export class PickDateComponent implements OnInit {
 
     this.http
     .put(this.endpoint.RESERVE_MED + Global.clickedPharmacy.id + '/' + Global.medToReserve.id,JSON.stringify(this.newDate),options)
-    .pipe().subscribe(returnedRes => {
+    .pipe(catchError((error: HttpErrorResponse) => {
+      if (error.error instanceof Error) {
+        alert("Bad request, please try again later.");
+      } else {
+        alert("There is no more med. Please check another pharmacy.");
+        
+      }
+      return EMPTY;
+    })).subscribe(returnedRes => {
              
         this.retRes = returnedRes
         let email: Email = new Email()

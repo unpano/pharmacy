@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.OptimisticLockException;
 import java.util.*;
 
 @Service
@@ -132,6 +133,7 @@ public class TermServiceImpl implements TermService {
         Term term = new Term();
 
         Optional<User> user = userRepository.findById(userId);
+
         //izabrano vreme plus 30 min koliko traje pregled
         long ONE_MINUTE_IN_MILLIS=60000; //millisecs
         long t= dateValue.getTime();
@@ -143,6 +145,22 @@ public class TermServiceImpl implements TermService {
         term.setStart(dateValue);
         term.setEnd(date1);
         term.setUser(user.get());
+
+        //da li je neko u medjuvremenu zakazao termin
+        Boolean termNotFree = false;
+
+        List<Term> scheduledTerms = termRepository.findAllByPharmacistId(pharmacistId);
+        for(int i=0; i<scheduledTerms.size(); i++){
+            if(dateValue.after(scheduledTerms.get(i).getStart()) && dateValue.before(scheduledTerms.get(i).getEnd())){
+                termNotFree = true;
+            }else if (dateValue.equals(scheduledTerms.get(i).getStart())){
+                termNotFree = true;
+            }
+        }
+
+        if(termNotFree){
+            throw new OptimisticLockException();
+        }
 
         return termRepository.save(term);
     }

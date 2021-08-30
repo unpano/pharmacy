@@ -8,6 +8,7 @@ import isa.pharmacy.Services.DermAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.OptimisticLockException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -98,9 +99,15 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
         //nadjem pregled koji hoce da zakaze
         Optional<DermAppointment> dermApp = dermAppointmentRepository.findById(appId);
 
-        dermApp.get().setUser(user);
-        return dermAppointmentRepository.save(dermApp.get());
+        //proverim da li ga je u medjuvremenu rezervisao drugi pacijent
+        if(dermApp.get().getUser() != null){
+            throw new OptimisticLockException();
+        }
 
+        //termin je zauzet kada je user setovan
+        dermApp.get().setUser(user);
+
+        return dermAppointmentRepository.save(dermApp.get());
     }
 
 

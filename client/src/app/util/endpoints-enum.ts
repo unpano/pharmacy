@@ -28,7 +28,7 @@ export enum Endpoint{
     RATE_DERMATOLOGIST = "http://localhost:8084/rates/rateDermatologist/",
     DERMATOLOGIST_LIST = "http://localhost:8084/users/dermatologists",
     PHARMACIST_LIST = "http://localhost:8084/users/pharmacists",
-    MEDS_RATE_LIST = "http://localhost:8084/reservations/medications",
+    MEDS_RATE_LIST = "http://localhost:8084/meds/medications",
     PHARMACY_RATE_LIST = "http://localhost:8084/pharmacies/pharmaciesToRate",
     RATE_PHARMACIST = "http://localhost:8084/rates/ratePharmacist/",
     RATE_MED = "http://localhost:8084/rates/rateMed/",

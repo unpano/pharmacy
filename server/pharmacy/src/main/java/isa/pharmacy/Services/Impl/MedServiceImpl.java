@@ -55,7 +55,9 @@ public class MedServiceImpl implements MedService {
         List<Med> retMeds = new ArrayList<>();
 
         for (int i =0; i< meds.size(); i++){
-            retMeds.add(meds.get(i).getMed());
+            //samo lekovi cije stanje nije 0
+            if(meds.get(i).getQuantity() != 0)
+                retMeds.add(meds.get(i).getMed());
         }
 
         return retMeds;

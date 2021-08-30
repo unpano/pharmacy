@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { DermAppointment } from '../dto/dermAppointment';
 import { Email } from '../dto/email';
 import { Endpoint } from '../util/endpoints-enum';
@@ -60,7 +61,15 @@ export class DermAppointmentListComponent implements OnInit {
   
       this.http
       .put(this.endpoint.USER_ADD_DERM_APPOINTMENT, app.id,options)
-        .pipe().subscribe(() => 
+        .pipe(catchError((error: HttpErrorResponse) => {
+          if (error.error instanceof Error) {
+            alert("Bad request, please try again later.");
+          } else {
+            alert("Somebody scheduled this appointment in meanwhile. Please choose another one.");
+            
+          }
+          return EMPTY;
+        })).subscribe(() => 
         {
           if(confirm("Successfully scheduled appointment. Information were sent to your email address.")) {
           this.http
