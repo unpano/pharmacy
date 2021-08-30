@@ -1,10 +1,7 @@
 package isa.pharmacy.Services.Impl;
 
 import isa.pharmacy.Models.*;
-import isa.pharmacy.Repositories.MedRepository;
-import isa.pharmacy.Repositories.PharmacyMedRepository;
-import isa.pharmacy.Repositories.PharmacyRepository;
-import isa.pharmacy.Repositories.ReservationRepository;
+import isa.pharmacy.Repositories.*;
 import isa.pharmacy.Services.PharmacyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +18,8 @@ import java.util.stream.Stream;
 @Service
 @Transactional
 public class PharmacyServiceImpl implements PharmacyService {
+
+
     @Autowired
     private PharmacyRepository pharmacyRepository;
 
@@ -31,11 +30,37 @@ public class PharmacyServiceImpl implements PharmacyService {
     private MedRepository medRepository;
 
     @Autowired
+    private UserRepository userRepository;
+
+
+    @Autowired
     private ReservationRepository reservationRepository;
 
     public List<Pharmacy> findAll() { return pharmacyRepository.findAll(); }
 
+
+
     public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
+
+
+
+
+    @Override
+    public Pharmacy findPharmacyByAdmin(Long adminId)
+    {
+
+        User admin = userRepository.findById(adminId).get();
+        //nasli smo konkretnog admina
+
+        Pharmacy p = admin.getPharmacy();
+
+
+       return p;
+    }
+
+
+
+
 
 
     @Override

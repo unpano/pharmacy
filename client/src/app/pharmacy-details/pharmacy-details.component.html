@@ -15,7 +15,7 @@
     <div class="form-group">
         <label for="find-form-first-name" id="prvaKolonaLabela">Address</label>
         <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.address}}</label>		
-        <button class="btn btn-primary" >Pokazi na mapi</button>
+        <button class="btn btn-primary" (click)="showMap()">Pokazi na mapi</button>
 					
     </div>
 
@@ -29,28 +29,13 @@
         <label  for="find-form-first-name" id="prvaKolonaLabela" >{{pharmacy.avgRank}}</label>								
     </div>
 
-    <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Free dermatology terms:</label>
-        <button id="eyeBtn" (click)="viewTerms(pharmacy)">View terms</button>							
-    </div>
-
-    <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Pharmacists:</label>
-        <button id="eyeBtn" (click)="viewPharmacists(pharmacy)">View pharmacist</button>								
-    </div>
-
-    <div class="form-group">
-        <label for="find-form-first-name" id="prvaKolonaLabela">Meds:</label>
-        <button id="eyeBtn" (click)="viewMeds(pharmacy)">View meds</button>								
-    </div>
 
     <div class="form-group">
         <label for="find-form-first-name" id="prvaKolonaLabela">Prices:</label>
         <label  for="find-form-first-name" id="prvaKolonaLabela" ></label>								
     </div>
 
-    <button  (click)="addPromotion()">Add promotion</button> 
-
+ 
    
 </form>
 

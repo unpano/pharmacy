@@ -23,6 +23,18 @@ public class User extends GeneralUser  {
     @OneToOne
     private LoyaltyProgram loyaltyProgram;
 
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Pharmacy pharmacy;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
+
     public Integer getPoints() {
         return points;
     }

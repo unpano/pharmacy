@@ -26,13 +26,20 @@ public class PromotionController {
     @Autowired
     private PharmacyService pharmacyService;
 
+    @GetMapping("/getPromotions/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> findAll(@PathVariable Long id) {
+
+        System.out.println(id);
+        return new ResponseEntity<>(promotionService.findAllByPharmacyId(id), HttpStatus.OK) ;
+    }
 
     //kreiranje promocije
     @PostMapping("/addPromotion/")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> addPromotion(@RequestBody Promotion p) {
 
-        System.out.println(p.content);
+
         return new ResponseEntity<>(promotionService.add(p), HttpStatus.OK);
     }
 

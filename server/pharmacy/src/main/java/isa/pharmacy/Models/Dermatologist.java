@@ -19,8 +19,6 @@ public class Dermatologist extends GeneralUser{
 
     private Time endTime;
 
-
-
     @JsonIgnore
     @OneToMany(mappedBy = "dermatologist", fetch = FetchType.LAZY)
     private Set<DermAppointment> dermAppointments = new HashSet<>();

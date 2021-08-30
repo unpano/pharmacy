@@ -27,4 +27,6 @@ public interface PharmacyService {
 
     Object addMed(Pharmacy ph, Long medId);
 
+    Pharmacy findPharmacyByAdmin(Long adminId);
+
 }

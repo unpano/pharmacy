@@ -54,6 +54,8 @@ export enum Endpoint {
   ALL_PHARMACIST_LIST = "http://localhost:8084/users/allPharmacists/",
 
   ADD_PROMOTION = "http://localhost:8084/promotions/addPromotion/",
-  GET_SUBSCRIBED_USERS = "http://localhost:8084/promotions/getSubscribed/"
+  GET_PROMOTIONS = "http://localhost:8084/promotions/getPromotions/",
+  GET_SUBSCRIBED_USERS = "http://localhost:8084/promotions/getSubscribed/",
+  GET_PHARMACY = "http://localhost:8084/pharmacies/getPharmacy/"
 
 }

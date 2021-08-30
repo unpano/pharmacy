@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 import { AdminDermAppointmentsComponent } from '../admin-derm-appointments/admin-derm-appointments.component';
 import { Promotion } from '../dto/promotion';
 import { AddPromotionComponent } from '../add-promotion/add-promotion.component';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'app-pharmacy-details',
@@ -23,7 +24,6 @@ export class PharmacyDetailsComponent implements OnInit {
   pharmacy: Pharmacy = Global.clickedPharmacy
   appointments : any;
   endpoint = Endpoint;
-  showMap = false;
 
   promotion : Promotion;
 
@@ -75,6 +75,17 @@ export class PharmacyDetailsComponent implements OnInit {
 
 
 
+
+  showMap()
+  {
+    console.log("mapaaaa")
+    let dialogRef = this.dialog.open(MapComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+                                    })
+    dialogRef.afterClosed().subscribe();
+
+  }
   
 
 

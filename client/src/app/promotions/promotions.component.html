@@ -1,43 +1,49 @@
 <app-admin-header></app-admin-header>
 
+
 <mat-card class="example-card">
     
     <mat-card-content>
+      <button (click)="addPromotion()">Add new promotion</button>
       <form role="form" novalidate class="form-inline" name="vehicleForm">
           
           <div class="container">
               <div class="row">
-                <div class="search-hero">
-                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
-                </div>
-                <table>
+               
+                <table class="table table-striped">
                   <thead>
                   <tr>
                     
-                    <th>Pharmacist</th>
+                    <th>Promotion title</th>
+                    <th>Content</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                   
                     <th></th>
-                    <th>Stars</th>
-                    
-
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let pharm of pharmacists | filter:searchText">
+                  <tr *ngFor="let p of promotions ">
                     
-                    <td>{{pharm.firstName}}</td>
-                    <td>{{pharm.lastName}}</td>
-                    <td>{{pharm.stars}}</td>
-                    
+
+                    <td>{{p.title}}</td>
+                    <td>{{p.startDate}}</td>
+                    <td>{{p.endDate}}</td>
+                    <td>{{p.content}}</td>
+       
+
+              
                   </tr>
                   </tbody>
                 </table>
               </div>
             </div>
       </form>
-      
+
       
     </mat-card-content>
 
     
   </mat-card>
+
 

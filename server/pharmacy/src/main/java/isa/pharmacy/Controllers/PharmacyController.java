@@ -48,17 +48,19 @@ public class PharmacyController {
     }
 
 
-
-
-
-
-
     @GetMapping
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.pharmacyService.findAll(), HttpStatus.OK) ;
 
     }
 
+    @GetMapping("/getPharmacy/{adminId}")
+    public ResponseEntity<?> findPharmacyByAdminId(@PathVariable Long adminId) {
+
+
+        return new ResponseEntity<>( pharmacyService.findPharmacyByAdmin(adminId), HttpStatus.OK) ;
+
+    }
 
 
 

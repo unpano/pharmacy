@@ -30,6 +30,9 @@ import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-li
 import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminPharmacyMedsComponent } from './admin-pharmacy-meds/admin-pharmacy-meds.component';
+import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
+import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 
 
@@ -61,10 +64,16 @@ const routes: Routes = [
   {path: 'ratePharmacist', component: PharmacistListComponent},
   {path: 'rateMedication', component: MedicationRateListComponent},
   {path: 'ratePharmacy', component: PharmacyRateListComponent},
+
+  {path : 'promotions', component: PromotionsComponent},
+  {path : 'pharmacists', component: AdminPharmacyPharmacistsComponent},
+  {path : 'dermatologists', component: DermatologistListComponent},
   {path : 'adminMeds', component: AdminPharmacyMedsComponent},
-  {path : 'adminProfile', component: AdminProfileComponent}
+  {path : 'adminProfile', component: AdminProfileComponent},
+  {path : 'promotions', component: AdminProfileComponent},
+  {path : 'terms', component:  AdminDermAppointmentsComponent}
 
-
+ 
 ];
 
 @NgModule({

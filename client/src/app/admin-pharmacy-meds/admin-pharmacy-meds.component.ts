@@ -21,7 +21,6 @@ import { AddMedComponent } from '../add-med/add-med.component';
 export class AdminPharmacyMedsComponent implements OnInit {
 
   meds: any
-  reserveFromPickedPharmacy: boolean = Global.reserveFromPickedPharmacy
   searchText
   endpoint = Endpoint;
   loggedUser: boolean = false
@@ -38,16 +37,23 @@ export class AdminPharmacyMedsComponent implements OnInit {
   ngOnInit(): void {
 
 
-      this.http
-      .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)
-      .pipe(
-        map(returnedMeds=> {
-          this.meds = returnedMeds
-          console.log(returnedMeds)
-        })
-      ).subscribe()
+    this.http
+    .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)
+    .pipe(
+      map(returnedMeds=> {
+        this.meds = returnedMeds
+        console.log(returnedMeds)
+      })
+    ).subscribe()
     
   }
+
+
+
+
+
+
+
 
 
   add()
@@ -55,8 +61,14 @@ export class AdminPharmacyMedsComponent implements OnInit {
     let dialogRef = this.dialog.open(AddMedComponent,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
-  })
+      })
+  
+
     dialogRef.afterClosed().subscribe();
+
+    this.router.navigate(["adminPage"]);
+
+
   }
   
 
@@ -79,6 +91,10 @@ export class AdminPharmacyMedsComponent implements OnInit {
         alert("The medicine can't be removed, it's reserved")
 
     })).subscribe()
+
+
+    this.router.navigate(["adminPage"]);
+
   }
 
 
@@ -94,6 +110,8 @@ export class AdminPharmacyMedsComponent implements OnInit {
       maxHeight: '90vh' //you can adjust the value as per your view
       })
     dialogRef.afterClosed().subscribe();
+
+    this.router.navigate(["adminPage"]);
 
   }
 

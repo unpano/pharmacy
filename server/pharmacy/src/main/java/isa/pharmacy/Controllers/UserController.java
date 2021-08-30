@@ -260,19 +260,13 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+
+
     @GetMapping("/allPharmacists/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> findPharmacistsByPharmacyId(@PathVariable Long id) {
 
-        Optional<Pharmacy> pharm = this.pharmacyService.findById(id);
-        List<Pharmacist> pharmacists = pharm.get().getPharmacists();
-
-        if (pharm.isPresent()){
-            return new ResponseEntity<>(pharmacists, HttpStatus.OK);
-        }
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
-
+       return null;
     }
 
 

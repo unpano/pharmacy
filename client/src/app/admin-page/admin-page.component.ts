@@ -17,29 +17,48 @@ import { PharmacyDetailsComponent } from '../pharmacy-details/pharmacy-details.c
 })
 export class AdminPageComponent implements OnInit {
 
-  pharmacies: any
   searchText
   endpoint = Endpoint;
   
   constructor(public dialog: MatDialog,private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+
+
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+
+
+
     if(Global.clickedMed.id != undefined){
       this.http
       .get(this.endpoint.MED_PHARMACY_LIST + Global.clickedMed.id)
       .pipe(
         map(returnedPharmacies=> {
-          this.pharmacies = returnedPharmacies
+
         })
       ).subscribe( Global.clickedMed = undefined)
-    }else{
+    }
+    else
+    {
       this.http
-      .get(this.endpoint.PHARMACY_LIST)
+      .get(this.endpoint.GET_PHARMACY + Global.loggedUser.id , options)
       .pipe(
-        map(returnedPharmacies=> {
-          this.pharmacies = returnedPharmacies
+        map(returnedPharmacy=> {
+          let pharmacy: any
+          pharmacy = returnedPharmacy  
+          Global.clickedPharmacy = pharmacy;
+
+
+          this.router.navigate(['/pharmacyDetails'])
+
         })
-      ).subscribe()
+      ).subscribe(
+
+
+      )
     }
     
   }

@@ -83,6 +83,8 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { EditMedComponent } from './edit-med/edit-med.component';
 import { AddPromotionComponent } from './add-promotion/add-promotion.component';
 import { AddMedComponent } from './add-med/add-med.component';
+import { MapComponent } from './map/map.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 
 
@@ -133,7 +135,9 @@ import { AddMedComponent } from './add-med/add-med.component';
     AdminProfileComponent,
     EditMedComponent,
     AddPromotionComponent,
-    AddMedComponent
+    AddMedComponent,
+    MapComponent,
+    PromotionsComponent
 
   ],
   imports: [

@@ -29,6 +29,28 @@ public class Pharmacy {
     private float avgRank;
 
     @Column(nullable = false)
+    private float longitude;
+
+    @Column(nullable = false)
+    private float latitude;
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    @Column(nullable = false)
     private float pharmacistCouncelingPrice;
 
     @JsonIgnore
@@ -57,6 +79,9 @@ public class Pharmacy {
     @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Pharmacist> pharmacists = new ArrayList<>();
+
+
+
 
     public Pharmacy(){
         super();
