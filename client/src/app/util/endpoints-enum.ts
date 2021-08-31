@@ -56,6 +56,12 @@ export enum Endpoint {
   ADD_PROMOTION = "http://localhost:8084/promotions/addPromotion/",
   GET_PROMOTIONS = "http://localhost:8084/promotions/getPromotions/",
   GET_SUBSCRIBED_USERS = "http://localhost:8084/promotions/getSubscribed/",
-  GET_PHARMACY = "http://localhost:8084/pharmacies/getPharmacy/"
+  GET_PHARMACY = "http://localhost:8084/pharmacies/getPharmacy/",
+
+  FIND_ALL_PHARMACISTS = "http://localhost:8084/pharmacists/allPharmacists/",
+
+  ADD_NEW_PHARMACIST = "http://localhost:8084/pharmacists/add_pharmacist/",
+
+  DELETE_PHARMACIST = "http://localhost:8084/pharmacies/deletePharmacist/"
 
 }

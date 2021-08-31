@@ -51,6 +51,8 @@ public class GeneralUser implements UserDetails {
     private List<Authority> authorities;
 
 
+
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -86,6 +88,7 @@ public class GeneralUser implements UserDetails {
     public void setAuthorities(List<Authority> authorities) {
         this.authorities = authorities;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

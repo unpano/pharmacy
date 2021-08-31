@@ -42,7 +42,7 @@ public class Pharmacist extends GeneralUser {
         this.terms = terms;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne( fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
     //Farmaceut ima radne sate/termine za preglede koji nisu unapred definisani

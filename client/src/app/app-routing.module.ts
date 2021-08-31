@@ -33,6 +33,7 @@ import { AdminPharmacyMedsComponent } from './admin-pharmacy-meds/admin-pharmacy
 import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
 import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { ReportComponent } from './report/report.component';
 
 
 
@@ -71,6 +72,7 @@ const routes: Routes = [
   {path : 'adminMeds', component: AdminPharmacyMedsComponent},
   {path : 'adminProfile', component: AdminProfileComponent},
   {path : 'promotions', component: AdminProfileComponent},
+  {path : 'report', component:  ReportComponent},
   {path : 'terms', component:  AdminDermAppointmentsComponent}
 
  

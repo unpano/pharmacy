@@ -85,6 +85,9 @@ import { AddPromotionComponent } from './add-promotion/add-promotion.component';
 import { AddMedComponent } from './add-med/add-med.component';
 import { MapComponent } from './map/map.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { ReportComponent } from './report/report.component';
+import { PharmacyDermatologistsComponent } from './pharmacy-dermatologists/pharmacy-dermatologists.component';
+import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.component';
 
 
 
@@ -137,7 +140,10 @@ import { PromotionsComponent } from './promotions/promotions.component';
     AddPromotionComponent,
     AddMedComponent,
     MapComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    ReportComponent,
+    PharmacyDermatologistsComponent,
+    AddPharmacistComponent
 
   ],
   imports: [

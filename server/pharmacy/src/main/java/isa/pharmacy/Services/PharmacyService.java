@@ -1,6 +1,8 @@
 package isa.pharmacy.Services;
 
 import isa.pharmacy.Models.DateTimeJSON;
+import isa.pharmacy.Models.GeneralUser;
+import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Repositories.PharmacyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +30,8 @@ public interface PharmacyService {
     Object addMed(Pharmacy ph, Long medId);
 
     Pharmacy findPharmacyByAdmin(Long adminId);
+
+    Object deletePharmacist(Pharmacy ph, Long pharmacistId) ;
+
 
 }

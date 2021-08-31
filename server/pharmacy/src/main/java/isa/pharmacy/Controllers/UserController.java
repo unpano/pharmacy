@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -31,6 +32,15 @@ public class UserController {
 
     @Autowired
     private PharmacyService pharmacyService;
+
+
+
+    //dodavanje novog usera
+    @PostMapping("/add_pharmacist/")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> addNewAppointment(@RequestBody User u ) {
+        return new ResponseEntity<>(userService.addMewUser(u), HttpStatus.OK);
+    }
 
     @GetMapping
     public ResponseEntity<?> findAll() {
@@ -262,11 +272,19 @@ public class UserController {
 
 
 
+
+
+
+
+
+
+
+
     @GetMapping("/allPharmacists/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> findPharmacistsByPharmacyId(@PathVariable Long id) {
 
-       return null;
+        return new ResponseEntity<List<Pharmacist>>(userService.findPharmacistsByPharmacyId(id), HttpStatus.OK);
     }
 
 

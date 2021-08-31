@@ -27,6 +27,9 @@ public class User extends GeneralUser  {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
+
+
+
     public Pharmacy getPharmacy() {
         return pharmacy;
     }

@@ -4,14 +4,15 @@ import isa.pharmacy.Models.*;
 import isa.pharmacy.Repositories.*;
 import isa.pharmacy.Services.PharmacyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.transaction.Transactional;
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -32,6 +33,9 @@ public class PharmacyServiceImpl implements PharmacyService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PharmacistRepository pharmacistRepository;
+
 
     @Autowired
     private ReservationRepository reservationRepository;
@@ -41,6 +45,7 @@ public class PharmacyServiceImpl implements PharmacyService {
 
 
     public Optional<Pharmacy> findById(Long id){ return pharmacyRepository.findById(id); }
+
 
 
 
@@ -97,6 +102,30 @@ public class PharmacyServiceImpl implements PharmacyService {
 
         return 1;
     }
+
+
+
+
+
+    @Override
+    public Object deletePharmacist(Pharmacy ph, Long pharmacistId) {
+
+        System.out.println(pharmacistId);
+
+        Pharmacist pharmacist = pharmacistRepository.findById(pharmacistId).get();
+
+            System.out.println(pharmacist.getId());
+
+        pharmacist.setPharmacy(null);
+
+        pharmacistRepository.save(pharmacist);
+
+        return 0;
+    }
+
+
+
+
 
     @Override
     public Pharmacy addMed(Pharmacy ph, Long medId) {

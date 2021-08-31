@@ -1,6 +1,7 @@
 package isa.pharmacy.Repositories;
 
 import isa.pharmacy.Models.Authority;
+import isa.pharmacy.Models.GeneralUser;
 import isa.pharmacy.Models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 

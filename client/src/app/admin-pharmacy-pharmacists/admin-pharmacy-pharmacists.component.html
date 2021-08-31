@@ -3,6 +3,7 @@
 <mat-card class="example-card">
     
     <mat-card-content>
+      <button (click)="add()">Add new pharmacist</button>
       <form role="form" novalidate class="form-inline" name="vehicleForm">
           
           <div class="container">
@@ -27,7 +28,7 @@
                     <td>{{pharm.firstName}}</td>
                     <td>{{pharm.lastName}}</td>
                     <td>{{pharm.stars}}</td>
-                    
+                    <button id="eyeBtn" (click)="deletePharmacist(pharm)">Delete</button>
                   </tr>
                   </tbody>
                 </table>

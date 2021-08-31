@@ -74,6 +74,15 @@ public class PharmacyController {
 
     }
 
+    //Admin brise farmaceuta iz apoteke
+    @PutMapping("/deletePharmacist/{pharmacistId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> deletePharmacist(@RequestBody Pharmacy ph, @PathVariable Long pharmacistId){
+
+        return new ResponseEntity<>(pharmacyService.deletePharmacist(ph, pharmacistId), HttpStatus.OK);
+
+    }
+
 
 
     @GetMapping("/{id}")
@@ -103,6 +112,11 @@ public class PharmacyController {
 
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
+
+
+
+
+
 
     @GetMapping("/search")
     public ResponseEntity<?> findByCriteria(@RequestParam(name = "searchItem", required = true) String searchItem) {

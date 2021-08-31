@@ -1,0 +1,79 @@
+
+
+
+
+
+
+<form role="form" novalidate class="form-inline" name="personForm">
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">First Name: </label>							
+        <input  [(ngModel)]="pharmacist.firstName"  name="newF" [value]="pharmacist.firstName">
+
+    </div>
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Last Name: </label>							
+        <input  [(ngModel)]="pharmacist.lastName"  name="newF" [value]="pharmacist.lastName">
+
+    </div>
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Username: </label>							
+        <input  [(ngModel)]="pharmacist.username"  name="newF" [value]="pharmacist.username">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Password: </label>							
+        <input  [(ngModel)]="pharmacist.password"  name="newF" [value]="pharmacist.password">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Email: </label>							
+        <input  [(ngModel)]="pharmacist.email"  name="newF" [value]="pharmacist.email">
+
+    </div>
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">phone Number: </label>							
+        <input  [(ngModel)]="pharmacist.phoneNumber"  name="newF" [value]="pharmacist.phoneNumber">
+
+    </div>
+
+  
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Address: </label>							
+        <input  [(ngModel)]="pharmacist.address"  name="newF" [value]="pharmacist.address">
+
+    </div>
+  
+
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">City: </label>							
+        <input  [(ngModel)]="pharmacist.city"  name="newF" [value]="pharmacist.city">
+
+    </div>
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">Start work time: </label>							
+        <input  [(ngModel)]="pharmacist.startTime"  name="newF" [value]="pharmacist.startTime">
+
+    </div>
+
+    <div class="form-group">
+        <label for="find-form-first-name" id="prvaKolonaLabela">End work time: </label>							
+        <input  [(ngModel)]="pharmacist.endTime"  name="newF" [value]="pharmacist.endTime">
+
+    </div>
+  
+  
+  
+    
+
+</form>
+<button  (click)="addPharmacist()">Add</button> 
+

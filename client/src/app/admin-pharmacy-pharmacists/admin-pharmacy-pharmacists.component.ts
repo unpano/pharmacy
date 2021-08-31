@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AddPharmacistComponent } from '../add-pharmacist/add-pharmacist.component';
+import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -21,7 +23,7 @@ export class AdminPharmacyPharmacistsComponent implements OnInit {
   searchText1
   endpoint = Endpoint
   
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     //dobavi listu farmaceuta
@@ -31,7 +33,7 @@ export class AdminPharmacyPharmacistsComponent implements OnInit {
     let options = { headers: headers };
 
     this.http
-      .get(this.endpoint.ALL_PHARMACIST_LIST + Global.clickedPharmacy.id, options)
+      .get(this.endpoint.FIND_ALL_PHARMACISTS + Global.clickedPharmacy.id, options)
       .pipe(
         map(returnedPharmacists => {
           this.pharmacists = returnedPharmacists
@@ -40,5 +42,46 @@ export class AdminPharmacyPharmacistsComponent implements OnInit {
   }
 
 
+
+
+
+  
+
+  add()
+  {
+    let dialogRef = this.dialog.open(AddPharmacistComponent,{
+      autoFocus: false,
+      maxHeight: '90vh' //you can adjust the value as per your view
+})
+    dialogRef.afterClosed().subscribe();
+  }
+
+
+
+
+  deletePharmacist(pharmacist : User)
+  {
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + Global.token.access_token}  
+    let options = { headers: headers };
+
+
+  this.http
+  .put(this.endpoint.DELETE_PHARMACIST + pharmacist.id ,Global.clickedPharmacy, options)
+  .pipe(
+    map(returnedPh=> {
+  
+      if(returnedPh == 0)
+        alert("The pharmacist does'n work in pharmacy anymore!")
+      else
+        alert("The pharmacist can't get fired ")
+
+    })).subscribe()
+
+
+    this.router.navigate(["adminPage"]);
+
+  }
 
 }
