@@ -36,6 +36,9 @@ public class PharmacyServiceImpl implements PharmacyService {
     @Autowired
     private PharmacistRepository pharmacistRepository;
 
+    @Autowired
+    private PharmacyDermatologistRepository pharmacyDermatologistRepository;
+
 
     @Autowired
     private ReservationRepository reservationRepository;
@@ -101,6 +104,28 @@ public class PharmacyServiceImpl implements PharmacyService {
         }
 
         return 1;
+    }
+
+
+
+
+
+    @Override
+    public Object deleteDermatologist(Pharmacy ph, Long dermatologistId) {
+
+
+        PharmacyDermatologist dermatologist = pharmacyDermatologistRepository.findByDermatologistIdAndPharmacyId(dermatologistId, ph.getId()).get();
+
+
+            List<PharmacyDermatologist> dermatologists = ph.getDermatologists();
+            dermatologists.remove(dermatologist);
+            ph.setDermatologists(dermatologists);
+            pharmacyRepository.save(ph);
+
+
+            pharmacyDermatologistRepository.delete(dermatologist);
+
+            return 0;
     }
 
 

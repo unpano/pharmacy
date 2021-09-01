@@ -8,6 +8,7 @@ import isa.pharmacy.Services.DermAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.OptimisticLockException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -18,7 +19,9 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     private DermAppointmentRepository dermAppointmentRepository;
 
     @Override
-    public DermAppointment addNewAppointment(DermAppointment dermAppointment) {
+    public DermAppointment addNewAppointment(DermAppointment dermAppointment){
+
+
 
         //proveravamo da li dermatologu tada radno vreme
         Dermatologist derm = dermAppointment.getDermatologist();
@@ -59,6 +62,8 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
 
 
         }
+
+
         System.out.println(i);
         if(i == true)
         {

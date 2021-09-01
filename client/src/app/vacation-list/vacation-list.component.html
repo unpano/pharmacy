@@ -3,7 +3,6 @@
 <mat-card class="example-card">
     
     <mat-card-content>
-      <button (click)="add()">Add new dermatologist</button>
       <form role="form" novalidate class="form-inline" name="vehicleForm">
           
           <div class="container">
@@ -15,23 +14,26 @@
                   <thead>
                   <tr>
                     
-                    <th>dermatologist</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Worker Name</th>
                     <th></th>
-                    <th>Stars</th>
-                    <th>Pharmacy</th>
-                    
+                    <th>Status</th>
 
                   </tr>
                   </thead>
                   <tbody>
-                  <tr *ngFor="let pharm of dermatologists | filter:searchText">
+                  <tr *ngFor="let v of vacations | filter:searchText">
                     
-                    <td>{{pharm.firstName}}</td>
-                    <td>{{pharm.lastName}}</td>
-                    <td>{{pharm.stars}}</td>
-                    <td>{{pharmacy.name}}</td>
-                    <button id="eyeBtn" (click)="deleteDermatologist(pharm)">Delete</button>
-                    
+                    <td>{{v.startDate}}</td>
+                    <td>{{v.endDate}}</td>
+                    <td></td>
+                    <td></td>
+                    <td *ngIf="v.approve == false"> Decline</td>
+                    <td *ngIf="v.approve == true"> Approve</td>
+                    <button *ngIf="v.answered == false" id="eyeBtn" (click)="approve(v)">Aprove</button>
+
+                    <button *ngIf="v.answered == false" id="eyeBtn" (click)="decline(v)">Decline</button>
                   </tr>
                   </tbody>
                 </table>

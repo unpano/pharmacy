@@ -57,18 +57,17 @@ public class Pharmacy {
     @OneToMany
     private List<User> subscribedUsers = new ArrayList<>();
 
-    public List<User> getSubscribedUsers() {
-        return subscribedUsers;
-    }
 
-    public void setSubscribedUsers(List<User> subscribedUsers) {
-        this.subscribedUsers = subscribedUsers;
-    }
 
     //Apoteka ima listu lekova
     @JsonIgnore
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<PharmacyMed> meds = new ArrayList<>();
+
+    //Apoteka ima listu dermatologa
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PharmacyDermatologist> dermatologists = new ArrayList<>();
 
     //Apoteka ima listu slobodnih termina kod dermatolooga
     @JsonIgnore
@@ -80,7 +79,35 @@ public class Pharmacy {
     @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Pharmacist> pharmacists = new ArrayList<>();
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<VacationRequest> vacations = new ArrayList<>();
 
+
+    public List<VacationRequest> getVacations() {
+        return vacations;
+    }
+
+    public void setVacations(List<VacationRequest> vacations) {
+        this.vacations = vacations;
+    }
+
+    public List<User> getSubscribedUsers() {
+        return subscribedUsers;
+    }
+
+    public void setSubscribedUsers(List<User> subscribedUsers) {
+        this.subscribedUsers = subscribedUsers;
+    }
+
+
+    public List<PharmacyDermatologist> getDermatologists() {
+        return dermatologists;
+    }
+
+    public void setDermatologists(List<PharmacyDermatologist> dermatologists) {
+        this.dermatologists = dermatologists;
+    }
 
     public Pharmacy(){
         super();

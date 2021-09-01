@@ -41,29 +41,34 @@ public class PharmacistServiceImpl implements PharmacistService {
     public List<Pharmacist> findPharmacistsByPharmacyId(Long id)
     {
         Pharmacy pharm = pharmacyRepository.findById(id).get();
-        System.out.println(pharm.getId());
+        List<Pharmacist> pharmacists = pharm.getPharmacists();
 
-        List<Pharmacist> pharmacists = pharmacistRepository.findAll();
-        System.out.println(pharmacists);
+        List<Pharmacist> p_return = new ArrayList<>();
 
 
+
+        //za svakog farmaceuta proveravamo da li je stv to i njegova uloga
 
         for( Pharmacist p : pharmacists)
         {
-            if(p.getPharmacy() !=  null)
+            if( ! p.getAuthorities().isEmpty() )
             {
-                if( p.getPharmacy().getId() != id)
+                for( GrantedAuthority a  : p.getAuthorities())
                 {
-                    pharmacists.remove(p);
+                    if( a.getAuthority().equals("ROLE_PHARMACIST"))
+                    {
+                        p_return.add(p);
+                    }
                 }
-            }
 
+            }
         }
 
 
 
 
-        return pharmacists;
+
+        return p_return;
     }
 
 }

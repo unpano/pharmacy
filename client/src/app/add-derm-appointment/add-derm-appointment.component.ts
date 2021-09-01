@@ -35,8 +35,7 @@ export class AddDermAppointmentComponent implements OnInit {
 
 
     this.term = new DermAppointment();
-    this.term.duration = 100;
-    this.term.price = 1000;
+
     
    
   }
@@ -58,7 +57,7 @@ export class AddDermAppointmentComponent implements OnInit {
       ).subscribe()
 
       this.http
-      .get(this.endpoint.DERMATOLOGIST_LIST, options)
+      .get(this.endpoint.FIND_ALL_DERMATOLOGISTS+ Global.clickedPharmacy.id, options)
       .pipe(
         map(returnedDermatologists=> {
           this.dermatologists = returnedDermatologists

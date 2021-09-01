@@ -48,6 +48,7 @@ public class PharmacyController {
     }
 
 
+
     @GetMapping
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(this.pharmacyService.findAll(), HttpStatus.OK) ;
@@ -71,6 +72,16 @@ public class PharmacyController {
     public ResponseEntity<?> deleteMed(@RequestBody Pharmacy ph, @PathVariable Long medId){
 
         return new ResponseEntity<>(pharmacyService.deleteMed(ph, medId), HttpStatus.OK);
+
+    }
+
+
+    //Admin brise dermatologa iz apoteke
+    @PutMapping("/deleteDermatologist/{dermatologistId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<?> deleteDermatologist(@RequestBody Pharmacy ph, @PathVariable Long dermatologistId){
+
+        return new ResponseEntity<>(pharmacyService.deleteDermatologist(ph, dermatologistId), HttpStatus.OK);
 
     }
 

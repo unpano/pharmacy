@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { AddDermatologistComponent } from '../add-dermatologist/add-dermatologist.component';
+import { Pharmacy } from '../dto/pharmacy';
 import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -22,6 +23,10 @@ export class AdminPharmacyDermatologistsComponent implements OnInit {
   searchText
   searchText1
   endpoint = Endpoint
+
+  pharmacy : Pharmacy = Global.clickedPharmacy;
+
+  pharmacies : any
   
   constructor(private http: HttpClient,private router: Router, public dialog: MatDialog) { }
 
@@ -39,9 +44,9 @@ export class AdminPharmacyDermatologistsComponent implements OnInit {
           this.dermatologists = returnedDermatologists
         })
       ).subscribe(() => {})
+
+
   }
-
-
 
 
 

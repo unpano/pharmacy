@@ -90,6 +90,7 @@ import { PharmacyDermatologistsComponent } from './pharmacy-dermatologists/pharm
 import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.component';
 import { AdminPharmacyDermatologistsComponent } from './admin-pharmacy-dermatologists/admin-pharmacy-dermatologists.component';
 import { AddDermatologistComponent } from './add-dermatologist/add-dermatologist.component';
+import { VacationListComponent } from './vacation-list/vacation-list.component';
 
 
 
@@ -147,7 +148,8 @@ import { AddDermatologistComponent } from './add-dermatologist/add-dermatologist
     PharmacyDermatologistsComponent,
     AddPharmacistComponent,
     AdminPharmacyDermatologistsComponent,
-    AddDermatologistComponent
+    AddDermatologistComponent,
+    VacationListComponent
 
   ],
   imports: [

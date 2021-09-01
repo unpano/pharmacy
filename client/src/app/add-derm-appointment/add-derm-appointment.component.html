@@ -38,11 +38,30 @@
               </select>
             </div>
 
-            <label>Duration:</label>
-  
+            <div class="form-group">
+              <label for="find-form-first-name" id="prvaKolonaLabela">Duration: </label>							
+              <input  [(ngModel)]="term.duration"  name="newF" [value]="term.duration">
+      
+          </div>
 
+          <div class="form-group">
+            <label for="find-form-first-name" id="prvaKolonaLabela">Price: </label>							
+            <input  [(ngModel)]="term.price"  name="newF" [value]="term.price">
+    
+        </div>
+      
+          <div class="form-group">
+              <label for="find-form-first-name" id="prvaKolonaLabela">Start work time: </label>							
+              <input type="time" step="1" [(ngModel)]="term.startTime"  name="newF" [value]="term.startTime">
+      
+          </div>
+      
+          <div class="form-group">
+              <label for="find-form-first-name" id="prvaKolonaLabela">End work time: </label>							
+              <input type="time" step="1" [(ngModel)]="term.endTime"  name="newF" [value]="term.endTime">
+      
+          </div>
 
-            <label>Price:</label>
           
 
           </mat-form-field></td>

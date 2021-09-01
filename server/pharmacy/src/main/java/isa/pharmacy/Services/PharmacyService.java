@@ -27,6 +27,8 @@ public interface PharmacyService {
 
     Object deleteMed(Pharmacy ph, Long medId);
 
+    Object deleteDermatologist(Pharmacy ph, Long dermatologistId);
+
     Object addMed(Pharmacy ph, Long medId);
 
     Pharmacy findPharmacyByAdmin(Long adminId);

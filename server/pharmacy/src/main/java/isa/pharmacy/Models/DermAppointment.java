@@ -5,6 +5,7 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
+import java.sql.Time;
 import java.util.Date;
 
 @Entity
@@ -18,6 +19,11 @@ public class DermAppointment {
     private Date date;
     private Integer duration;
     private Integer price;
+
+    private Time startTime;
+    private Time endTime;
+
+
 
     @ManyToOne( fetch = FetchType.EAGER)
     //@NotFound(action = NotFoundAction.IGNORE)
@@ -44,6 +50,22 @@ public class DermAppointment {
         this.dermatologist = dermatologist;
         this.pharmacy = pharmacy;
         this.user = user;
+    }
+
+    public Time getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
+    }
+
+    public Time getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
 
     public Long getId() {
