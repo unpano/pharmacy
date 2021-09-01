@@ -34,6 +34,7 @@ import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-
 import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/admin-pharmacy-pharmacists.component';
 import { PromotionsComponent } from './promotions/promotions.component';
 import { ReportComponent } from './report/report.component';
+import { AdminPharmacyDermatologistsComponent } from './admin-pharmacy-dermatologists/admin-pharmacy-dermatologists.component';
 
 
 
@@ -68,7 +69,7 @@ const routes: Routes = [
 
   {path : 'promotions', component: PromotionsComponent},
   {path : 'pharmacists', component: AdminPharmacyPharmacistsComponent},
-  {path : 'dermatologists', component: DermatologistListComponent},
+  {path : 'dermatologists', component: AdminPharmacyDermatologistsComponent},
   {path : 'adminMeds', component: AdminPharmacyMedsComponent},
   {path : 'adminProfile', component: AdminProfileComponent},
   {path : 'promotions', component: AdminProfileComponent},

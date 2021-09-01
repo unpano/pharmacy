@@ -62,6 +62,12 @@ export enum Endpoint {
 
   ADD_NEW_PHARMACIST = "http://localhost:8084/pharmacists/add_pharmacist/",
 
-  DELETE_PHARMACIST = "http://localhost:8084/pharmacies/deletePharmacist/"
+  DELETE_PHARMACIST = "http://localhost:8084/pharmacies/deletePharmacist/",
+
+  FIND_ALL_DERMATOLOGISTS = "http://localhost:8084/dermatologists/allDermatologists/",
+
+  ADD_NEW_DERMATOLOGIST = "http://localhost:8084/dermatologists/add_dermatologist/",
+
+  DELETE_DERMATOLOGIST = "http://localhost:8084/pharmacies/deleteDermatologist/"
 
 }

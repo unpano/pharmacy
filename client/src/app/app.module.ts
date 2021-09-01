@@ -88,6 +88,8 @@ import { PromotionsComponent } from './promotions/promotions.component';
 import { ReportComponent } from './report/report.component';
 import { PharmacyDermatologistsComponent } from './pharmacy-dermatologists/pharmacy-dermatologists.component';
 import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.component';
+import { AdminPharmacyDermatologistsComponent } from './admin-pharmacy-dermatologists/admin-pharmacy-dermatologists.component';
+import { AddDermatologistComponent } from './add-dermatologist/add-dermatologist.component';
 
 
 
@@ -143,7 +145,9 @@ import { AddPharmacistComponent } from './add-pharmacist/add-pharmacist.componen
     PromotionsComponent,
     ReportComponent,
     PharmacyDermatologistsComponent,
-    AddPharmacistComponent
+    AddPharmacistComponent,
+    AdminPharmacyDermatologistsComponent,
+    AddDermatologistComponent
 
   ],
   imports: [
