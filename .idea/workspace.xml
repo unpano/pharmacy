@@ -24,26 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cbf47fce-dcb2-4f0e-82f7-edc67e76042a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inserti za mySQL bazu.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/derm-appointment-list/derm-appointment-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/dermatologist-list/dermatologist-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/dermatologist-list/dermatologist-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/medication-rate-list/medication-rate-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/medication-rate-list/medication-rate-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacist-list/pharmacist-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacist-list/pharmacist-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pharmacy-rate-list/pharmacy-rate-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pharmacy-rate-list/pharmacy-rate-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/pick-date/pick-date.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/pick-date/pick-date.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/reservation-list/reservation-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/reservation-list/reservation-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/schedule-pharmacist-appointment/schedule-pharmacist-appointment.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/util/endpoints-enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/DermatologistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/DermatologistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/TermRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Repositories/TermRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermatologistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/DermatologistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermAppointmentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermatologistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/DermatologistServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/MedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/MedServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/RateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/RateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/ReservationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/TermServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Services/Impl/TermServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Controllers/PharmacyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/java/isa/pharmacy/Models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pharmacy/src/main/resources/skripta.sql" beforeDir="false" afterPath="$PROJECT_DIR$/server/pharmacy/src/main/resources/skripta.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Docker compose primer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../nistagram/nistagram/account_service" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/client/node_modules/protractor" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -234,6 +217,8 @@
       <workItem from="1630357033657" duration="4279000" />
       <workItem from="1630361633105" duration="1064000" />
       <workItem from="1630363467738" duration="1994000" />
+      <workItem from="1630402188083" duration="28000" />
+      <workItem from="1630584852627" duration="1686000" />
     </task>
     <servers />
   </component>
@@ -265,10 +250,11 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1629833184882" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1630359647304">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="446" y="87" key="#com.intellij.ide.util.MemberChooser" timestamp="1630585025347">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1630359647304" />
+    <state x="446" y="87" key="#com.intellij.ide.util.MemberChooser/0.40.1280.680@0.40.1280.680" timestamp="1630585025347" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1629790760047">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -277,42 +263,51 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="170" y="166" width="941" height="348" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1629831394734" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1629494486509">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="421" y="136" key="FileChooserDialogImpl" timestamp="1630402211565">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1629494486509" />
-    <state width="1237" height="421" key="GridCell.Tab.0.bottom" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="421" y="136" key="FileChooserDialogImpl/0.40.1280.680@0.40.1280.680" timestamp="1630402211565" />
+    <state width="1237" height="489" key="GridCell.Tab.0.bottom" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.0.center" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.0.bottom/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
+    <state width="1237" height="489" key="GridCell.Tab.0.center" timestamp="1630586534163">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.0.left" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.0.center/0.40.1280.680@0.40.1280.680" timestamp="1630586534163" />
+    <state width="1237" height="489" key="GridCell.Tab.0.left" timestamp="1630586534163">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.0.right" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.0.left/0.40.1280.680@0.40.1280.680" timestamp="1630586534163" />
+    <state width="1237" height="489" key="GridCell.Tab.0.right" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.1.bottom" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.0.right/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
+    <state width="1237" height="489" key="GridCell.Tab.1.bottom" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.1.center" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.1.bottom/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
+    <state width="1237" height="489" key="GridCell.Tab.1.center" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.1.left" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.1.center/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
+    <state width="1237" height="489" key="GridCell.Tab.1.left" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
-    <state width="1237" height="421" key="GridCell.Tab.1.right" timestamp="1630361461690">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1237" height="489" key="GridCell.Tab.1.left/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
+    <state width="1237" height="489" key="GridCell.Tab.1.right" timestamp="1630586534164">
+      <screen x="0" y="40" width="1280" height="680" />
     </state>
     <state width="1237" height="421" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1630361461690" />
+    <state width="1237" height="489" key="GridCell.Tab.1.right/0.40.1280.680@0.40.1280.680" timestamp="1630586534164" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1629318390527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

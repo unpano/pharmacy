@@ -127,6 +127,21 @@ public class User extends GeneralUser  {
             inverseJoinColumns = @JoinColumn(name = "med_id", referencedColumnName = "id"))
     private List<Med> allergies;
 
+    //User ima listu apoteka na cije promocije je pretplacen
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "user_promoted_pharmacy",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "pharmacy_id", referencedColumnName = "id"))
+    private List<Pharmacy> pharmacies;
+
+    public List<Pharmacy> getPharmacies() {
+        return pharmacies;
+    }
+
+    public void setPharmacies(List<Pharmacy> pharmacies) {
+        this.pharmacies = pharmacies;
+    }
+
     public List<Med> getAllergies() {
         return allergies;
     }

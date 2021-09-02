@@ -268,3 +268,10 @@ insert into prescription_med (prescription_id,med_id) values (3,5);
 insert into prescription_med (prescription_id,med_id) values (4,6);
 insert into prescription_med (prescription_id,med_id) values (6,1);
 insert into prescription_med (prescription_id,med_id) values (6,2);
+
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (1,1);
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (1,2);
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (1,3);
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (2,1);
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (2,4);
+insert into user_promoted_pharmacy (user_id,pharmacy_id) values (2,5);

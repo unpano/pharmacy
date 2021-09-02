@@ -71,6 +71,21 @@ public class PharmacyController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/promoted")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findPromotedPharmacies(Principal user){
+
+        Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
+
+        List<Pharmacy> promotedPharmacies = user1.get().getPharmacies();
+        
+        if (user1.isPresent()){
+            return new ResponseEntity<>(promotedPharmacies, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+    }
+
 
 
 }

@@ -64,6 +64,7 @@ import { DermatologistListComponent } from './dermatologist-list/dermatologist-l
 import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
 import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
 import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 
 
@@ -96,7 +97,8 @@ import { MedicationRateListComponent } from './medication-rate-list/medication-r
     DermatologistListComponent,
     PharmacistListComponent,
     PharmacyRateListComponent,
-    MedicationRateListComponent
+    MedicationRateListComponent,
+    PromotionsComponent
   ],
   imports: [
     BrowserModule,

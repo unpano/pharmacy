@@ -1,0 +1,34 @@
+<app-header-l></app-header-l>
+<mat-card> 
+    <mat-card-content>
+      <form novalidate class="form-inline">
+          <div class="container">
+              <div class="row">
+                <div class="search-hero">
+                  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search">
+                </div>
+                <table matSort (matSortChange)="sortData($event)">
+                  <thead>
+                  <tr> 
+                    <th mat-sort-header="name">Pharmacy name</th>
+                    <th mat-sort-header="address">Address</th>
+                    <th mat-sort-header="city">City</th>
+                    <th mat-sort-header="rate">Rate</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let pharmacy of sortedData | filter:searchText">
+                    <td>{{pharmacy.name}}</td>
+                    <td>{{pharmacy.address}}</td>
+                    <td>{{pharmacy.city}}</td>
+                    <td>{{pharmacy.avgRank}}</td>   
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form> 
+    </mat-card-content>
+  </mat-card>
+

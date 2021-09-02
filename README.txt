@@ -7,7 +7,7 @@ spring.datasource.password=ovdeIdeSifra
 Tako da odgovara korisnickom imenu i sifri koju ste koristili prilikom otvaranja konekcije na tom portu. Da bi se
 baza kreirala potrebno je kreirati semu sa nazivom pharmacy.
 
-Za ulogu student 1 formirano je 13 tabela u bazi koje se popunjavaju podacima iz resource fajla.
+Za ulogu student 1 formirano je 14 tabela u bazi koje se popunjavaju podacima iz resource fajla.
 U njemu se nalaze insert naredbe. Nazivi tabela su:
 	1. loyalty_program
 	2. pharmacies
@@ -22,6 +22,7 @@ U njemu se nalaze insert naredbe. Nazivi tabela su:
 	11. derm_appointment
 	12. prescriptions
 	13. prescription_med
+	14. user_promoted_pharmacy
 Tim redom i popunjavati podatke u tabelama.
 Sifre za korisnike su iste kao i username-ovi samo su kriptovane.
 

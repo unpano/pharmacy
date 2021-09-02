@@ -22,6 +22,7 @@ import { DermatologistListComponent } from './dermatologist-list/dermatologist-l
 import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.component';
 import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
 import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
+import { PromotionsComponent } from './promotions/promotions.component';
 
 
 const routes: Routes = [
@@ -42,7 +43,8 @@ const routes: Routes = [
   {path: 'rateDermatologist', component: DermatologistListComponent},
   {path: 'ratePharmacist', component: PharmacistListComponent},
   {path: 'rateMedication', component: MedicationRateListComponent},
-  {path: 'ratePharmacy', component: PharmacyRateListComponent}
+  {path: 'ratePharmacy', component: PharmacyRateListComponent},
+  {path: 'promotions', component: PromotionsComponent}
 ];
 
 @NgModule({
