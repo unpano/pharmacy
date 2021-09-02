@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -49,6 +50,10 @@ export class UserProfileComponent implements OnInit {
     .get<Observable<User>>(this.endpoint.USER_PROFILE,options1)
       .pipe(
         map(returnedUser => {
+          var datePipe = new DatePipe('en-US');
+          
+            returnedUser["lastPasswordResetDate"] = datePipe.transform(returnedUser["lastPasswordResetDate"], 'dd-MM-yyyy HH:mm');
+         
           this.user = returnedUser  
 
         })).subscribe(() =>

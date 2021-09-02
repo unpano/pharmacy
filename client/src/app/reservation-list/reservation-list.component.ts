@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -33,9 +34,13 @@ export class ReservationListComponent implements OnInit {
       .get(this.endpoint.USER_RESERVATIONS,options)
       .pipe(
         map(returnedReservations=> {
+          var datePipe = new DatePipe('en-US');
+          for (const term in returnedReservations) {
+            returnedReservations[term]["pickUpDate"] = datePipe.transform(returnedReservations[term]["pickUpDate"], 'dd-MM-yyyy');
+           
+          }
           this.reservations = returnedReservations
           this.sortedData = this.reservations.slice()
-          console.log(this.sortedData)
         })
       ).subscribe()
   }

@@ -65,6 +65,7 @@ import { PharmacistListComponent } from './pharmacist-list/pharmacist-list.compo
 import { PharmacyRateListComponent } from './pharmacy-rate-list/pharmacy-rate-list.component';
 import { MedicationRateListComponent } from './medication-rate-list/medication-rate-list.component';
 import { PromotionsComponent } from './promotions/promotions.component';
+import { TermDetailsComponent } from './term-details/term-details.component';
 
 
 
@@ -98,7 +99,8 @@ import { PromotionsComponent } from './promotions/promotions.component';
     PharmacistListComponent,
     PharmacyRateListComponent,
     MedicationRateListComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    TermDetailsComponent
   ],
   imports: [
     BrowserModule,

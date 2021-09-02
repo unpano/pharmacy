@@ -36,4 +36,5 @@ export enum Endpoint{
     RATE_LIST = "http://localhost:8084/rates",
     CHANGE_RATE = "http://localhost:8084/rates/changeRate/",
     RATED = "http://localhost:8084/rates/rated/",
+    FIND_PHARMACIST = "http://localhost:8084/terms/pharmacist/"
 }

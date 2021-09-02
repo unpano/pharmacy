@@ -119,6 +119,8 @@ public class ReservationServiceImpl implements ReservationService {
 
         }
 
+        System.out.println(reservation1.getId());
+
         return reservation1;
     }
 

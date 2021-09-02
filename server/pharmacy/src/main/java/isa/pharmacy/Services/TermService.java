@@ -23,4 +23,6 @@ public interface TermService {
     Optional<Term> freeTerm(Long id, Long id1);
 
     List<Term> findAllByUserId(Long id);
+
+    Pharmacist findPharmacistByTermId(Long termId);
 }

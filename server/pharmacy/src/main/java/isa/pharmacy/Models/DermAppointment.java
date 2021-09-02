@@ -20,7 +20,6 @@ public class DermAppointment {
     private Integer price;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //@NotFound(action = NotFoundAction.IGNORE)
     private Dermatologist dermatologist;
 
 

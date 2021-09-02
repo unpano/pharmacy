@@ -89,7 +89,7 @@ public class UserController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> update(@RequestBody User user) {
-        
+
         Optional<User> optUser = userService.update(user);
 
         if (optUser.isPresent()) {

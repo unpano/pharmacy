@@ -214,4 +214,11 @@ public class TermServiceImpl implements TermService {
     public List<Term> findAllByUserId(Long id) {
         return termRepository.findAllByUserId(id);
     }
+
+    @Override
+    public Pharmacist findPharmacistByTermId(Long termId) {
+        Optional<Term> term = termRepository.findById(termId);
+
+        return term.get().getPharmacist();
+    }
 }

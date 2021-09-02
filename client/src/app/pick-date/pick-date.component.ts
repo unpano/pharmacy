@@ -46,8 +46,16 @@ export class PickDateComponent implements OnInit {
       }
       return EMPTY;
     })).subscribe(returnedRes => {
+      
                      
         this.retRes = returnedRes
+
+        if(this.retRes.id == null){
+
+          alert("You have already reserved this med")
+          console.log(returnedRes)
+          return
+        }
         let email: Email = new Email()
         const headers1 = { 
           'content-type': 'application/json',

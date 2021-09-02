@@ -99,6 +99,15 @@ public class TermController {
     }
 
     //vraca buduce termine na osnovu id-ja korisnika
+    @GetMapping("/pharmacist/{termId}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<?> findPharmacistByTermId(@PathVariable Long termId){
+
+        return new ResponseEntity<>(termService.findPharmacistByTermId(termId), HttpStatus.OK);
+
+    }
+
+    //vraca buduce termine na osnovu id-ja korisnika
     @GetMapping("/pastTerms")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> findPastTermsByUserId(Principal user){
