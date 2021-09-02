@@ -31,6 +31,8 @@ export class PromotionsComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
@@ -44,6 +46,9 @@ export class PromotionsComponent implements OnInit {
       
       })
     ).subscribe()
+
+
+
     
   }
 

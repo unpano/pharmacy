@@ -1,7 +1,166 @@
-----admin functionalities----------
+----admin functionalities----------Hristina Suknjaja
 
 
-insert into derm_appointment values (1,"2021-08-16 16:00:00",30,1000,3,1,1);
-insert into derm_appointment values (2,"2021-08-16 16:30:00",30,750,3,2,1);
-insert into derm_appointment values (3,"2021-08-21 16:00:00",30,1000,3,1,null);
-insert into derm_appointment values (4,"2021-08-16 16:30:00",30,1000,3,1,null);
+
+
+------pharmacies--------
+
+
+insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price,latitude, longitude) values(1,'Ul.29.novembra 25',3.7,'Viva','Beograd',600, 44.718440, 20.381090);
+insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price,latitude, longitude) values(2,'Trg Republike 10',4.3,'Hrast','Beograd',700, 44.816280, 20.460820);
+
+
+------users
+
+
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
+values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true,  1);
+
+-----meds 
+
+
+
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(1,'150mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(2,'200mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(3,'300mg; blister,6x10kom',2,0,'Actawell® XR',475,'MERCKLE GMBH, LudwigMerckle-Strasse 3,Blaubeuren, Nemacka','kvetiapin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(4,'150mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(5,'50mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(6,'75mg; blister,4x14kom',1,0,'Pregalix®',367,'PHARMATHEN SA, Dervenakion 6, Pallini, Attiki, Grcka','pregabalin',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(7,'500mg+500mg+250mg; bocica staklena, 25x500mg + 500 mg + 250 mg',0,1,'RECARBRIO®',1040,'LABORATOIRES MERCK SHARP & DOHME CHIBRET, Route de Marsat, Riom, Clermont-Ferrand, Francuska','imipenem, cilastatin, relebaktam',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(8,'rastvor za injekciju/infuziju; 1000mg+200mg; bocica staklena, 10x1.2g',0,1,'Amoxiplus 1,2g',756,'ANTIBIOTICE SA, Str. Valea Lupului nr. 1, Iasi, jud. Iasi, Rumunija','amoksicilin, klavulanska kiselina',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(9,'25mg/g; tuba, 1x50g',5,1,'Ketonal®',427,'SALUTAS PHARMA GMBH, Lange Göhren 3, Sülzetal, Osterweddingen, Nemacka','ketoprofen',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(10,'100mg/2mL; ampula, 10x2mL',6,1,'Ketonal®',180,'LEK FARMACEVTSKA DRU@BA D.D., Verovckova 57, Ljubljana, Slovenija','ketoprofen',0);
+insert into meds (id,additional_notes,form,issuance_regime,name,price,producer,type,stars) values(11,'; 8mg/mL; boca staklena, 1x100mL',7,1,'HEDELIX®',823,'KREWEL-MEUSELBACH GMBH, Krewelstr.2, Eitorf, Nemacka','br{ljan (Hedera helix L.), meki ekstrakt lista',0);
+
+
+
+-----pharmacy_med-------
+
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(1,1,1,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(2,1,2,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(3,1,3,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(4,1,4,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(5,1,5,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(6,1,6,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(7,1,7,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(8,1,8,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(9,2,9,16);
+insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(10,2,10,16);
+
+
+
+
+
+-----users-----------
+
+
+
+
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
+values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true,  1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
+values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true,1);
+
+
+
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id)
+values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true,1);
+
+
+
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
+values ('Pharmacist',4,'Momcilo','Stefanovic','momcilo','$2a$12$EOE8SNMv2P0lw.E7zZ0seuHx6cZgw212odgJjtIriVJ9MBFjUlXlm','momcilohej334@gmail.com','0616972409','Srbija','Pec','Mitra Misovica 7',true, 1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id)
+values ('Dermatologist',5,'Marta','Savic','marta','$2a$12$t5Kqg4ujfrRa/mCVVV/u5.IqfEWm5J3ECCuWus7Vzx02ZIUtl9bve','marta_savic3@gmail.com','0616972411','Srbija','Sremska Mitrovica','Ilije Glamocanina 9',true,2);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
+values ('User',9,'Hristina','Suknjaja','admin1','$2a$12$nshwofN/TdVIa87LXguq6urMwk.TyygUZNOkTq0idcH0A87a3Y6dK','kalinica11@gmail.com','0617072406','Srbija','Uzice','Zicka 2',true, 1);
+
+
+-----derm_appointment
+
+
+insert into derm_appointment values (105,"2021-09-16 16:00:00",30,400,5,2,null);
+insert into derm_appointment values (106,"2021-09-16 12:30:00",45,600,5,2,null);
+insert into derm_appointment values (107,"2021-09-20 13:30:00",45,600,5,1,null);
+insert into derm_appointment values (109,"2021-10-20 14:30:00",45,600,5,1,null);
+insert into derm_appointment values (110,"2021-10-27 15:30:00",45,600,5,1,null);
+
+insert into derm_appointment values (1,"2021-08-21 16:00:00",30,1000,5,1,null);
+insert into derm_appointment values (2,"2021-08-22 16:30:00",30,1000,5,1,null);
+insert into derm_appointment values (101,"2021-08-23 16:00:00",30,1000,5,1,null);
+insert into derm_appointment values (102,"2021-08-24 16:30:00",30,750,5,2,null);
+
+
+
+-----------authority
+
+
+insert into authority (id,name) values (1,'ROLE_USER');
+insert into authority (id,name) values (2,'ROLE_PHARMACIST');
+insert into authority (id,name) values (3,'ROLE_DERMATOLOGIST');
+insert into authority (id,name) values (4,'ROLE_ADMIN');
+
+------user_authorities
+
+insert into user_authority (user_id,authority_id) values (1,4);
+insert into user_authority (user_id,authority_id) values (9,4);
+insert into user_authority (user_id,authority_id) values (2,1);
+
+insert into user_authority (user_id,authority_id) values (3,2);
+insert into user_authority (user_id,authority_id) values (4,2);
+
+insert into user_authority (user_id,authority_id) values (5,3);
+
+
+
+----pharmacy_dermatologist
+
+insert into pharmacy_dermatologist (id,dermatologist_id, pharmacy_id) values (1,5,1);
+insert into pharmacy_dermatologist (id,dermatologist_id, pharmacy_id) values (2,5,2);
+
+
+
+----------promotion----
+
+
+insert into promotion (id, content, end_date, start_date, title, pharmacy_id)
+values (1, "Dermatoloski pregled 30% jeftiniji", "2021-09-16 16:00:00", "2021-06-16 16:00:00", "Popust", 1);
+
+insert into promotion (id, content, end_date, start_date, title, pharmacy_id)
+values (2, "Dermatoloski pregled 10% jeftiniji", "2021-02-16 16:00:00", "2021-01-16 16:00:00", "Popust", 1);
+
+insert into promotion (id, content, end_date, start_date, title, pharmacy_id)
+values (3, "Dermatoloski pregled 10% jeftiniji", "2021-02-16 16:00:00", "2021-01-16 16:00:00", "Popust", 2);
+
+
+
+
+-----------------vacation_request
+
+insert into vacation_request
+values (1, false, false, "2021-06-16 16:00:00", "2021-02-16 16:00:00",5, null,  1);
+
+
+
+
+insert into vacation_request
+values (2, false, false, "2021-02-16 16:00:00", "2021-01-16 16:00:00",5, null,  1);
+
+insert into vacation_request
+values (3, false, false, "2021-04-16 16:00:00", "2021-03-16 16:00:00",null, 4,  1);
+insert into vacation_request
+values (4, false, false, "2021-06-16 16:00:00", "2021-02-16 16:00:00",null, 3,  1);
+
+insert into vacation_request
+values (5, false, false, "2021-06-16 16:00:00", "2021-02-16 16:00:00",5, null,  2);
+
+
+
+
+
+
+
+
+
+
+

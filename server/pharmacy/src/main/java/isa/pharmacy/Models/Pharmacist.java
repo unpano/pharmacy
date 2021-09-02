@@ -34,19 +34,9 @@ public class Pharmacist extends GeneralUser {
         this.pharmacy = pharmacy;
     }
 
-    public Set<Term> getTerms() {
-        return terms;
-    }
-
-    public void setTerms(Set<Term> terms) {
-        this.terms = terms;
-    }
 
     @ManyToOne( fetch = FetchType.EAGER)
     private Pharmacy pharmacy;
 
-    //Farmaceut ima radne sate/termine za preglede koji nisu unapred definisani
-    @OneToMany(mappedBy = "pharmacist")
-    private Set<Term> terms = new HashSet<>();
 
 }

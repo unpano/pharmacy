@@ -3,12 +3,16 @@ package isa.pharmacy.Services.Impl;
 import isa.pharmacy.Models.DermAppointment;
 import isa.pharmacy.Models.Dermatologist;
 import isa.pharmacy.Models.User;
+import isa.pharmacy.Models.VacationRequest;
 import isa.pharmacy.Repositories.DermAppointmentRepository;
+import isa.pharmacy.Repositories.VacationRepository;
 import isa.pharmacy.Services.DermAppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.OptimisticLockException;
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -18,59 +22,102 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     @Autowired
     private DermAppointmentRepository dermAppointmentRepository;
 
+
+    @Autowired
+    private VacationRepository vacationRepository;
+
+    public Time getTimeFromDate(Date aDate){
+        int ret = 0;
+        SimpleDateFormat localDateFormat = new SimpleDateFormat("HH:MM:SS");
+        String sTime = localDateFormat.format(aDate);
+        String iTime = sTime;
+
+        return  java.sql.Time.valueOf(iTime);
+    }
+
     @Override
     public DermAppointment addNewAppointment(DermAppointment dermAppointment){
 
 
-
         //proveravamo da li dermatologu tada radno vreme
-        Dermatologist derm = dermAppointment.getDermatologist();
-        Date dateTime = dermAppointment.getDate();
-        boolean i = false;
 
-        //dermAppointmentRepository.findAllByDermatologistId(derm.getId());
-        Set<DermAppointment> lista_svih_zakazanih_pregleda = derm.getDermAppointments();
+                Dermatologist derm = dermAppointment.getDermatologist();
+                Time timeApp = getTimeFromDate(dermAppointment.getDate()) ;
 
+                if(timeApp.before(derm.getStartTime()) || timeApp.after(derm.getEndTime()))
+                {
+                    System.out.println(" Dermatologu tada nije radno vreme !");
+                    return null;
+                }
+
+        ///jeste ----nastavljamo dalje
         //proveravamo da li dermatolog vec ima zakazan termin
 
-        for (DermAppointment pregled : lista_svih_zakazanih_pregleda)
-        {
-            System.out.println(pregled.getDermatologist());
+                Set<DermAppointment> lista_svih_zakazanih_pregleda = derm.getDermAppointments();
 
-            long ONE_MINUTE_IN_MILLIS=60000; //millisecs
-            long t= pregled.getDate().getTime();    //pregled u vremenu
-            long t2= dermAppointment.getDate().getTime();    //pregled u vremenu
 
-            Date kraj_nekog=new Date(t + (pregled.getDuration() * ONE_MINUTE_IN_MILLIS));
-            Date kraj_ovog=new Date(t2 + (dermAppointment.getDuration() * ONE_MINUTE_IN_MILLIS));
+                boolean i = false;
 
-            //ako je vreme novog pregleda izmedju pocetka i kraja nekog vec postojeceg, onda ga necemo cuvati
-            if ( dermAppointment.getDate().after( pregled.getDate() )  || dermAppointment.getDate().before( kraj_nekog) )
+            for (DermAppointment pregled : lista_svih_zakazanih_pregleda)
             {
-                i = true;
+
+
+                long ONE_MINUTE_IN_MILLIS=60000; //millisecs
+                long t= pregled.getDate().getTime();    //pregled u vremenu
+                long t2= dermAppointment.getDate().getTime();    //pregled u vremenu
+
+                Date kraj_nekog=new Date(t + (pregled.getDuration() * ONE_MINUTE_IN_MILLIS));
+                Date kraj_ovog=new Date(t2 + (dermAppointment.getDuration() * ONE_MINUTE_IN_MILLIS));
+
+                //ako je vreme novog pregleda izmedju pocetka i kraja nekog vec postojeceg, onda ga necemo cuvati
+                if ( dermAppointment.getDate().after( pregled.getDate() )  || dermAppointment.getDate().before( kraj_nekog) )
+                {
+                    i = true;
+
+                }
+                if ( dermAppointment.getDate().after( pregled.getDate() )  && dermAppointment.getDate().before( kraj_ovog) )
+                {
+                    i = true;
+
+                }
+                if(dermAppointment.getDate() ==pregled.getDate())
+                {
+                    i = true;
+                }
+
 
             }
-            if ( dermAppointment.getDate().after( pregled.getDate() )  && dermAppointment.getDate().before( kraj_ovog) )
-            {
-                i = true;
-
-            }
-            if(dermAppointment.getDate() ==pregled.getDate())
-            {
-                i = true;
-            }
-
-
-        }
 
 
         System.out.println(i);
         if(i == true)
         {
+            System.out.println(" Dermatolog je na pregledu tada !");
             return null;
 
         }
-        else
+
+        ///nema zakazan termin----nastavljamo dalje
+        //proveravamo da li je dermatolog na godisnjem odmoru
+
+        List<VacationRequest> vacations = vacationRepository.findAll();
+        for (VacationRequest v : vacations)
+        {
+            if(v.isApproved() && v.getDermatologist().getId() == derm.getId())
+            {
+                if(dermAppointment.getDate().after(   v.getStartDate()   )  && dermAppointment.getDate().before(     v.getEndDate()      ))
+                {
+                    System.out.println(" Dermatolog je na godisnjem tada !");
+                    return  null;
+                }
+
+            }
+
+        }
+
+
+
+
             return dermAppointmentRepository.save(dermAppointment);
     }
 

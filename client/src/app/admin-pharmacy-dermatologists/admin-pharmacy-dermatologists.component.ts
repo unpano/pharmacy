@@ -31,6 +31,9 @@ export class AdminPharmacyDermatologistsComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
+
+    
     //dobavi listu farmaceuta
     const headers = { 
       'content-type': 'application/json',

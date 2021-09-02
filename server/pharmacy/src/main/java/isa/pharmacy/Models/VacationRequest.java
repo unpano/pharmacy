@@ -1,5 +1,7 @@
 package isa.pharmacy.Models;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -15,6 +17,7 @@ public class VacationRequest {
     private Date startDate;
 
     private Date endDate;
+
 
     private boolean approved;
 

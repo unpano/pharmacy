@@ -15,15 +15,9 @@ public class DermAppointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Date date;
     private Integer duration;
     private Integer price;
-
-    private Time startTime;
-    private Time endTime;
-
-
 
     @ManyToOne( fetch = FetchType.EAGER)
     //@NotFound(action = NotFoundAction.IGNORE)
@@ -50,22 +44,6 @@ public class DermAppointment {
         this.dermatologist = dermatologist;
         this.pharmacy = pharmacy;
         this.user = user;
-    }
-
-    public Time getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
-    }
-
-    public Time getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Time endTime) {
-        this.endTime = endTime;
     }
 
     public Long getId() {

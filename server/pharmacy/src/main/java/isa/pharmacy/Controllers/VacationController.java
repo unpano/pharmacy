@@ -1,5 +1,6 @@
 package isa.pharmacy.Controllers;
 
+import isa.pharmacy.Models.GeneralUser;
 import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.Pharmacy;
 import isa.pharmacy.Models.VacationRequest;
@@ -28,10 +29,11 @@ public class VacationController {
         return new ResponseEntity<List<VacationRequest>>(vacationService.findVacationsByPharmacyId(id), HttpStatus.OK);
     }
 
+
     @GetMapping("/getWorkerName/")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> findWorkerName(@PathVariable Long vId) {
-        return new ResponseEntity<String>(vacationService.findWorkerName(vId), HttpStatus.OK) ;
+        return new ResponseEntity<GeneralUser>(vacationService.findWorkerName(vId), HttpStatus.OK) ;
 
     }
 

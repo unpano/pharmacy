@@ -15,9 +15,9 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -31,12 +31,22 @@ public class DermAppointmentController {
     private UserService userService;
 
 
-
-
     //dodavanje slobodnih termina
-    @PostMapping("/add_appointment/")
+    @PostMapping("/add_appointment/{date}/{time}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> addNewAppointment(@RequestBody DermAppointment app) {
+    public ResponseEntity<?> addNewAppointment(@PathVariable String date, @PathVariable String time , @RequestBody DermAppointment app ) throws ParseException{
+
+        System.out.println(time);
+        System.out.println(date);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
+        Date dateValue = formatter.parse(date+' '+time);
+
+
+        app.setDate(dateValue);
+
+        System.out.println("ovde je sve okej");
+
         return new ResponseEntity<>(dermAppointmentService.addNewAppointment(app), HttpStatus.OK);
     }
 

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { DermAppointment } from '../dto/dermAppointment';
 import { Email } from '../dto/email';
@@ -20,10 +21,6 @@ export class AddDermAppointmentComponent implements OnInit {
   dermatologists : any
 
 
-  duration : Number;
-  date : Date;  
-  price : Number;
-
   sortedData: any
   searchText
   endpoint = Endpoint;
@@ -31,7 +28,11 @@ export class AddDermAppointmentComponent implements OnInit {
   term : DermAppointment;
 
 
-  constructor(public dialog: MatDialog,private http: HttpClient) { 
+  date 
+  time 
+
+
+  constructor(public dialog: MatDialog,private http: HttpClient,public router: Router) { 
 
 
     this.term = new DermAppointment();
@@ -41,6 +42,8 @@ export class AddDermAppointmentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
 
     const headers = { 
       'content-type': 'application/json',
@@ -67,10 +70,6 @@ export class AddDermAppointmentComponent implements OnInit {
 
   }
 
-  onSelectedPharmacy(ph: Pharmacy)
-  {
-      this.term.pharmacy = ph;
-  }
 
   onSelectedDermatologist(derm: User)
   {
@@ -79,12 +78,6 @@ export class AddDermAppointmentComponent implements OnInit {
   }
 
 
-  pickDate(){
-
-
-    this.term.date = this.date;
-    alert(this.term.date)
-  }
 
 
 
@@ -95,16 +88,16 @@ export class AddDermAppointmentComponent implements OnInit {
         'Authorization': 'Bearer ' + Global.token.access_token}  
       let options = { headers: headers };
 
-  
+
       this.http
-        .post(this.endpoint.ADD_NEW_TERM, this.term, options)
+        .post(this.endpoint.ADD_NEW_TERM + this.date + '/' + this.time, this.term, options)
         .pipe().subscribe(returnTerm => 
         {
-    
-          this.term.date = this.date;
+          alert(this.time)
           this.term.duration = 100;
           this.term.price = 1000;
           this.term.user = null;
+          this.term.pharmacy = Global.clickedPharmacy;
 
           if (returnTerm == null)
             alert("Dermatologist already has an appointment. Try with another date!")

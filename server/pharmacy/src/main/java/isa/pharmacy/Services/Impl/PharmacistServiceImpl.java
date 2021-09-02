@@ -64,10 +64,6 @@ public class PharmacistServiceImpl implements PharmacistService {
             }
         }
 
-
-
-
-
         return p_return;
     }
 

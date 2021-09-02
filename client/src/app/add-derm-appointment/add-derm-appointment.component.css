@@ -30,3 +30,23 @@ form {
       width: 200px;
       
   }
+
+  mat-form-field {
+    margin-right: 12px;
+  }
+
+  .input{
+    width: 280px;
+    height: 50px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 2px 0 5px 5px;
+    border-width: 0ch;
+}
+
+
+.input,.label{
+  margin-left: 60px;
+  margin-top: 25px;
+  font-weight: bold;
+}

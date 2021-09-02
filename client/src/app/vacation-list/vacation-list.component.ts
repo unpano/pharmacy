@@ -34,9 +34,11 @@ export class VacationListComponent implements OnInit {
 
   worker : any
   
-  constructor(private http: HttpClient,private router: Router, public dialog: MatDialog) { }
+  constructor(private http: HttpClient,public router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
+
     //dobavi listu farmaceuta
     const headers = { 
       'content-type': 'application/json',
@@ -85,22 +87,15 @@ this.http
   
 
   catchError((error: HttpErrorResponse) => {
-    if (error.error instanceof Error) {
-      // A client-side or network error occurred. Handle it accordingly.
-      alert("Bad request, please try again later.");
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
+    if (error.error instanceof Error) 
+    {
+    alert("Bad request, please try again later.");
+    } 
+    else 
+    {
       alert("Already answered");
     }
 
-    // If you want to return a new response:
-    //return of(new HttpResponse({body: [{name: "Default value..."}]}));
-
-    // If you want to return the error on the upper level:
-    //return throwError(error);
-
-    // or just return nothing:
     return EMPTY;
   }),
   map(returnedPh=> {
