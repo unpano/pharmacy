@@ -1,0 +1,74 @@
+
+
+
+
+
+<mat-card class="example-card">
+  
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+
+
+            
+        <div class="forma">
+
+
+                <label class="label"> Pick date: </label>
+
+                <form>
+
+                    <input
+                    type="date"
+                    class="input"
+                    name="examinationDateInput"
+                    [(ngModel)]="date"/>
+        
+               
+                    <label class="label">Pick time:</label>
+                    <input type="time" id="input" class="input"  value="13:00:00" [(ngModel)]="timeInput" step="1"/>
+
+           
+  
+
+       
+
+        
+        
+
+
+                <div class="form-group">
+                <label for="vehicle-form-brand">Dermatologist:</label>
+                <select class="form-control" name="brand" id="vehicle-form-brand" required >
+                    <option value="" disabled selected>Select dermatologist</option>
+                    <option *ngFor="let derm of dermatologists" (click)="onSelectedDermatologist(derm)">{{derm.firstName}} {{derm.lastName}}</option>
+                </select>								
+                </div>
+
+
+
+
+                <label class="label">Duration:</label>
+                <input [(ngModel)]="dermApp.duration"  name="newF" [value]="dermApp.duration" />
+
+                <label class="label">Price:</label>
+                <input [(ngModel)]="dermApp.price"  name="newF" [value]="dermApp.price" />
+ 
+
+
+
+  <button mat-raised-button (click)="addTerm()">Add appointment term</button>
+
+
+</form>
+
+</div>
+  
+      </table>
+      </form>  
+    </mat-card-content>
+
+  
+  </mat-card>
+ 
+

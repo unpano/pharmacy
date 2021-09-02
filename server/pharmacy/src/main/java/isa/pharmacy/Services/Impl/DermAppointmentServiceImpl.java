@@ -39,9 +39,14 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
     public DermAppointment addNewAppointment(DermAppointment dermAppointment){
 
 
+        Dermatologist derm = dermAppointment.getDermatologist();
+
+
+
+
         //proveravamo da li dermatologu tada radno vreme
 
-                Dermatologist derm = dermAppointment.getDermatologist();
+
                 Time timeApp = getTimeFromDate(dermAppointment.getDate()) ;
 
                 if(timeApp.before(derm.getStartTime()) || timeApp.after(derm.getEndTime()))

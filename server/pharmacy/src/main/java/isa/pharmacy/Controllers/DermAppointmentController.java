@@ -38,6 +38,7 @@ public class DermAppointmentController {
 
         System.out.println(time);
         System.out.println(date);
+        System.out.println(app.getDuration());
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
         Date dateValue = formatter.parse(date+' '+time);

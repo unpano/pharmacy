@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AddDermApp2Component } from '../add-derm-app2/add-derm-app2.component';
 import { AddDermAppointmentComponent } from '../add-derm-appointment/add-derm-appointment.component';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
@@ -43,7 +44,7 @@ export class AdminDermAppointmentsComponent implements OnInit {
 
   addDermAppointment(){
     
-    let dialogRef = this.dialog.open(AddDermAppointmentComponent,{
+    let dialogRef = this.dialog.open(AddDermApp2Component,{
       autoFocus: false,
       maxHeight: '90vh' //you can adjust the value as per your view
 })

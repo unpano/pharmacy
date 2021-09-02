@@ -13,6 +13,7 @@ import java.util.Set;
 public class Dermatologist extends GeneralUser{
 
     //Prosecna ocena dermatologa
+    
     private Float stars;
 
     private Time startTime;
@@ -65,6 +66,9 @@ public class Dermatologist extends GeneralUser{
     public Time getEndTime() {
         return endTime;
     }
+
+
+
 
 
 }

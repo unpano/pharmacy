@@ -9,13 +9,6 @@
 insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price,latitude, longitude) values(1,'Ul.29.novembra 25',3.7,'Viva','Beograd',600, 44.718440, 20.381090);
 insert into pharmacies (id,address,avg_rank,name,city,pharmacist_counceling_price,latitude, longitude) values(2,'Trg Republike 10',4.3,'Hrast','Beograd',700, 44.816280, 20.460820);
 
-
-------users
-
-
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
-values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true,  1);
-
 -----meds 
 
 
@@ -56,24 +49,24 @@ insert into pharmacy_med (id,pharmacy_id,med_id,quantity) values(10,2,10,16);
 
 
 
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
-values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true,  1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
-values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true,1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id, start_time, end_time)
+values ('User',1,'Andjela','Paunovic','andjica','$2a$12$zjkiVPZmu2j1s5.jMYsfEOlS1nSgNPvkn7r5.KfRWypgDMhWNn4PS','andjelapaunovic99@gmail.com','0616972406','Srbija','Uzice','Potocanje BB',true,  1, "12:00:00", "16:00:00");
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id, start_time, end_time)
+values ('User',2,'Andrija','Popovic','andrija','$2a$12$CzWBCQiV3UbgYRKcRm647u3app1S9e0V3SYkpX1iGacGyZfCixajy','andrijapopovic89@gmail.com','0616972407','Srbija','Pozarevac','Proleterskih brigada 13',true,1,  "12:00:00", "16:00:00");
 
 
 
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id)
-values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true,1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id, start_time, end_time)
+values ('Pharmacist',3,'Marija','Krstic','marija','$2a$12$s6D2OReh/jx8fIo5SUdTyuhtNDjcsPCSWIFGhlkUouD9LknkWP74K','marijakrstic77@gmail.com','0616972408','Srbija','Krusevac','Kostolac 14',true,1,  "12:00:00", "16:00:00");
 
 
 
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
-values ('Pharmacist',4,'Momcilo','Stefanovic','momcilo','$2a$12$EOE8SNMv2P0lw.E7zZ0seuHx6cZgw212odgJjtIriVJ9MBFjUlXlm','momcilohej334@gmail.com','0616972409','Srbija','Pec','Mitra Misovica 7',true, 1);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id)
-values ('Dermatologist',5,'Marta','Savic','marta','$2a$12$t5Kqg4ujfrRa/mCVVV/u5.IqfEWm5J3ECCuWus7Vzx02ZIUtl9bve','marta_savic3@gmail.com','0616972411','Srbija','Sremska Mitrovica','Ilije Glamocanina 9',true,2);
-insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id)
-values ('User',9,'Hristina','Suknjaja','admin1','$2a$12$nshwofN/TdVIa87LXguq6urMwk.TyygUZNOkTq0idcH0A87a3Y6dK','kalinica11@gmail.com','0617072406','Srbija','Uzice','Zicka 2',true, 1);
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id, start_time, end_time)
+values ('Pharmacist',4,'Momcilo','Stefanovic','momcilo','$2a$12$EOE8SNMv2P0lw.E7zZ0seuHx6cZgw212odgJjtIriVJ9MBFjUlXlm','momcilohej334@gmail.com','0616972409','Srbija','Pec','Mitra Misovica 7',true, 1,  "12:00:00", "16:00:00");
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled,pharmacy_id, start_time, end_time)
+values ('Dermatologist',5,'Marta','Savic','marta','$2a$12$t5Kqg4ujfrRa/mCVVV/u5.IqfEWm5J3ECCuWus7Vzx02ZIUtl9bve','marta_savic3@gmail.com','0616972411','Srbija','Sremska Mitrovica','Ilije Glamocanina 9',true,2,  "12:00:00", "16:00:00");
+insert into users (dtype,id,first_name,last_name,username,password,email,phone_number,country,city,address, enabled, pharmacy_id, start_time, end_time)
+values ('User',9,'Hristina','Suknjaja','admin1','$2a$12$nshwofN/TdVIa87LXguq6urMwk.TyygUZNOkTq0idcH0A87a3Y6dK','kalinica11@gmail.com','0617072406','Srbija','Uzice','Zicka 2',true, 1,  "12:00:00", "16:00:00");
 
 
 -----derm_appointment

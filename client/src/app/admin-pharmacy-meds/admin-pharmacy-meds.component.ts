@@ -34,16 +34,16 @@ export class AdminPharmacyMedsComponent implements OnInit {
 
    }
 
-  ngOnInit(): void {
+   ngOnInit(): void {
 
     const headers = { 
       'content-type': 'application/json',
       'Authorization': 'Bearer ' + Global.token.access_token}  
     let options = { headers: headers };
-    
+
 
     this.http
-    .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id, options)
+    .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id)
     .pipe(
       map(returnedMeds=> {
         this.meds = returnedMeds
@@ -52,9 +52,8 @@ export class AdminPharmacyMedsComponent implements OnInit {
     ).subscribe()
 
 
-    
-  }
 
+  }
 
 
 
@@ -109,6 +108,7 @@ export class AdminPharmacyMedsComponent implements OnInit {
 
   update(med : Med)
   {
+
     Global.clickedMed = med
 
 

@@ -88,16 +88,18 @@ export class AddDermAppointmentComponent implements OnInit {
         'Authorization': 'Bearer ' + Global.token.access_token}  
       let options = { headers: headers };
 
+      alert(this.time)
+      this.term.duration = 100;
+      this.term.price = 1000;
+      this.term.user = null;
+      this.term.pharmacy = Global.clickedPharmacy;
+
 
       this.http
         .post(this.endpoint.ADD_NEW_TERM + this.date + '/' + this.time, this.term, options)
         .pipe().subscribe(returnTerm => 
         {
-          alert(this.time)
-          this.term.duration = 100;
-          this.term.price = 1000;
-          this.term.user = null;
-          this.term.pharmacy = Global.clickedPharmacy;
+
 
           if (returnTerm == null)
             alert("Dermatologist already has an appointment. Try with another date!")
