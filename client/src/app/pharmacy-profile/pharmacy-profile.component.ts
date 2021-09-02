@@ -18,7 +18,7 @@ export class PharmacyProfileComponent implements OnInit {
   constructor(public dialog: MatDialog,private router: Router) { }
 
   ngOnInit(): void {
-    if(Global.loggedUser.lastName != undefined){
+    if(sessionStorage.getItem('token') != null){
       this.userLogged = true
     }
   }

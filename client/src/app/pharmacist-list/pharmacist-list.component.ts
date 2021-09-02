@@ -24,10 +24,13 @@ export class PharmacistListComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //dobavi listu farmaceuta
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http
@@ -52,7 +55,7 @@ export class PharmacistListComponent implements OnInit {
     //oceni farmaceuta
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http
@@ -74,7 +77,7 @@ export class PharmacistListComponent implements OnInit {
     //promeni ocenu farmaceuta
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http

@@ -1,4 +1,4 @@
 export class Token{
-    access_token: String;
-    expires_in: Number;
+    access_token: string;
+    expires_in: string;
 }

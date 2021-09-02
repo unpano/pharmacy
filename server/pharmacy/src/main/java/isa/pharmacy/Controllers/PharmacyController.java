@@ -78,7 +78,7 @@ public class PharmacyController {
         Optional<User> user1 = Optional.ofNullable(userService.findByUsername(user.getName()));
 
         List<Pharmacy> promotedPharmacies = user1.get().getPharmacies();
-        
+
         if (user1.isPresent()){
             return new ResponseEntity<>(promotedPharmacies, HttpStatus.OK);
         }

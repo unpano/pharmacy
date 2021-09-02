@@ -29,7 +29,9 @@ export class MedListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(Global.loggedUser.id != undefined)
+
+  
+    if(sessionStorage.getItem('token') != null)
       this.loggedUser = true
    
     if(Global.allMeds == true){

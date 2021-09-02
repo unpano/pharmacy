@@ -24,10 +24,13 @@ export class FutureDermAppointmentListComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //VRACAM BUDUCE PREGLEDE PACIJENTA KOD DERMATOLOGA
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
       .get(this.endpoint.FUTURE_DERM_APPOINTMENT_LIST,options)
@@ -52,7 +55,7 @@ export class FutureDermAppointmentListComponent implements OnInit {
   removeDermAppointment(app: DermAppointment){
       const headers = { 
         'content-type': 'application/json',
-        'Authorization': 'Bearer ' + Global.token.access_token}  
+        'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
       let options = { headers: headers };
       this.http
         .put(this.endpoint.FREE_SCHEDULED_DERM_APPOINTMENT + app.id,null,options)
@@ -67,7 +70,7 @@ export class FutureDermAppointmentListComponent implements OnInit {
       removePharmAppointment(app: Term){
         const headers = { 
           'content-type': 'application/json',
-          'Authorization': 'Bearer ' + Global.token.access_token}  
+          'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
         let options = { headers: headers };
         this.http
           .put(this.endpoint.FREE_SCHEDULED_PHARM_APPOINTMENT + app.id,null,options)

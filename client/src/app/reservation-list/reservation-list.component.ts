@@ -21,10 +21,13 @@ export class ReservationListComponent implements OnInit {
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //poziv metode koja vraca sve rezervacije user-a
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
       .get(this.endpoint.USER_RESERVATIONS,options)
@@ -40,7 +43,7 @@ export class ReservationListComponent implements OnInit {
   removeReservation(res: Reservation){
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
       .put(this.endpoint.FREE_RESERVED_MED + res.id,null,options)
@@ -55,7 +58,7 @@ export class ReservationListComponent implements OnInit {
   pickUp(res){
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
       .put(this.endpoint.PICK_UP_MED + res.id,null,options)

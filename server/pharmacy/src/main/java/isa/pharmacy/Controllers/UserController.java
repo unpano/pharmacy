@@ -1,9 +1,6 @@
 package isa.pharmacy.Controllers;
 
 import isa.pharmacy.Models.*;
-import isa.pharmacy.Services.DermAppointmentService;
-import isa.pharmacy.Services.RateService;
-import isa.pharmacy.Services.TermService;
 import isa.pharmacy.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -42,10 +38,11 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/meds/{id}")
+    @GetMapping("/meds")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> findMedsByUserId(@PathVariable Long id){
-        Optional<User> user = this.userService.findById(id);
+    public ResponseEntity<?> findMedsByUserId(Principal user1){
+        Optional<User> user = Optional.ofNullable(userService.findByUsername(user1.getName()));
+
         List<Med> allergies = user.get().getAllergies();
 
         if (user.isPresent()){
@@ -92,6 +89,7 @@ public class UserController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> update(@RequestBody User user) {
+        
         Optional<User> optUser = userService.update(user);
 
         if (optUser.isPresent()) {

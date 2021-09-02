@@ -35,7 +35,7 @@ export class AddAllergyFormComponent implements OnInit {
   addAllergy(med: Med){
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     const body=JSON.stringify(med);

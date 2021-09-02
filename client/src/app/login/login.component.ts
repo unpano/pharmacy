@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') != null){
+      this.router.navigate(['loggedUserHomePage'])
+    }
   }
 
   onClickedSignUp(){
@@ -50,21 +53,19 @@ export class LoginComponent implements OnInit {
       map(returnedToken => { 
           Global.token.access_token = returnedToken["access_token"]
           Global.token.expires_in = returnedToken["expires_in"]
+          sessionStorage.setItem("token", Global.token.access_token);
+          sessionStorage.setItem("timeOut", Global.token.expires_in);
+     
       })).subscribe(res =>{
               const headers = { 
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + Global.token.access_token}  
+                'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
               let options = { headers: headers };
 
               this.http
               .get(this.endpoint.USER_PROFILE,options)
                 .pipe(
                   map(returnedUser => {
-                    let user: any
-                    user = returnedUser  
-                    Global.loggedUser = user
-                    console.log(Global.loggedUser)
-
                     if(returnedUser["authorities"][0]["authority"] == 'ROLE_USER')
                       this.router.navigate(["/loggedUserHomePage"]);
                   })).subscribe()

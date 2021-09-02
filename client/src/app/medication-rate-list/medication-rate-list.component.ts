@@ -24,10 +24,13 @@ export class MedicationRateListComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //dobavi listu lekova
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     
     this.http
@@ -52,7 +55,7 @@ export class MedicationRateListComponent implements OnInit {
     //oceni lek
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http
@@ -74,7 +77,7 @@ export class MedicationRateListComponent implements OnInit {
     //promeni ocenu dermatologa
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http

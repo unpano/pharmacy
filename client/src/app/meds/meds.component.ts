@@ -14,10 +14,11 @@ export class MedsComponent implements OnInit {
 
   ngOnInit(): void {
     Global.allMeds = true
-    if(Global.loggedUser.id != undefined)
+    if(sessionStorage.getItem('token') != null){
       this.userLogged = true
+    }
     else
-    this.userLogged = false
+      this.userLogged = false
   }
 
 }

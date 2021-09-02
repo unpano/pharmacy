@@ -22,10 +22,13 @@ export class PrescriptionListComponent implements OnInit {
   constructor(public router: Router,public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //dobavljam listu recepata koji su prepisani pacijentu
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     
     this.http

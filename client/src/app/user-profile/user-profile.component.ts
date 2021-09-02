@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AddAllergyFormComponent } from '../add-allergy-form/add-allergy-form.component';
 import { User } from '../dto/user';
@@ -16,7 +17,7 @@ import { Global } from '../util/global';
 })
 export class UserProfileComponent implements OnInit {
 
-  user: User = Global.loggedUser
+  user: any
   meds: any
   onEditButton: Boolean = false
   dataArray = []
@@ -36,18 +37,36 @@ export class UserProfileComponent implements OnInit {
   constructor(public dialog: MatDialog,private router: Router,private http: HttpClient) { }
 
   ngOnInit(): void {
-    //console.log(this.user)
-    const headers = { 
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
+    const headers1 = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
+    let options1 = { headers: headers1 };
+
+    this.http
+    .get<Observable<User>>(this.endpoint.USER_PROFILE,options1)
+      .pipe(
+        map(returnedUser => {
+          this.user = returnedUser  
+
+        })).subscribe(() =>
+        {
+          const headers = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
-      .get(this.endpoint.USER_MED_LIST + Global.loggedUser.id,options)
+      .get(this.endpoint.USER_MED_LIST,options)
       .pipe(
         map(returnedAllergies=> {
           this.meds = returnedAllergies
         })
       ).subscribe()
+        })
+    //console.log(this.user)
+    
   }
 
   onEditProfile(){
@@ -58,25 +77,27 @@ export class UserProfileComponent implements OnInit {
     //poziv update metode za usera 
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
+    //nadjem ulogovanog prvo
+
     if(this.newFirstName != undefined)
-      Global.loggedUser.firstName = this.newFirstName
+      this.user.firstName = this.newFirstName
     if(this.newLastName != undefined)
-      Global.loggedUser.lastName = this.newLastName
+      this.user.lastName = this.newLastName
     if(this.newUsername != undefined)
-      Global.loggedUser.username = this.newUsername
+      this.user.username = this.newUsername
     if(this.newPhoneNumber != undefined)
-      Global.loggedUser.phoneNumber = this.newPhoneNumber
+      this.user.phoneNumber = this.newPhoneNumber
     if(this.newAddress != undefined)
-      Global.loggedUser.address = this.newAddress
+      this.user.address = this.newAddress
     if(this.newCity != undefined)
-      Global.loggedUser.city = this.newCity
+      this.user.city = this.newCity
     if(this.newCountry != undefined)
-      Global.loggedUser.country = this.newCountry
+      this.user.country = this.newCountry
     
-    const body=JSON.stringify(Global.loggedUser);   //konverzija objekta subscriber u json
+    const body=JSON.stringify(this.user);   //konverzija objekta subscriber u json
     
 
     this.http

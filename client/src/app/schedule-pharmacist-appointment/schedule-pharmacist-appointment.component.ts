@@ -11,7 +11,7 @@ import { Pharmacy } from '../dto/pharmacy';
 import { User } from '../dto/user';
 import { Email } from '../dto/email';
 import { Router } from '@angular/router';
-import { EMPTY } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-schedule-pharmacist-appointment',
@@ -22,6 +22,7 @@ import { EMPTY } from 'rxjs';
 
 export class SchedulePharmacistAppointmentComponent implements OnInit {
 
+  user: any
   dateInput
   timeInput
   pharmacies: any
@@ -33,6 +34,9 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
   constructor(public dialog: MatDialog,private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
   }
 
   
@@ -45,7 +49,7 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
     
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token} 
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")} 
     let options = { headers: headers };
 
     this.http
@@ -60,7 +64,7 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
   pickPharmacy(pharmacy: Pharmacy){
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token} 
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")} 
     let options = { headers: headers };
 
     this.http
@@ -75,20 +79,31 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
     //kreiranje novog term-a
 
     //Samoako je broj penala 
-    if(Global.loggedUser.penalties < 3){
+    const headers1 = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
+    let options1 = { headers: headers1 };
+
+    this.http
+    .get<Observable<User>>(this.endpoint.USER_PROFILE,options1)
+      .pipe(
+        map(returnedUser => {
+          this.user = returnedUser  
+
+        })).subscribe(() =>
+        {
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     let email: Email = new Email()
-    email.recipient = Global.loggedUser.email
+    email.recipient = this.user.email
     email.subject = "Confirmation info of scheduled pharmacist appointment"
     email.message = 'You have scheduled appointment for pharmacist  ' + pharmacist.firstName + '.'
 
     this.http
-      .put(this.endpoint.SCHEDULE_PHARMACIST + pharmacist.id + '/' + Global.loggedUser.id
-      + '/' + this.dateInput + '/' + this.timeInput,null,options)
+      .put(this.endpoint.SCHEDULE_PHARMACIST + pharmacist.id + '/' + this.dateInput + '/' + this.timeInput,null,options)
       .pipe(catchError((error: HttpErrorResponse) => {
         if (error.error instanceof Error) {
           alert("Bad request, please try again later.");
@@ -104,7 +119,7 @@ export class SchedulePharmacistAppointmentComponent implements OnInit {
           .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe()
           .subscribe(res => this.router.navigate(["loggedUserHomePage"]))
         }
-      })
-  }else
-  alert("Number of panelties is 3. You cannot finish this action.")}
+      })})}
+      
+  
 }

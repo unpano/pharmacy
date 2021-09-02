@@ -10,6 +10,7 @@ export class LoggedUserHomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

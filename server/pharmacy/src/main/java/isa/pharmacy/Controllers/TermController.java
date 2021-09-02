@@ -67,10 +67,13 @@ public class TermController {
     }
 
     //Nadji sve farmaceute koje imaju slobodan termin
-    @PutMapping("/add/{pharmacistId}/{userId}/{date}/{time}")
+    @PutMapping("/add/{pharmacistId}/{date}/{time}")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<?> addTerm(@PathVariable Long pharmacistId, @PathVariable Long userId,
+    public ResponseEntity<?> addTerm(@PathVariable Long pharmacistId, Principal user1,
                                      @PathVariable String date, @PathVariable String time) throws ParseException {
+        Optional<User> user = Optional.ofNullable(userService.findByUsername(user1.getName()));
+        Long userId = user.get().getId();
+
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
         Date dateValue = formatter.parse(date+' '+time);
         Optional<User> optUser = userService.findById(userId);

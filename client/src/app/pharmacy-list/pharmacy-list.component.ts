@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Sort } from '@angular/material/sort';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Pharmacy } from '../dto/pharmacy';
 import { PharmacyMedsComponent } from '../pharmacy-meds/pharmacy-meds.component';
@@ -21,9 +22,13 @@ export class PharmacyListComponent implements OnInit {
   searchText
   endpoint = Endpoint;
 
-  constructor(public dialog: MatDialog,private http: HttpClient) {}
+  constructor(public dialog: MatDialog,private http: HttpClient,private router: Router) {}
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }else
+     this.router.navigate(['loggedUserHomePage'])
     //Da li cu prikazati sve apoteke ili one u kojima ima odredjeni lek
     if(Global.clickedMed.id != undefined){
       this.http

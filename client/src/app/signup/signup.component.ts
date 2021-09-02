@@ -33,6 +33,9 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.login = false
+    if(sessionStorage.getItem('token') != null){
+      this.router.navigate(['loggedUserHomePage'])
+    }
   }
 
   homeClicked(){

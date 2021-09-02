@@ -6,6 +6,7 @@ import { Endpoint } from '../util/endpoints-enum';
 
 import { Sort } from '@angular/material/sort';
 import { Global } from '../util/global';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-promotions',
@@ -19,13 +20,16 @@ export class PromotionsComponent implements OnInit {
   searchText
   endpoint = Endpoint;
 
-  constructor(public dialog: MatDialog,private http: HttpClient) { }
+  constructor(public dialog: MatDialog,private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
 
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http

@@ -4,7 +4,6 @@ import isa.pharmacy.Models.Dermatologist;
 import isa.pharmacy.Models.Pharmacist;
 import isa.pharmacy.Models.User;
 import org.springframework.data.domain.Page;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.List;
 import java.util.Optional;

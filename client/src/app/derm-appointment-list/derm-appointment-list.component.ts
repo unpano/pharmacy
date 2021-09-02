@@ -2,10 +2,11 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { Router } from '@angular/router';
-import { EMPTY } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { DermAppointment } from '../dto/dermAppointment';
 import { Email } from '../dto/email';
+import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -16,6 +17,7 @@ import { Global } from '../util/global';
 })
 export class DermAppointmentListComponent implements OnInit {
 
+  user: any
   appointments : any
   sortedData : any
   searchText
@@ -27,7 +29,7 @@ export class DermAppointmentListComponent implements OnInit {
     //VRACAM SLOBODNE TERMINE U APOTECI
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http
@@ -41,18 +43,28 @@ export class DermAppointmentListComponent implements OnInit {
   }
 
   scheduleAppointment(app: DermAppointment){
+    const headers1 = { 
+      'content-type': 'application/json',
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
+    let options1 = { headers: headers1 };
 
-    //Obezbedjena je i provera na backu
-    if(Global.loggedUser.penalties < 3){
+    this.http
+    .get<Observable<User>>(this.endpoint.USER_PROFILE,options1)
+      .pipe(
+        map(returnedUser => {
+          this.user = returnedUser  
+
+        })).subscribe(() =>
+        {
       const headers = { 
         'content-type': 'application/json',
-        'Authorization': 'Bearer ' + Global.token.access_token}  
+        'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
       let options = { headers: headers };
   
       let email: Email = new Email()
-      email.recipient = Global.loggedUser.email
+      email.recipient = this.user.email
       email.subject = "Confirmation info of scheduled dermatologist appointment"
-      email.message = 'Hey, ' + Global.loggedUser.firstName + ',' + 
+      email.message = 'Hey, ' + this.user.firstName + ',' + 
       'You have scheduled dermatologist appointment on ' + app.date.toString() + '. ' +
       'Appointment is in ' + app.pharmacy.name + ', ' + app.pharmacy.address + ', ' + app.pharmacy.city + '.' +
       'You chosen ' + app.dermatologist.firstName + 'as your dermatologist. ' +
@@ -77,8 +89,8 @@ export class DermAppointmentListComponent implements OnInit {
           }
         }
       )
-    }else
-    alert("Number of panelties is 3. You cannot finish this action.")
+        })
+    
   }
 
   sortData(sort: Sort) {

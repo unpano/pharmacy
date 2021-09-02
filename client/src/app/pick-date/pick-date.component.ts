@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { EMPTY } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Email } from '../dto/email';
 import { Reservation } from '../dto/reservation';
+import { User } from '../dto/user';
 import { Endpoint } from '../util/endpoints-enum';
 import { Global } from '../util/global';
 
@@ -17,6 +18,7 @@ import { Global } from '../util/global';
 })
 export class PickDateComponent implements OnInit {
 
+  user: any
   newDate: Date
   reservation: any
   retRes: any
@@ -30,7 +32,7 @@ export class PickDateComponent implements OnInit {
     //Prvim rezervaciju za lek
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
 
     this.http
@@ -44,10 +46,23 @@ export class PickDateComponent implements OnInit {
       }
       return EMPTY;
     })).subscribe(returnedRes => {
-             
+                     
         this.retRes = returnedRes
         let email: Email = new Email()
-        email.recipient = Global.loggedUser.email
+        const headers1 = { 
+          'content-type': 'application/json',
+          'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
+        let options1 = { headers: headers1 };
+    
+        this.http
+        .get<Observable<User>>(this.endpoint.USER_PROFILE,options1)
+          .pipe(
+            map(returnedUser => {
+              this.user = returnedUser  
+    
+            })).subscribe(() =>
+            {
+        email.recipient = this.user.email
         email.subject = "Confirmation info of reserved med"
         email.message = 'You have reserved med. Reservation id: ' + this.retRes.id + '.'
 
@@ -56,7 +71,7 @@ export class PickDateComponent implements OnInit {
             .post<any>(this.endpoint.SEND_EMAIL, JSON.stringify(email), options).pipe().subscribe()
             this.router.navigate(["loggedUserHomePage"]);
           }
-        
+            })
     }
     )
   }

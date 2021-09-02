@@ -20,10 +20,13 @@ export class PastDermAppointmentListComponent implements OnInit {
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('token') == null){
+      this.router.navigate([''])
+    }
     //VRACAM PROSLE PREGLEDE PACIJENTA KOD DERMATOLOGA
     const headers = { 
       'content-type': 'application/json',
-      'Authorization': 'Bearer ' + Global.token.access_token}  
+      'Authorization': 'Bearer ' + sessionStorage.getItem("token")}  
     let options = { headers: headers };
     this.http
       .get(this.endpoint.PAST_DERM_APPOINTMENT_LIST,options)
