@@ -1,11 +1,20 @@
 -----POPUJAVANJE BAZE-----
 
+
+
 Baza se kreira na localhost:3306/pharmacy. pharmacy je naziv seme baze podataka. U application.properties fajlu
 podesiti:
 spring.datasource.username=ovdeIdeUsername
 spring.datasource.password=ovdeIdeSifra
 Tako da odgovara korisnickom imenu i sifri koju ste koristili prilikom otvaranja konekcije na tom portu. Da bi se
 baza kreirala potrebno je kreirati semu sa nazivom pharmacy.
+
+
+
+Uputstvo za popunjavanje baze za ulogu administratora apoteke popuniti pomocu sql koda iz fajla admin_baza.txt 
+koji se nalazi na grani hristina.
+
+
 
 Za ulogu student 1 formirano je 13 tabela u bazi koje se popunjavaju podacima iz resource fajla.
 U njemu se nalaze insert naredbe. Nazivi tabela su:
