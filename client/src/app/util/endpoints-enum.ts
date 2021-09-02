@@ -72,10 +72,11 @@ export enum Endpoint {
 
   FIND_ALL_VACATIONS = "http://localhost:8084/vacations/allVacation/",
 
+
   APPROVE = "http://localhost:8084/vacations/approve/",
 
   DECLINE = "http://localhost:8084/vacations/decline/",
 
-  FIND_WORKER_NAMES = "http://localhost:8084/vacations/getWorkerName/"
+  FIND_WORKER = "http://localhost:8084/vacations/getWorkerName/"
 
 }
