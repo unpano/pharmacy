@@ -243,15 +243,15 @@ insert into term (id,user_id,pharmacist_id,start,end) values (7,2,5,'2021-08-26 
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
 values (1,1,6,1,'2021-08-25 13:00:00',45,1400);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
-values (2,1,7,2,'2021-08-25 17:00:00',30,400);
+values (2,null,7,2,'2021-08-25 17:00:00',30,400);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
-values (3,1,8,2,'2021-08-25 18:00:00',20,1000);
+values (3,null,8,2,'2021-08-25 18:00:00',20,1000);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
 values (4,2,6,1,'2021-08-25 16:00:00',30,1200);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
-values (5,2,7,3,'2021-08-25 13:00:00',45,1100);
+values (5,null,7,3,'2021-08-25 13:00:00',45,1100);
 insert into derm_appointment (id,user_id,dermatologist_id,pharmacy_id,date,duration,price)
-values (6,2,8,4,'2021-08-25 13:00:00',60,1400);
+values (6,null,8,4,'2021-08-25 13:00:00',60,1400);
 
 insert into prescriptions (id,user_id,date,prescription_status) values (1,1,'2021-08-25 13:47:53',0);
 insert into prescriptions (id,user_id,date,prescription_status) values (2,1,'2021-09-25 13:47:53',1);
