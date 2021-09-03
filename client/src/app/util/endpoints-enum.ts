@@ -77,6 +77,16 @@ export enum Endpoint {
 
   DECLINE = "http://localhost:8084/vacations/decline/",
 
+  GET_ORDERS = "http://localhost:8084/orders/getOrders/",
+
+  GET_ORDER_MEDS = "http://localhost:8084/orders/getMeds/",
+  
+  FIND_ALL_OFFERS = "http://localhost:8084/offers/allOffers/",
+
+  ACCEPT = "http://localhost:8084/offers/accept/",
+  
+  NOT_ACCEPT = "http://localhost:8084/offers/decline/",
+
   FIND_WORKER = "http://localhost:8084/vacations/getWorkerName/"
 
 }

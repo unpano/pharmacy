@@ -7,16 +7,99 @@
 <form role="form" novalidate class="form-inline" name="personForm">
     <div class="form-group">
         <label for="find-form-first-name" id="prvaKolonaLabela">Average pharmacy rate:</label>
-        <label  for="find-form-first-name"  ></label>								
+        <label  for="find-form-first-name" >{{pharmacy.avgRank}}</label>   							
     </div>
 
+
+
+
         <label for="find-form-first-name" id="prvaKolonaLabela">Pharmacists :</label>
+
+
+
+
+        <mat-card class="example-card">
+    
+            <mat-card-content>
+              <form role="form" novalidate class="form-inline" name="vehicleForm">
+                  
+         
+        
+                        <table>
+                          <thead>
+                          <tr>
+                            
+                            <th>Pharmacist</th>
+                            <th></th>
+                            <th></th>
+                            <th>Average rate </th>
+        
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let pharm of pharmacists ">
+                            
+                            <td>{{pharm.firstName}}</td>
+                            <td>{{pharm.lastName}}</td>
+                            <td></td>
+                            <td>{{pharm.stars}}</td>
+                          </tr>
+                          </tbody>
+                        </table>
+           
+              </form>
+              
+              
+            </mat-card-content>
+        
+            
+          </mat-card>
+
+
+
+
 
 
         <label for="find-form-first-name" id="prvaKolonaLabela">Dermatologists :</label>
  
        							
+        <mat-card class="example-card">
+    
+            <mat-card-content>
+              <form role="form" novalidate class="form-inline" name="vehicleForm">
+                  
+         
+        
+                        <table>
+                          <thead>
+                          <tr>
+                            
+                            <th>Dermatologist</th>
+                            <th></th>
+                            <th></th>
+                            <th>Average rate </th>
+        
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let derm of dermatologists ">
+                            
+                            <td>{{derm.firstName}}</td>
+                            <td>{{derm.lastName}}</td>
 
+                            <td></td>
+                            <td>{{derm.stars}}</td>
+                          </tr>
+                          </tbody>
+                        </table>
+           
+              </form>
+              
+              
+            </mat-card-content>
+        
+            
+          </mat-card>
   
    
 </form>

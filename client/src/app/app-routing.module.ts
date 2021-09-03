@@ -36,6 +36,7 @@ import { PromotionsComponent } from './promotions/promotions.component';
 import { ReportComponent } from './report/report.component';
 import { AdminPharmacyDermatologistsComponent } from './admin-pharmacy-dermatologists/admin-pharmacy-dermatologists.component';
 import { VacationListComponent } from './vacation-list/vacation-list.component';
+import { OrderComponent } from './order/order.component';
 
 
 
@@ -76,6 +77,7 @@ const routes: Routes = [
   {path : 'promotions', component: AdminProfileComponent},
   {path : 'report', component:  ReportComponent},
   {path : 'terms', component:  AdminDermAppointmentsComponent},
+  {path : 'orders', component:  OrderComponent},
   {path : 'vacations', component:  VacationListComponent}
 
  

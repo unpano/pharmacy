@@ -1,0 +1,61 @@
+<app-admin-header></app-admin-header>
+
+
+<mat-card class="example-card">
+    
+    <mat-card-content>
+      <button (click)="addOrder()">Add new order</button>
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+               
+                <table class="table table-striped">
+
+
+
+                  <thead>
+                  <tr>
+                    
+                    <th>Date</th>
+                    <th></th>
+                    <th></th>
+ 
+                   
+                    <th></th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr *ngFor="let o of orders ">
+                    
+
+                        <td>{{o.date}}</td>
+                        <button id="eyeBtn" (click)="getMeds(o)">Med list</button>
+                        <button id="eyeBtn" (click)="getOffers(o)">See offers</button>
+
+
+                       
+                       
+       
+
+              
+                  </tr>
+
+                  </tbody>
+
+
+                  
+                </table>
+              </div>
+            </div>
+      </form>
+
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+
+
+

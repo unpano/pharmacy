@@ -25,7 +25,7 @@ public class PromotionServiceImpl implements PromotionService {
         private PromotionRepository promotionRepository;
 
         @Autowired
-    private PharmacyRepository pharmacyRepository;
+        private PharmacyRepository pharmacyRepository;
 
 
 

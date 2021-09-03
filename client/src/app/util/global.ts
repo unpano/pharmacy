@@ -1,5 +1,6 @@
 
 import { Med } from "../dto/med";
+import { Order } from "../dto/order";
 import { Pharmacy } from "../dto/pharmacy";
 import { Promotion } from "../dto/promotion";
 import { Token } from "../dto/token";
@@ -8,6 +9,7 @@ import { User } from "../dto/user";
 
 export namespace Global {
     export var loggedUser: User = new User();
+    export var clickedOrder: Order = new Order();
     export var token: Token = new Token();
     export var clickedPharmacy: Pharmacy = new Pharmacy();
     export var clickedSignUp: boolean = false;

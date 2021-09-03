@@ -1,0 +1,46 @@
+
+<mat-card class="example-card">
+    
+    <mat-card-content>
+
+      <form role="form" novalidate class="form-inline" name="vehicleForm">
+          
+          <div class="container">
+              <div class="row">
+       
+                <table class="table table-striped">
+                  <thead>
+                  <tr>
+                    
+                    <th>Med name</th>
+                    <th>Type</th>
+                    <th>Producer</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let med of meds ">
+                    
+                    <td>{{med.med.name}}</td>
+                    <td>{{med.med.type}} </td>
+                    <td>{{med.med.producer}} </td>
+                    <td>{{med.med.price}} </td>
+                    <td>{{med.quantity}} </td>
+
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </form>
+
+      
+    </mat-card-content>
+
+    
+  </mat-card>
+
+
