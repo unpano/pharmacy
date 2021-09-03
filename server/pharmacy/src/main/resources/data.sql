@@ -219,8 +219,6 @@ insert into user_authority (user_id,authority_id) values (7,3);
 insert into user_authority (user_id,authority_id) values (8,3);
 
 insert into user_allergy (user_id,med_id) values (1,1);
-insert into user_allergy (user_id,med_id) values (1,2);
-insert into user_allergy (user_id,med_id) values (1,3);
 insert into user_allergy (user_id,med_id) values (2,7);
 insert into user_allergy (user_id,med_id) values (2,8);
 
