@@ -22,7 +22,7 @@ export class FutureDermAppointmentListComponent implements OnInit {
   searchText1
   endpoint = Endpoint
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router, private dialog: MatDialog) { }
 
 
   ngOnInit(): void {
