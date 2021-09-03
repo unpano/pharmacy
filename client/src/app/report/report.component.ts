@@ -16,7 +16,7 @@ import { Global } from '../util/global';
 export class ReportComponent implements OnInit {
 
 
-  
+  meds : any
   pharmacists: any
   dermatologists : any
   endpoint = Endpoint
@@ -54,6 +54,21 @@ export class ReportComponent implements OnInit {
           this.dermatologists = returnedDermatologists
         })
       ).subscribe(() => {})
+
+      
+
+
+    this.http
+      .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id, options)
+      .pipe(
+        map(returnedPharmacists => {
+          this.meds = returnedPharmacists
+        })
+      ).subscribe(() => {})
+
+
+
+
   }
 
 }

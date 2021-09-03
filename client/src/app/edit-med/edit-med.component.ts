@@ -66,11 +66,11 @@ onEditButton: Boolean = false
       Global.clickedMed.price = this.newPrice
 
     
-    const body=JSON.stringify(Global.clickedMed);   //konverzija objekta subscriber u json
+
     
 
     this.http
-    .put(this.endpoint.MED_UPDATE,body,options)
+    .put(this.endpoint.MED_UPDATE,Global.clickedMed,options)
     .pipe().subscribe(() => {if(confirm("Successfully updated med.")) {
       
     }}

@@ -118,7 +118,7 @@ export class AdminPharmacyMedsComponent implements OnInit {
       })
     dialogRef.afterClosed().subscribe();
 
-    this.router.navigate(["adminPage"]);
+    this.router.navigate(["adminProfile"]);
 
   }
 

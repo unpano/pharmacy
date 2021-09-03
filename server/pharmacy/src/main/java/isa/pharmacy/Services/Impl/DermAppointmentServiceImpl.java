@@ -106,9 +106,20 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
         ///nema zakazan termin----nastavljamo dalje
         //proveravamo da li je dermatolog na godisnjem odmoru
 
+        List<VacationRequest> odmori = vacationRepository.findAll();
 
-
-
+        for(VacationRequest vacationRequest : odmori)
+        {
+            if( vacationRequest.getDermatologist() != null) {
+                if (vacationRequest.getDermatologist().getId() == derm.getId()) {
+                    if (vacationRequest.getStartDate().before(dermAppointment.getDate()) &&
+                            vacationRequest.getEndDate().after(dermAppointment.getDate())) {
+                        System.out.println("Na odmoru je!");
+                        return null;
+                    }
+                }
+            }
+        }
 
 
             return dermAppointmentRepository.save(dermAppointment);

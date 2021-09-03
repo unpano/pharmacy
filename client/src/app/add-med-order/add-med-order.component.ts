@@ -39,7 +39,7 @@ export class AddMedOrderComponent implements OnInit {
 
 
     this.http
-    .get(this.endpoint.MED_LIST)
+    .get(this.endpoint.PHARMACY_MED_LIST + Global.clickedPharmacy.id, options)
     .pipe(
       map(returnedMeds=> {
         this.meds = returnedMeds
@@ -55,17 +55,9 @@ export class AddMedOrderComponent implements OnInit {
       this.medQuantity.med = med;
   }
 
-
-
-
-
-  add()
+  addOrder()
   {
-
-  
-
-
-
+    
 
     //kreiranje nove narudzbine 
     const headers = { 
@@ -89,8 +81,10 @@ export class AddMedOrderComponent implements OnInit {
             
 
           })
+  }
 
-}
+
+
 
 
   

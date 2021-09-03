@@ -100,6 +100,46 @@
         
             
           </mat-card>
+
+
+          <label for="find-form-first-name" id="prvaKolonaLabela">Med prices :</label>
+          <mat-card class="example-card">
+    
+            <mat-card-content>
+              <form role="form" novalidate class="form-inline" name="vehicleForm">
+                  
+         
+        
+                        <table>
+                          <thead>
+                          <tr>
+                            
+                            <th>Medicine</th>
+                            <th></th>
+                            <th></th>
+                            <th>Price </th>
+        
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let med of meds ">
+                            
+                            <td>{{med.name}}</td>
+                            <td>{{med.additionalNotes}}</td>
+
+                            <td></td>
+                            <td>{{med.price}}</td>
+                          </tr>
+                          </tbody>
+                        </table>
+           
+              </form>
+              
+              
+            </mat-card-content>
+        
+            
+          </mat-card>
   
    
 </form>

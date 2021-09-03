@@ -26,6 +26,7 @@
     "bootstrap": "^5.0.1",
     "chart.js": "file:node_modules/chart.js",
     "leaflet": "^1.7.1",
+    "ng2-charts": "^2.4.2",
     "ng2-search-filter": "^0.5.1",
     "ngx-material-timepicker": "^5.5.3",
     "prop-types": "^15.7.2",
