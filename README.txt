@@ -11,8 +11,8 @@ baza kreirala potrebno je kreirati semu sa nazivom pharmacy.
 
 
 
-Uputstvo za popunjavanje baze za ulogu administratora apoteke popuniti pomocu sql koda iz fajla admin_baza.txt 
-koji se nalazi na grani hristina.
+Uputstvo za popunjavanje baze za ulogu administratora apoteke : 
+	bazu popuniti pomocu sql koda iz fajla admin_baza.txt koji se nalazi na grani hristina.
 
 
 
