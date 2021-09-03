@@ -1,0 +1,55 @@
+
+
+
+
+
+<mat-card class="example-card">
+  
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+
+
+            
+        <div class="forma">
+
+
+
+                <form>
+
+
+                <div class="form-group">
+                <label for="vehicle-form-brand">Med:</label>
+                <select class="form-control" name="brand" id="vehicle-form-brand" required >
+                    <option value="" disabled selected>Select med</option>
+                    <option *ngFor="let m of meds" (click)="onSelectedMed(med)">{{m.id}}</option>
+                </select>								
+                </div>
+
+              </form>
+
+
+                <label class="label">Quantity:</label>
+                <input [(ngModel)]="medQuantity.quantity"  name="newF" [value]="medQuantity.quantity"/>
+
+
+
+                 
+
+
+
+
+</div>
+  
+      </table>
+      </form>  
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="add()">Add</button>
+    </mat-card-actions>
+  
+  </mat-card>
+
+
+ 
+

@@ -20,7 +20,7 @@ export class AddDermApp2Component implements OnInit {
   endpoint = Endpoint;
 
 
-  date
+  date : String
   timeInput : String
 
   dermatologists : any

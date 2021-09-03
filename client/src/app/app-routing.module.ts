@@ -19,7 +19,6 @@ import { FutureDermAppointmentListComponent } from './future-derm-appointment-li
 import { PastDermAppointmentListComponent } from './past-derm-appointment-list/past-derm-appointment-list.component';
 import { SchedulePharmacistAppointmentComponent } from './schedule-pharmacist-appointment/schedule-pharmacist-appointment.component';
 import { ReservationListComponent } from './reservation-list/reservation-list.component';
-import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
 
 import { RateComponent } from './rate/rate.component';
 import { PrescriptionListComponent } from './prescription-list/prescription-list.component';
@@ -37,6 +36,7 @@ import { ReportComponent } from './report/report.component';
 import { AdminPharmacyDermatologistsComponent } from './admin-pharmacy-dermatologists/admin-pharmacy-dermatologists.component';
 import { VacationListComponent } from './vacation-list/vacation-list.component';
 import { OrderComponent } from './order/order.component';
+import { AddDermApp2Component } from './add-derm-app2/add-derm-app2.component';
 
 
 
@@ -58,7 +58,7 @@ const routes: Routes = [
   {path: 'schedulePharmacistAppointment', component: SchedulePharmacistAppointmentComponent},
   {path: 'reservations', component: ReservationListComponent},
 
-  {path: 'addTerm', component: AddDermAppointmentComponent},
+  {path: 'addTerm', component: AddDermApp2Component},
 
 
   {path: 'writeComplaint', component: WriteComplaintComponent},

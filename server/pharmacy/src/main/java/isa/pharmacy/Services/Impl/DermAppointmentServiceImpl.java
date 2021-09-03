@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.OptimisticLockException;
+import javax.transaction.Transactional;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -105,20 +106,7 @@ public class DermAppointmentServiceImpl implements DermAppointmentService {
         ///nema zakazan termin----nastavljamo dalje
         //proveravamo da li je dermatolog na godisnjem odmoru
 
-        List<VacationRequest> vacations = vacationRepository.findAll();
-        for (VacationRequest v : vacations)
-        {
-            if(v.isApproved() && v.getDermatologist().getId() == derm.getId())
-            {
-                if(dermAppointment.getDate().after(   v.getStartDate()   )  && dermAppointment.getDate().before(     v.getEndDate()      ))
-                {
-                    System.out.println(" Dermatolog je na godisnjem tada !");
-                    return  null;
-                }
 
-            }
-
-        }
 
 
 

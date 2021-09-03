@@ -50,6 +50,24 @@ public class OfferServiceImpl implements OfferService {
 
 
 
+    public boolean declineAllOffers( Long id, MedsOrder medsOrder)
+    {
+        List<OrderOffer> offers =  offerReppository.findAll();
+
+
+        for( OrderOffer o : offers)
+        {
+            if( o.getMedsOrder().getId() == medsOrder.getId())
+            {
+                if( o.getId() != id)
+                {
+                    o.setAccepted(false);
+                    o.setAnswered(true);
+                }
+            }
+        }
+        return true;
+    }
 
 
 
@@ -57,6 +75,9 @@ public class OfferServiceImpl implements OfferService {
     public Object approve(OrderOffer orderOffer)
     {
         OrderOffer offer = offerReppository.findById(orderOffer.getId()).get();
+
+
+        declineAllOffers(orderOffer.getId(), orderOffer.getMedsOrder());
 
         if( offer.isAnswered() )
         {
@@ -71,6 +92,8 @@ public class OfferServiceImpl implements OfferService {
     public Object decline(OrderOffer orderOffer )
     {
         OrderOffer offer = offerReppository.findById(orderOffer.getId()).get();
+
+
         if( offer.isAnswered() )
         {
             throw new OptimisticLockException();

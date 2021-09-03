@@ -66,7 +66,6 @@ import { AdminPharmacyPharmacistsComponent } from './admin-pharmacy-pharmacists/
 import { AdminDermAppointmentsComponent } from './admin-derm-appointments/admin-derm-appointments.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { PharmacyPricesComponent } from './pharmacy-prices/pharmacy-prices.component';
-import { AddDermAppointmentComponent } from './add-derm-appointment/add-derm-appointment.component';
 
 
 import { WriteComplaintComponent } from './write-complaint/write-complaint.component';
@@ -96,6 +95,7 @@ import { OrderComponent } from './order/order.component';
 import { AddOrderComponent } from './add-order/add-order.component';
 import { OrderMedsComponent } from './order-meds/order-meds.component';
 import { OfferListComponent } from './offer-list/offer-list.component';
+import { AddMedOrderComponent } from './add-med-order/add-med-order.component';
 
 
 
@@ -131,7 +131,7 @@ import { OfferListComponent } from './offer-list/offer-list.component';
     AdminDermAppointmentsComponent,
     AdminHeaderComponent,
     PharmacyPricesComponent,
-    AddDermAppointmentComponent,
+
 
 
 
@@ -159,7 +159,8 @@ import { OfferListComponent } from './offer-list/offer-list.component';
     OrderComponent,
     AddOrderComponent,
     OrderMedsComponent,
-    OfferListComponent
+    OfferListComponent,
+    AddMedOrderComponent
 
   ],
   imports: [

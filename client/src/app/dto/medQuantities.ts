@@ -1,4 +1,5 @@
 import { Med } from "./med";
+import { Order } from "./order";
 
 
 export class MedQuantityes{
@@ -8,6 +9,8 @@ export class MedQuantityes{
 
     quantity : Number;
 
+
+     order : Order
 
 
 }
