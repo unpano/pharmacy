@@ -224,14 +224,14 @@ insert into user_allergy (user_id,med_id) values (1,3);
 insert into user_allergy (user_id,med_id) values (2,7);
 insert into user_allergy (user_id,med_id) values (2,8);
 
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (1,1,1,'2021-08-30',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (2,1,3,'2021-08-31',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (3,1,5,'2021-08-30',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (4,1,7,'2021-09-30',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (5,2,8,'2021-09-07',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (6,2,9,'2021-09-03',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (7,2,10,'2021-09-13',0);
-insert into reservation (id,user_id,med_id,pick_up_date,picked_up) values (8,2,11,'2021-10-11',0);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (1,1,1,'2021-08-30',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (2,1,3,'2021-08-31',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (3,1,5,'2021-08-30',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (4,1,7,'2021-09-30',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (5,2,8,'2021-09-07',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (6,2,9,'2021-09-03',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (7,2,10,'2021-09-13',0,1);
+insert into reservation (id,user_id,med_id,pick_up_date,picked_up,pharmacy_id) values (8,2,11,'2021-10-11',0,1);
 
 insert into term (id,user_id,pharmacist_id,start,end) values (1,1,3,'2021-08-26 10:00:00','2021-08-26 10:30:00');
 insert into term (id,user_id,pharmacist_id,start,end) values (2,1,4,'2021-08-26 11:00:00','2021-08-26 11:30:00');
