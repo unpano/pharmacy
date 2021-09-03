@@ -2,6 +2,8 @@ import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TermDetailsComponent } from '../term-details/term-details.component';
+import { MatDialog } from '@angular/material/dialog';
 import { map } from 'rxjs/operators';
 import { DermAppointment } from '../dto/dermAppointment';
 import { Term } from '../dto/term';
@@ -89,6 +91,14 @@ export class FutureDermAppointmentListComponent implements OnInit {
             else
               alert("Could not cencel appointment less than 24 hours before!")
           })).subscribe()
+        }
+pharmAppDetails(app1: Term){
+          Global.clickedTerm = app1
+          let dialogRef = this.dialog.open(TermDetailsComponent,{
+            autoFocus: false,
+            maxHeight: '90vh' //you can adjust the value as per your view
+          })
+          dialogRef.afterClosed().subscribe();
         }
 
 }
