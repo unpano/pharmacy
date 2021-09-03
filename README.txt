@@ -1,3 +1,6 @@
+-------------------------------------NAPOMENA---------------------------------------------
+FRONT se nalazi u folderu pharmacy\client, a BACK u folderu pharmacy\server\pharmacy!
+
 -----POPUJAVANJE BAZE-----
 
 Baza se kreira na localhost:3306/pharmacy. pharmacy je naziv seme baze podataka. U application.properties fajlu
@@ -45,6 +48,8 @@ npm install --save-dev @angular-devkit/build-angular
 
 -----POKRETANJE BACKEND-A-----
 
+
+pharmacy\server\pharmacy
 Otvoriti projekat u IntelliJ-u. Podesiti konfiguraciju da prepozna main class-u. Pokrenuti na Run.
 Aplikacija se pokrece na portu 8084. Nije preporucljivo menjati port, jer je front takodje podesen da gadja
 taj port, u suprotnom moralo bi se i tamo menjati.
