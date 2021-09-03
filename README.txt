@@ -7,7 +7,8 @@ spring.datasource.password=ovdeIdeSifra
 Tako da odgovara korisnickom imenu i sifri koju ste koristili prilikom otvaranja konekcije na tom portu. Da bi se
 baza kreirala potrebno je kreirati semu sa nazivom pharmacy.
 
-Za ulogu student 1 formirano je 14 tabela u bazi koje se popunjavaju podacima iz resource fajla.
+Za ulogu student 1 formirano je 14+ tabela u bazi koje se popunjavaju podacima iz resource foldera iz fajla data.sql 
+automatski.
 U njemu se nalaze insert naredbe. Nazivi tabela su:
 	1. loyalty_program
 	2. pharmacies
@@ -23,7 +24,7 @@ U njemu se nalaze insert naredbe. Nazivi tabela su:
 	12. prescriptions
 	13. prescription_med
 	14. user_promoted_pharmacy
-Tim redom i popunjavati podatke u tabelama.
+Tim redom se popunjavaju podaci u tabelama.
 Sifre za korisnike su iste kao i username-ovi samo su kriptovane.
 
 -----SLANJE EMAIL-A-----
@@ -38,6 +39,9 @@ Pozicionirati se u folder \Pharmacy\client i pokrenuti sledece komande.
 npm install -g @angular/cli
 npm install
 npm start
+
+Po potrebi pre pokretanja pokrenuti komandu (ako dodje do greske prilikom pokretanja)
+npm install --save-dev @angular-devkit/build-angular
 
 -----POKRETANJE BACKEND-A-----
 
