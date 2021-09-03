@@ -101,6 +101,7 @@ export class UserProfileComponent implements OnInit {
       this.user.city = this.newCity
     if(this.newCountry != undefined)
       this.user.country = this.newCountry
+    this.user.lastPasswordResetDate = null
     
     const body=JSON.stringify(this.user);   //konverzija objekta subscriber u json
     
